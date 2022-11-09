@@ -8912,7 +8912,6 @@ HOST-SUFFIX,zhichi08.com, reject
 HOST-SUFFIX,zhidian3g.cn, reject
 HOST-SUFFIX,zhifenjie.com, reject
 HOST-SUFFIX,zhihei.com, reject
-HOST-SUFFIX,zhihu.xmcimg.com, reject
 HOST-SUFFIX,zhiong.net, reject
 HOST-SUFFIX,zhiyuanteam.com, reject
 HOST-SUFFIX,zhiziyun.com, reject
@@ -9090,7 +9089,6 @@ HOST-SUFFIX,mads.suning.com, reject
 HOST-SUFFIX,mopnativeadv.037201.com, reject
 HOST-SUFFIX,nativeadv.dftoutiao.com, reject
 HOST-SUFFIX,optimus-ads.amap.com, reject
-HOST-SUFFIX,sugar.zhihu.com, reject
 HOST-SUFFIX,track.tiara.daum.net, reject
 HOST-SUFFIX,track.tiara.kakao.com, reject
 HOST-SUFFIX,trackapp.guahao.cn, reject
@@ -9606,17 +9604,10 @@ IP-CIDR,211.161.101.110/32, reject
 # Malware
 # > Huawei AspiegelBot
 IP-CIDR,114.119.160.0/21, reject
-# > KuaiZip
-# https://zhuanlan.zhihu.com/p/39534279, reject
-HOST-SUFFIX,kuaizip.com, reject
 # > MacKeeper
 # https://www.lizhi.io/blog/40002904, reject
 HOST-SUFFIX,zryydi.com, reject
-# > Adobe Flash China Special Edition
-# https://www.zhihu.com/question/281163698/answer/441388130, reject
-HOST,geo2.adobe.com, reject
 # > C&J Marketing
-# https://www.zhihu.com/question/46746200, reject
 HOST-SUFFIX,alienskins.cn, reject
 HOST-SUFFIX,anydeskchina.cn, reject
 HOST-SUFFIX,betterzipcn.com, reject
