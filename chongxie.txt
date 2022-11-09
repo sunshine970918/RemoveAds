@@ -297,8 +297,6 @@ http:\/\/analytics\.163\.com\/ntes url reject
 # > 每日优鲜
 ^https:\/\/j-image\.missfresh\.cn\/img_(.+)\.gif$ url reject
 ^https:\/\/j-image\.missfresh\.cn\/img_(.+)\.(jpg|jpeg|gif|png)\?iopcmd=convert&dst=webp&q=85$ url reject
-# > 知乎开屏页广告,首页右下角悬浮框,推荐列表广告,问题回答列表广告,具体回答下广告
-#^https:\/\/(appcloud2\.zhihu\.com\/v3\/config$|www\.zhihu\.com\/api\/v4\/answers\/\d+\/recommendations|api\.zhihu\.com\/(topstory\/recommend|commercial_api\/(real_time_launch_v2|app_float_layer$)|questions\/\d+\/feeds\?|v4\/questions\/\d+\/answers\?)) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/zhihu.js
 # > 中国移动
 ^https?:\/\/gd\.10086\.cn\/gmccfile\/file\/image\/preloading703\/.*.jpg url reject
 ^https?+:\/\/clientaccess\.10086\.cn\/biz-orange\/DN\/init\/startInit url reject-200
