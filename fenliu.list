@@ -7,8 +7,6 @@
 ip-asn, 132202, direct
 # > 知乎
 Host, www.zhihu.com, direct
-# > 京东
-Host, storage.360buyimg.com, direct
 # > 光大银行阳光惠生活
 host-keyword, talk.bz.getui.com, reject
 # > 民生银行
