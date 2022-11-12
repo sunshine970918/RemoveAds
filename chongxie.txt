@@ -193,7 +193,7 @@ http:\/\/analytics\.163\.com\/ntes url reject
 # > 哔哩哔哩屏蔽首页右上活动[卸载重装]
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity url reject-dict
 # > 哔哩哔哩启动时开启直连模式[自行启用]
-;^https?:\/\/app\.bilibili\.com\/x\/resource\/domain url script-response-body https://gitlab.com/ddgksf2013/Cuttlefish/-/raw/master/Script/bilibili_startup_direct.js
+;^https?:\/\/app\.bilibili\.com\/x\/resource\/domain url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_startup_direct.js
 # > 哔哩哔哩繁体CC字幕转中文简体[自行启用]
 ;^https?:\/\/i.\.hdslb\.com\/bfs\/subtitle\/.+\.json$ url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_cc.js
 # > 哔哩哔哩观影页面去广告
