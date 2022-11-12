@@ -402,7 +402,7 @@ https?:\/\/t7z\.cupid\.iqiyi\.com\/show url reject
 # > 爱阅书香
 ^https?:\/\/icc\.one\/iFreeTime\/xid32uxaoecnfv2\/ url reject
 # > 酷安
-^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList) url script-response-body https://gitlab.com/ddgksf2013/Cuttlefish/-/raw/master/Script/coolapk.js
+^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList) url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/coolapk.js
 ^https?://api-access\.pangolin-sdk-toutiao\.com/api/ad/union/sdk url reject
 ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch url reject-dict
 # > 大众点评
