@@ -197,7 +197,7 @@ http:\/\/analytics\.163\.com\/ntes url reject
 # > 哔哩哔哩繁体CC字幕转中文简体[自行启用]
 ;^https?:\/\/i.\.hdslb\.com\/bfs\/subtitle\/.+\.json$ url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_cc.js
 # > 哔哩哔哩观影页面去广告
-^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/tab\? url script-response-body https://gitlab.com/ddgksf2013/Cuttlefish/-/raw/master/Script/bilibili_json.js
+^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/tab\? url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_json.js
 # > 哔哩哔哩应用开屏去广告
 ^https://app.bilibili.com/x/v2/splash/show url reject-dict
 # > 哔哩哔哩应用开屏广告预加载
