@@ -8,8 +8,8 @@ author      ddgksf2013
 
 [rewrite_local]
 
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=hotWords url script-response-body https://codeberg.org/ddgksf2013/Cuttlefish/raw/branch/master/Script/jd_json.js
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=hotSearchTerms url script-response-body https://codeberg.org/ddgksf2013/Cuttlefish/raw/branch/master/Script/jd_json.js
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=hotWords url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/jd_json.js
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=hotSearchTerms url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/jd_json.js
 
 [mitm]
 
