@@ -12,7 +12,7 @@ hostname = m.jd.com, api.m.jd.com, m.360buyimg.com, mpcs.suning.com, amdc.m.taob
 
 
 # > 京东_开屏去广告
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/Startup/startup.js
 # > 京喜
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising url response-body jdLiteAdvertisingVO response-body ddgksf2013
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush url response-body pushData response-body ddgksf2013
