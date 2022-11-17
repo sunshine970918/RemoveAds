@@ -2,7 +2,7 @@
 # >  某些APP要清除缓存或者重新安装APP,拦截广告才会生效！  
 # >  更新时间  2022.11.10
 # >  */  
-hostname = m.jd.com, api.m.jd.com, m.360buyimg.com, mpcs.suning.com, amdc.m.taobao.com, heic.alicdn.com, acs.m.taobao.com, gw.alicdn.com, gab.122.gov.cn, m*.amap.com, api-new.app.acfun.cn, mp.weixin.qq.com, ssl.kohsocialapp.qq.com, support.you.163.com, gw.kaola.com, interface*.music.163.com, m.ads.8le8le.com, appconf.mail.163.com, *.bdstatic.com, business.msstatic.com, mime.baidu.com, baidu.com, m.baidu.com, imeclient.openspeech.cn, business-cdn.shouji.sogou.com, sofire.baidu.com, ndstatic.cdn.bcebos.com, pan.baidu.com, staticsns.cdn.bcebos.com, api.wfdata.club, clientaccess.10086.cn, m.client.10010.com, cloud.189.cn, api.cloud.189.cn, gd.10086.cn, api.douban.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, *.zhuishushenqi.com, syh.zybang.com, learn.chaoxing.com, app.bilibili.com, manga.bilibili.com, 4gimg.map.qq.com, r.inews.qq.com, y.gtimg.cn, mi.gdt.qq.com,  iface2.iqiyi.com, *.cdn.qiyiapp.*, act.vip.iqiyi.com, intl.iqiyi.com, news.l.qq.com, static.gameplus.qq.com, tc.qq.com, images.client.vip.xunlei.com, gw.alicdn.com, heic.alicdn.com, app-api.smzdm.com, homepage-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, s3plus.meituan.net, flowplus.meituan.net, www.meituan.com, p*.meituan.net, wmapi.meituan.com, img.meituan.net, list-app-m.i4.cn, fuss10.elemecdn.com, elemecdn.com, cube.elemecdn.com, www1.elecfans.com, api.izuiyou.com, api.xiachufang.com, p.kuaidi100.com, cdn.kuaidi100.com, testflight.apple.com, icc.one, api.coolapk.com, sf6-be-pack.pglstatp-toutiao.com, api-access.pangolin-sdk-toutiao.com, *.pglstatp-toutiao.com.*, app.aa-ab.com, api.bspapp.com, mp.weixin.qq.com, api.aliyundrive.com, bp-api.bestv.com.cn, support.you.163.com, yanxuan.nosdn.127.net, easyreadfs.nosdn.127.net, edith.xiaohongshu.com, pages.xiaohongshu.com, www.xiaohongshu.com, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com,
+hostname = m.jd.com, api.m.jd.com, m.360buyimg.com, mpcs.suning.com, amdc.m.taobao.com, heic.alicdn.com, acs.m.taobao.com, gw.alicdn.com, gab.122.gov.cn, m*.amap.com, api-new.app.acfun.cn, mp.weixin.qq.com, ssl.kohsocialapp.qq.com, support.you.163.com, gw.kaola.com, interface*.music.163.com, m.ads.8le8le.com, appconf.mail.163.com, *.bdstatic.com, business.msstatic.com, mime.baidu.com, baidu.com, m.baidu.com, imeclient.openspeech.cn, business-cdn.shouji.sogou.com, sofire.baidu.com, ndstatic.cdn.bcebos.com, pan.baidu.com, staticsns.cdn.bcebos.com, api.wfdata.club, clientaccess.10086.cn, m.client.10010.com, cloud.189.cn, api.cloud.189.cn, gd.10086.cn, api.douban.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, *.zhuishushenqi.com, syh.zybang.com, learn.chaoxing.com, 4gimg.map.qq.com, r.inews.qq.com, y.gtimg.cn, mi.gdt.qq.com,  iface2.iqiyi.com, *.cdn.qiyiapp.*, act.vip.iqiyi.com, intl.iqiyi.com, news.l.qq.com, static.gameplus.qq.com, tc.qq.com, images.client.vip.xunlei.com, gw.alicdn.com, heic.alicdn.com, s3plus.meituan.net, flowplus.meituan.net, www.meituan.com, p*.meituan.net, wmapi.meituan.com, img.meituan.net, list-app-m.i4.cn, fuss10.elemecdn.com, elemecdn.com, cube.elemecdn.com, www1.elecfans.com, api.izuiyou.com, api.xiachufang.com, p.kuaidi100.com, cdn.kuaidi100.com, testflight.apple.com, icc.one, api.coolapk.com, sf6-be-pack.pglstatp-toutiao.com, api-access.pangolin-sdk-toutiao.com, *.pglstatp-toutiao.com.*, app.aa-ab.com, api.bspapp.com, mp.weixin.qq.com, api.aliyundrive.com, bp-api.bestv.com.cn, support.you.163.com, yanxuan.nosdn.127.net, easyreadfs.nosdn.127.net, edith.xiaohongshu.com, pages.xiaohongshu.com, www.xiaohongshu.com, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com,
 
 # > "reject" 策略会返回 HTTP 状态码 404,不附带任何额外内容
 # > "reject-200" 策略会返回 HTTP 状态码 200,不附带任何额外内容
@@ -59,29 +59,6 @@ hostname = m.jd.com, api.m.jd.com, m.360buyimg.com, mpcs.suning.com, amdc.m.taob
 ^https?+:\/\/image\.suning\.cn\/uimg\/ma\/ad\/ url reject-200
 # > 拼多多
 ^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
-# > 什么值得买去广告
-# > 什么值得买好价详情页
-^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul url reject
-# > 什么值得买好价详情页红包小助手
-^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul url reject
-# > 什么值得买Wiki(618晒物活动推广,将来可能不是广告)
-^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul url reject
-# > 什么值得买开屏广告
-^https?:\/\/app-api\.smzdm\.com\/util\/loading url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
-# > 什么值得买首页广告
-^https?:\/\/homepage-api\.smzdm\.com\/v3\/home url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
-# > 什么值得买好价广告
-^https?:\/\/haojia-api\.smzdm\.com\/home\/list url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
-# > 什么值得买好价详情页广告
-^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
-# > 什么值得买百科广告
-^https?:\/\/baike-api\.smzdm\.com\/home_v3\/list url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
-# > 什么值得买搜索结果广告
-^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10 url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
-# > 什么值得买搜索标签广告
-^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
-# > 什么值得买值会员权益中心banner广告
-^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
 # > 网易严选
 https://support.you.163.com/appversync/check.do url reject
 ^https?+:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json url reject
@@ -121,50 +98,6 @@ https:\/\/yanxuan.nosdn.127.net\/.*\.mp4 url reject-dict
 
 
 # ======= 视频 ======= #
-# > 哔哩哔哩屏蔽广告浮窗
-^https?:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive url reject-dict
-# > 哔哩哔哩屏蔽IP请求
-^https?:\/\/app\.bilibili\.com\/x\/resource\/ip url reject
-# > 哔哩哔哩屏蔽DefaultWord
-^https?:\/\/app\.bilibili\.com\/bilibili\.app\.interface\.v1\.Search\/Default url reject
-# > 哔哩哔哩屏蔽首页右上活动[卸载重装]
-^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity url reject-dict
-# > 哔哩哔哩启动时开启直连模式[自行启用]
-;^https?:\/\/app\.bilibili\.com\/x\/resource\/domain url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_startup_direct.js
-# > 哔哩哔哩繁体CC字幕转中文简体[自行启用]
-;^https?:\/\/i.\.hdslb\.com\/bfs\/subtitle\/.+\.json$ url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_cc.js
-# > 哔哩哔哩观影页面去广告
-^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/cinema\/tab\? url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_json.js
-# > 哔哩哔哩应用开屏去广告
-^https://app.bilibili.com/x/v2/splash/show url reject-dict
-# > 哔哩哔哩应用开屏广告预加载
-^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_json.js
-# > 哔哩哔哩去除统一设置的皮肤
-^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_json.js
-# > 哔哩哔哩1080P高码率+4K画质(番剧和影视除外)
-^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_json.js
-# > 哔哩哔哩热搜发现
-^https://app.bilibili.com/x/v2/search/square url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_json.js
-# > 哔哩哔哩Defaultword
-^https://app.bilibili.com/x/v2/search/defaultwords url reject-dict
-# > 哔哩哔哩Material_Ad
-^https?:\/\/api\.bilibili\.com\/x\/vip\/ads\/material\/report url reject-dict
-# > 哔哩哔哩小卡片广告
-^https://api.bilibili.com/pgc/season/player/cards url reject-dict
-# > 哔哩哔哩去除动态中的话题
-^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr url reject-dict
-# > 哔哩哔哩漫画去广告
-^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash) url reject-dict
-# > 哔哩哔哩推荐去广告
-^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_json.js
-# > 哔哩哔哩追番去广告
-^https?:\/\/api\.(bilibili|biliapi)\.(com|net)\/pgc\/page\/bangumi url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_json.js
-# > 哔哩哔哩直播去广告
-^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_json.js
-# > 哔哩哔哩标签页处理
-^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_json.js
-# > 哔哩哔哩我的页面处理
-^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/bilibili_json.js
 # > 优酷
 ^https?:\/\/vali\.cp31\.ott\.cibntv\.net\/youku url reject
 ^https?:\/\/.+?\.ott\.cibntv\.net\/[\w\/-]+.mp4\?sid= url reject
