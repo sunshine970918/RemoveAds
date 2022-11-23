@@ -186,6 +186,7 @@ https?:\/\/t7z\.cupid\.iqiyi\.com\/show url reject
 ^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo\? url reject
 ^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture url reject
 ^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus\?ad url reject
+^https?:\/\/wmapi\.meituan\.com\/api\/v7\/startpicture url reject-200
 # > 饿了么
 ^https?:\/\/elemecdn.com\/.+\/sitemap url reject
 ^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4} url reject
