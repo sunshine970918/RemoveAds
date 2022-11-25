@@ -12,8 +12,6 @@ hostname = m.jd.com, api.m.jd.com, m.360buyimg.com, mpcs.suning.com, heic.alicdn
 
 
 # ======= 购物 ======= #
-# > 京东_开屏去广告
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/Startup/startup.js
 # > 京东
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start url reject-dict
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=hotWords url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/jd_json.js
