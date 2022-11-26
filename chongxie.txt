@@ -255,6 +255,9 @@ http:\/\/analytics\.163\.com\/ntes url reject
 ^https:\/\/staticsns\.cdn\.bcebos\.com\/amis\/.+/banner.png url reject
 ^http:\/\/rp\.hpplay\.cn\/logouts url reject
 ^https:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?vip url reject
+^https?:\/\/pan\.baidu\.com\/act\/v\d\/bchannel\/list url reject-200
+^https?:\/\/pan\.baidu\.com\/act\/v\d\/welfare\/list url reject-200
+^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/pcs\/ad url reject-200
 # > 天翼云盘
 ^https?:\/\/api\.cloud\.189\.cn\/guns\/getOpenscreenBanners reject-200
 # > 迅雷
