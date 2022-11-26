@@ -2,7 +2,7 @@
 # >  某些APP要清除缓存或者重新安装APP,拦截广告才会生效！  
 # >  更新时间  2022.11.23
 # >  */  
-hostname = m.jd.com, api.m.jd.com, m.360buyimg.com, mpcs.suning.com, heic.alicdn.com, acs.m.taobao.com, gw.alicdn.com, gab.122.gov.cn, m*.amap.com, api-new.app.acfun.cn, mp.weixin.qq.com, ssl.kohsocialapp.qq.com, support.you.163.com, gw.kaola.com, app.zhuanzhuan.com, interface*.music.163.com, m.ads.8le8le.com, appconf.mail.163.com, *.bdstatic.com, business.msstatic.com, mime.baidu.com, baidu.com, m.baidu.com, appwk.baidu.com, imeclient.openspeech.cn, business-cdn.shouji.sogou.com, sofire.baidu.com, ndstatic.cdn.bcebos.com, pan.baidu.com, staticsns.cdn.bcebos.com, api.wfdata.club, res.app.coc.10086.cn, m.client.10010.com, cloud.189.cn, api.cloud.189.cn, api.douban.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, *.zhuishushenqi.com, syh.zybang.com, learn.chaoxing.com, 4gimg.map.qq.com, r.inews.qq.com, y.gtimg.cn, mi.gdt.qq.com,  iface2.iqiyi.com, *.cdn.qiyiapp.*, act.vip.iqiyi.com, intl.iqiyi.com, news.l.qq.com, static.gameplus.qq.com, tc.qq.com, images.client.vip.xunlei.com, gw.alicdn.com, heic.alicdn.com, s3plus.meituan.net, flowplus.meituan.net, www.meituan.com, p*.meituan.net, wmapi.meituan.com, img.meituan.net, list-app-m.i4.cn, fuss10.elemecdn.com, elemecdn.com, cube.elemecdn.com, www1.elecfans.com, api.izuiyou.com, api.xiachufang.com, p.kuaidi100.com, cdn.kuaidi100.com, testflight.apple.com, icc.one, api.coolapk.com, sf6-be-pack.pglstatp-toutiao.com, api-access.pangolin-sdk-toutiao.com, *.pglstatp-toutiao.com.*, app.aa-ab.com, api.bspapp.com, mp.weixin.qq.com, api.aliyundrive.com, bp-api.bestv.com.cn, support.you.163.com, yanxuan.nosdn.127.net, easyreadfs.nosdn.127.net, edith.xiaohongshu.com, pages.xiaohongshu.com, www.xiaohongshu.com, m.ctrip.com, sdkapp.uve.weibo.com, wbapp.uve.weibo.com, api.weibo.cn, mapi.weibo.com, new.vip.weibo.cn, luckman.suning.com,
+hostname = m.jd.com, api.m.jd.com, m.360buyimg.com, mpcs.suning.com, heic.alicdn.com, acs.m.taobao.com, gw.alicdn.com, gab.122.gov.cn, m*.amap.com, api-new.app.acfun.cn, mp.weixin.qq.com, ssl.kohsocialapp.qq.com, support.you.163.com, gw.kaola.com, app.zhuanzhuan.com, interface*.music.163.com, m.ads.8le8le.com, appconf.mail.163.com, *.bdstatic.com, business.msstatic.com, mime.baidu.com, baidu.com, m.baidu.com, appwk.baidu.com, imeclient.openspeech.cn, business-cdn.shouji.sogou.com, sofire.baidu.com, pan.baidu.com, staticsns.cdn.bcebos.com, api.wfdata.club, res.app.coc.10086.cn, m.client.10010.com, cloud.189.cn, api.cloud.189.cn, api.douban.com, rtbapi.douyucdn.cn, staticlive.douyucdn.cn, capi.douyucdn.cn, *.zhuishushenqi.com, syh.zybang.com, learn.chaoxing.com, 4gimg.map.qq.com, r.inews.qq.com, y.gtimg.cn, mi.gdt.qq.com,  iface2.iqiyi.com, *.cdn.qiyiapp.*, act.vip.iqiyi.com, intl.iqiyi.com, news.l.qq.com, static.gameplus.qq.com, tc.qq.com, images.client.vip.xunlei.com, gw.alicdn.com, heic.alicdn.com, s3plus.meituan.net, flowplus.meituan.net, www.meituan.com, p*.meituan.net, wmapi.meituan.com, img.meituan.net, list-app-m.i4.cn, fuss10.elemecdn.com, elemecdn.com, cube.elemecdn.com, www1.elecfans.com, api.izuiyou.com, api.xiachufang.com, p.kuaidi100.com, cdn.kuaidi100.com, testflight.apple.com, icc.one, api.coolapk.com, sf6-be-pack.pglstatp-toutiao.com, api-access.pangolin-sdk-toutiao.com, *.pglstatp-toutiao.com.*, app.aa-ab.com, api.bspapp.com, mp.weixin.qq.com, api.aliyundrive.com, bp-api.bestv.com.cn, support.you.163.com, yanxuan.nosdn.127.net, easyreadfs.nosdn.127.net, edith.xiaohongshu.com, pages.xiaohongshu.com, www.xiaohongshu.com, m.ctrip.com, sdkapp.uve.weibo.com, wbapp.uve.weibo.com, api.weibo.cn, mapi.weibo.com, new.vip.weibo.cn, luckman.suning.com,
 
 # > "reject" 策略会返回 HTTP 状态码 404,不附带任何额外内容
 # > "reject-200" 策略会返回 HTTP 状态码 200,不附带任何额外内容
@@ -241,19 +241,6 @@ http:\/\/analytics\.163\.com\/ntes url reject
 
 # ======= 云盘 ======= #
 # > 百度网盘
-^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adx url reject
-^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry url reject
-^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao url reject
-^https?:\/\/update.pan.baidu.com\/statistics url reject
-^https:\/\/pan\.baidu\.com\/pmall\/order\/privilege\/info url reject
-^https:\/\/pan\.baidu\.com\/rest\/.+\/pcs\/adx url reject
-^https:\/\/pan\.baidu\.com\/api\/useractivity\/activity url reject
-^http:\/\/pan\.baidu\.com\/act\/.+\/bchannel\/list url reject
-^https:\/\/pan\.baidu\.com\/api\/certuser\/get url reject
-^https:\/\/ndstatic\.cdn\.bcebos\.com\/activity\/welfare\/js\/.+\.js url reject
-^https:\/\/ndstatic\.cdn\.bcebos\.com\/activity\/welfare\/index\.html url reject
-^https:\/\/staticsns\.cdn\.bcebos\.com\/amis\/.+/banner.png url reject
-^http:\/\/rp\.hpplay\.cn\/logouts url reject
 ^https:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?vip url reject
 ^https?:\/\/pan\.baidu\.com\/act\/v\d\/bchannel\/list url reject-200
 ^https?:\/\/pan\.baidu\.com\/act\/v\d\/welfare\/list url reject-200
