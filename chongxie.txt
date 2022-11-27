@@ -366,6 +366,8 @@ http:\/\/analytics\.163\.com\/ntes url reject
 
 
 # ======= 其他app ======= #
+# > 拦截100
+^https?:\/\/tagit\.hyhuo\.com\/cypt\/block100\/get_vip_info$ url script-request-body 
 # > 威锋
 ^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) url reject
 # > 豆瓣
