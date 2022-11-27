@@ -1159,8 +1159,6 @@ host-suffix, bayescom.com, reject
 host-suffix, atrace.chelaile.net.cn, reject
 host, logs.chelaile.net.cn, reject
 host, ad.chelaile.net.cn, reject
-# > 铁路12306
-HOST, ad.12306.cn, REJECT
 # > 两步路
 HOST-SUFFIX, admobile.top, REJECT
 # > 抖音
