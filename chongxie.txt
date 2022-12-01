@@ -17,7 +17,7 @@ hostname = tagit.hyhuo.com, m.jd.com, api.m.jd.com, m.360buyimg.com, mpcs.suning
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=hotWords url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/jd_json.js
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=hotSearchTerms url script-response-body https://raw.githubusercontent.com/sunshine970918/QuantumultX/main/Script/jd_json.js
 
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/splashAds.js
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=queryMaterialAdverts url reject
 ^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ url reject
 ^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/(aladdin|base)\/(new)?na\/m\/(getLoadingPicture|adInfo) url reject
