@@ -74,7 +74,7 @@ const defaultNetworkPath = getVal('defaultNetworkPath') || '/'
 /* 节点名前缀 */
 const prefix = getVal('prefix') || '免流 '
 /* 节点名后缀 */
-const suffix = getVal('suffix') || '混淆 '
+const suffix = getVal('suffix') || ''
 /* 附加 Host 前缀 */
 const hostPrefix = getVal('hostPrefix') || ''
 const hostSuffix = getVal('hostSuffix') || ''
