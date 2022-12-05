@@ -30,7 +30,7 @@ networkSuffix 为节点名添加 network 后缀. 默认为空 不修改. 例 443
 
 defaultNetworkPath 设置 Network 网络时 默认的 Path 路径. 原始数据无 path 时, 默认设置为 /
 
-ipPrefix 为 IP 节点添加前缀. 默认禁用
+ipPrefix 为 IP 节点添加前缀. 默认禁用 
 
 ipSuffix 为 IP 节点添加后缀. 默认禁用. 例 [1.1.1.1]
 
