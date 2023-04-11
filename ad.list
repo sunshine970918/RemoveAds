@@ -164,7 +164,6 @@
 .ulog.gifshow.com
 .ios.synacast.com
 .counter.hqew.com
-.iadsdk.apple.com
 .storage.live.com
 .api.onedrive.com
 .yun.duiba.com.cn
@@ -246,7 +245,6 @@
 .d1-ks.a.kwimgs.com
 .d1-ec.a.kwimgs.com
 .d4-ks.a.kwimgs.com
-.metrics.icloud.com
 .msg.umengcloud.com
 .notify.bugsnag.com
 .api.verify.mob.com
@@ -297,18 +295,15 @@
 .push.kwd.inkuai.com
 .info.lm.tv.sohu.com
 .ad.tencentmusic.com
-.cf.iadsdk.apple.com
 .rabbit.tg.meitu.com
 ._psis._udp.jpush.cn
 .inediblebedside.com
 .illuminatelocks.com
 .al.autohome.com.cn 
 .s2-10958.kwimgs.com
-.piwik.minirplus.com
-.apple.www.letv.com 
+.piwik.minirplus.com 
 .ulogjs.ksapisrv.com
 .adashx.ut.tudou.com
-.tr.iadsdk.apple.com
 .errnewlog.umeng.com
 .widget.qweather.net
 .yoda.kwd.inkuai.com
@@ -316,7 +311,6 @@
 .unagi-na.amazon.com
 .imgx.kwd.inkuai.com
 .static.zongheng.com
-.ca.iadsdk.apple.com
 .api2.openinstall.io
 .itachi.aty.sohu.com
 .meepo.meitustat.com
@@ -442,8 +436,6 @@
 .dorangesource.alicdn.com
 .comm.app.autohome.com.cn
 .skadsdk.appsflyer-cn.com
-.api-adservices.apple.com
-.iosapps.itunes.apple.com
 .www.googleadservices.com
 .tnc11-bjlgy.zijieapi.com
 .sdk.open.talk.igexin.com
@@ -508,7 +500,6 @@
 .datacollector-drcn.dt.hicloud.com
 .oss-cn-shanghai.westdatacloud.top
 .prod.rewardsplatform.microsoft.com
-.weather-analytics-events.apple.com
 .du-app.cn-hangzhou.log.aliyuncs.com
 .api-access.pangolin-sdk-toutiao.com
 .cu-cn-north00002.gala.convection.cn
