@@ -54,7 +54,6 @@ HOST, amap-aos-info-nogw.amap.com, REJECT
 HOST, pageviewp.icbc.com.cn, REJECT
 HOST-SUFFIX, mall.icbc.com.cn, REJECT
 # 广告联盟
-HOST, ad.zijieapi.com, REJECT
 HOST, init.supersonicads.com, REJECT
 HOST, is.snssdk.com, REJECT
 HOST, open.e.kuaishou.com, REJECT
