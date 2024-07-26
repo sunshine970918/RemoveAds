@@ -165,7 +165,7 @@ HOST, iadmusicmat.music.126.net, REJECT
 HOST, iadmusicmatvideo.music.126.net, REJECT
 HOST, ipv4.music.163.com, REJECT
 HOST, ipv6.music.163.com, REJECT
-HOST-SUFFIX, 163jiasu.com, REJECT
+-HOST-SUFFIX, 163jiasu.com, REJECT
 # 微博 开屏广告
 HOST, huodong.weibo.cn, REJECT
 HOST-SUFFIX, biz.weibo.com, REJECT
