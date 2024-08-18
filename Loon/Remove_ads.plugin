@@ -1,0 +1,238 @@
+#!name = 自用去广告合集
+#!desc = sunshine970918自用的去广告合集
+#!openUrl = 
+#!author = sunshine970918
+#!tag = 去广告, sunshine970918
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(738)
+#!homepage = 
+#!icon = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/erdongchanyo/AdBlock.png
+#!date = 2024-08-18 15:50:06
+
+[Rule]
+
+[Rewrite]
+
+# ======= 5 ======= #
+# > 555影视 // run.api.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com
+^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/advert reject
+
+
+# ======= A ======= #
+# 阿里云盘 //*api.alipan.com, member.alipan.com
+^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders reject-dict
+^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle reject-dict
+
+# ======= B ====== #
+# 百度云 //pan.baidu.com
+^https:\/\/pan\.baidu\.com\/(act\/api\/activityentry|act\/v2\/|rest\/2\.0\/pcs\/ad) reject-dict
+
+
+# ======= C ======= #
+# 车来了 //api.chelaile.net.cn, web.chelaile.net.cn
+^https:\/\/api\.chelaile\.net\.cn\/adpub reject
+^https:\/\/api\.chelaile\.net\.cn\/goocity\/advert reject
+^https:\/\/web\.chelaile\.net\.cn\/api\/adpub reject
+
+# CSDN //app-gw.csdn.net
+^https:\/\/app-gw\.csdn\.net\/cms-app\/v\d\/home_page\/open_advertisement reject
+
+
+# ======= D ======= #
+# 豆瓣 //api.douban.com
+^https:\/\/api\.douban\.com\/v2\/app_ads\/splash reject
+^https:\/\/api\.douban\.com\b.*\/common_ads\? reject
+
+# > 滴滴出行 // res.xiaojukeji.com
+https?://res\.xiaojukeji\.com\/resapi\/activity\/mget reject-dict
+https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNotices) reject
+
+# > 滴滴 // img-ys011.didistatic.com
+^https?:\/\/img-ys011\.didistatic\.com\/static\/ad_oss\/.*.jpg reject
+
+
+# ======= E ======= #
+# 饿了么 //elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com
+^https:\/\/elemecdn.com\/.+\/sitemap reject
+^https:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4} reject
+^https:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4} reject
+^https:\/\/fuss10.elemecdn.com\/.+\.mp4 reject
+^https:\/\/www1.elecfans.com\/www\/delivery reject
+
+
+# ======= G ====== #
+# > 广东移动 // gd.10086.cn
+^https?:\/\/gd\.10086\.cn\/gmccapp\/serv\/\?servicename=GMCCAPP_704_002_001_001 reject-200
+
+
+# ======= J ====== #
+# 建设银行
+^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png reject
+
+# 京东 //api.m.jd.com
+^http:\/\/\w{32}\.jddebug\.com\/diagnose\? reject
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) reject-dict
+
+# 交管12123 //gab.122.gov.cn
+^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ reject
+
+
+# ======= K ======= #
+# 肯德基 //res.kfc.com.cn
+^https:\/\/res\.kfc\.com\.cn\/advertisement reject
+
+# 酷安 //api.coolapk.com
+^https:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch reject-dict
+
+
+# ======= L ======= #
+#乐刻启动页去广告 #开屏广告 lens.leoao.com
+^https?:\/\/lens\.leoao\.com\/lens\/conduct\/app\/rpc\/v2\/com\.lefit\.dubbo\.cms\.api\.front\.AppAdvertisingFrontService\/getAppAdvertisingNew reject-200
+
+
+# ======= M ====== #
+# 米家 //home.mi.com
+^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) reject-dict
+
+# 猫眼 //p0.pipi.cn
+^https:\/\/p0\.pipi\.cn\/(adAdmin|mediaplus\/maoyantong_ads_fe)\/\w+\.jpg\?imageMogr2\/quality\/ reject-dict
+^https:\/\/p0\.pipi\.cn\/(adAdmin|mediaplus\/maoyantong_ads_fe)\/\w+\.(jpg|png)\?imageMogr2\/thumbnail\/(860x0|!165x165|!1049x1169) reject-dict
+
+# 美团 & 美团外卖 //flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
+^http:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? reject-dict
+^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg reject-dict
+^https:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg reject-dict
+^https:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json reject-dict
+^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ reject-dict
+
+# ======= Q ====== #
+# QQ链接解锁 //pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com
+(^https:\/\/c\.pc\.qq\.com\/middlem\.html\?pfurl=)(http.*)(&pfuin=.*) 302 $2
+(^https:\/\/c\.pc\.qq\.com\/middlect\.html\?pfuin=.*&pfurl=)(http.*)(&gjsublevel=.*) 302 $2
+(^https:\/\/c\.pc\.qq\.com\/middlect\.html\?iscontinue=.*pfurl=)(http.*)(&pfuin=.*) 302 $2
+(^https:\/\/pingtas\.qq\.com\/webview\/pingd\?dm=c\.pc\.qq\.com&pvi=\d+&si=s\d+&url=\/middlem\.html\?pfurl%3d)(http.*)(%26pfuin%3d.*%26pfuin%3d.*) 302 $2
+(^https:\/\/cgi\.connect\.qq\.com\/qqconnectopen\/get_urlinfoForQQV2\?url=)(http.*) 302 $2
+(^https:\/\/c\.pc\.qq\.com\/index\.html\?pfurl=)(http.*)(&pfuin=.*) 302 $2
+(^https:\/\/c\.pc\.qq\.com\/ios\.html\?url=)(http.*)(&level=.*) 302 $2
+(^https:\/\/pingtas\.qq\.com\/webview\/pingd\?dm=c\.pc\.qq\.com&pvi=\d+&si=s\d+&url=\/ios\.html\?url%3d)(http.*)(%26level.*%26level.*) 302 $2
+
+
+# ======= R ====== #
+# > 瑞幸咖啡// capi.lkcoffee.com
+^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/(homePage\/contactor\/modules|app\/adposNew) reject
+
+
+# ======= S ====== #
+# > 顺丰 // ccsp-egmas.sf-express.com, shopic.sf-express.com
+^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade reject
+https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages reject
+^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen reject
+# > 顺丰优选 // mapi.sfbest.com
+^https://mapi\.sfbest\.com\/brokerservice-server\/cms\/getPositionById.* reject
+# > 顺丰速运小程序 // ucmp.sf-express.com
+^https?:\/\/ucmp\.sf-express\.com\/cx-wechat-query\/query\/info-flow\/reconsitution-list reject-200
+
+
+# ======= T ====== #
+# > 淘票票 // 同阿里巴巴
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryloadingbanner url reject-200
+
+
+# ======= W ====== #
+# 网上国网 //osg-service.sgcc.com.cn
+^https:\/\/osg-service\.sgcc\.com\.cn:18600\/emss-pfa-appset-front\/bootpageoutter\/ reject-dict
+
+# 微信 //mp.weixin.qq.com
+^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/(snscosdownload|snssvpdownload)\/(SH|SZ)\/reserved\/\w+ reject-dict
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? reject-dict
+
+
+# ======= X ====== #
+# 闲鱼 //gw.alicdn.com, acs.m.taobao.com
+^https:\/\/gw\.alicdn\.com\/mt\/ reject
+^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} reject
+^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome reject
+
+# > 下厨房 // api.xiachufang.com
+^https?:\/\/api\.xiachufang\.com\/v\d\/ad/ reject
+
+# 晓晓优选 //xxyx-client-api.xiaoxiaoyouxuan.com
+https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad reject
+^https?:Wxxyx-client-api\.xiaoxiaoyouxuan\.com\/activity\/show reject
+
+
+# ======= Y ====== #
+# 云闪付 //wallet.95516.com
+^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 reject
+
+
+# ======= Z ====== #
+# 中国移动 //client.app.coc.10086.cn
+^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) reject-dict
+
+# > 中国电信 // cloud.189.cn, zt-app.go189.cn
+^https?:\/\/cloud\.189\.cn\/include\/splash\/ reject
+^https?:\/\/zt-app\.go189\.cn\/zt-app\/welcome\/.*?Animation reject-img
+
+# > 中国广电 // app.10099.com.cn
+^https?:\/\/app\.10099\.com\.cn\/contact-web\/api\/version\/getFlashScreenPage reject-200
+
+# > 涨乐财富通 // live.inst-service.htsc.com
+^https:\/\/live\.inst-service\.htsc\.com\/live reject-dict
+
+
+[Script]
+# ======= 0 ======= #
+# 12306 //ad.12306.cn, mobile.12306.cn
+http-response ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ uscript-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/12306.js, requires-body = true, tag = 12306移除开屏广告
+http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body = true, tag = 12306移除开屏广告
+
+# ======= 5 ======= #
+# > 555影视 // run.api.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com
+http-response ^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/movie\/index_recommend script-path = https://github.com/ddgksf2013/Scripts/raw/master/555Ad.js, requires-body = true, tag = 555影视移除开屏广告
+
+# ======= A ======= #
+# amdc
+http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = hhttps://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body = true, tag = amdc去广告
+# 阿里云盘 //*api.alipan.com, member.alipan.com
+http-response ^https:\/\/api\.alipan\.com\/apps\/v2\/users\/home\/(news|widgets) script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/adrive.js, requires-body = true, tag = 阿里云盘去广告
+http-response ^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(news|widgets) script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/adrive.js, requires-body = true, tag = 阿里云盘去广告
+http-response ^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/adrive.js, requires-body = true, tag = 阿里云盘去广告
+
+# ======= B ====== #
+# 百度云盘 //pan.baidu.com
+http-response ^https:\/\/pan\.baidu\.com\/api\/getsyscfg\? script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/baiduCloud.js, requires-body = true, tag = 百度云盘去广告
+http-response ^https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/baiduCloud.js, requires-body = true, tag = 百度云盘去广告
+
+# ======= J ====== #
+# JavDB影视 //api.hechuangxinxi.xyz, jdforrepam.com
+http-response ^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/(v1\/(ads|startup|users)|v4\/movies\/\w+) script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, requires-body = true, tag = JavDB影视去广告
+# 京东 //api.m.jd.com
+http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/jingdong.js, requires-body = true, tag = 京东去广告
+# 京东极速版 //api.m.jd.com
+http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/jingdong.js, requires-body = true, tag = 京东极速版去广告
+
+# 酷安 //api.coolapk.com
+http-response ^https:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\? script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/coolapk.js, requires-body = true, tag = 酷安去广告
+http-response ^https:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init) script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/coolapk.js, requires-body = true, tag = 酷安去广告
+http-response ^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\? script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/coolapk.js, requires-body = true, tag = 酷安去广告
+
+# ======= S ====== #
+# > 顺丰 // ccsp-egmas.sf-express.com, shopic.sf-express.com
+http-response https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryInfoFlow script-path = https://github.com/ddgksf2013/Scripts/raw/master/shunfeng_json.js, requires-body = true, tag = 顺丰去广告
+
+# ======= W ====== #
+# 微信封禁页面 //weixin110.qq.com, security.wechat.com
+http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/wechat/wechat110.js, requires-body = true, tag = 微信封禁页面
+
+# ======= Z ====== #
+# 中国农业银行 //mobilepaas.abchina.com.cn
+http-response ^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body = true, tag = 中国农业银行去开屏
+# 中国移动云盘 //ad.mcloud.139.com, jzts.cmpassport.com
+http-response ^https:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cloud139.js, requires-body = true, tag = 中国移动云盘去广告
+http-response ^https:\/\/jzts\.cmpassport\.com\/personalized\/getPushContent script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cloud139.js, requires-body = true, tag = 中国移动云盘去广告
+
+[Mitm]
+hostname = ad.12306.cn, mobile.12306.cn, run.api.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pan.baidu.com, api.chelaile.net.cn, web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, api.hechuangxinxi.xyz, jdforrepam.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, api.rr.tv, capi.lkcoffee.com, ccsp-egmas.sf-express.com, shopic.sf-express.com, mapi.sfbest.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, api.xiachufang.com, xxyx-client-api.xiaoxiaoyouxuan.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, client.app.coc.10086.cn, ad.mcloud.139.com, jzts.cmpassport.com, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com
