@@ -27,6 +27,21 @@
 # ======= B ====== #
 # 百度云 //pan.baidu.com
 ^https:\/\/pan\.baidu\.com\/(act\/api\/activityentry|act\/v2\/|rest\/2\.0\/pcs\/ad) reject-dict
+# 应用配置
+^https:\/\/pan\.baidu\.com\/api\/getconfig reject-dict
+^https:\/\/pan\.baidu\.com\/api\/getsyscfg reject-dict
+# 签到任务配置
+^https:\/\/pan\.baidu\.com\/api\/taskscore\/tasklist reject-dict
+# 弹窗配置
+^https:\/\/pan\.baidu\.com\/act\/api\/activityentry reject-dict
+# 信息流广告
+^https:\/\/pan\.baidu\.com\/act\/api\/activityentry reject-dict
+# 我的 - 游戏中心
+^https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user\?method=gamecenter reject-dict
+# 我的页面 - 其他推广
+^https:\/\/pan\.baidu\.com\/act\/v2\/welfare\/list reject-dict
+# 广告配置
+^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adv reject-dict
 
 
 # ======= C ======= #
@@ -202,7 +217,7 @@ http-response ^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(news|
 http-response ^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/adrive.js, requires-body = true, tag = 阿里云盘去广告
 
 # ======= B ====== #
-# 百度云盘 //pan.baidu.com
+# 百度云盘 //
 http-response ^https:\/\/pan\.baidu\.com\/api\/getsyscfg\? script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/baiduCloud.js, requires-body = true, tag = 百度云盘去广告
 http-response ^https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/baiduCloud.js, requires-body = true, tag = 百度云盘去广告
 
@@ -235,4 +250,4 @@ http-response ^https:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/ script-pa
 http-response ^https:\/\/jzts\.cmpassport\.com\/personalized\/getPushContent script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cloud139.js, requires-body = true, tag = 中国移动云盘去广告
 
 [Mitm]
-hostname = ad.12306.cn, mobile.12306.cn, run.api.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pan.baidu.com, api.chelaile.net.cn, web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, api.hechuangxinxi.xyz, jdforrepam.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, api.rr.tv, capi.lkcoffee.com, ccsp-egmas.sf-express.com, shopic.sf-express.com, mapi.sfbest.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, api.xiachufang.com, xxyx-client-api.xiaoxiaoyouxuan.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, client.app.coc.10086.cn, ad.mcloud.139.com, jzts.cmpassport.com, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com
+hostname = ad.12306.cn, mobile.12306.cn, run.api.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pan.baidu.com, 180.76.76.200, 180.76.76.112, api.chelaile.net.cn, web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, api.hechuangxinxi.xyz, jdforrepam.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, api.rr.tv, capi.lkcoffee.com, ccsp-egmas.sf-express.com, shopic.sf-express.com, mapi.sfbest.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, api.xiachufang.com, xxyx-client-api.xiaoxiaoyouxuan.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, client.app.coc.10086.cn, ad.mcloud.139.com, jzts.cmpassport.com, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com
