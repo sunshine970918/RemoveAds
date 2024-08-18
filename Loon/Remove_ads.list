@@ -220,6 +220,8 @@ DOMAIN, dns.weixin.qq.com.cn, REJECT
 DOMAIN-SUFFIX, wxs.qq.com, REJECT
 
 # ======= X ======= #
+# 晓晓优选去开屏
+DOMAIN,api-htp.beizi.biz,REJECT
 # 小米
 DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 # 迅雷 解除版权限制
