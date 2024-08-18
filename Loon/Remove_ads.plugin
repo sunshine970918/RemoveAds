@@ -10,8 +10,6 @@
 #!icon = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/erdongchanyo/AdBlock.png
 #!date = 2024-08-18 15:50:06
 
-[Rule]
-
 [Rewrite]
 
 # ======= 5 ======= #
