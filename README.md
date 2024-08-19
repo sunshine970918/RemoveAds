@@ -1,1 +1,2 @@
-自用圈x配置，整合张军，墨鱼，blackmatrix7部分规则
+自用圈x&LOON配置
+整合张军，RuCu6，blackmatrix7, 可莉的部分规则
