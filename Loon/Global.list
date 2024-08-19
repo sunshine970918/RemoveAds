@@ -1,321 +1,360 @@
-# https://github.com/DivineEngine/Profiles/blob/master/Quantumult/Filter/Global.list
-# 2024-08-019 10:25
+# https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Loon/Global
+# 2024-08-19 20:25
 
-# (D.C.S.G?)
-DOMAIN-SUFFIX, 9cache.com
-DOMAIN-SUFFIX, 9gag.com
-DOMAIN-SUFFIX, abc.com
-DOMAIN-SUFFIX, anchor.fm
-DOMAIN-SUFFIX, archive.fo
-DOMAIN-SUFFIX, archive.org
-DOMAIN-SUFFIX, archive.ph
-DOMAIN-SUFFIX, archiveofourown.org
-DOMAIN-SUFFIX, artstation.com
-DOMAIN-SUFFIX, ask.com
-DOMAIN-SUFFIX, avg.com
-DOMAIN-SUFFIX, axios.com
-DOMAIN-SUFFIX, bandcamp.com
-DOMAIN-SUFFIX, bandwagonhost.com
-DOMAIN-SUFFIX, bbc.com
-DOMAIN-SUFFIX, behance.net
-DOMAIN-SUFFIX, bit.ly
-DOMAIN-SUFFIX, bloglovin.com
-DOMAIN-SUFFIX, blubrry.com
-DOMAIN-SUFFIX, box.com
-DOMAIN-SUFFIX, brave.com
-DOMAIN-SUFFIX, bullguard.com
-DOMAIN-SUFFIX, castbox.fm
-DOMAIN-SUFFIX, change.org
-DOMAIN-SUFFIX, cloudcone.com
-DOMAIN-SUFFIX, clyp.it
-DOMAIN-SUFFIX, cna.com.tw
-DOMAIN-SUFFIX, conoha.jp
-DOMAIN-SUFFIX, coursehero.com
-DOMAIN-SUFFIX, c-span.org
-DOMAIN-SUFFIX, dailymotion.com
-DOMAIN-SUFFIX, daum.net
-DOMAIN-SUFFIX, deadline.com
-DOMAIN-SUFFIX, depositphotos.com
-DOMAIN-SUFFIX, deviantart.com
-DOMAIN-SUFFIX, deviantart.net
-DOMAIN-SUFFIX, disconnect.me
-DOMAIN-SUFFIX, disqus.com
-DOMAIN-SUFFIX, dlive.tv
-DOMAIN-SUFFIX, dowjones.com
-DOMAIN-SUFFIX, duckduckgo.com
-DOMAIN-SUFFIX, earthcam.com
-DOMAIN-SUFFIX, edx-cdn.org
-DOMAIN-SUFFIX, encyclopedia.com
-DOMAIN-SUFFIX, feeder.co
-DOMAIN-SUFFIX, feedly.com
-DOMAIN-SUFFIX, flickr.com
-DOMAIN-SUFFIX, flipboard.com
-DOMAIN-SUFFIX, flitto.com
-DOMAIN-SUFFIX, foreignaffairs.com
-DOMAIN-SUFFIX, foreignpolicy.com
-DOMAIN-SUFFIX, ft.com
-DOMAIN-SUFFIX, ftchinese.com
-DOMAIN-SUFFIX, ftimg.net
-DOMAIN-SUFFIX, genius.com
-DOMAIN-SUFFIX, getsync.com
-DOMAIN-SUFFIX, gfw.report
-DOMAIN-SUFFIX, git.io
-DOMAIN-SUFFIX, githack.com
-DOMAIN-SUFFIX, graphql.org
-DOMAIN-SUFFIX, hackmd.io
-DOMAIN-SUFFIX, heroku.com
-DOMAIN-SUFFIX, hket.com
-DOMAIN-SUFFIX, huffpost.com
-DOMAIN-SUFFIX, i-cable.com
-DOMAIN-SUFFIX, imgur.com
-DOMAIN-SUFFIX, independent.co.uk
-DOMAIN-SUFFIX, inoreader.com
-DOMAIN-SUFFIX, is.gd
-DOMAIN-SUFFIX, issuu.com
-DOMAIN-SUFFIX, istockphoto.com
-DOMAIN-SUFFIX, justpaste.it
-DOMAIN-SUFFIX, kakao.com
-DOMAIN-SUFFIX, kobo.com
-DOMAIN-SUFFIX, listennotes.com
-DOMAIN-SUFFIX, livestream.com
-DOMAIN-SUFFIX, mailchimp.com
-DOMAIN-SUFFIX, matrix.org
-DOMAIN-SUFFIX, medibang.com
-DOMAIN-SUFFIX, medium.com
-DOMAIN-SUFFIX, mega.co.nz
-DOMAIN-SUFFIX, mega.io
-DOMAIN-SUFFIX, mega.nz
-DOMAIN-SUFFIX, mixlr.com
-DOMAIN-SUFFIX, moon.fm
-DOMAIN-SUFFIX, mubi.com
-DOMAIN-SUFFIX, myspace.com
-DOMAIN-SUFFIX, myspacecdn.com
-DOMAIN-SUFFIX, nbcnews.com
-DOMAIN-SUFFIX, neowin.net
-DOMAIN-SUFFIX, newstatesman.com
-DOMAIN-SUFFIX, newsweek.com
-DOMAIN-SUFFIX, newyorker.com
-DOMAIN-SUFFIX, now.com
-DOMAIN-SUFFIX, ok.ru
-DOMAIN-SUFFIX, omny.fm
-DOMAIN-SUFFIX, openvpn.net
-DOMAIN-SUFFIX, owltail.com
-DOMAIN-SUFFIX, oxfordscholarship.com
-DOMAIN-SUFFIX, parsevideo.com
-DOMAIN-SUFFIX, paste.ee
-DOMAIN-SUFFIX, pastie.org
-DOMAIN-SUFFIX, pcloud.com
-DOMAIN-SUFFIX, peing.net
-DOMAIN-SUFFIX, player.fm
-DOMAIN-SUFFIX, podbean.com
-DOMAIN-SUFFIX, prism-break.org
-DOMAIN-SUFFIX, privoxy.org
-DOMAIN-SUFFIX, proxifier.com
-DOMAIN-SUFFIX, quora.com
-DOMAIN-SUFFIX, quoracdn.net
-DOMAIN-SUFFIX, qz.com
-DOMAIN-SUFFIX, radioline.co
-DOMAIN-SUFFIX, reabble.com
-DOMAIN-SUFFIX, redditlist.com
-DOMAIN-SUFFIX, resilio.com
-DOMAIN-SUFFIX, rsshub.app
-DOMAIN-SUFFIX, rthk.hk
-DOMAIN-SUFFIX, scmp.com
-DOMAIN-SUFFIX, scribd.com
-DOMAIN-SUFFIX, search.com
-DOMAIN-SUFFIX, shutterstock.com
-DOMAIN-SUFFIX, signal.org
-DOMAIN-SUFFIX, sketchappsources.com
-DOMAIN-SUFFIX, slideshare.net
-DOMAIN-SUFFIX, smartmailcloud.com
-DOMAIN-SUFFIX, smh.com.au
-DOMAIN-SUFFIX, speakerdeck.com
-DOMAIN-SUFFIX, spideroak.com
-DOMAIN-SUFFIX, spiegel.de
-DOMAIN-SUFFIX, startpage.com
-DOMAIN-SUFFIX, steemit.com
-DOMAIN-SUFFIX, straitstimes.com
-DOMAIN-SUFFIX, streamable.com
-DOMAIN-SUFFIX, substack.com
-DOMAIN-SUFFIX, swissinfo.ch
-DOMAIN-SUFFIX, tapatalk.com
-DOMAIN-SUFFIX, techspot.com
-DOMAIN-SUFFIX, textnow.me
-DOMAIN-SUFFIX, theage.com.au
-DOMAIN-SUFFIX, theatlantic.com
-DOMAIN-SUFFIX, theaustralian.com.au
-DOMAIN-SUFFIX, theconversation.com
-DOMAIN-SUFFIX, thediplomat.com
-DOMAIN-SUFFIX, theguardian.com
-DOMAIN-SUFFIX, theinitium.com
-DOMAIN-SUFFIX, themoviedb.org
-DOMAIN-SUFFIX, thetvdb.com
-DOMAIN-SUFFIX, time.com
-DOMAIN-SUFFIX, tineye.com
-DOMAIN-SUFFIX, tiny.cc
-DOMAIN-SUFFIX, torproject.org
-DOMAIN-SUFFIX, tradingview.com
-DOMAIN-SUFFIX, turbobit.net
-DOMAIN-SUFFIX, tutanota.com
-DOMAIN-SUFFIX, urbandictionary.com
-DOMAIN-SUFFIX, ustream.tv
-DOMAIN-SUFFIX, v2ex.com
-DOMAIN-SUFFIX, venturebeat.com
-DOMAIN-SUFFIX, viber.com
-DOMAIN-SUFFIX, vimeo.com
-DOMAIN-SUFFIX, voxer.com
-DOMAIN-SUFFIX, vzw.com
-DOMAIN-SUFFIX, washingtonpost.com
-DOMAIN-SUFFIX, wattpad.com
-DOMAIN-SUFFIX, welt.de
-DOMAIN-SUFFIX, whoer.net
-DOMAIN-SUFFIX, wikimapia.org
-DOMAIN-SUFFIX, wikiwand.com
-DOMAIN-SUFFIX, wire.com
-DOMAIN-SUFFIX, wireguard.com
-DOMAIN-SUFFIX, wn.com
-DOMAIN-SUFFIX, worldcat.org
-DOMAIN-SUFFIX, wsj.com
-DOMAIN-SUFFIX, wsj.net
-DOMAIN-SUFFIX, x.co
-DOMAIN-SUFFIX, yandex.ru
-DOMAIN-SUFFIX, you-get.org
-DOMAIN-SUFFIX, zaobao.com
-DOMAIN-SUFFIX, zello.com
-DOMAIN-SUFFIX, zeronet.io
-DOMAIN-SUFFIX, z-lib.org
-DOMAIN-SUFFIX, zophar.net
-DOMAIN-SUFFIX, zyxel.com
-DOMAIN, lab.skk.moe
-DOMAIN, ocsp.int-x3.letsencrypt.org
-# > Akamai
-DOMAIN, a248.e.akamai.net
-DOMAIN, a771.dscq.akamai.net
-# > Amazon
-DOMAIN-SUFFIX, amazon.co.jp
-DOMAIN, d3c33hcgiwev3.cloudfront.net
-DOMAIN, payments-jp.amazon.com
-DOMAIN, s3-ap-northeast-1.amazonaws.com
-DOMAIN, s3-ap-southeast-2.amazonaws.com
-# > Alphabet
-DOMAIN-SUFFIX, abc.xyz
-DOMAIN-SUFFIX, admob.com
-DOMAIN-SUFFIX, adsense.com
-DOMAIN-SUFFIX, advertisercommunity.com
-DOMAIN-SUFFIX, ampproject.org
-DOMAIN-SUFFIX, android.com
-DOMAIN-SUFFIX, androidify.com
-DOMAIN-SUFFIX, androidtv.com
-DOMAIN-SUFFIX, api.ai
-DOMAIN-SUFFIX, apigee.com
-DOMAIN-SUFFIX, appspot.com
-DOMAIN-SUFFIX, blogblog.com
-DOMAIN-SUFFIX, blogger.com
-DOMAIN-SUFFIX, chrome.com
-DOMAIN-SUFFIX, chromium.org
-DOMAIN-SUFFIX, debug.com
-DOMAIN-SUFFIX, dialogflow.com
-DOMAIN-SUFFIX, feedburner.com
-DOMAIN-SUFFIX, firebaseio.com
-DOMAIN-SUFFIX, g.co
-DOMAIN-SUFFIX, getoutline.org
-DOMAIN-SUFFIX, ggpht.com
-DOMAIN-SUFFIX, gmail.com
-DOMAIN-SUFFIX, gmodules.com
-DOMAIN-SUFFIX, google.com
-DOMAIN-SUFFIX, gvt0.com
-DOMAIN-SUFFIX, gvt1.com
-DOMAIN-SUFFIX, gvt3.com
-DOMAIN-SUFFIX, itasoftware.com
-DOMAIN-SUFFIX, on2.com
-DOMAIN-SUFFIX, recaptcha.net
-DOMAIN-SUFFIX, schema.org
-DOMAIN-SUFFIX, tensorflow.org
-DOMAIN-SUFFIX, tenor.com
-DOMAIN-SUFFIX, tfhub.dev
-DOMAIN-SUFFIX, tiltbrush.com
-DOMAIN-SUFFIX, waymo.com
-DOMAIN-SUFFIX, web.dev
-DOMAIN-SUFFIX, webmproject.org
-DOMAIN-SUFFIX, webrtc.org
-DOMAIN-SUFFIX, widevine.com
-DOMAIN-SUFFIX, zynamics.com
-DOMAIN-KEYWORD, .blogspot.
-DOMAIN-KEYWORD, goog
-DOMAIN-KEYWORD, google.com.
-# > Apple
-DOMAIN, testflight.apple.com
-# > Automattic
-DOMAIN-SUFFIX, gravatar.com
-DOMAIN-SUFFIX, tumblr.com
-DOMAIN-SUFFIX, videopress.com
-DOMAIN-SUFFIX, wordpress.com
-# > Bloomberg
-DOMAIN-SUFFIX, bloomberg.cn
-DOMAIN-SUFFIX, bloomberg.com
-DOMAIN-SUFFIX, bloomberg.de
-DOMAIN-SUFFIX, bloombergview.com
-# > Clubhouse
-DOMAIN, clubhouse.pubnubapi.com
-DOMAIN-SUFFIX, clubhouseapi.com
-DOMAIN-SUFFIX, joinclubhouse.com
-# > Crypto
-DOMAIN-SUFFIX, aex.com
-DOMAIN-SUFFIX, bibox.com
-DOMAIN-SUFFIX, binance.cc
-DOMAIN-SUFFIX, binance.com
-DOMAIN-SUFFIX, binance.me
-DOMAIN-SUFFIX, binance.us
-DOMAIN-SUFFIX, bitcointalk.org
-DOMAIN-SUFFIX, bitfinex.com
-DOMAIN-SUFFIX, bithumb.com
-DOMAIN-SUFFIX, bitmex.com
-DOMAIN-SUFFIX, bitstamp.net
-DOMAIN-SUFFIX, bittrex.com
-DOMAIN-SUFFIX, bybit.com
-DOMAIN-SUFFIX, coinbase.com
-DOMAIN-SUFFIX, coincheck.com
-DOMAIN-SUFFIX, coingecko.com
-DOMAIN-SUFFIX, coinmarketcap.com
-DOMAIN-SUFFIX, coinone.co.kr
-DOMAIN-SUFFIX, etherscan.io
-DOMAIN-SUFFIX, ftx.com
-DOMAIN-SUFFIX, gate.io
-DOMAIN-SUFFIX, gemini.com
-DOMAIN-SUFFIX, huobi.com
-DOMAIN-SUFFIX, korbit.co.kr
-DOMAIN-SUFFIX, kraken.com
-DOMAIN-SUFFIX, kucoin.com
-DOMAIN-SUFFIX, liquid.com
-DOMAIN-SUFFIX, okex.com
-DOMAIN-SUFFIX, okx.com
-DOMAIN-SUFFIX, poloniex.com
-DOMAIN-SUFFIX, sushi.com
-DOMAIN-SUFFIX, uniswap.org
-DOMAIN-SUFFIX, zb.com
-# > Discord
-DOMAIN-SUFFIX, discord.com
-DOMAIN-SUFFIX, discordapp.com
-DOMAIN-SUFFIX, discordapp.net
-# > Dropbox
-DOMAIN-SUFFIX, dropbox.com
-DOMAIN-SUFFIX, dropboxapi.com
-DOMAIN-SUFFIX, dropboxusercontent.com
-# > Fastly
-DOMAIN, cloud-cdn-digitalocean-com.global.ssl.fastly.net
-DOMAIN, github.global.ssl.fastly.net
-DOMAIN, nytimes.map.fastly.net
-DOMAIN-SUFFIX, freetls.fastly.net
-# > Line
-DOMAIN-SUFFIX, line.me
-DOMAIN-SUFFIX, line-apps.com
-DOMAIN-SUFFIX, line-scdn.net
-DOMAIN-SUFFIX, naver.jp
-IP-CIDR, 103.2.30.0/23
-IP-CIDR, 125.209.208.0/20
-IP-CIDR, 147.92.128.0/17
-IP-CIDR, 203.104.144.0/21
-# > Meta
+#### Google ####
+# NAME: GoogleDrive
+DOMAIN,www.googleapis.com
+DOMAIN-SUFFIX,docs.google.com
+DOMAIN-SUFFIX,drive.google.com
+DOMAIN-SUFFIX,googledrive.com
+DOMAIN-SUFFIX,googleusercontent.com
+USER-AGENT,%E4%BA%91%E7%AB%AF%E7%A1%AC%E7%9B%98*
+USER-AGENT,*com.google.Drive*
+USER-AGENT,Google.Drive*
+
+# NAME: GoogleSearch
+DOMAIN-KEYWORD,www.google.
+
+# NAME: GoogleVoice
+DOMAIN,lens.l.google.com
+
+# NAME: Gemini
+DOMAIN,ai.google.dev
+DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN,makersuite.google.com
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-SUFFIX,apis.google.com
+DOMAIN-KEYWORD,colab
+DOMAIN-KEYWORD,developerprofiles
+DOMAIN-KEYWORD,generativelanguage
+
+# NAME: BardAI
+DOMAIN,ai.google.dev
+DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN,generativelanguage.googleapis.com
+DOMAIN,makersuite.google.com
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+
+# NAME: PayPal
+DOMAIN-SUFFIX,account-paypal.info
+DOMAIN-SUFFIX,account-paypal.net
+DOMAIN-SUFFIX,account-paypal.org
+DOMAIN-SUFFIX,accountpaypal.com
+DOMAIN-SUFFIX,accountpaypal.net
+DOMAIN-SUFFIX,accountpaypal.org
+DOMAIN-SUFFIX,anfutong.cn
+DOMAIN-SUFFIX,anfutong.com
+DOMAIN-SUFFIX,anfutong.com.cn
+DOMAIN-SUFFIX,beibao.cn
+DOMAIN-SUFFIX,beibao.com
+DOMAIN-SUFFIX,beibao.com.cn
+DOMAIN-SUFFIX,bill-safe.com
+DOMAIN-SUFFIX,billmelater.com
+DOMAIN-SUFFIX,billmelater.info
+DOMAIN-SUFFIX,billmelater.net
+DOMAIN-SUFFIX,bml.info
+DOMAIN-SUFFIX,braintreegateway.com
+DOMAIN-SUFFIX,braintreegateway.tv
+DOMAIN-SUFFIX,braintreepayments.com
+DOMAIN-SUFFIX,braintreepayments.info
+DOMAIN-SUFFIX,braintreepayments.org
+DOMAIN-SUFFIX,braintreepayments.tv
+DOMAIN-SUFFIX,braintreepaymentsolutions.com
+DOMAIN-SUFFIX,braintreeps.com
+DOMAIN-SUFFIX,briantreepayments.net
+DOMAIN-SUFFIX,briantreepayments.tv
+DOMAIN-SUFFIX,buyfast-paysmart.net
+DOMAIN-SUFFIX,card.io
+DOMAIN-SUFFIX,cash2.com
+DOMAIN-SUFFIX,cashify.com
+DOMAIN-SUFFIX,cashify.net
+DOMAIN-SUFFIX,devtools-paypal.com
+DOMAIN-SUFFIX,experiencebillmelater.com
+DOMAIN-SUFFIX,filipino-music.net
+DOMAIN-SUFFIX,fundpaypal.com
+DOMAIN-SUFFIX,getbraintree.com
+DOMAIN-SUFFIX,gmoney.org
+DOMAIN-SUFFIX,i-o-u.info
+DOMAIN-SUFFIX,krakenjs.com
+DOMAIN-SUFFIX,loanbuilder.com
+DOMAIN-SUFFIX,login-paypal.com
+DOMAIN-SUFFIX,login-paypal.info
+DOMAIN-SUFFIX,mywaytopay.info
+DOMAIN-SUFFIX,mywaytopay.net
+DOMAIN-SUFFIX,pa9pal.com
+DOMAIN-SUFFIX,paaypal.com
+DOMAIN-SUFFIX,paily.net
+DOMAIN-SUFFIX,paily.org
+DOMAIN-SUFFIX,paipal.com
+DOMAIN-SUFFIX,pavpal.com
+DOMAIN-SUFFIX,paydiant.com
+DOMAIN-SUFFIX,paylike.com
+DOMAIN-SUFFIX,paypa1.com
+DOMAIN-SUFFIX,paypa1.org
+DOMAIN-SUFFIX,paypaal.com
+DOMAIN-SUFFIX,paypal-activate.com
+DOMAIN-SUFFIX,paypal-activate.info
+DOMAIN-SUFFIX,paypal-activate.org
+DOMAIN-SUFFIX,paypal-apac.com
+DOMAIN-SUFFIX,paypal-apps.com
+DOMAIN-SUFFIX,paypal-biz.com
+DOMAIN-SUFFIX,paypal-brandcentral.com
+DOMAIN-SUFFIX,paypal-business.com
+DOMAIN-SUFFIX,paypal-business.net
+DOMAIN-SUFFIX,paypal-business.org
+DOMAIN-SUFFIX,paypal-cardcash.com
+DOMAIN-SUFFIX,paypal-cash.com
+DOMAIN-SUFFIX,paypal-center.com
+DOMAIN-SUFFIX,paypal-center.info
+DOMAIN-SUFFIX,paypal-center.net
+DOMAIN-SUFFIX,paypal-center.org
+DOMAIN-SUFFIX,paypal-communication.com
+DOMAIN-SUFFIX,paypal-communications.com
+DOMAIN-SUFFIX,paypal-communications.net
+DOMAIN-SUFFIX,paypal-community.com
+DOMAIN-SUFFIX,paypal-community.net
+DOMAIN-SUFFIX,paypal-comunidad.com
+DOMAIN-SUFFIX,paypal-corp.com
+DOMAIN-SUFFIX,paypal-database.com
+DOMAIN-SUFFIX,paypal-database.us
+DOMAIN-SUFFIX,paypal-donations.com
+DOMAIN-SUFFIX,paypal-dynamic.com
+DOMAIN-SUFFIX,paypal-engineering.com
+DOMAIN-SUFFIX,paypal-europe.com
+DOMAIN-SUFFIX,paypal-excelinvoicing.com
+DOMAIN-SUFFIX,paypal-exchanges.com
+DOMAIN-SUFFIX,paypal-forward.com
+DOMAIN-SUFFIX,paypal-galactic.com
+DOMAIN-SUFFIX,paypal-gift.com
+DOMAIN-SUFFIX,paypal-gifts.com
+DOMAIN-SUFFIX,paypal-gpplus.com
+DOMAIN-SUFFIX,paypal-here.com
+DOMAIN-SUFFIX,paypal-hrsystem.com
+DOMAIN-SUFFIX,paypal-innovationlab.com
+DOMAIN-SUFFIX,paypal-integration.com
+DOMAIN-SUFFIX,paypal-japan.com
+DOMAIN-SUFFIX,paypal-knowledge.com
+DOMAIN-SUFFIX,paypal-labs.com
+DOMAIN-SUFFIX,paypal-latam.com
+DOMAIN-SUFFIX,paypal-learning.com
+DOMAIN-SUFFIX,paypal-login.com
+DOMAIN-SUFFIX,paypal-login.info
+DOMAIN-SUFFIX,paypal-login.org
+DOMAIN-SUFFIX,paypal-login.us
+DOMAIN-SUFFIX,paypal-luxury.com
+DOMAIN-SUFFIX,paypal-mainstreet.net
+DOMAIN-SUFFIX,paypal-marketing.com
+DOMAIN-SUFFIX,paypal-media.com
+DOMAIN-SUFFIX,paypal-merchantloyalty.com
+DOMAIN-SUFFIX,paypal-mktg.com
+DOMAIN-SUFFIX,paypal-mobilemoney.com
+DOMAIN-SUFFIX,paypal-network.org
+DOMAIN-SUFFIX,paypal-notice.com
+DOMAIN-SUFFIX,paypal-notify.com
+DOMAIN-SUFFIX,paypal-online.info
+DOMAIN-SUFFIX,paypal-online.net
+DOMAIN-SUFFIX,paypal-online.org
+DOMAIN-SUFFIX,paypal-optimizer.com
+DOMAIN-SUFFIX,paypal-pages.com
+DOMAIN-SUFFIX,paypal-photocard.com
+DOMAIN-SUFFIX,paypal-plaza.com
+DOMAIN-SUFFIX,paypal-portal.com
+DOMAIN-SUFFIX,paypal-prepagata.com
+DOMAIN-SUFFIX,paypal-prepagata.net
+DOMAIN-SUFFIX,paypal-prepaid.com
+DOMAIN-SUFFIX,paypal-profile.com
+DOMAIN-SUFFIX,paypal-proserv.com
+DOMAIN-SUFFIX,paypal-qrshopping.org
+DOMAIN-SUFFIX,paypal-recargacelular.com
+DOMAIN-SUFFIX,paypal-redeem.com
+DOMAIN-SUFFIX,paypal-referral.com
+DOMAIN-SUFFIX,paypal-retail.com
+DOMAIN-SUFFIX,paypal-scoop.com
+DOMAIN-SUFFIX,paypal-search.com
+DOMAIN-SUFFIX,paypal-secure.net
+DOMAIN-SUFFIX,paypal-secure.org
+DOMAIN-SUFFIX,paypal-security.net
+DOMAIN-SUFFIX,paypal-security.org
+DOMAIN-SUFFIX,paypal-service.org
+DOMAIN-SUFFIX,paypal-signin.com
+DOMAIN-SUFFIX,paypal-signin.us
+DOMAIN-SUFFIX,paypal-special.com
+DOMAIN-SUFFIX,paypal-specialoffers.com
+DOMAIN-SUFFIX,paypal-sptam.com
+DOMAIN-SUFFIX,paypal-status.com
+DOMAIN-SUFFIX,paypal-support.com
+DOMAIN-SUFFIX,paypal-survey.com
+DOMAIN-SUFFIX,paypal-survey.org
+DOMAIN-SUFFIX,paypal-team.com
+DOMAIN-SUFFIX,paypal-viewpoints.net
+DOMAIN-SUFFIX,paypal.ca
+DOMAIN-SUFFIX,paypal.com
+DOMAIN-SUFFIX,paypal.com.cn
+DOMAIN-SUFFIX,paypal.com.hk
+DOMAIN-SUFFIX,paypal.com.sg
+DOMAIN-SUFFIX,paypal.hk
+DOMAIN-SUFFIX,paypal.info
+DOMAIN-SUFFIX,paypal.jp
+DOMAIN-SUFFIX,paypal.me
+DOMAIN-SUFFIX,paypal.net.cn
+DOMAIN-SUFFIX,paypal.org.cn
+DOMAIN-SUFFIX,paypal.so
+DOMAIN-SUFFIX,paypal.us
+DOMAIN-SUFFIX,paypalbeacon.com
+DOMAIN-SUFFIX,paypalbenefits.com
+DOMAIN-SUFFIX,paypalbrasil.com
+DOMAIN-SUFFIX,paypalcommunity.cn
+DOMAIN-SUFFIX,paypalcommunity.com
+DOMAIN-SUFFIX,paypalcommunity.net
+DOMAIN-SUFFIX,paypalcommunity.org
+DOMAIN-SUFFIX,paypalcorp.com
+DOMAIN-SUFFIX,paypalcredit.com
+DOMAIN-SUFFIX,paypalcreditcard.com
+DOMAIN-SUFFIX,paypalgivingfund.org
+DOMAIN-SUFFIX,paypalhere.cn
+DOMAIN-SUFFIX,paypalhere.com
+DOMAIN-SUFFIX,paypalhere.com.cn
+DOMAIN-SUFFIX,paypalhere.info
+DOMAIN-SUFFIX,paypalhere.net
+DOMAIN-SUFFIX,paypalhere.org
+DOMAIN-SUFFIX,paypalhere.tv
+DOMAIN-SUFFIX,paypali.net
+DOMAIN-SUFFIX,paypalinc.com
+DOMAIN-SUFFIX,paypalindia.com
+DOMAIN-SUFFIX,paypalinsuranceservices.org
+DOMAIN-SUFFIX,paypall.com
+DOMAIN-SUFFIX,paypallabs.com
+DOMAIN-SUFFIX,paypalme.com
+DOMAIN-SUFFIX,paypalnet.net
+DOMAIN-SUFFIX,paypalnet.org
+DOMAIN-SUFFIX,paypalnetwork.info
+DOMAIN-SUFFIX,paypalnetwork.net
+DOMAIN-SUFFIX,paypalnetwork.org
+DOMAIN-SUFFIX,paypalobjects.com
+DOMAIN-SUFFIX,paypalonline.net
+DOMAIN-SUFFIX,paypalonline.org
+DOMAIN-SUFFIX,paypalprepagata.com
+DOMAIN-SUFFIX,paypalprepagata.net
+DOMAIN-SUFFIX,paypalservice.com
+DOMAIN-SUFFIX,paypalshopping.com
+DOMAIN-SUFFIX,paypalshopping.net
+DOMAIN-SUFFIX,paypalsurvey.com
+DOMAIN-SUFFIX,paypalx.com
+DOMAIN-SUFFIX,paypaly.com
+DOMAIN-SUFFIX,payppal.com
+DOMAIN-SUFFIX,payypal.com
+DOMAIN-SUFFIX,pdncommunity.com
+DOMAIN-SUFFIX,pp-soc.com
+DOMAIN-SUFFIX,ppaypal.com
+DOMAIN-SUFFIX,pppds.com
+DOMAIN-SUFFIX,pypl.com
+DOMAIN-SUFFIX,pypl.info
+DOMAIN-SUFFIX,pypl.net
+DOMAIN-SUFFIX,pypl.tv
+DOMAIN-SUFFIX,s-xoom.com
+DOMAIN-SUFFIX,secure-paypal.info
+DOMAIN-SUFFIX,securepaypal.info
+DOMAIN-SUFFIX,simility.com
+DOMAIN-SUFFIX,sslpaypal.org
+DOMAIN-SUFFIX,swiftbank.info
+DOMAIN-SUFFIX,swiftbank.us
+DOMAIN-SUFFIX,swiftcapital.com
+DOMAIN-SUFFIX,swiftfinancial.com
+DOMAIN-SUFFIX,swiftfinancial.info
+DOMAIN-SUFFIX,swiftfinancial.net
+DOMAIN-SUFFIX,thepaypalshop.com
+DOMAIN-SUFFIX,theshoppingexpresslane.net
+DOMAIN-SUFFIX,venmo-touch.com
+DOMAIN-SUFFIX,venmo.com
+DOMAIN-SUFFIX,venmo.info
+DOMAIN-SUFFIX,venmo.net
+DOMAIN-SUFFIX,venmo.org
+DOMAIN-SUFFIX,venmo.s3.amazonaws.com
+DOMAIN-SUFFIX,webmoneyinfo.com
+DOMAIN-SUFFIX,wiremoneytoirelandwithxoomeasierandcheaper.com
+DOMAIN-SUFFIX,www-paypal.info
+DOMAIN-SUFFIX,www-paypal.us
+DOMAIN-SUFFIX,wwwxoom.com
+DOMAIN-SUFFIX,xn--bnq297cix3a.cn
+DOMAIN-SUFFIX,xoom-experience.com
+DOMAIN-SUFFIX,xoom.com
+DOMAIN-SUFFIX,xoom.io
+DOMAIN-SUFFIX,xoom.net.cn
+DOMAIN-SUFFIX,xoom.us
+DOMAIN-SUFFIX,xoomcom.com
+DOMAIN-KEYWORD,paypal
+USER-AGENT,PayPal*
+
+# NAME: Line
+DOMAIN-SUFFIX,lin.ee
+DOMAIN-SUFFIX,line-apps.com
+DOMAIN-SUFFIX,line-cdn.net
+DOMAIN-SUFFIX,line-scdn.net
+DOMAIN-SUFFIX,line.me
+DOMAIN-SUFFIX,linecorp.com
+DOMAIN-SUFFIX,naver.jp
+DOMAIN-SUFFIX,nhncorp.jp
+IP-CIDR,103.2.28.0/22,no-resolve
+IP-CIDR,119.235.224.0/21,no-resolve
+IP-CIDR,119.235.232.0/23,no-resolve
+IP-CIDR,119.235.235.0/24,no-resolve
+IP-CIDR,119.235.236.0/23,no-resolve
+IP-CIDR,125.209.208.0/20,no-resolve
+IP-CIDR,125.209.252.103/32,no-resolve
+IP-CIDR,125.209.252.208/32,no-resolve
+IP-CIDR,125.6.146.0/24,no-resolve
+IP-CIDR,125.6.149.0/24,no-resolve
+IP-CIDR,125.6.190.0/24,no-resolve
+IP-CIDR,147.92.128.0/17,no-resolve
+IP-CIDR,203.104.103.0/24,no-resolve
+IP-CIDR,203.104.128.0/19,no-resolve
+IP-CIDR,203.174.66.64/26,no-resolve
+IP-CIDR,203.174.77.0/24,no-resolve
+
+# NAME: Wikipedia
+DOMAIN-SUFFIX,mediawiki.org
+DOMAIN-SUFFIX,wikibooks.org
+DOMAIN-SUFFIX,wikidata.org
+DOMAIN-SUFFIX,wikileaks.org
+DOMAIN-SUFFIX,wikimedia.org
+DOMAIN-SUFFIX,wikinews.org
+DOMAIN-SUFFIX,wikipedia.org
+DOMAIN-SUFFIX,wikiquote.org
+DOMAIN-SUFFIX,wikisource.org
+DOMAIN-SUFFIX,wikiversity.org
+DOMAIN-SUFFIX,wikivoyage.org
+DOMAIN-SUFFIX,wiktionary.org
+
+# NAME: Python
+DOMAIN-SUFFIX,pycon.org
+DOMAIN-SUFFIX,pypa.io
+DOMAIN-SUFFIX,pypi.io
+DOMAIN-SUFFIX,pypi.org
+DOMAIN-SUFFIX,python.org
+DOMAIN-SUFFIX,pythonhosted.org
+
+# NAME: TeamViewer
+DOMAIN-SUFFIX,teamviewer.com
+IP-CIDR,139.220.243.27/32,no-resolve
+IP-CIDR,172.16.102.56/32,no-resolve
+IP-CIDR,221.226.128.146/32,no-resolve
+IP-CIDR6,2a0b:b580::/48,no-resolve
+IP-CIDR6,2a0b:b581::/48,no-resolve
+IP-CIDR6,2a0b:b582::/48,no-resolve
+IP-CIDR6,2a0b:b583::/48,no-resolve
+
+
+# > Meta(facebook,whatsapp,instagram,facemessenger)
 DOMAIN-SUFFIX, accountkit.com
 DOMAIN-SUFFIX, cdninstagram.com
 DOMAIN-SUFFIX, f8.com
@@ -337,71 +376,265 @@ DOMAIN-SUFFIX, rocksdb.org
 DOMAIN-SUFFIX, whatsapp.com
 DOMAIN-SUFFIX, whatsapp.net
 DOMAIN-KEYWORD, .facebook.
-# > Microsoft
-DOMAIN, assets1.xboxlive.com
-DOMAIN, assets2.xboxlive.com
-DOMAIN, az416426.vo.msecnd.net
-DOMAIN, az668014.vo.msecnd.net
-DOMAIN-SUFFIX, aka.ms
-DOMAIN-SUFFIX, github.blog
-DOMAIN-SUFFIX, github.com
-DOMAIN-SUFFIX, github.io
-DOMAIN-SUFFIX, githubassets.com
-DOMAIN-SUFFIX, githubusercontent.com
-DOMAIN-SUFFIX, onedrive.live.com
-DOMAIN-SUFFIX, streaming.mediaservices.windows.net
-# > Pinterest
-DOMAIN-SUFFIX, pinimg.com
-DOMAIN-KEYWORD, .pinterest.
+
+# NAME: Discord
+DOMAIN-SUFFIX,airhorn.solutions
+DOMAIN-SUFFIX,airhornbot.com
+DOMAIN-SUFFIX,bigbeans.solutions
+DOMAIN-SUFFIX,dis.gd
+DOMAIN-SUFFIX,discord-activities.com
+DOMAIN-SUFFIX,discord.co
+DOMAIN-SUFFIX,discord.com
+DOMAIN-SUFFIX,discord.design
+DOMAIN-SUFFIX,discord.dev
+DOMAIN-SUFFIX,discord.gg
+DOMAIN-SUFFIX,discord.gift
+DOMAIN-SUFFIX,discord.gifts
+DOMAIN-SUFFIX,discord.media
+DOMAIN-SUFFIX,discord.new
+DOMAIN-SUFFIX,discord.store
+DOMAIN-SUFFIX,discord.tools
+DOMAIN-SUFFIX,discordactivities.com
+DOMAIN-SUFFIX,discordapp.com
+DOMAIN-SUFFIX,discordapp.io
+DOMAIN-SUFFIX,discordapp.net
+DOMAIN-SUFFIX,discordapp.page.link
+DOMAIN-SUFFIX,discordcdn.com
+DOMAIN-SUFFIX,discordmerch.com
+DOMAIN-SUFFIX,discordpartygames.com
+DOMAIN-SUFFIX,discordsays.com
+DOMAIN-SUFFIX,discordstatus.com
+DOMAIN-SUFFIX,hammerandchisel.ssl.zendesk.com
+DOMAIN-SUFFIX,watchanimeattheoffice.com
+
+# 内容：Microsoft
+DOMAIN-KEYWORD,1drv
+DOMAIN-KEYWORD,microsoft
+DOMAIN-SUFFIX,aadrm.com
+DOMAIN-SUFFIX,acompli.com
+DOMAIN-SUFFIX,acompli.net
+DOMAIN-SUFFIX,aka.ms
+DOMAIN-SUFFIX,akadns.net
+DOMAIN-SUFFIX,aspnetcdn.com
+DOMAIN-SUFFIX,assets-yammer.com
+DOMAIN-SUFFIX,azure.com
+DOMAIN-SUFFIX,azure.net
+DOMAIN-SUFFIX,azureedge.net
+DOMAIN-SUFFIX,azureiotcentral.com
+DOMAIN-SUFFIX,azurerms.com
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,bing.net
+DOMAIN-SUFFIX,bingapis.com
+DOMAIN-SUFFIX,cloudapp.net
+DOMAIN-SUFFIX,cloudappsecurity.com
+DOMAIN-SUFFIX,edgesuite.net
+DOMAIN-SUFFIX,gfx.ms
+DOMAIN-SUFFIX,hotmail.com
+DOMAIN-SUFFIX,live.com
+DOMAIN-SUFFIX,live.net
+DOMAIN-SUFFIX,lync.com
+DOMAIN-SUFFIX,msappproxy.net
+DOMAIN-SUFFIX,msauth.net
+DOMAIN-SUFFIX,msauthimages.net
+DOMAIN-SUFFIX,msecnd.net
+DOMAIN-SUFFIX,msedge.net
+DOMAIN-SUFFIX,msft.net
+DOMAIN-SUFFIX,msftauth.net
+DOMAIN-SUFFIX,msftauthimages.net
+DOMAIN-SUFFIX,msftidentity.com
+DOMAIN-SUFFIX,msidentity.com
+DOMAIN-SUFFIX,msn.cn
+DOMAIN-SUFFIX,msn.com
+DOMAIN-SUFFIX,msocdn.com
+DOMAIN-SUFFIX,msocsp.com
+DOMAIN-SUFFIX,mstea.ms
+DOMAIN-SUFFIX,o365weve.com
+DOMAIN-SUFFIX,oaspapps.com
+DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,office.net
+DOMAIN-SUFFIX,office365.com
+DOMAIN-SUFFIX,officeppe.net
+DOMAIN-SUFFIX,omniroot.com
+DOMAIN-SUFFIX,onedrive.com
+DOMAIN-SUFFIX,onenote.com
+DOMAIN-SUFFIX,onenote.net
+DOMAIN-SUFFIX,onestore.ms
+DOMAIN-SUFFIX,outlook.com
+DOMAIN-SUFFIX,outlookmobile.com
+DOMAIN-SUFFIX,phonefactor.net
+DOMAIN-SUFFIX,public-trust.com
+DOMAIN-SUFFIX,sfbassets.com
+DOMAIN-SUFFIX,sfx.ms
+DOMAIN-SUFFIX,sharepoint.com
+DOMAIN-SUFFIX,sharepointonline.com
+DOMAIN-SUFFIX,skype.com
+DOMAIN-SUFFIX,skypeassets.com
+DOMAIN-SUFFIX,skypeforbusiness.com
+DOMAIN-SUFFIX,staffhub.ms
+DOMAIN-SUFFIX,svc.ms
+DOMAIN-SUFFIX,sway-cdn.com
+DOMAIN-SUFFIX,sway-extensions.com
+DOMAIN-SUFFIX,sway.com
+DOMAIN-SUFFIX,trafficmanager.net
+DOMAIN-SUFFIX,uservoice.com
+DOMAIN-SUFFIX,virtualearth.net
+DOMAIN-SUFFIX,visualstudio.com
+DOMAIN-SUFFIX,windows-ppe.net
+DOMAIN-SUFFIX,windows.com
+DOMAIN-SUFFIX,windows.net
+DOMAIN-SUFFIX,windowsazure.com
+DOMAIN-SUFFIX,windowsupdate.com
+DOMAIN-SUFFIX,wunderlist.com
+DOMAIN-SUFFIX,yammer.com
+DOMAIN-SUFFIX,yammerusercontent.com
+
 # > pixiv
-DOMAIN-SUFFIX, pixiv.net
-DOMAIN-SUFFIX, pixiv.org
-DOMAIN-SUFFIX, pximg.net
+DOMAIN-SUFFIX,booth.pm
+DOMAIN-SUFFIX,fanbox.cc
+DOMAIN-SUFFIX,pixiv.cat
+DOMAIN-SUFFIX,pixiv.co.jp
+DOMAIN-SUFFIX,pixiv.me
+DOMAIN-SUFFIX,pixiv.net
+DOMAIN-SUFFIX,pixiv.org
+DOMAIN-SUFFIX,pximg.net
+
 # > Reddit
-DOMAIN-SUFFIX, redd.it
-DOMAIN-SUFFIX, reddit.com
-DOMAIN-SUFFIX, redditmedia.com
-DOMAIN-SUFFIX, redditstatic.com
-# > Reuters
-DOMAIN-SUFFIX, reuters.com
-DOMAIN-SUFFIX, reutersmedia.net
-# > Steam
-# DOMAIN, store.steampowered.com
-DOMAIN-SUFFIX, steamcommunity.com
+DOMAIN-SUFFIX,redd.it
+DOMAIN-SUFFIX,reddit.com
+DOMAIN-SUFFIX,redditmail.com
+DOMAIN-SUFFIX,redditmedia.com
+DOMAIN-SUFFIX,redditstatic.com
+DOMAIN-SUFFIX,reddituploads.com
+DOMAIN-SUFFIX,reddituploads.com.cdn-cf.behance.net
+DOMAIN-SUFFIX,reddituploads.com.cdn-cf.dropbox.com
 
-# > The Economist
-DOMAIN-SUFFIX, economist.com
-DOMAIN-SUFFIX, static-economist.com
-# > The New York Times
-DOMAIN-SUFFIX, newyorktimes.com
-DOMAIN-SUFFIX, nyt.com
-DOMAIN-SUFFIX, nytco.com
-DOMAIN-SUFFIX, nytimes.com
-DOMAIN-SUFFIX, nytimg.com
-DOMAIN-SUFFIX, nytlog.com
-DOMAIN-SUFFIX, nytstyle.com
-DOMAIN-SUFFIX, tmagazine.com
+# NAME: ThomsonReuters
+DOMAIN-SUFFIX,aranzadi.es
+DOMAIN-SUFFIX,corepublishingsolutions.com
+DOMAIN-SUFFIX,elite.com
+DOMAIN-SUFFIX,legaltracker.com
+DOMAIN-SUFFIX,livrariart.com.br
+DOMAIN-SUFFIX,reuters.com
+DOMAIN-SUFFIX,reuters.tv
+DOMAIN-SUFFIX,reutersagency.cn
+DOMAIN-SUFFIX,reutersmedia.net
+DOMAIN-SUFFIX,sweetandmaxwell.co.uk
+DOMAIN-SUFFIX,thomsonreuters.ca
+DOMAIN-SUFFIX,thomsonreuters.cn
+DOMAIN-SUFFIX,thomsonreuters.co.jp
+DOMAIN-SUFFIX,thomsonreuters.co.kr
+DOMAIN-SUFFIX,thomsonreuters.co.nz
+DOMAIN-SUFFIX,thomsonreuters.co.uk
+DOMAIN-SUFFIX,thomsonreuters.com
+DOMAIN-SUFFIX,thomsonreuters.com.ar
+DOMAIN-SUFFIX,thomsonreuters.com.au
+DOMAIN-SUFFIX,thomsonreuters.com.br
+DOMAIN-SUFFIX,thomsonreuters.com.hk
+DOMAIN-SUFFIX,thomsonreuters.com.my
+DOMAIN-SUFFIX,thomsonreuters.com.pe
+DOMAIN-SUFFIX,thomsonreuters.com.sg
+DOMAIN-SUFFIX,thomsonreuters.com.tr
+DOMAIN-SUFFIX,thomsonreuters.es
+DOMAIN-SUFFIX,thomsonreuters.in
+DOMAIN-SUFFIX,thomsonreuters.ru
+DOMAIN-SUFFIX,thomsonreutersmexico.com
+DOMAIN-SUFFIX,tmsnrt.rs
+DOMAIN-SUFFIX,tr.com
 
-# > Wikimedia Foundation
-DOMAIN-SUFFIX, mediawiki.org
-DOMAIN-SUFFIX, wikibooks.org
-DOMAIN-SUFFIX, wikidata.org
-DOMAIN-SUFFIX, wikileaks.org
-DOMAIN-SUFFIX, wikimedia.org
-DOMAIN-SUFFIX, wikimediafoundation.org
-DOMAIN-SUFFIX, wikinews.org
-DOMAIN-SUFFIX, wikipedia.org
-DOMAIN-SUFFIX, wikiquote.org
-DOMAIN-SUFFIX, wikisource.org
-DOMAIN-SUFFIX, wikiversity.org
-DOMAIN-SUFFIX, wikivoyage.org
-DOMAIN-SUFFIX, wiktionary.org
-# > Yahoo
-DOMAIN, search.yahoo.co.jp
-DOMAIN-SUFFIX, yahoo.com
-# > Yandex
-DOMAIN, disk.yandex.com
-DOMAIN-SUFFIX, yadi.sk
+# NAME: Steam
+DOMAIN,steammobile.akamaized.net
+DOMAIN-SUFFIX,cdn-ali.content.steamchina.com
+DOMAIN-SUFFIX,cdn-qc.content.steamchina.com
+DOMAIN-SUFFIX,cdn-ws.content.steamchina.com
+DOMAIN-SUFFIX,csgo.wmsj.cn
+DOMAIN-SUFFIX,dl.steam.clngaa.com
+DOMAIN-SUFFIX,dl.steam.ksyna.com
+DOMAIN-SUFFIX,dota2.wmsj.cn
+DOMAIN-SUFFIX,fanatical.com
+DOMAIN-SUFFIX,humblebundle.com
+DOMAIN-SUFFIX,playartifact.com
+DOMAIN-SUFFIX,s.team
+DOMAIN-SUFFIX,st.dl.bscstorage.net
+DOMAIN-SUFFIX,st.dl.eccdnx.com
+DOMAIN-SUFFIX,st.dl.pinyuncloud.com
+DOMAIN-SUFFIX,steam-api.com
+DOMAIN-SUFFIX,steam-chat.com
+DOMAIN-SUFFIX,steambroadcast.akamaized.net
+DOMAIN-SUFFIX,steamcdn-a.akamaihd.net
+DOMAIN-SUFFIX,steamcommunity-a.akamaihd.net
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steamcontent.tnkjmec.com
+DOMAIN-SUFFIX,steamgames.com
+DOMAIN-SUFFIX,steampipe.akamaized.net
+DOMAIN-SUFFIX,steampowered.com
+DOMAIN-SUFFIX,steampowered.com.8686c.com
+DOMAIN-SUFFIX,steamstat.us
+DOMAIN-SUFFIX,steamstatic.com
+DOMAIN-SUFFIX,steamstatic.com.8686c.com
+DOMAIN-SUFFIX,steamstore-a.akamaihd.net
+DOMAIN-SUFFIX,steamunlocked.net
+DOMAIN-SUFFIX,steamusercontent-a.akamaihd.net
+DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net
+DOMAIN-SUFFIX,steamvideo-a.akamaihd.net
+DOMAIN-SUFFIX,underlords.com
+DOMAIN-SUFFIX,valvesoftware.com
+DOMAIN-SUFFIX,wmsjsteam.com
+DOMAIN-KEYWORD,steambroadcast
+DOMAIN-KEYWORD,steamstore
+
+# NAME: Yandex
+DOMAIN-SUFFIX,xn--d1acpjx3f.xn--p1ai
+DOMAIN-SUFFIX,ya.ru
+DOMAIN-SUFFIX,yadi.sk
+DOMAIN-SUFFIX,yandex
+DOMAIN-SUFFIX,yandex.aero
+DOMAIN-SUFFIX,yandex.az
+DOMAIN-SUFFIX,yandex.by
+DOMAIN-SUFFIX,yandex.co.il
+DOMAIN-SUFFIX,yandex.com
+DOMAIN-SUFFIX,yandex.com.am
+DOMAIN-SUFFIX,yandex.com.ge
+DOMAIN-SUFFIX,yandex.com.ru
+DOMAIN-SUFFIX,yandex.com.tr
+DOMAIN-SUFFIX,yandex.com.ua
+DOMAIN-SUFFIX,yandex.de
+DOMAIN-SUFFIX,yandex.ee
+DOMAIN-SUFFIX,yandex.eu
+DOMAIN-SUFFIX,yandex.fi
+DOMAIN-SUFFIX,yandex.fr
+DOMAIN-SUFFIX,yandex.jobs
+DOMAIN-SUFFIX,yandex.kg
+DOMAIN-SUFFIX,yandex.kz
+DOMAIN-SUFFIX,yandex.lt
+DOMAIN-SUFFIX,yandex.lv
+DOMAIN-SUFFIX,yandex.md
+DOMAIN-SUFFIX,yandex.net
+DOMAIN-SUFFIX,yandex.ru
+DOMAIN-SUFFIX,yandex.st
+DOMAIN-SUFFIX,yandex.sx
+DOMAIN-SUFFIX,yandex.tj
+DOMAIN-SUFFIX,yandex.tm
+DOMAIN-SUFFIX,yandex.ua
+DOMAIN-SUFFIX,yandex.uz
+DOMAIN-SUFFIX,yastatic.net
+IP-CIDR,100.43.64.0/19,no-resolve
+IP-CIDR,141.8.128.0/18,no-resolve
+IP-CIDR,178.154.128.0/18,no-resolve
+IP-CIDR,178.154.192.0/19,no-resolve
+IP-CIDR,185.32.187.0/24,no-resolve
+IP-CIDR,199.21.96.0/22,no-resolve
+IP-CIDR,199.36.240.0/22,no-resolve
+IP-CIDR,213.180.192.0/19,no-resolve
+IP-CIDR,37.140.128.0/18,no-resolve
+IP-CIDR,37.9.64.0/18,no-resolve
+IP-CIDR,5.255.192.0/18,no-resolve
+IP-CIDR,5.45.192.0/18,no-resolve
+IP-CIDR,77.88.0.0/18,no-resolve
+IP-CIDR,87.250.224.0/19,no-resolve
+IP-CIDR,93.158.128.0/18,no-resolve
+IP-CIDR,95.108.128.0/17,no-resolve
+IP-CIDR6,2620:10f:d000::/44,no-resolve
+IP-CIDR6,2a02:6b8::/29,no-resolve
 
 # (Region-Restricted Access Denied)
 DOMAIN, addons.mozilla.org
@@ -412,9 +645,6 @@ DOMAIN-SUFFIX, engadget.com
 DOMAIN-SUFFIX, ifixit.com
 DOMAIN-SUFFIX, terabox.com
 DOMAIN-SUFFIX, zaobao.com.sg
-# > Alphabet
-DOMAIN-SUFFIX, go.dev
-DOMAIN-SUFFIX, golang.org
 
 # ---(Apple)---
 DOMAIN, amp-api.podcasts.apple.com
@@ -424,28 +654,65 @@ DOMAIN, lookup-api.apple.com
 DOMAIN, radio.itunes.apple.com
 DOMAIN-SUFFIX, appsto.re
 DOMAIN-SUFFIX, smoot.apple.com
-# > Web Preview
-DOMAIN, apps.apple.com
-DOMAIN, books.apple.com
-DOMAIN, itunes.apple.com
-DOMAIN, tv.apple.com
-# > News
-DOMAIN, gateway.icloud.com
-DOMAIN, news-assets.apple.com
-DOMAIN, news-client.apple.com
-DOMAIN, news-client-search.apple.com
-DOMAIN, news-edge.apple.com
-DOMAIN, news-events.apple.com
-DOMAIN, apple.comscoreresearch.com
-DOMAIN-SUFFIX, apple.news
+
+# NAME: AppleMail
+DOMAIN-SUFFIX,mail.icloud.com.cn
+DOMAIN-SUFFIX,mail.me.com
+
+# NAME: AppleNews
+DOMAIN,gspe1-ssl.ls.apple.com
+DOMAIN,news-client-search.apple.com
+USER-AGENT,AppleNews*
+USER-AGENT,com.apple.news*
+
+# NAME: AppleProxy
+DOMAIN,api-glb-sea.smoot.apple.com
+DOMAIN,apple.comscoreresearch.com
+DOMAIN,books.itunes.apple.com
+DOMAIN,cdn.apple-cloudkit.com
+DOMAIN,cvws.icloud-content.com
+DOMAIN,developer.apple.com
+DOMAIN,devimages-cdn.apple.com
+DOMAIN,devstreaming-cdn.apple.com
+DOMAIN,docs-assets.developer.apple.com
+DOMAIN,gspe1-ssl.ls.apple.com
+DOMAIN,hls-svod.itunes.apple.com
+DOMAIN,itunes.apple.com
+DOMAIN,js-cdn.music.apple.com
+DOMAIN,lookup-api.apple.com
+DOMAIN,mask-api.icloud.com
+DOMAIN,mask-h2.icloud.com
+DOMAIN,mask.icloud.com
+DOMAIN,news-assets.apple.com
+DOMAIN,news-client.apple.com
+DOMAIN,news-edge.apple.com
+DOMAIN,news-events.apple.com
+DOMAIN,np-edge.itunes.apple.com
+DOMAIN,play-edge.itunes.apple.com
+DOMAIN,sandbox.itunes.apple.com
+DOMAIN,testflight.apple.com
+DOMAIN,tv.applemusic.com
+DOMAIN,uts-api.itunes.apple.com
+DOMAIN-SUFFIX,apple-dns.net
+DOMAIN-SUFFIX,apple.news
+DOMAIN-SUFFIX,apps.apple.com
+DOMAIN-SUFFIX,appsto.re
+DOMAIN-SUFFIX,audio-ssl.itunes.apple.com
+DOMAIN-SUFFIX,blobstore.apple.com
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,digicert.com
+DOMAIN-SUFFIX,hls-amt.itunes.apple.com
+DOMAIN-SUFFIX,hls.itunes.apple.com
+DOMAIN-SUFFIX,ocsp.apple.com
+DOMAIN-SUFFIX,tv.apple.com
+USER-AGENT,AppleNews*
+USER-AGENT,AppleTV*
+USER-AGENT,com.apple.news*
+USER-AGENT,com.apple.trustd*
+USER-AGENT,com.apple.tv*
 
 # ------
-# > Microsoft
-DOMAIN-SUFFIX, bing.com
-DOMAIN-SUFFIX, linkedin.com
-DOMAIN-SUFFIX, licdn.com
-DOMAIN-SUFFIX, msn.com
-DOMAIN-SUFFIX, skype.com
+
 # > Framagit
 DOMAIN-SUFFIX, framagit.com
 DOMAIN-SUFFIX, framagit.org
