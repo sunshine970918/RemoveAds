@@ -377,6 +377,17 @@ DOMAIN-SUFFIX, whatsapp.com
 DOMAIN-SUFFIX, whatsapp.net
 DOMAIN-KEYWORD, .facebook.
 
+# NAME: Unity
+DOMAIN-SUFFIX,multiplay.cn
+DOMAIN-SUFFIX,unity.cn
+DOMAIN-SUFFIX,unity.com
+DOMAIN-SUFFIX,unity3d.com
+DOMAIN-SUFFIX,unity3dusercontent.com
+DOMAIN-SUFFIX,unitychina.cn
+DOMAIN-SUFFIX,unityedu.cn
+DOMAIN-SUFFIX,unityedu.com
+DOMAIN-SUFFIX,unityedu.com.cn
+
 # NAME: Discord
 DOMAIN-SUFFIX,airhorn.solutions
 DOMAIN-SUFFIX,airhornbot.com
@@ -649,11 +660,8 @@ DOMAIN-SUFFIX, zaobao.com.sg
 # ---(Apple)---
 DOMAIN, amp-api.podcasts.apple.com
 DOMAIN, beta.music.apple.com
-DOMAIN, books.itunes.apple.com
 DOMAIN, lookup-api.apple.com
 DOMAIN, radio.itunes.apple.com
-DOMAIN-SUFFIX, appsto.re
-DOMAIN-SUFFIX, smoot.apple.com
 
 # NAME: AppleMail
 DOMAIN-SUFFIX,mail.icloud.com.cn
@@ -705,9 +713,7 @@ DOMAIN-SUFFIX,hls-amt.itunes.apple.com
 DOMAIN-SUFFIX,hls.itunes.apple.com
 DOMAIN-SUFFIX,ocsp.apple.com
 DOMAIN-SUFFIX,tv.apple.com
-USER-AGENT,AppleNews*
 USER-AGENT,AppleTV*
-USER-AGENT,com.apple.news*
 USER-AGENT,com.apple.trustd*
 USER-AGENT,com.apple.tv*
 
