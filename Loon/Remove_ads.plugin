@@ -186,7 +186,7 @@ https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad reject
 # 开屏广告
 ^https:\/\/sdk\.1rtb\.net\/sdk\/req_ad\? reject-dict
 # 更新弹窗
-^https:\/\/gw\.xiaocantech\.com\/g\/pa reject-dict
+#^https:\/\/gw\.xiaocantech\.com\/g\/pa reject-dict
 
 
 
