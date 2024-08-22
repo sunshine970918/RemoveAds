@@ -1,5 +1,5 @@
 # Author: sunshine970918
-# 2024-08-18 17:15
+# 2024-08-22 20:15
 
 # ======= A ======= #
 # 阿里巴巴
@@ -80,9 +80,38 @@ DOMAIN-SUFFIX, union.baidu.com, REJECT
 DOMAIN, adttrackingprd.hwwt8.com, REJECT
 
 # ======= G ======= #
+# > 谷歌
+DOMAIN-SUFFIX, google-analytics.com, REJECT
+DOMAIN, safebrowsing.googleapis.com, REJECT
+DOMAIN-SUFFIX, doubleclick.net, REJECT
+DOMAIN-SUFFIX, googleadservices.com, REJECT
+DOMAIN-SUFFIX, googleadsserving.cn, REJECT
+DOMAIN-SUFFIX, googlesyndication.com, REJECT
+DOMAIN-SUFFIX, googletagservices.com, REJECT
+DOMAIN-SUFFIX, googletagmanager.com, REJECT
+DOMAIN-SUFFIX, video-ad-stats.googlesyndication.com, REJECT
+DOMAIN-SUFFIX, tpc.googlesyndication.com, REJECT
+DOMAIN-SUFFIX, pagead.google.com, REJECT
+DOMAIN-SUFFIX, pagead.l.google.com, REJECT
+DOMAIN-SUFFIX, pagead2.googlesyndication.com, REJECT
+DOMAIN-SUFFIX, pagead-tpc.l.google.com, REJECT
+DOMAIN-SUFFIX, mobileads.google.com, REJECT
+DOMAIN-SUFFIX, googlecommerce.com, REJECT
+DOMAIN-SUFFIX, blaaaa12.googlecode.com, REJECT
+DOMAIN-SUFFIX, badad.googleplex.com, REJECT
+DOMAIN-SUFFIX, afs.googlesyndication.com, REJECT
+DOMAIN-SUFFIX, afd.l.google.com, REJECT
+DOMAIN-SUFFIX, www.googleadservices.com, REJECT
+DOMAIN-SUFFIX, www.google-analytics.com, REJECT
+DOMAIN, ads.youtube.com, REJECT
+
 # 工商银行
 DOMAIN, pageviewp.icbc.com.cn, REJECT
 DOMAIN-SUFFIX, mall.icbc.com.cn, REJECT
+
+# > 广州地铁乘车码
+DOMAIN, apis.alenable.com, REJECT
+
 # 广告联盟
 DOMAIN, ad.zijieapi.com, REJECT
 DOMAIN, adapi.izuiyou.com, REJECT
@@ -124,6 +153,14 @@ DOMAIN-KEYWORD, pangolin-sdk-toutiao, REJECT
 DOMAIN-KEYWORD, pangolin.snssdk.com, REJECT
 DOMAIN-KEYWORD, pglstatp-toutiao, REJECT
 DOMAIN-KEYWORD, video-cn.snssdk.com, REJECT
+DOMAIN-SUFFIX, tos.pstatp.com, REJECT
+DOMAIN-SUFFIX, getui.com, REJECT
+DOMAIN-SUFFIX, getui.net, REJECT
+DOMAIN-SUFFIX, gepush.com, REJECT
+DOMAIN-SUFFIX, igexin.com, REJECT
+DOMAIN-SUFFIX, log.aliyuncs.com, REJECT
+DOMAIN-SUFFIX, zlsdk.1rtb.net, REJECT
+
 
 # ======= H ======= #
 # 海尔智家
@@ -180,6 +217,17 @@ IP-CIDR, 103.37.155.60/32, REJECT
 # ======= S ======= #
 # 什么值得买
 DOMAIN, api.zuihuimai.com, REJECT
+DOMAIN, aaid.uyunad.com, REJECT
+DOMAIN, acs4baichuan.m.taobao.com, REJECT
+DOMAIN, adashxgc.ut.taobao.com, REJECT
+DOMAIN, analytics-api.smzdm.com, REJECT
+DOMAIN, baichuan-sdk.alicdn.com, REJECT
+DOMAIN, dgstatic.jd.com, REJECT
+DOMAIN, msg.umengcloud.com, REJECT
+DOMAIN, sec.umeng.com, REJECT
+DOMAIN, ulogs.umeng.com, REJECT
+DOMAIN, ynuf.aliapp.org, REJECT
+
 # 数字联盟
 DOMAIN-SUFFIX, shuzilm.cn, REJECT
 # Speedtest
@@ -214,12 +262,16 @@ DOMAIN, ipv6.music.163.com, REJECT
 # 微博 开屏广告
 DOMAIN, huodong.weibo.cn, REJECT
 DOMAIN-SUFFIX, biz.weibo.com, REJECT
+# 微博开屏广告预加载
+DOMAIN, bootpreload.uve.weibo.com, REJECT
 # 微信
 DOMAIN, badjs.weixinbridge.com, REJECT
 DOMAIN, dns.weixin.qq.com.cn, REJECT
 DOMAIN-SUFFIX, wxs.qq.com, REJECT
 
 # ======= X ======= #
+# > 小小影视
+DOMAIN, 39d83s.com, REJECT
 # 晓晓优选去开屏
 DOMAIN,api-htp.beizi.biz,REJECT
 # 小米
@@ -255,3 +307,13 @@ DOMAIN, zxid-m.mobileservice.cn, REJECT
 IP-CIDR, 103.41.167.237/32, REJECT
 IP-CIDR, 118.89.204.198/32, REJECT
 IP6-CIDR, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
+
+# > 真不卡
+DOMAIN-SUFFIX, ttayy.cn, REJECT
+DOMAIN-SUFFIX, zhengxiaoliu.top, REJECT
+
+# > 中国移动
+IP-CIDR, 120.240.95.37/32, REJECT
+
+# > 中国联通
+DOMAIN-SUFFIX, m1.ad.10010.com, REJECT
