@@ -291,7 +291,6 @@ IP-CIDR,182.254.116.116/32,REJECT
 IP-CIDR,203.205.137.89/32,REJECT
 DOMAIN,1010pic.com,REJECT
 DOMAIN,8le8le.com,REJECT
-DOMAIN,a0.app.xiaomi.com,REJECT
 DOMAIN,aaid.umeng.com,REJECT
 DOMAIN,ad-cache.dopool.com,REJECT
 DOMAIN,ad-cdn.qingting.fm,REJECT
@@ -644,8 +643,6 @@ DOMAIN,metrics2.data.hicloud.com,REJECT
 DOMAIN,metrika.yandex.ru,REJECT
 DOMAIN,mi.gdt.qq.com,REJECT
 DOMAIN,miav-cse.avlyun.com,REJECT
-DOMAIN,mime.baidu.com,REJECT
-DOMAIN,mine.baidu.com,REJECT
 DOMAIN,mission-pub.smart-tv.cn,REJECT
 DOMAIN,miui-fxcse.avlyun.com,REJECT
 DOMAIN,mnqlog.ldmnq.com,REJECT
@@ -768,7 +765,6 @@ DOMAIN,sngmta.qq.com,REJECT
 DOMAIN,stat.y.qq.com,REJECT
 DOMAIN,static.ads-twitter.com,REJECT
 DOMAIN,statics.woozooo.com,REJECT
-DOMAIN,staticsns.cdn.bcebos.com,REJECT
 DOMAIN,stats.qiumibao.com,REJECT
 DOMAIN,statsigapi.net,REJECT
 DOMAIN,stg-data.ads.heytapmobi.com,REJECT
