@@ -874,7 +874,6 @@ DOMAIN,scdown.qq.com,REJECT
 DOMAIN,scs.openspeech.cn,REJECT
 DOMAIN,sdk-ab-config.qquanquan.com,REJECT
 DOMAIN,sdk-cache.video.ptqy.gitv.tv,REJECT
-DOMAIN,sdk.1rtb.net,REJECT
 DOMAIN,sdk.beizi.biz,REJECT
 DOMAIN,sdk.cferw.com,REJECT
 DOMAIN,sdk.e.qq.com,REJECT
