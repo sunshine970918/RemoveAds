@@ -279,7 +279,7 @@ DOMAIN-SUFFIX,miaozhen.com,REJECT
 DOMAIN-SUFFIX,ubixioe.com,REJECT
 DOMAIN-SUFFIX,unityads.unity3d.com,REJECT
 DOMAIN-SUFFIX,v.smtcdns.com,REJECT
-DOMAIN-SUFFIX,zijieapi.com,REJECT
+#DOMAIN-SUFFIX,zijieapi.com,REJECT
 DOMAIN-KEYWORD,ads.g.doubleclick,REJECT
 DOMAIN-KEYWORD,asiad.byteactivity,REJECT
 DOMAIN-KEYWORD,pangolin-sdk-toutiao,REJECT
