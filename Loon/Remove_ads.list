@@ -586,7 +586,7 @@ DOMAIN,applog.lc.quark.cn,REJECT
 DOMAIN,applog.uc.cn,REJECT
 DOMAIN,applog.zijieapi.com,REJECT
 DOMAIN,ata-sdk-uuid-report.dreport.meituan.net,REJECT
-DOMAIN,audid-api.taobao.com,REJECT
+#DOMAIN,audid-api.taobao.com,REJECT
 DOMAIN,audid.umeng.com,REJECT
 DOMAIN,azr.footprintdns.com,REJECT
 DOMAIN,b1-data.ads.heytapmobi.com,REJECT
