@@ -704,7 +704,7 @@ DOMAIN,hwpub-s01-drcn.cloud.dbankcloud.cn,REJECT
 DOMAIN,hya.comp.360os.com,REJECT
 DOMAIN,hye.comp.360os.com,REJECT
 DOMAIN,hyt.comp.360os.com,REJECT
-DOMAIN,i.snssdk.com,REJECT
+#DOMAIN,i.snssdk.com,REJECT
 DOMAIN,iad.apple.com,REJECT
 DOMAIN,iadctest.qwapi.com,REJECT
 DOMAIN,iadsdk.apple.com,REJECT
