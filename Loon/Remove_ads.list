@@ -6,8 +6,6 @@
 DOMAIN,dns.alidns.com,REJECT
 # 阿里云盘
 IP-CIDR,203.107.1.1/24,REJECT
-# 爱奇艺
-DOMAIN,api.iqiyi.com,REJECT
 # Apple
 DOMAIN,advertising.apple.com,REJECT
 DOMAIN,api-adservices.apple.com,REJECT
@@ -88,8 +86,8 @@ DOMAIN-KEYWORD,httpdns-,REJECT
 # 建设银行
 DOMAIN-KEYWORD,adv.ccb.com,REJECT
 # 京东
-DOMAIN,dns.jd.com,REJECT
-IP-CIDR,101.124.19.122/32,REJECT
+#DOMAIN,dns.jd.com,REJECT
+#IP-CIDR,101.124.19.122/32,REJECT
 IP6-CIDR,2402:db40:5100:1011::5/128,REJECT
 # JavDB
 DOMAIN,api.liquidlink.cn,REJECT
@@ -132,15 +130,12 @@ DOMAIN,iadmusicmatvideo.music.126.net,REJECT
 DOMAIN,ipv4.music.163.com,REJECT
 DOMAIN,ipv6.music.163.com,REJECT
 ,DOMAIN-SUFFIX,163jiasu.com,REJECT
-# 微博 开屏广告
-DOMAIN,huodong.weibo.cn,REJECT
-DOMAIN-SUFFIX,biz.weibo.com,REJECT
-# 微博开屏广告预加载
-DOMAIN,bootpreload.uve.weibo.com,REJECT
 # 微信
 DOMAIN,badjs.weixinbridge.com,REJECT
 DOMAIN,dns.weixin.qq.com.cn,REJECT
 DOMAIN-SUFFIX,wxs.qq.com,REJECT
+# 网易邮箱大师
+DOMAIN, httpdns.n.netease.com, REJECT
 
 
 # ======= X ======= #
@@ -339,7 +334,6 @@ DOMAIN,data.mistat.india.xiaomi.com,REJECT
 DOMAIN,data.mistat.rus.xiaomi.com,REJECT
 DOMAIN,data.mistat.xiaomi.com,REJECT
 DOMAIN,diagnosis.ad.xiaomi.com,REJECT
-DOMAIN,dig.bdurl.net,REJECT
 DOMAIN,dl.zuimeitianqi.com,REJECT
 DOMAIN,dlogs.bwton.com,REJECT
 DOMAIN,domain.aishengji.com,REJECT
@@ -397,7 +391,6 @@ DOMAIN,iad.apple.com,REJECT
 DOMAIN,iadctest.qwapi.com,REJECT
 DOMAIN,iadsdk.apple.com,REJECT
 DOMAIN,iadworkbench.apple.com,REJECT
-DOMAIN,ifacelog.iqiyi.com,REJECT
 DOMAIN,ifs.tanx.com,REJECT
 DOMAIN,image-ad.sm.cn,REJECT
 DOMAIN,imageplus.baidu.com,REJECT
@@ -450,7 +443,6 @@ DOMAIN,logtj.kugou.com,REJECT
 DOMAIN,logupdate.avlyun.sec.miui.com,REJECT
 DOMAIN,m.atm.youku.com,REJECT
 DOMAIN,m1.ad.10010.com,REJECT
-DOMAIN,mbdlog.iqiyi.com,REJECT
 DOMAIN,metok.sys.miui.com,REJECT
 DOMAIN,metrics.apple.com,REJECT
 DOMAIN,metrics.data.hicloud.com,REJECT
@@ -615,9 +607,6 @@ DOMAIN,xlivrdr.com,REJECT
 DOMAIN,xlmzc.cnjp-exp.com,REJECT
 DOMAIN,xlviiirdr.com,REJECT
 DOMAIN,xlviirdr.com,REJECT
-DOMAIN,yk-ssp.ad.youku.com,REJECT
-DOMAIN,ykad-data.youku.com,REJECT
-DOMAIN,ykad-gateway.youku.com,REJECT
 DOMAIN,zeus.ad.xiaomi.com,REJECT
 DOMAIN-KEYWORD,..shouji.sogou.com,REJECT
 DOMAIN-KEYWORD,.[a-zA-Z0-9.-]skwai.com,REJECT
