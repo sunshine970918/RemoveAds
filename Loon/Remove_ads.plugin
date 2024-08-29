@@ -210,10 +210,6 @@ https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad reject
 
 
 [Script]
-# ======= 5 ======= #
-# > 555影视 // run.api.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com
-http-response ^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/movie\/index_recommend script-path = https://github.com/ddgksf2013/Scripts/raw/master/555Ad.js, requires-body = true, tag = 555影视移除开屏广告
-
 # ======= A ======= #
 # amdc
 http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = hhttps://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body = true, tag = amdc去广告
