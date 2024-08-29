@@ -17,9 +17,9 @@ URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/
 
 # ======= Y ====== #
 # 云闪付 //account.95516.com, base.95516.com, content.95516.com
-#DOMAIN, ads.95516.com, REJECT
-#DOMAIN, switch.cup.com.cn, REJECT
-#DOMAIN, tysdk.95516.com, REJECT
+DOMAIN, ads.95516.com, REJECT
+DOMAIN, switch.cup.com.cn, REJECT
+DOMAIN, tysdk.95516.com, REJECT
 
 [Rewrite]
 # ======= C ======= #
