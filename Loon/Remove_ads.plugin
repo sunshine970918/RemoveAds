@@ -5,10 +5,10 @@
 #!tag = 去广告, sunshine970918
 #!system = 
 #!system_version = 
-#!loon_version = 3.2.1(738)
+#!loon_version = 3.2.1(745)
 #!homepage = https://github.com/sunshine970918/RemoveAds
 #!icon = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/erdongchanyo/AdBlock.png
-#!date = 2024-08-21 20:42:06
+#!date = 2024-08-29 15:15:06
 
 [Rule]
 # ======= H ====== #
@@ -163,6 +163,10 @@ https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages reject
 ^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/(snscosdownload|snssvpdownload)\/(SH|SZ)\/reserved\/\w+ reject-dict
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? reject-dict
 
+# 网易邮箱大师 //appconf.mail.163.com
+# 拦截HTTPDNS
+^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/http\/urlConfig\.do$ reject-dict
+
 
 # ======= X ====== #
 # 闲鱼 //gw.alicdn.com, acs.m.taobao.com
@@ -211,13 +215,6 @@ https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad reject
 
 
 [Script]
-# ======= 0 ======= #
-# 12306 //ad.12306.cn, mobile.12306.cn
-# 移除12306开屏广告
-http-response ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/12306/12306_remove_splashscreen_ads.js, requires-body = true, tag = 移除12306开屏广告
-# 移除12306应用内广告
-http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, tag = 移除12306应用内广告
-
 # ======= 5 ======= #
 # > 555影视 // run.api.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com
 http-response ^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/movie\/index_recommend script-path = https://github.com/ddgksf2013/Scripts/raw/master/555Ad.js, requires-body = true, tag = 555影视移除开屏广告
@@ -270,4 +267,4 @@ http-response ^https:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/ script-pa
 http-response ^https:\/\/jzts\.cmpassport\.com\/personalized\/getPushContent script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cloud139.js, requires-body = true, tag = 中国移动云盘去广告
 
 [Mitm]
-hostname = ad.12306.cn, mobile.12306.cn, run.api.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pan.baidu.com, 180.76.76.200, 180.76.76.112, api.chelaile.net.cn, web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.hechuangxinxi.xyz, jdforrepam.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, api.rr.tv, capi.lkcoffee.com, ccsp-egmas.sf-express.com, shopic.sf-express.com, sec.sginput.qq.com, mapi.sfbest.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, api.xiachufang.com, xxyx-client-api.xiaoxiaoyouxuan.com, gw.xiaocantech.com, web2.realtech-inc.com, sdk.1rtb.net, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, client.app.coc.10086.cn, ad.mcloud.139.com, jzts.cmpassport.com, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com
+hostname = run.api.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pan.baidu.com, 180.76.76.200, 180.76.76.112, api.chelaile.net.cn, web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.hechuangxinxi.xyz, jdforrepam.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, api.rr.tv, capi.lkcoffee.com, ccsp-egmas.sf-express.com, shopic.sf-express.com, sec.sginput.qq.com, mapi.sfbest.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, mp.weixin.qq.com, appconf.mail.163.com, weixin110.qq.com, security.wechat.com, api.xiachufang.com, xxyx-client-api.xiaoxiaoyouxuan.com, gw.xiaocantech.com, web2.realtech-inc.com, sdk.1rtb.net, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, client.app.coc.10086.cn, ad.mcloud.139.com, jzts.cmpassport.com, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com
