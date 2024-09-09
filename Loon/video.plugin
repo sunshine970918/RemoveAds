@@ -1,0 +1,34 @@
+#!name=瑟瑟视频--Eric
+#!desc=Safari浏览器播放，50度灰网页内可直接播放，汤头条和小蓝视频需进行跳转后播放；海角社区,91pron,91短视频,暗网禁区,黑料社,51动漫,妻友,每日大赛,tiktok成人版,AI色色,水果派,pronhub等APP内直接观看无需跳转
+#50度灰:https://p1.6p3ucmp.com
+#汤头条:https://p5.ymvfegagd.net
+#小蓝视频:https://p4.gv009.fun
+#GTV:https://d1f7d.etaxhjvt.com/af/abaZg
+#海角社区:https://d2673.aqicxtlf.net/?code=bFpJ2
+#91pron:https://10bbb3.dzhttuyq.com/af/gcEQ
+#91短视频:https://0bf9.woznungkb.me/aff-kRUpP
+#暗网禁区:https://37cd32.wgxzocuy.net/aff-cxCdA
+#黑料社:https://5987f.ecuzzdkq.com/aff-4br2
+#51动漫:https://51ct.net/?code=aZwgG
+#换妻俱乐部,妻友:https://dfbd.bwsdfow.net/?code=aMubZ
+#每日大赛:https://207b.ryslctkz.com/?code=zsMM
+#tiktok成人版:https://11k7.qrgnedmo.com/af/aRb6X
+#Ai色色:https://559b.vdhmzlew.com/?code=Ab9V
+#水果派:https://16935a0b.rgjughj.com/af/ftkG
+#Pornhub中文版:https://841a3.imwlgne.com/af/vkv7
+#!keyword=
+#!openUrl = 
+#!author = Alex0510[https://github.com/Alex0510/Eric]
+#!tag = 
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.2(735)
+#!homepage=https://t.me/+A1cOYwvOdeI4MWNl
+#!icon=
+#!date = 2024-09-9 20:15:49
+
+[Script]
+http-request ^https:\/\/[^\/]*\..*\.cn\/\w+\/[a-z0-9]{32}\/[a-z0-9]{32}\.m3u8(\?.*)? script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/tangtoutiao.js, requires-body=true, tag=瑟瑟视频
+
+[MITM]
+hostname = *play.*.cn,long.*.cn
