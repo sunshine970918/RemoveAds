@@ -311,7 +311,6 @@ DOMAIN,catalog.fjwhcbsh.com,REJECT
 DOMAIN,cctv.adsunion.com,REJECT
 DOMAIN,cdn-ads.oss-cn-shanghai.aliyuncs.com,REJECT
 DOMAIN,cdn.ad.xiaomi.com,REJECT
-DOMAIN,cdn.ynuf.aliapp.org,REJECT
 DOMAIN,chiq-cloud.com,REJECT
 DOMAIN,ck.ads.oppomobile.com,REJECT
 DOMAIN,clog.miguvideo.com,REJECT
@@ -612,7 +611,6 @@ DOMAIN-KEYWORD,..shouji.sogou.com,REJECT
 DOMAIN-KEYWORD,.[a-zA-Z0-9.-]skwai.com,REJECT
 DOMAIN-KEYWORD,.a.market.xiaomi.com,REJECT
 DOMAIN-KEYWORD,.data.hicloud.com,REJECT
-DOMAIN-KEYWORD,.log.aliyuncs.com,REJECT
 DOMAIN-KEYWORD,.shouji.sogou.com,REJECT
 DOMAIN-KEYWORD,[a-zA-Z0-9.-]-ad.sm.cn,REJECT
 DOMAIN-KEYWORD,[a-zA-Z0-9.-]-ad.video.yximgs.com,REJECT
