@@ -131,6 +131,12 @@ IP-CIDR, 103.224.222.208/32, REJECT, no-resolve
 DOMAIN,api.liquidlink.cn,REJECT
 
 
+# ======= K ======= #
+# 快递100
+URL-REGEX, ^http:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do, REJECT-DICT
+URL-REGEX, ^http:\/\/p\.kuaidi100\.com\/advertisement\/, REJECT-DICT
+
+
 # ======= L ======= #
 # 蓝奏云
 DOMAIN,statics.woozooo.com,REJECT
@@ -154,6 +160,8 @@ DOMAIN,statics.woozooo.com,REJECT
 # 美团
 DOMAIN, httpdns.meituan.com, REJECT
 URL-REGEX, ^http:\/\/103\.37\.155\.60\/fetch, REJECT
+# 米家
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 
 
 # ======= Q ======= #
@@ -205,7 +213,9 @@ DOMAIN,39d83s.com,REJECT
 # 晓晓优选去开屏
 DOMAIN,api-htp.beizi.biz,REJECT
 # 小米
-DOMAIN,sdkconfig.ad.xiaomi.com,REJECT
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT-DROP
+DOMAIN, data.mistat.xiaomi.com, REJECT
+DOMAIN, tracking.intl.miui.com, REJECT
 # 迅雷 解除版权限制
 ;DOMAIN,hub5btmain.v6.shub.sandai.net,REJECT
 ;DOMAIN,hub5emu.v6.shub.sandai.net,REJECT
@@ -230,3 +240,10 @@ DOMAIN-SUFFIX,zhengxiaoliu.top,REJECT
 IP-CIDR,120.240.95.37/32,REJECT
 # > 中国联通
 DOMAIN-SUFFIX,m1.ad.10010.com,REJECT
+# 中国电信
+DOMAIN, ad.21cn.com, REJECT
+DOMAIN, ad.k.21cn.com, REJECT
+DOMAIN, admarket.21cn.com, REJECT
+DOMAIN, adshows.21cn.com, REJECT
+IP-CIDR, 122.229.8.47/32, REJECT, no-resolve
+IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
