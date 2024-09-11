@@ -8,18 +8,87 @@
 #!loon_version = 3.2.3(752)
 #!homepage = https://github.com/sunshine970918/RemoveAds
 #!icon = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/erdongchanyo/AdBlock.png
-#!date = 2024-09-11 10:21:06
+#!date = 2024-09-11 16:03:06
 
 [Rule]
+# ======= A ======= #
+# 安全浏览限制解除
+DOMAIN,lookup.api.bsb.baidu.com,REJECT
+DOMAIN-SUFFIX,u3.ucweb.com,REJECT
+DOMAIN-KEYWORD,safebrowsing.,REJECT
+
+# ======= B ======= #
+# 百度地图
+DOMAIN,afd.baidu.com,REJECT
+DOMAIN,afdconf.baidu.com,REJECT
+DOMAIN,lc.map.baidu.com,REJECT
+
+# ======= D ======= #
+# DNS 无响应
+DOMAIN,adttrackingprd.hwwt8.com,REJECT
+
+# ======= G ======= #
+# 工商银行
+DOMAIN,pageviewp.icbc.com.cn,REJECT
+DOMAIN-SUFFIX,mall.icbc.com.cn,REJECT
+# > 广州地铁乘车码
+DOMAIN,apis.alenable.com,REJECT
+
 # ======= H ====== #
 # 航旅纵横 //114.115.217.129, home.umetrip.com
 URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
+# 海尔智家
+DOMAIN-SUFFIX,ehaier.com,REJECT
+
+# ======= J ======= #
+# 建设银行
+DOMAIN-KEYWORD,adv.ccb.com,REJECT
+# JavDB
+DOMAIN,api.liquidlink.cn,REJECT
+
+# ======= K ======= #
+# 快递100
+URL-REGEX, ^http:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do, REJECT-DICT
+URL-REGEX, ^http:\/\/p\.kuaidi100\.com\/advertisement\/, REJECT-DICT
+
+# ======= L ======= #
+# 蓝奏云
+DOMAIN,statics.woozooo.com,REJECT
+
+# ======= M ======= #
+# 米家
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
+
+# ======= X ======= #
+# > 小小影视
+DOMAIN,39d83s.com,REJECT
+# 晓晓优选去开屏
+DOMAIN,api-htp.beizi.biz,REJECT
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT-DROP
+DOMAIN, data.mistat.xiaomi.com, REJECT
+DOMAIN, tracking.intl.miui.com, REJECT
 
 # ======= Y ====== #
 # 云闪付 //account.95516.com, base.95516.com, content.95516.com
 DOMAIN, ads.95516.com, REJECT
 DOMAIN, switch.cup.com.cn, REJECT
 DOMAIN, tysdk.95516.com, REJECT
+
+# ======= Z ======= #
+# > 真不卡
+DOMAIN-SUFFIX,ttayy.cn,REJECT
+DOMAIN-SUFFIX,zhengxiaoliu.top,REJECT
+# > 中国移动
+IP-CIDR,120.240.95.37/32,REJECT
+# > 中国联通
+DOMAIN-SUFFIX,m1.ad.10010.com,REJECT
+# 中国电信
+DOMAIN, ad.21cn.com, REJECT
+DOMAIN, ad.k.21cn.com, REJECT
+DOMAIN, admarket.21cn.com, REJECT
+DOMAIN, adshows.21cn.com, REJECT
+IP-CIDR, 122.229.8.47/32, REJECT, no-resolve
+IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
 
 [Rewrite]
 # ======= C ======= #
