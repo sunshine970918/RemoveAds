@@ -183,12 +183,6 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 
 
 # ======= S ====== #
-# > 顺丰 // ccsp-egmas.sf-express.com, shopic.sf-express.com
-^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade reject
-https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages reject
-^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen reject
-# > 顺丰优选 // mapi.sfbest.com
-^https://mapi\.sfbest\.com\/brokerservice-server\/cms\/getPositionById.* reject
 # > 顺丰速运小程序 // ucmp.sf-express.com
 ^https?:\/\/ucmp\.sf-express\.com\/cx-wechat-query\/query\/info-flow\/reconsitution-list reject-200
 
@@ -283,8 +277,6 @@ http-response ^https:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init) sc
 http-response ^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\? script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/coolapk.js, requires-body = true, tag = 酷安去广告
 
 # ======= S ====== #
-# > 顺丰 // ccsp-egmas.sf-express.com, shopic.sf-express.com
-http-response https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryInfoFlow script-path = https://github.com/ddgksf2013/Scripts/raw/master/shunfeng_json.js, requires-body = true, tag = 顺丰去广告
 # 搜狗输入法 //sec.sginput.qq.com
 http-response ^https:\/\/sec\.sginput\.qq\.com\/qscript-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body = true, tag = 移除 搜狗输入法候选词推广
 
@@ -304,4 +296,4 @@ http-response ^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$ script-path
 
 
 [Mitm]
-hostname = cdn.web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.hechuangxinxi.xyz, jdforrepam.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ccsp-egmas.sf-express.com, shopic.sf-express.com, mapi.sfbest.com, ucmp.sf-express.com, sec.sginput.qq.com, osg-service.sgcc.com.cn, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, gw.xiaocantech.com, web2.realtech-inc.com, sdk.1rtb.net, client.app.coc.10086.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com, mobilepaas.abchina.com.cn
+hostname = cdn.web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.hechuangxinxi.xyz, jdforrepam.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ucmp.sf-express.com, sec.sginput.qq.com, osg-service.sgcc.com.cn, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, gw.xiaocantech.com, web2.realtech-inc.com, sdk.1rtb.net, client.app.coc.10086.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com, mobilepaas.abchina.com.cn
