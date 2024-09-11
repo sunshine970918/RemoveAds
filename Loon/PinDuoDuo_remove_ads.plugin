@@ -24,7 +24,7 @@ DOMAIN, ta-a.pinduoduo.com, REJECT
 #DOMAIN, ta.pinduoduo.com, REJECT
 #DOMAIN, th-a.pinduoduo.com, REJECT
 DOMAIN, th-b.pinduoduo.com, REJECT
-DOMAIN, th.pinduoduo.com, REJECT
+#DOMAIN, th.pinduoduo.com, REJECT
 
 [Rewrite]
 # 开屏广告
