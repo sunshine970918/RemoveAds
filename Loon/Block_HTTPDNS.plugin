@@ -5,10 +5,10 @@
 #!tag = DNS
 #!system = 
 #!system_version = 
-#!loon_version = 3.2.1(745)
+#!loon_version = 3.2.3(752)
 #!homepage = https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md
 #!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/Other_icon/120px/HTTPDNS.png
-#!date = 2024-09-09 13:06:25
+#!date = 2024-09-11 15:53:25
 
 [Rule]
 # YY语音
