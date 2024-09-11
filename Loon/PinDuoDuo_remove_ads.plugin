@@ -21,7 +21,7 @@ DOMAIN, titan.pinduoduo.com, REJECT
 DOMAIN, apm.pinduoduo.com, REJECT
 DOMAIN, m.pinduoduo.net, REJECT
 DOMAIN, ta-a.pinduoduo.com, REJECT
-DOMAIN, ta.pinduoduo.com, REJECT
+#DOMAIN, ta.pinduoduo.com, REJECT
 DOMAIN, th-a.pinduoduo.com, REJECT
 DOMAIN, th-b.pinduoduo.com, REJECT
 DOMAIN, th.pinduoduo.com, REJECT
