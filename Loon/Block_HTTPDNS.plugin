@@ -41,8 +41,8 @@ AND, ((IP-CIDR, 220.243.141.0/32, no-resolve), (DEST-PORT, 6443)), REJECT
 
 
 # QQ音乐
-DOMAIN, httpdns.kg.qq.com, REJECT
-URL-REGEX, ^http:\/\/182\.256\.116\.116\/d, REJECT
+#DOMAIN, httpdns.kg.qq.com, REJECT
+#URL-REGEX, ^http:\/\/182\.256\.116\.116\/d, REJECT
 
 # 哔哩哔哩
 DOMAIN, httpdns.bilivideo.com, REJECT
@@ -133,16 +133,16 @@ DOMAIN, dig.bdurl.net, REJECT
 DOMAIN, dig.zjurl.cn, REJECT
 
 # 斗鱼
-DOMAIN, dotserver.douyucdn.cn, REJECT
-^http:\/\/203\.107\.1\.33\/\d+\/ss
-^http:\/\/203\.107\.1\.34\/\d+\/ss
+#DOMAIN, dotserver.douyucdn.cn, REJECT
+#^http:\/\/203\.107\.1\.33\/\d+\/ss
+#^http:\/\/203\.107\.1\.34\/\d+\/ss
 
 # 金山云
-DOMAIN, hdns.ksyun.com, REJECT
+#DOMAIN, hdns.ksyun.com, REJECT
 
 # OPPO
-DOMAIN, httpdns.push.oppomobile.com, REJECT
-DOMAIN, httpdns.ocloud.oppomobile.com, REJECT
+#DOMAIN, httpdns.push.oppomobile.com, REJECT
+#DOMAIN, httpdns.ocloud.oppomobile.com, REJECT
 
 # 快手
 DOMAIN, kuaishou.httpdns.pro, REJECT
@@ -154,15 +154,15 @@ DOMAIN, httpdns.meituan.com, REJECT
 URL-REGEX, ^http:\/\/103\.37\.155\.60\/fetch, REJECT
 
 # 拼多多
-URL-REGEX, ^http:\/\/81\.69\.130\.131\/d, REJECT
-URL-REGEX, ^http:\/\/101\.35\.204\.35\/d, REJECT
-#URL-REGEX, ^http:\/\/101\.35\.212\.35\/d, REJECT
-URL-REGEX, ^http:\/\/114\.110\.96\.6\/d, REJECT
-URL-REGEX, ^http:\/\/114\.110\.96\.26\/d, REJECT
-URL-REGEX, ^http:\/\/114\.110\.97\.30\/d, REJECT
-URL-REGEX, ^http:\/\/114\.110\.97\.97\/d, REJECT
-URL-REGEX, ^http:\/\/121\.5\.84\.85\/d, REJECT
-URL-REGEX, ^http:\/\/\[2402:4e00:1411:201:0:9964:ba21:5a41\]\/d, REJECT
+#URL-REGEX, ^http:\/\/81\.69\.130\.131\/d, REJECT
+#URL-REGEX, ^http:\/\/101\.35\.204\.35\/d, REJECT
+##URL-REGEX, ^http:\/\/101\.35\.212\.35\/d, REJECT
+#URL-REGEX, ^http:\/\/114\.110\.96\.6\/d, REJECT
+#URL-REGEX, ^http:\/\/114\.110\.96\.26\/d, REJECT
+#URL-REGEX, ^http:\/\/114\.110\.97\.30\/d, REJECT
+#URL-REGEX, ^http:\/\/114\.110\.97\.97\/d, REJECT
+#URL-REGEX, ^http:\/\/121\.5\.84\.85\/d, REJECT
+#URL-REGEX, ^http:\/\/\[2402:4e00:1411:201:0:9964:ba21:5a41\]\/d, REJECT
 
 # 网易
 DOMAIN, httpdns.music.163.com, REJECT
