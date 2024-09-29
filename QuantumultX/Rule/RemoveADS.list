@@ -18,7 +18,7 @@
 #HOST-SUFFIX,iad-apple.com
 #HOST-SUFFIX,iadsdk.apple.com
 # 安全浏览限制解除
-,HOST,lookup.api.bsb.baidu.com
+#HOST,lookup.api.bsb.baidu.com
 HOST-SUFFIX,u3.ucweb.com
 HOST-KEYWORD,safebrowsing.
 
