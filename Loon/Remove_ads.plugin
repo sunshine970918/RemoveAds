@@ -256,7 +256,7 @@ https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad reject
 [Script]
 # ======= A ======= #
 # amdc
-http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = hhttps://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body = true, tag = amdc去广告
+#http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = hhttps://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body = true, tag = amdc去广告
 
 # ======= H ====== #
 # 航旅纵横 //114.115.217.129, home.umetrip.com
