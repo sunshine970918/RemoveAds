@@ -126,8 +126,8 @@ URL-REGEX, ^http:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do-DICT
 URL-REGEX, ^http:\/\/p\.kuaidi100\.com\/advertisement\/-DICT
 # 酷狗vip
 URL-REGEX,https://gateway.kugou.com/ads.gateway/.*,REJECT
-DOMAIN-SUFFIX,adservice.kugou.com,REJECT
-DOMAIN-SUFFIX,install2.kugou.com,REJECT
+HOST-SUFFIX,adservice.kugou.com,REJECT
+HOST-SUFFIX,install2.kugou.com,REJECT
 
 
 # ======= L ======= #
@@ -178,16 +178,16 @@ HOST,id.hadron.ad.gt
 HOST-KEYWORD,-adsystem.com
 
 # 什么值得买
-DOMAIN, aaid.uyunad.com, REJECT
-DOMAIN, acs4baichuan.m.taobao.com, REJECT
-DOMAIN, adashxgc.ut.taobao.com, REJECT
-DOMAIN, analytics-api.smzdm.com, REJECT
-DOMAIN, baichuan-sdk.alicdn.com, REJECT
-DOMAIN, dgstatic.jd.com, REJECT
-DOMAIN, msg.umengcloud.com, REJECT
-DOMAIN, sec.umeng.com, REJECT
-DOMAIN, ulogs.umeng.com, REJECT
-DOMAIN, ynuf.aliapp.org, REJECT
+HOST, aaid.uyunad.com, REJECT
+HOST, acs4baichuan.m.taobao.com, REJECT
+HOST, adashxgc.ut.taobao.com, REJECT
+HOST, analytics-api.smzdm.com, REJECT
+HOST, baichuan-sdk.alicdn.com, REJECT
+HOST, dgstatic.jd.com, REJECT
+HOST, msg.umengcloud.com, REJECT
+HOST, sec.umeng.com, REJECT
+HOST, ulogs.umeng.com, REJECT
+HOST, ynuf.aliapp.org, REJECT
 
 
 # ======= W ======= #
