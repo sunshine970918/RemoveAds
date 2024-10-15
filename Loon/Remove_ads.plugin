@@ -130,7 +130,7 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png reject
 
 # 京东 //api.m.jd.com
-^http:\/\/\w{32}\.jddebug\.com\/diagnose\? reject
+#^http:\/\/\w{32}\.jddebug\.com\/diagnose\? reject
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) reject-dict
 
 # 交管12123 //gab.122.gov.cn
