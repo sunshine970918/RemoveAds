@@ -6,9 +6,9 @@
 #!system = 
 #!system_version = 
 #!loon_version = 3.2.1(745)
-#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/PinDuoDuo.png
-#!date = 2024-09-11 10:07:32
+#!homepage = https://gitlab.com/lodepuly/ProxyResource-/blob/main/README.md
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PinDuoDuo.png
+#!date = 2024-10-22 17:07:32
 
 [Rule]
 # 拦截HTTPDNS
@@ -18,7 +18,7 @@
 
 DOMAIN, titan.pinduoduo.com, REJECT
 # DOMAIN, apm-a.pinduoduo.com, REJECT
-DOMAIN, apm.pinduoduo.com, REJECT
+#DOMAIN, apm.pinduoduo.com, REJECT
 #DOMAIN, m.pinduoduo.net, REJECT
 DOMAIN, ta-a.pinduoduo.com, REJECT
 #DOMAIN, ta.pinduoduo.com, REJECT
@@ -28,23 +28,20 @@ DOMAIN, th-b.pinduoduo.com, REJECT
 
 [Rewrite]
 # 开屏广告
-^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash reject
-^https:\/\/api\.pinduoduo\.com\/search_hotquery reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/new_chat_group reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/personal reject-dict
+^https:\/\/api\.(?:pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash\? reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up\? reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\? reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/brand-olay\/goods_detail\/bybt_guide reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/(?:likes|my_order_group|new_chat_group|order_express_group|personal) reject-dict
 ^https:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/my_order_group reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/likes reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/order_express_group reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/flow\/hungary\/window\/global\/v2\? reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render response-body-json-del bottom_section_list ui.bottom_section ui.live_section.float_info
+^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub\? response-body-json-del monthly_card_entrance personal_center_style_v2_vo icon_set.icons icon_set.top_personal_icons title_bar_items
+^https:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data reject-dict
+^https:\/\/api\.pinduoduo\.com\/search response-body-json-del expansion
+^https:\/\/api\.pinduoduo\.com\/search_hotquery\? reject-dict
 
 [Script]
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/PinDuoDuo/PinDuoDuo_remove_ads.js, requires-body = true, tag = 拼多多去广告
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/PinDuoDuo/PinDuoDuo_remove_ads.js, requires-body = true, tag = 精简首页
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/PinDuoDuo/PinDuoDuo_remove_ads.js, requires-body = true, tag = 拼多多去广告
-http-response ^https:\/\/api\.pinduoduo\.com\/search script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/PinDuoDuo/PinDuoDuo_remove_ads.js, requires-body = true, tag = 移除搜索结果推广
-
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? script-path = https://kelee.one/Resource/Script/PinDuoDuo/PinDuoDuo_remove_ads.js, requires-body = true, tag = 精简首页
 [MitM]
 hostname = api.pinduoduo.com, api.yangkeduo.com
