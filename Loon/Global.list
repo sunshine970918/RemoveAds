@@ -403,8 +403,7 @@ IP-CIDR6, 2620:120:e000::/40, no-resolve
 DOMAIN, www.googleapis.com
 DOMAIN-SUFFIX, docs.google.com
 DOMAIN-SUFFIX, drive.google.com
-# NAME: GoogleSearch
-, www.google.
+
 # NAME: GoogleVoice
 DOMAIN, lens.l.google.com
 # NAME: Gemini
