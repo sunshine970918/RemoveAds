@@ -41,6 +41,11 @@ URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/
 DOMAIN-SUFFIX,ehaier.com,REJECT
 
 # ======= J ======= #
+# 京东 //api.m.jd.com
+DOMAIN, dns.jd.com, REJECT
+URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
+IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
+IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
 # 建设银行
 DOMAIN-KEYWORD,adv.ccb.com,REJECT
 # JavDB
@@ -256,33 +261,30 @@ https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad reject
 [Script]
 # ======= A ======= #
 # amdc
-#http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = hhttps://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body = true, tag = amdc去广告
+#http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = https://kelee.one/Resource/Script/header.js, requires-body = true, tag = amdc去广告
 
 # ======= H ====== #
 # 航旅纵横 //114.115.217.129, home.umetrip.com
-http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Umetrip/Umetrip_remove_ads.js, tag = 移除首页广告
+http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path = https://kelee.one/Resource/Script/Umetrip/Umetrip_remove_ads.js, tag = 移除首页广告
 
 # ======= J ====== #
 # JavDB影视 //api.hechuangxinxi.xyz, jdforrepam.com
-http-response ^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/(v1\/(ads|startup|users)|v4\/movies\/\w+) script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, requires-body = true, tag = JavDB影视去广告
+http-response ^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/(v1\/(ads|startup|users)|v4\/movies\/\w+) script-path = https://kelee.one/Resource/Script/myBlockAds.js, requires-body = true, tag = JavDB影视去广告
 # 京东 //api.m.jd.com
-http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/jingdong.js, requires-body = true, tag = 京东去广告
+http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://kelee.one/Resource/Script/JD/JD_remove_ads.js, requires-body = true, tag = 京东去广告
 # 京东极速版 //api.m.jd.com
-http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/jingdong.js, requires-body = true, tag = 京东极速版去广告
+http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising script-path = https://kelee.one/Resource/Script/JD/JD_remove_ads.js, requires-body = true, tag = 京东极速版去广告
 
 # ======= K ====== #
 # 酷安 //api.coolapk.com
-http-response ^https:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\? script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/coolapk.js, requires-body = true, tag = 酷安去广告
-http-response ^https:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init) script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/coolapk.js, requires-body = true, tag = 酷安去广告
-http-response ^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\? script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/coolapk.js, requires-body = true, tag = 酷安去广告
+http-response ^https:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\? script-path = https://kelee.one/Resource/Script/CoolApk/CoolApk_remove_ads.js, requires-body = true, tag = 酷安去广告
+http-response ^https:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init) script-path = https://kelee.one/Resource/Script/CoolApk/CoolApk_remove_ads.js, requires-body = true, tag = 酷安去广告
+http-response ^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\? script-path = https://kelee.one/Resource/Script/CoolApk/CoolApk_remove_ads.js, requires-body = true, tag = 酷安去广告
 
-# ======= S ====== #
-# 搜狗输入法 //sec.sginput.qq.com
-http-response ^https:\/\/sec\.sginput\.qq\.com\/qscript-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body = true, tag = 移除 搜狗输入法候选词推广
 
 # ======= W ====== #
 # 微信封禁页面 //weixin110.qq.com, security.wechat.com
-http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/wechat/wechat110.js, requires-body = true, tag = 微信封禁页面
+http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path = https://kelee.one/Resource/Script/Weixin/Weixin_external_links_unlock.js, requires-body = true, tag = 微信封禁页面
 
 # ======= Y ====== #
 # 云闪付 //account.95516.com, base.95516.com, content.95516.com
@@ -292,8 +294,8 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 
 # ======= Z ====== #
 # 中国农业银行 //mobilepaas.abchina.com.cn
-http-response ^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body = true, tag = 中国农业银行去开屏
+http-response ^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$ script-path = https://kelee.one/Resource/Script/header.js, requires-body = true, tag = 中国农业银行去开屏
 
 
 [Mitm]
-hostname = cdn.web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.hechuangxinxi.xyz, jdforrepam.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ucmp.sf-express.com, sec.sginput.qq.com, osg-service.sgcc.com.cn, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, gw.xiaocantech.com, web2.realtech-inc.com, sdk.1rtb.net, client.app.coc.10086.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com, mobilepaas.abchina.com.cn
+hostname = cdn.web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.hechuangxinxi.xyz, jdforrepam.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, gw.xiaocantech.com, web2.realtech-inc.com, sdk.1rtb.net, client.app.coc.10086.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com, mobilepaas.abchina.com.cn
