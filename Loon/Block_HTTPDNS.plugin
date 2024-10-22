@@ -6,9 +6,9 @@
 #!system = 
 #!system_version = 
 #!loon_version = 3.2.3(752)
-#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/Other_icon/120px/HTTPDNS.png
-#!date = 2024-09-11 15:53:25
+#!homepage = https://gitlab.com/lodepuly/ProxyResource-/blob/main/README.md
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
+#!date = 2024-09-25 15:45:58
 
 [Rule]
 # YY语音
@@ -108,6 +108,7 @@ URL-REGEX, ^http:\/\/180\.76\.76\.112\/v\d\/, REJECT
 URL-REGEX, ^http:\/\/180\.76\.76\.112\/v\d\/resolve, REJECT
 URL-REGEX, ^http:\/\/180\.76\.76\.220\/v\d\/resolve, REJECT
 IP-CIDR, 186.76.76.200/32, REJECT, no-resolve
+
 
 # 华为
 DOMAIN, httpdns.c.cdnhwc2.com, REJECT
