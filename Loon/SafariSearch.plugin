@@ -7,8 +7,8 @@
 #!system_version = 
 #!loon_version = 3.2.1(732)
 #!homepage = https://github.com/sunshine970918/RemoveAds
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Safari.png
-#!date = 2024-08-22 22:48:55
+#!icon = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Safari.png
+#!date = 2024-10-22 16:48:55
 
 [Rewrite]
 # Safari内输入快捷键+空格+搜索关键词快速指定搜索引擎搜索
