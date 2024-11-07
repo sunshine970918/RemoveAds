@@ -1,0 +1,9 @@
+#!name=下厨房app净化
+#!desc=下厨房app净化
+
+[Rule]
+URL-REGEX,^https:\/\/api\.xiachufang\.com\/v2\/homepage1810\/init_page\.json,REJECT
+URL-REGEX,^https:\/\/m\.xiachufang\.com\/post,REJECT
+
+[Rewrite]
+https://api.xiachufang.com/v2/config/get.json response-body-json-jq '.content.tab_name = ["关注", "推荐"]'
