@@ -21,7 +21,7 @@
 ^https:\/\/duckduckgo\.com\/\?q=wk\+([^&]+).+ 302 https://zh.wikipedia.org/wiki/$1
 ^https:\/\/duckduckgo\.com\/\?q=qm\+([^&]+).+ 302 https://www.qimai.cn/search/index/country/cn/search/$1
 ^https:\/\/duckduckgo\.com\/\?q=gh\+([^&]+).+ 302 https://github.com/search?q=$1
-^https:\/\/duckduckgo\.com\/\?q=([^&]+).+ 302 https://m.baidu.com/s?wd=$1
+^https:\/\/duckduckgo\.com\/\?q=([^&]+).+ 302 https://www.baidu.com/s?wd=$1
 
 [MitM]
 hostname = duckduckgo.com
