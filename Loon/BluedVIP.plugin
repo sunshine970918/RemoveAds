@@ -4,11 +4,11 @@
 #!keyword=Blued_Chat
 #!homepage=https://t.me/+A1cOYwvOdeI4MWNl
 [Argument]
-arg1 = switch,true,tag=bld_pic
-arg2 = switch,true,tag=bld_vip
-arg3 = switch,true,tag=bld_location
-arg4 = switch,true,tag=fanka_pic
-arg5 = switch,true,tag=fanka_location
+arg1 = switch,true,tag=Blued闪照
+arg2 = switch,true,tag=Blued_VIP
+arg3 = switch,true,tag=Blued位置
+arg4 = switch,true,tag=翻咔查看图片
+arg5 = switch,true,tag=翻咔位置
 
 [Rule]
 URL-REGEX,https://argo.blued.cn/blued/promote.*,REJECT
@@ -30,4 +30,4 @@ http-response https://api.finka.cn/vas/nearby/v2 script-path=https://gist.github
 http-request https://(gethornet.com|api.finka.cn|api.sqaces.com|api.theorangemeetingplace.com).* script-path=https://gist.githubusercontent.com/Alex0510/85c95aeaf2283ab825702d27ed229a54/raw/Finka.js, requires-body=true, enable = {arg5}, tag=Finka_location
 
 [MITM]
-hostname = api.finka.cn, gethornet.com, api.theorangemeetingplace.com, api.sqaces.com, social.blued.cn, argo.blued.cn, *.bldimg.com, ulogs.umengcloud.com, 157.255.34.9, 157.255.34.28, 157.255.34.3, 157.255.34.2, 220.249.135.81, 182.91.254.69
+hostname = api.finka.cn, gethornet.com, api.theorangemeetingplace.com, api.sqaces.com, social.blued.cn, argo.blued.cn, *.bldimg.com, ulogs.umengcloud.com, 220.249.135.81, 182.91.254.69
