@@ -3,6 +3,7 @@
 #!icon=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/icons/change_iconB%403x.png
 #!keyword=Blued_Chat
 #!homepage=https://t.me/+A1cOYwvOdeI4MWNl
+#!openUrl = https://github.com/sunshine970918/RemoveAds
 [Argument]
 arg1 = switch,true,tag=Blued闪照
 arg2 = switch,true,tag=Blued_VIP
