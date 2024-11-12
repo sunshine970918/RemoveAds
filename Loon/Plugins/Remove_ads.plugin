@@ -96,6 +96,7 @@ DOMAIN-SUFFIX, jpush.cn, REJECT
 DOMAIN-SUFFIX, jpush.io, REJECT
 DOMAIN, qzs.gdtimg.com, REJECT
 DOMAIN-KEYWORD, api-access.pangolin-sdk-toutiao, REJECT
+DOMAIN, mssdk.volces.com, REJECT
 
 
 # ======= Y ====== #
