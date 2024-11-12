@@ -244,8 +244,6 @@ https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad reject
 ^https?:Wxxyx-client-api\.xiaoxiaoyouxuan\.com\/activity\/show reject
 
 
-
-
 # ======= Y ====== #
 # 云闪付 //wallet.95516.com
 ^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 reject
