@@ -89,6 +89,14 @@ DOMAIN, api-htp.beizi.biz, REJECT
 DOMAIN, sdkconfig.ad.xiaomi.com, REJECT-DROP
 DOMAIN, data.mistat.xiaomi.com, REJECT
 DOMAIN, tracking.intl.miui.com, REJECT
+DOMAIN, sdktmp.hubcloud.con.cn, REJECT
+DOMAIN, sdk.beizi.biz, REJECT
+DOMAIN-SUFFIX, jiguang.cn, REJECT
+DOMAIN-SUFFIX, jpush.cn, REJECT
+DOMAIN-SUFFIX, jpush.io, REJECT
+DOMAIN, qzs.gdtimg.com, REJECT
+DOMAIN-KEYWORD, api-access.pangolin-sdk-toutiao, REJECT
+
 
 # ======= Y ====== #
 # 云闪付 //account.95516.com, base.95516.com, content.95516.com
