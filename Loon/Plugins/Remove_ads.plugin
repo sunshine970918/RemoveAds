@@ -16,6 +16,9 @@
 DOMAIN, ad.12306.cn, DIRECT
 
 # ======= A ======= #
+# 阿里云盘
+IP-CIDR, 203.107.1.1/24, REJECT, no-resolve
+
 # 安全浏览限制解除
 DOMAIN,lookup.api.bsb.baidu.com,REJECT
 DOMAIN-SUFFIX,u3.ucweb.com,REJECT
@@ -110,6 +113,13 @@ IP-CIDR, 122.229.8.47/32, REJECT, no-resolve
 IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
 
 [Rewrite]
+# ======= A ======= #
+# 阿里云盘 //api.alipan.com, member.alipan.com, bizapi.alipan.com
+# 首页活动日历
+^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle reject-dict
+# 首页板块入口
+^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders reject-dict
+
 # ======= C ======= #
 # 彩云天气 //biz.cyapi.cn, starplucker.cyapi.cn, api.caiyunapp.com, cdn-w.caiyunapp.com
 ^https:\/\/biz\.cyapi\.cn\/(p\/v1\/entries|p\/v1\/trial_card\/info|v2\/product) reject-dict
@@ -269,7 +279,11 @@ https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad reject
 # 移除12306开屏广告
 http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path = https://kelee.one/Resource/Script/12306/12306_remove_splashscreen_ads.js, requires-body = true, tag = 移除12306开屏广告
 
+
 # ======= A ======= #
+# 阿里云盘 //api.alipan.com, member.alipan.com, bizapi.alipan.com
+http-response ^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(news|widgets) script-path = https://kelee.one/Resource/Script/AliYunDrive/AliYunDrive_remove_ads.js, requires-body = true, tag = 移除阿里云盘广告
+http-response ^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list script-path = https://kelee.one/Resource/Script/AliYunDrive/AliYunDrive_remove_ads.js, requires-body = true, tag = 移除阿里云盘广告
 # amdc
 #http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = https://kelee.one/Resource/Script/header.js, requires-body = true, tag = amdc去广告
 
@@ -305,4 +319,4 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 
 
 [Mitm]
-hostname = ad.12306.cn, mobile.12306.cn, m.baidu.com, www.baidu.com, biz.cyapi.cn, starplucker.cyapi.cn, api.caiyunapp.com, cdn-w.caiyunapp.com, cdn.web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, api.wfdata.club, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, client.app.coc.10086.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com
+hostname = ad.12306.cn, mobile.12306.cn, api.alipan.com, member.alipan.com, bizapi.alipan.com, m.baidu.com, www.baidu.com, biz.cyapi.cn, starplucker.cyapi.cn, api.caiyunapp.com, cdn-w.caiyunapp.com, cdn.web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, api.wfdata.club, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, client.app.coc.10086.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com
