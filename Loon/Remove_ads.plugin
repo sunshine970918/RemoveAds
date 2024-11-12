@@ -6,11 +6,15 @@
 #!system = 
 #!system_version = 
 #!loon_version = 3.2.3(752)
-#!homepage = https://github.com/sunshine970918/RemoveAds
+#!homepage = https://github.com/sunshine970918/RemoveAds/Loon
 #!icon = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/erdongchanyo/AdBlock.png
-#!date = 2024-10-22 16:45:06
+#!date = 2024-11-12 21:45:06
 
 [Rule]
+# ======= 12306 ======= #
+# 放行规则
+DOMAIN, ad.12306.cn, DIRECT
+
 # ======= A ======= #
 # 安全浏览限制解除
 DOMAIN,lookup.api.bsb.baidu.com,REJECT
@@ -64,7 +68,17 @@ DOMAIN,statics.woozooo.com,REJECT
 # 米家
 DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 
+# ======= O ======= #
+# Outlook
+DOMAIN, acdn.adnxs.com, REJECT
+DOMAIN, mediation.adnxs.com, REJECT
+DOMAIN, sin3-ib.adnxs.com, REJECT
+
 # ======= X ======= #
+# 小米
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
+DOMAIN, data.mistat.xiaomi.com, REJECT
+DOMAIN, tracking.intl.miui.com, REJECT
 # > 小小影视
 DOMAIN,39d83s.com,REJECT
 # 晓晓优选去开屏
@@ -97,6 +111,10 @@ IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
 
 [Rewrite]
 # ======= C ======= #
+# 彩云天气 //biz.cyapi.cn, starplucker.cyapi.cn, api.caiyunapp.com, cdn-w.caiyunapp.com
+^https:\/\/biz\.cyapi\.cn\/(p\/v1\/entries|p\/v1\/trial_card\/info|v2\/product) reject-dict
+^https:\/\/starplucker\.cyapi\.cn\/v3\/(config\/cypage\/\w+\/conditions|notification\/message_center|operation\/homefeatures) reject-dict
+
 # 车来了 - 为您推荐 // cdn.web.chelaile.net.cn
 ^https:\/\/cdn\.web\.chelaile\.net\.cn\/info-flow\/index\.html reject
 
@@ -201,6 +219,9 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 # 网上国网 //osg-service.sgcc.com.cn
 ^https:\/\/osg-service\.sgcc\.com\.cn:18600\/emss-pfa-appset-front\/bootpageoutter\/ reject-dict
 
+# 威锋 - 开屏广告 //api.wfdata.club
+^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/yesList reject
+
 # 微信 //mp.weixin.qq.com
 ^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/(snscosdownload|snssvpdownload)\/(SH|SZ)\/reserved\/\w+ reject-dict
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? reject-dict
@@ -211,10 +232,6 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 
 
 # ======= X ====== #
-# > 下厨房 // api.xiachufang.com
-^https:\/\/api\.xiachufang\.com\/v2\/ad\/ reject-dict
-^https?:\/\/api\.xiachufang\.com\/v\d\/ad/ reject
-
 #向日葵 #开屏广告 #主机名client-api-v2.oray.com
 ^https:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_STARTUP reject-dict
 #向日葵 #首页文字广告
@@ -226,15 +243,6 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad reject
 ^https?:Wxxyx-client-api\.xiaoxiaoyouxuan\.com\/activity\/show reject
 
-# > 小蚕霸王餐去广告 //gw.xiaocantech.com, web2.realtech-inc.com, sdk.1rtb.net
-# 红包推广
-#^https:\/\/gw\.xiaocantech\.com\/rpc header-replace-regex methodname .*(GetBannerList|IsShowOrderAwardPopup|UserLifeShopList|BrandBannerList|GetPromotionGlobalCfg) null
-# 首页横幅推广
-^https:\/\/web2\.realtech-inc\.com\/oss\/xc-app-assets\/configs\/common\/theme\.json reject-dict
-# 开屏广告
-^https:\/\/sdk\.1rtb\.net\/sdk\/req_ad\? reject
-# 更新弹窗
-#^https:\/\/gw\.xiaocantech\.com\/g\/pa reject-dict
 
 
 
@@ -259,9 +267,21 @@ https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad reject
 
 
 [Script]
+# ======= 12306 ======= #
+# 移除12306开屏广告
+http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path = https://kelee.one/Resource/Script/12306/12306_remove_splashscreen_ads.js, requires-body = true, tag = 移除12306开屏广告
+
 # ======= A ======= #
 # amdc
 #http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = https://kelee.one/Resource/Script/header.js, requires-body = true, tag = amdc去广告
+
+# ======= B ======= #
+# 百度网页去广告 //m.baidu.com, www.baidu.com
+http-response ^https?:\/\/(www|m)\.baidu\.com\/?($|\?from=\w{8,9}) script-path = https://kelee.one/Resource/Script/BaiduSearch/BaiduSearchHomePage_remove_ads.js, requires-body = true, tag = 移除百度搜索首页信息流广告
+
+# ======= C ======= #
+# 彩云天气 //biz.cyapi.cn, starplucker.cyapi.cn, api.caiyunapp.com, cdn-w.caiyunapp.com
+http-response ^https:\/\/(wrapper\.cyapi\.cn|api\.caiyunapp\.com|cdn-w\.caiyunapp\.com)\/v1\/activity\? script-path = https://kelee.one/Resource/Script/ColorfulClouds/ColorfulClouds_remove_ads.js, requires-body = true, tag = 彩云天气去广告
 
 # ======= H ====== #
 # 航旅纵横 //114.115.217.129, home.umetrip.com
@@ -284,13 +304,7 @@ http-response ^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\? script-path = h
 # 微信封禁页面 //weixin110.qq.com, security.wechat.com
 http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path = https://kelee.one/Resource/Script/Weixin/Weixin_external_links_unlock.js, requires-body = true, tag = 微信封禁页面
 
-# ======= Y ====== #
-# 云闪付 //account.95516.com, base.95516.com, content.95516.com
-#http-response ^https:\/\/base\.95516\.com\/app\/inApp\/sys\/appShowGroup\/ script-path = https://gitlab.com/lodepuly/vpn_tool/raw/master/Resource/Script/UnionPay/UnionPay_remove_ads_with_ssl_unpinning.js, requires-body = true, tag = 移除云闪付推广
-#http-response ^https:\/\/account\.95516\.com\/fortune\/inApp\/common\/ script-path = https://gitlab.com/lodepuly/vpn_tool/raw/master/Resource/Script/UnionPay/UnionPay_remove_ads_with_ssl_unpinning.js, requires-body = true, tag = 移除云闪付推广
-#http-response ^https:\/\/content\.95516\.com\/koala-pre\/koala\/(recommend\/hotList|right\/queryAllRights) script-path = https://gitlab.com/lodepuly/vpn_tool/raw/master/Resource/Script/UnionPay/UnionPay_remove_ads_with_ssl_unpinning.js, requires-body = true, tag = 移除云闪付推广
-
 
 
 [Mitm]
-hostname = cdn.web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, gw.xiaocantech.com, web2.realtech-inc.com, sdk.1rtb.net, client.app.coc.10086.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com
+hostname = ad.12306.cn, mobile.12306.cn, m.baidu.com, www.baidu.com, biz.cyapi.cn, starplucker.cyapi.cn, api.caiyunapp.com, cdn-w.caiyunapp.com, cdn.web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, api.wfdata.club, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, client.app.coc.10086.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com
