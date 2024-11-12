@@ -1,12 +1,12 @@
 #!name = 自用去广告合集
 #!desc = sunshine970918自用的去广告合集
-#!openUrl = 
 #!author = sunshine970918
 #!tag = 去广告, sunshine970918
 #!system = 
 #!system_version = 
 #!loon_version = 3.2.3(752)
 #!homepage = https://github.com/sunshine970918/RemoveAds/Loon
+#!openUrl = https://github.com/sunshine970918/RemoveAds
 #!icon = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/erdongchanyo/AdBlock.png
 #!date = 2024-11-12 21:45:06
 
