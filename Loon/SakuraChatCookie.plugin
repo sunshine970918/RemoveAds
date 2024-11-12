@@ -1,0 +1,32 @@
+#!name = SakuraChatCookie
+#!desc = 🌸Sakura Scripts 获取cookie/token
+#!author = Sliverkiss [https://github.com/Sliverkiss]
+#!homePage = https://t.me/sliverkiss_blog
+#!data = 2024-09-21
+#!icon = https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/gril.png
+#!system = iOS,iPadOS
+#!loon_version = 3.2.3(753)
+
+[Argument]
+arg1 = switch,true,tag=奶茶多合一获取
+arg7 = switch,true,tag=阿里云盘获取cookie
+arg24 = switch,true,tag=达美乐披萨获取token
+arg11 = switch,true,tag=比格披萨自助获取token
+arg12 = switch,true,tag=蜜雪冰城获取token
+arg16 = switch,true,tag=胖乖生活获取
+arg18 = switch,true,tag=奈雪点单获取token
+arg23 = switch,true,tag=小蚕霸王餐获取
+
+[Script]
+http-response ^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-sale-login|account\/login-minp) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, enable = {arg1}, tag=奶茶获取token
+http-request ^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/integral|cmk-center)\/sign\/(signIn|takePartInSign) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, enable = {arg1}, tag=奶茶获取token
+http-request ^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, requires-body=true, enable = {arg7}, timeout=60, tag=阿里云盘获取cookie
+http-request ^https:\/\/game\.dominos\.com\.cn\/.+\/game\/gameDone script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, requires-body=true, timeout=10, enable = {arg24}, tag=达美乐披萨获取token
+http-request ^https:\/\/m\.hualala\.com\/orh5\/promotionEvent\/getSignInEventDetail.+ script-path=https://gist.githubusercontent.com/Sliverkiss/4703f7114ad352e97dcd5eaa4dc3e2f5/raw/bgps.js, timeout=10, enable = {arg11}, tag=比格披萨自助获取token
+http-response ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60,  enable = {arg12}, tag=蜜雪冰城获取token
+http-request ^https:\/\/userapi\.qiekj\.com\/wechat\/unionId\/login script-path=https://gist.githubusercontent.com/Sliverkiss/845cf469e4762afdc83c3949be006609/raw/pgsh.js, requires-body=true, timeout=60, enable = {arg16}, tag=胖乖生活
+http-request ^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, requires-body=true, timeout=60, enable = {arg18}, tag=奈雪点单获取token
+http-response ^https:\/\/gw\.xiaocantech\.com\/rpc script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, requires-body=true, timeout=60, enable = {arg23}, tag=小蚕霸王餐
+
+[MITM]
+hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,auth.alipan.com,auth.aliyundrive.com,m.hualala.com,mxsa.mxbc.net,userapi.qiekj.com,tm-web.pin-dao.cn,gw.xiaocantech.com
