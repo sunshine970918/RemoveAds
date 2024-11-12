@@ -16,21 +16,21 @@ arg53 = input,"32 10 * * *",tag=达美乐任务时间
 arg54 = switch,true,tag=达美乐任务开关
 arg27 = input,"34 10 * * *",tag=蜜雪冰城任务时间
 arg28 = switch,true,tag=蜜雪冰城任务开关
-arg35 = input,"10 8 * * *",tag=胖乖生活任务时间
-arg36 = switch,false,tag=胖乖生活任务开关
 arg41 = input,"36 10 * * *",tag=奈雪任务时间
 arg42 = switch,true,tag=奈雪任务开关
-arg47 = input,"0 9 * * *",tag=希泡泡玛特任务时间
-arg48 = switch,false,tag=泡泡玛特任务开关
 arg51 = input,"38 10 * * *",tag=小蚕霸王餐任务时间
 arg52 = switch,true,tag=小蚕霸王餐任务开关
+arg35 = input,"10 8 * * *",tag=胖乖生活任务时间
+arg36 = switch,false,tag=胖乖生活任务开关
+arg47 = input,"0 9 * * *",tag=希泡泡玛特任务时间
+arg48 = switch,false,tag=泡泡玛特任务开关
 
 [Script]
 cron {arg1} script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, enable= {arg2}, tag=奶茶多合一
 cron {arg13} script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, timeout=300, enable= {arg14}, tag=阿里云盘签到
 cron {arg53} script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js,timeout=300, enable= {arg54}, tag=达美乐披萨
 cron {arg27} script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, timeout=300, enable={arg28}, tag=蜜雪冰城
-cron {arg35} script-path=https://gist.githubusercontent.com/Sliverkiss/845cf469e4762afdc83c3949be006609/raw/pgsh.js, timeout=300, enable={arg36}, tag=胖乖生活
 cron {arg41} script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, timeout=300, enable={arg42}, tag=奈雪点单签到
-cron {arg47} script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, timeout=300, enable={arg48}, tag=泡泡玛特签到
 cron {arg51} script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, timeout=300, enable={arg52}, tag=小蚕霸王餐
+cron {arg35} script-path=https://gist.githubusercontent.com/Sliverkiss/845cf469e4762afdc83c3949be006609/raw/pgsh.js, timeout=300, enable={arg36}, tag=胖乖生活
+cron {arg47} script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, timeout=300, enable={arg48}, tag=泡泡玛特签到
