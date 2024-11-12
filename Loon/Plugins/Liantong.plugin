@@ -2,6 +2,7 @@
 #!desc=去开屏
 #!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1062.png
 #!keyword=xream
+#!openUrl = https://github.com/sunshine970918/RemoveAds
 
 [General]
 force-http-engine-hosts = m.client.10010.com
