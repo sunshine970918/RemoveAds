@@ -1,5 +1,6 @@
 #!name=下厨房app净化
 #!desc=下厨房app净化
+#!icon=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/icons/AppIcon60x60%402x.png
 
 [Rule]
 URL-REGEX,^https:\/\/api\.xiachufang\.com\/v2\/homepage1810\/init_page\.json,REJECT
