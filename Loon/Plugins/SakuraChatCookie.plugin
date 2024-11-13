@@ -12,7 +12,6 @@ arg1 = switch,true,tag=奶茶多合一获取
 arg7 = switch,true,tag=阿里云盘获取cookie
 arg24 = switch,true,tag=达美乐披萨获取token
 arg12 = switch,true,tag=蜜雪冰城获取token
-arg16 = switch,true,tag=胖乖生活获取
 arg18 = switch,true,tag=奈雪点单获取token
 arg23 = switch,true,tag=小蚕霸王餐获取
 arg21 = switch,true,tag=泡泡玛特获取token
@@ -23,10 +22,9 @@ http-request ^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/int
 http-request ^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, requires-body=true, enable = {arg7}, timeout=60, tag=阿里云盘获取cookie
 http-request ^https:\/\/game\.dominos\.com\.cn\/.+\/game\/gameDone script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, requires-body=true, timeout=10, enable = {arg24}, tag=达美乐披萨获取token
 http-response ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60,  enable = {arg12}, tag=蜜雪冰城获取token
-http-request ^https:\/\/userapi\.qiekj\.com\/wechat\/unionId\/login script-path=https://gist.githubusercontent.com/Sliverkiss/845cf469e4762afdc83c3949be006609/raw/pgsh.js, requires-body=true, timeout=60, enable = {arg16}, tag=胖乖生活
 http-request ^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, requires-body=true, timeout=60, enable = {arg18}, tag=奈雪点单获取token
 http-response ^https:\/\/gw\.xiaocantech\.com\/rpc script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, requires-body=true, timeout=60, enable = {arg23}, tag=小蚕霸王餐
 http-response ^https:\/\/popvip\.paquapp\.com\/miniapp\/v2\/wechat\/getUserInfo script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, requires-body=true, timeout=60, enable = {arg21}, tag=泡泡玛特获取token
 
 [MITM]
-hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,auth.alipan.com,auth.aliyundrive.com,m.hualala.com,mxsa.mxbc.net,userapi.qiekj.com,tm-web.pin-dao.cn,gw.xiaocantech.com, popvip.paquapp.com
+hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,auth.alipan.com,auth.aliyundrive.com,m.hualala.com,mxsa.mxbc.net,tm-web.pin-dao.cn,gw.xiaocantech.com, popvip.paquapp.com
