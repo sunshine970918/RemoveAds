@@ -9,22 +9,24 @@
 
 [Argument]
 arg1 = switch,true,tag=奶茶多合一获取
-arg7 = switch,true,tag=阿里云盘获取cookie
-arg24 = switch,true,tag=达美乐披萨获取token
-arg12 = switch,true,tag=蜜雪冰城获取token
-arg18 = switch,true,tag=奈雪点单获取token
-arg23 = switch,true,tag=小蚕霸王餐获取
-arg21 = switch,true,tag=泡泡玛特获取token
+arg2 = switch,true,tag=阿里云盘获取cookie
+arg3 = switch,true,tag=达美乐披萨获取token
+arg4 = switch,true,tag=蜜雪冰城获取token
+arg5 = switch,true,tag=奈雪点单获取token
+arg6 = switch,true,tag=小蚕霸王餐获取
+arg7 = switch,true,tag=泡泡玛特获取token
+arg8 = switch,true,tag=酷狗获取数据
 
 [Script]
 http-response ^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-sale-login|account\/login-minp) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, enable = {arg1}, tag=奶茶获取token
 http-request ^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/integral|cmk-center)\/sign\/(signIn|takePartInSign) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, enable = {arg1}, tag=奶茶获取token
-http-request ^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, requires-body=true, enable = {arg7}, timeout=60, tag=阿里云盘获取cookie
-http-request ^https:\/\/game\.dominos\.com\.cn\/.+\/game\/gameDone script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, requires-body=true, timeout=10, enable = {arg24}, tag=达美乐披萨获取token
-http-response ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60,  enable = {arg12}, tag=蜜雪冰城获取token
-http-request ^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, requires-body=true, timeout=60, enable = {arg18}, tag=奈雪点单获取token
-http-response ^https:\/\/gw\.xiaocantech\.com\/rpc script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, requires-body=true, timeout=60, enable = {arg23}, tag=小蚕霸王餐
-http-response ^https:\/\/popvip\.paquapp\.com\/miniapp\/v2\/wechat\/getUserInfo script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, requires-body=true, timeout=60, enable = {arg21}, tag=泡泡玛特获取token
+http-request ^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, requires-body=true, enable = {arg2}, timeout=60, tag=阿里云盘获取cookie
+http-request ^https:\/\/game\.dominos\.com\.cn\/.+\/game\/gameDone script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, requires-body=true, timeout=10, enable = {arg3}, tag=达美乐披萨获取token
+http-response ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60,  enable = {arg4}, tag=蜜雪冰城获取token
+http-request ^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, requires-body=true, timeout=60, enable = {arg5}, tag=奈雪点单获取token
+http-response ^https:\/\/gw\.xiaocantech\.com\/rpc script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, requires-body=true, timeout=60, enable = {arg6}, tag=小蚕霸王餐
+http-response ^https:\/\/popvip\.paquapp\.com\/miniapp\/v2\/wechat\/getUserInfo script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, requires-body=true, timeout=60, enable = {arg7}, tag=泡泡玛特获取token
+http-request https://(gateway|gatewayretry|gateway3).kugou.com/youth/v1/(recharge/receive_vip_listen_song|activity/get_month_vip_record).* script-path=https://gist.githubusercontent.com/Alex0510/1c389019c264a7d3ddbe4dbcf77d4295/raw/kugou.js, requires-body=true, timeout=60, enable = {arg8},tag=酷狗数据
 
 [MITM]
-hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,auth.alipan.com,auth.aliyundrive.com,m.hualala.com,mxsa.mxbc.net,tm-web.pin-dao.cn,gw.xiaocantech.com, popvip.paquapp.com
+hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,auth.alipan.com,auth.aliyundrive.com,m.hualala.com,mxsa.mxbc.net,tm-web.pin-dao.cn,gw.xiaocantech.com, popvip.paquapp.com, *.kugou.com
