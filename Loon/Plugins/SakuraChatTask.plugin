@@ -10,20 +10,60 @@
 [Argument]
 arg1 = input,"30 10 * * *",tag=奶茶多合一任务时间
 arg2 = switch,true,tag=奶茶多合一任务开关
+
 arg3 = input,"40 10 * * *",tag=阿里云盘任务时间
 arg4 = switch,true,tag=阿里云盘任务开关
+
 arg5 = input,"34 10 * * *",tag=达美乐任务时间
 arg6 = switch,true,tag=达美乐任务开关
+
 arg7 = input,"35 10 * * *",tag=蜜雪冰城任务时间
 arg8 = switch,true,tag=蜜雪冰城任务开关
+
 arg9 = input,"36 10 * * *",tag=奈雪任务时间
 arg10 = switch,true,tag=奈雪任务开关
+
 arg11 = input,"32-33 10 * * *",tag=小蚕霸王餐任务时间
 arg12 = switch,true,tag=小蚕霸王餐任务开关
+
 arg13 = input,"37 10 * * *",tag=希泡泡玛特任务时间
 arg14 = switch,true,tag=泡泡玛特任务开关
+
 arg15 = input,"10 0 * * *",tag=酷狗领取VIP任务时间
 arg16 = switch,true,tag=酷狗领取VIP任务开关
+
+arg17 = input,"10 9,17 * * *", tag=阿里云社区任务时间
+arg18 = switch,true,tag=阿里云社区
+
+arg19 = input,"10 9 * * *",tag=雨晨ios签到任务时间
+arg20 = switch,true,tag=雨晨ios签到
+
+arg21 = input,"10 9 * * *",tag=高德地图签到任务时间
+arg22 = switch,true,tag=高德地图
+
+arg23 = input,"0 6,12,18 * * *",tag=高德抢券签到任务时间
+arg24 = switch,true,tag=高德抢券
+
+arg25 = input,"10 9 * * *",tag=杜蕾斯签到任务时间
+arg26 = switch,true,tag=杜蕾斯
+
+arg27 = input,"10 9 * * *",tag=杰士邦签到任务时间
+arg28 = switch,true,tag=杰士邦
+
+arg29 = input,"10 9 * * *",tag=吾爱破解签到任务时间
+arg30 = switch,true,tag=吾爱破解
+
+arg31 = input,"10 9 * * *",tag=iios苹果软件站签到任务时间
+arg32 = switch,true,tag=ios苹果软件站
+
+arg33 = input,"10 9 * * *",tag=有赞小程序签到任务时间
+arg34 = switch,true,tag=有赞小程序
+
+arg35 = input,"10 9 * * *",tag=IQOO社区签到任务时间
+arg36 = switch,true,tag=IQOO社区
+
+arg37 = input,"10 9 * * *",tag=柠季签到任务时间
+arg38 = switch,true,tag=柠季
 
 [Script]
 cron {arg1} script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, enable= {arg2}, tag=奶茶多合一
@@ -34,3 +74,14 @@ cron {arg9} script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b9
 cron {arg11} script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, timeout=300, enable={arg12}, tag=小蚕霸王餐
 cron {arg13} script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, timeout=300, enable={arg14}, tag=泡泡玛特签到
 cron {arg15} script-path=https://gist.githubusercontent.com/Alex0510/1c389019c264a7d3ddbe4dbcf77d4295/raw/kugou_auto.js, timeout=300, enable={arg16}, tag=酷狗领取VIP
+cron {arg17} script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/aliyun_web/aliyun_web.js, timeout=600,enable= {arg18}, tag=阿里云社区
+cron {arg19} script-path=https://gist.githubusercontent.com/Sliverkiss/9aab5b214f3145e39639a2581e83bb27/raw/yuchenios.js, timeout=600,enable= {arg20}, tag=雨晨ios签到
+cron {arg21} script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=120,enable= {arg22}, tag=高德地图
+cron {arg23} script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDacheCoupon.js, timeout=120,enable= {arg24}, tag=高德抢券
+cron {arg25} script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, timeout=120,enable= {arg26}, tag=杜蕾斯
+cron {arg27} script-path=https://gist.githubusercontent.com/Sliverkiss/6d15658e313eee254a55d2b97933587c/raw/jsb.js, timeout=300, enable={arg28}, tag=杰士邦安心福利社
+cron {arg29} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js, timeout=10,enable={arg30}, tag=吾爱破解签到
+cron {arg31} script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/iios/iios.js, timeout=120,enable= {arg32}, tag=iios-苹果软件站
+cron {arg33} script-path=https://gist.githubusercontent.com/Sliverkiss/8770ecc5fe99c8f6d99c964b33244d79/raw/youzanV3.js, timeout=120,enable= {arg34}, tag=有赞小程序
+cron {arg35} script-path=https://gist.githubusercontent.com/Sliverkiss/bfc5527ad3ea8ac7b0820ca442442452/raw/iqoo.js, timeout=120, enable={arg36}, tag=IQOO
+cron {arg37} script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/ningji/ningji.js, timeout=120, enable={arg38}, tag=柠季
