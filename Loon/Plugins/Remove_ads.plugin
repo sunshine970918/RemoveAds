@@ -96,18 +96,7 @@ DOMAIN, tracking.intl.miui.com, REJECT
 DOMAIN,39d83s.com,REJECT
 # 晓晓优选去开屏
 DOMAIN, api-htp.beizi.biz, REJECT
-DOMAIN, sdkconfig.ad.xiaomi.com, REJECT-DROP
-DOMAIN, data.mistat.xiaomi.com, REJECT
-DOMAIN, tracking.intl.miui.com, REJECT
-DOMAIN, sdktmp.hubcloud.con.cn, REJECT
 DOMAIN, sdk.beizi.biz, REJECT
-DOMAIN-SUFFIX, jiguang.cn, REJECT
-DOMAIN-SUFFIX, jpush.cn, REJECT
-DOMAIN-SUFFIX, jpush.io, REJECT
-DOMAIN, qzs.gdtimg.com, REJECT
-DOMAIN-KEYWORD, api-access.pangolin-sdk-toutiao, REJECT
-DOMAIN, mssdk.volces.com, REJECT
-
 
 # ======= Y ====== #
 # 云闪付 //account.95516.com, base.95516.com, content.95516.com
@@ -132,6 +121,9 @@ IP-CIDR, 122.229.8.47/32, REJECT, no-resolve
 IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
 
 [Rewrite]
+# ======= 5 ======= #
+# 555影视 //app-v1.ecoliving168.com
+^https:\/\/app-v1\.ecoliving168\.com\/api\/v1\/advert\/config mock-response-body data-type=text status-code=200
 # ======= A ======= #
 # 阿里云盘 //api.alipan.com, member.alipan.com, bizapi.alipan.com
 # 首页活动日历
@@ -298,6 +290,10 @@ https?:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/agent_ad reject
 # 移除12306开屏广告
 http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path = https://kelee.one/Resource/Script/12306/12306_remove_splashscreen_ads.js, requires-body = true, tag = 移除12306开屏广告
 
+# ======= 5 ======= #
+# 555影视 //app-v1.ecoliving168.com
+# 移除横幅广告
+http-response ^https:\/\/app-v1\.ecoliving168\.com\/api\/v1\/movie\/index_recommend\? script-path=https://kelee.one/Resource/Script/555DY/555DY_remove_ads.js, requires-body=true, tag=555影视移除横幅广告
 
 # ======= A ======= #
 # 阿里云盘 //api.alipan.com, member.alipan.com, bizapi.alipan.com
@@ -334,4 +330,4 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 
 
 [Mitm]
-hostname = ad.12306.cn, mobile.12306.cn, api.alipan.com, member.alipan.com, bizapi.alipan.com, m.baidu.com, www.baidu.com, biz.cyapi.cn, starplucker.cyapi.cn, api.caiyunapp.com, cdn-w.caiyunapp.com, cdn.web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, api.wfdata.club, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, client.app.coc.10086.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com
+hostname = ad.12306.cn, mobile.12306.cn, app-v1.ecoliving168.com, api.alipan.com, member.alipan.com, bizapi.alipan.com, m.baidu.com, www.baidu.com, biz.cyapi.cn, starplucker.cyapi.cn, api.caiyunapp.com, cdn-w.caiyunapp.com, cdn.web.chelaile.net.cn, app-gw.csdn.net, api.douban.com, res.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gd.10086.cn, 114.115.217.129, home.umetrip.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ucmp.sf-express.com, osg-service.sgcc.com.cn, api.wfdata.club, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, client.app.coc.10086.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, live.inst-service.htsc.com
