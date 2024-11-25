@@ -10,20 +10,20 @@
 [Argument]
 arg1 = input,"30 10 * * *",tag=奶茶多合一任务时间
 arg2 = switch,true,tag=奶茶多合一任务开关
-arg3 = input,"45 10 * * *",tag=阿里云盘任务时间
+arg3 = input,"40 10 * * *",tag=阿里云盘任务时间
 arg4 = switch,true,tag=阿里云盘任务开关
-arg5 = input,"32 10 * * *",tag=达美乐任务时间
+arg5 = input,"34 10 * * *",tag=达美乐任务时间
 arg6 = switch,true,tag=达美乐任务开关
-arg7 = input,"34 10 * * *",tag=蜜雪冰城任务时间
+arg7 = input,"35 10 * * *",tag=蜜雪冰城任务时间
 arg8 = switch,true,tag=蜜雪冰城任务开关
 arg9 = input,"36 10 * * *",tag=奈雪任务时间
 arg10 = switch,true,tag=奈雪任务开关
-arg11 = input,"38 10 * * *",tag=小蚕霸王餐任务时间
+arg11 = input,"32-33 10 * * *",tag=小蚕霸王餐任务时间
 arg12 = switch,true,tag=小蚕霸王餐任务开关
-arg13 = input,"0 9 * * *",tag=希泡泡玛特任务时间
-arg14 = switch,false,tag=泡泡玛特任务开关
+arg13 = input,"37 10 * * *",tag=希泡泡玛特任务时间
+arg14 = switch,true,tag=泡泡玛特任务开关
 arg15 = input,"10 0 * * *",tag=酷狗领取VIP任务时间
-arg16 = switch,false,tag=酷狗领取VIP任务开关
+arg16 = switch,true,tag=酷狗领取VIP任务开关
 
 [Script]
 cron {arg1} script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, enable= {arg2}, tag=奶茶多合一
