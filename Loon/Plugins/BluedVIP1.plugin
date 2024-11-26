@@ -1,0 +1,27 @@
+#!name=Blued基友--Eric全网独发
+#!desc=https://t.me/+A1cOYwvOdeI4MWNl,查看会员隐藏距离，查看会员保密的最后在线时间，地图找人次数到期，地图显示头像和影子功能，捕获闪照视频,全球随意修改定位(需使用boxjs可自定义修改参数)等功能，转载请注明出处,免费分享禁止转卖
+#!icon=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/icons/change_iconB%403x.png
+#!keyword=Blued_Chat
+#!author = Mr.Eric[https://t.me/Mr_Alex]
+#!homepage=https://t.me/+A1cOYwvOdeI4MWNl
+#!openUrl = https://github.com/sunshine970918/RemoveAds
+[Argument]
+arg1 = switch,true,tag=Blued闪照
+arg2 = switch,true,tag=Blued_VIP
+arg3 = switch,true,tag=Blued位置
+arg4 = switch,true,tag=翻咔查看图片
+arg5 = switch,true,tag=翻咔位置
+
+[Script]
+http-request ^https:\/\/(burn-chatfiles|chatfiles|argo)\.(blued|bldimg)\.(cn|com)\/(((chatfiles|ingfiles|burn_chatfiles\/(videos|users))\/.*(mp4|jpg|(jpg|png))|blued\/qiniu\/chat)|.*).* script-path=https://gist.githubusercontent.com/Alex0510/23b38f5ad332e30d11a60a28ee4aa132/raw/bluedpic.js, enable = {arg1}, tag=blued_pic
+
+http-response ^https:\/\/.*\/users.*(setting|is_living=false|more/ios|flash|shadow|fair/exchange/count|\?aaid=|basic|map|\?column=) script-path=https://gist.githubusercontent.com/Alex0510/23b38f5ad332e30d11a60a28ee4aa132/raw/bluedvip.js, requires-body=true, enable = {arg2}, tag=blued_VIP
+
+http-request https://((social|argo).blued.cn|\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)/(users.*extra_info=|ticktocks/users|groups/nearby|users/selection|ticktocks/popups|ticktocks/info|ticktocks/banner).* script-path=https://gist.githubusercontent.com/Alex0510/23b38f5ad332e30d11a60a28ee4aa132/raw/bluedlocation.js, enable = {arg3}, tag=blued_location
+
+http-response https://api.finka.cn/vas/nearby/v2 script-path=https://gist.githubusercontent.com/Alex0510/85c95aeaf2283ab825702d27ed229a54/raw/Finka.js, requires-body=true, enable = {arg4}, tag=翻咔查看pic
+
+http-request https://(gethornet.com|api.finka.cn|api.sqaces.com|api.theorangemeetingplace.com).* script-path=https://gist.githubusercontent.com/Alex0510/85c95aeaf2283ab825702d27ed229a54/raw/Finka.js, requires-body=true, enable = {arg5}, tag=Finka_location
+
+[MITM]
+hostname = api.finka.cn, gethornet.com, api.theorangemeetingplace.com, api.sqaces.com, social.blued.cn, argo.blued.cn, *.bldimg.com, ulogs.umengcloud.com, 220.249.135.81, 182.91.254.69
