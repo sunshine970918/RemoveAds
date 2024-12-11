@@ -1,7 +1,3 @@
-/* 本程序由 Jack 解密
- * 官网地址：auth.phpks.com
- * 官方群号：76815829 
- * 当前时间：2024-12-08 22:33:51*/
 const _0x48321a = function () {
   let _0x1f08b5 = true;
   return function (_0x13e36f, _0x2181c8) {
