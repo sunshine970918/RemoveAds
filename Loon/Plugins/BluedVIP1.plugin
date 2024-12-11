@@ -6,16 +6,16 @@
 #!homepage=https://t.me/+A1cOYwvOdeI4MWNl
 #!openUrl = https://github.com/sunshine970918/RemoveAds
 [Argument]
-arg1 = switch,true,tag=Blued闪照
+arg1 = switch,false,tag=Blued闪照
 arg2 = switch,true,tag=Blued_VIP
-arg3 = switch,true,tag=Blued位置
-arg4 = switch,true,tag=翻咔查看图片
-arg5 = switch,true,tag=翻咔位置
+arg3 = switch,false,tag=Blued位置
+arg4 = switch,false,tag=翻咔查看图片
+arg5 = switch,false,tag=翻咔位置
 
 [Script]
 http-request ^https:\/\/(burn-chatfiles|chatfiles|argo)\.(blued|bldimg)\.(cn|com)\/(((chatfiles|ingfiles|burn_chatfiles\/(videos|users))\/.*(mp4|jpg|(jpg|png))|blued\/qiniu\/chat)|.*).* script-path=https://gist.githubusercontent.com/Alex0510/23b38f5ad332e30d11a60a28ee4aa132/raw/bluedpic.js, enable = {arg1}, tag=blued_pic
 
-http-response ^https:\/\/.*\/users.*(setting|is_living=false|more/ios|flash|shadow|fair/exchange/count|\?aaid=|basic|map|\?column=) script-path=https://gist.githubusercontent.com/Alex0510/23b38f5ad332e30d11a60a28ee4aa132/raw/bluedvip.js, requires-body=true, enable = {arg2}, tag=blued_VIP
+http-response ^https:\/\/.*\/users.*(setting|is_living=false|more/ios|flash|shadow|fair/exchange/count|\?aaid=|basic|map|\?column=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/Plugins/22.js, requires-body=true, enable = {arg2}, tag=blued_VIP
 
 http-request https://((social|argo).blued.cn|\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)/(users.*extra_info=|ticktocks/users|groups/nearby|users/selection|ticktocks/popups|ticktocks/info|ticktocks/banner).* script-path=https://gist.githubusercontent.com/Alex0510/23b38f5ad332e30d11a60a28ee4aa132/raw/bluedlocation.js, enable = {arg3}, tag=blued_location
 
