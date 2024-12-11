@@ -6,11 +6,11 @@
 #!homepage=https://t.me/+A1cOYwvOdeI4MWNl
 #!openUrl = https://github.com/sunshine970918/RemoveAds
 [Argument]
-arg1 = switch,true,tag=Blued闪照
+arg1 = switch,false,tag=Blued闪照
 arg2 = switch,true,tag=Blued_VIP
-arg3 = switch,true,tag=Blued位置
-arg4 = switch,true,tag=翻咔查看图片
-arg5 = switch,true,tag=翻咔位置
+arg3 = switch,false,tag=Blued位置
+arg4 = switch,false,tag=翻咔查看图片
+arg5 = switch,false,tag=翻咔位置
 
 EricPassword = input, "", tag = 输入密码, desc = 密码验证
 scriptpic = select, "false", "true", tag = Eric-pic闪照, desc = 用于闪照
