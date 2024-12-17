@@ -29,7 +29,7 @@ URL-REGEX,https://social.blued.cn/users/.*/joy,REJECT
 URL-REGEX,^https:\/\/social\.blued\.cn\/users\/recommend$,REJECT
 
 [Script]
-http-response ^https:\/\/.*\/users.*(setting|is_living=false|more/ios|flash|shadow|fair/exchange/count|\?aaid=|basic|map|\?column=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_vip.js, requires-body=true, enable = {arg1}, tag=blued_VIP, binary-body-mode = true, argument=[{EricPassword},{scriptvip}]
+http-response ^https:\/\/.*\/users.*(setting|is_living=false|more/ios|flash|shadow|fair/exchange/count|\?aaid=|basic|map|\?column=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_vip.js, requires-body=true, enable = {arg1}, tag=blued_VIP
 
 http-request https://((social|argo).blued.cn|\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)/(users.*extra_info=|ticktocks/users|groups/nearby|users/selection|ticktocks/popups|ticktocks/info|ticktocks/banner).* script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_location.js, enable = {arg2}, tag=blued_location, argument=[{customLatitude},{customLongitude},{customCity},{AK},{sortBy},{scriptEnabled},{useCity},{useCoordinates}]
 
