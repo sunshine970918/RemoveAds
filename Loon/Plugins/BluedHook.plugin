@@ -15,7 +15,6 @@ customLongitude = input, "", tag = 输入经度(经纬度定位), desc = 经度
 customLatitude = input, "", tag = 输入纬度(经纬度定位), desc = 纬度
 customCity = input, "", tag = 输入城市(城市定位), desc = 你的城市
 AK = input, "", tag = 输入百度地图API密钥(城市定位), desc = 你的百度地图API密钥
-scriptEnabled = switch, true, tag = 启用经纬度脚本, desc = 启用经纬度
 useCity = switch, false, tag = 使用城市定位(二选一), desc = 选择使用城市而不是经纬度
 useCoordinates = switch, true, tag = 使用经纬度定位(二选一), desc = 选择使用经纬度而不是城市，默认为true
 mapSearchEnabled = switch, false, tag = 启用地图找人, desc = 启用地图找人功能，默认为false
@@ -32,7 +31,7 @@ URL-REGEX,^https:\/\/social\.blued\.cn\/users\/recommend$,REJECT
 [Script]
 http-response ^https:\/\/.*\/users.*(setting|is_living=false|more/ios|flash|shadow|fair/exchange/count|\?aaid=|basic|map|\?column=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_vip.js, requires-body=true, enable = {arg1}, tag=blued_VIP
 
-http-request https://((social|argo).blued.cn|\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)/(users.*extra_info=|ticktocks/users|groups/nearby|users/selection|ticktocks/popups|ticktocks/info|ticktocks/banner).* script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_location.js, enable = {arg2}, tag=blued_location, argument=[{customLatitude},{customLongitude},{customCity},{AK},{sortBy},{scriptEnabled},{useCity},{useCoordinates},{mapSearchEnabled}]
+http-request https://((social|argo).blued.cn|\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)/(users.*extra_info=|ticktocks/users|groups/nearby|users/selection|ticktocks/popups|ticktocks/info|ticktocks/banner).* script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_location.js, enable = {arg2}, tag=blued_location, argument=[{customLatitude},{customLongitude},{customCity},{AK},{sortBy},{useCity},{useCoordinates},{mapSearchEnabled}]
 
 http-response https://api.finka.cn/vas/nearby/v2 script-path=https://gist.githubusercontent.com/Alex0510/85c95aeaf2283ab825702d27ed229a54/raw/Finka.js, requires-body=true, enable = {arg3}, tag=翻咔查看pic
 
