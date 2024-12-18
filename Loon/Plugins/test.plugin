@@ -15,11 +15,11 @@ customLongitude = input, "", tag = 输入经度(经纬度定位), desc = 经度
 customLatitude = input, "", tag = 输入纬度(经纬度定位), desc = 纬度
 customCity = input, "", tag = 输入城市(城市定位), desc = 你的城市
 AK = input, "", tag = 输入百度地图API密钥(城市定位), desc = 你的百度地图API密钥
-sortBy = select, "nearby", "online", tag = 地图找人, desc = nearby附近的人，online在线的人
 scriptEnabled = switch, true, tag = 启用经纬度脚本, desc = 启用经纬度
 useCity = switch, false, tag = 使用城市定位(二选一), desc = 选择使用城市而不是经纬度
 useCoordinates = switch, true, tag = 使用经纬度定位(二选一), desc = 选择使用经纬度而不是城市，默认为true
 mapSearchEnabled = switch, false, tag = 启用地图找人, desc = 启用地图找人功能，默认为false
+sortBy = select, "nearby", "online", tag = 地图找人, desc = nearby附近的人，online在线的人
 
 [Rule]
 URL-REGEX,https://argo.blued.cn/blued/promote.*,REJECT
