@@ -5,6 +5,7 @@
 #!author = Mr.Eric[https://t.me/Mr_Alex]
 #!homepage=https://t.me/+A1cOYwvOdeI4MWNl
 #!openUrl = https://github.com/sunshine970918/RemoveAds
+
 [Argument]
 arg1 = switch,true,tag=Blued_VIP
 arg2 = switch,false,tag=Blued位置
@@ -19,6 +20,7 @@ sortBy = select, "nearby", "online", tag = 地图找人, desc = nearby附近的�
 scriptEnabled = select, "false", "true", tag = 是否启用经纬度脚本, desc = 启用经纬度
 useCity = switch, false, tag = 使用城市定位(二选一), desc = 选择使用城市而不是经纬度
 useCoordinates = switch, true, tag = 使用经纬度定位(二选一), desc = 选择使用经纬度而不是城市，默认为true
+mapSearchEnabled = switch, true, tag = 启用地图找人, desc = 启用地图找人功能，默认为true
 
 [Rule]
 URL-REGEX,https://argo.blued.cn/blued/promote.*,REJECT
@@ -31,7 +33,7 @@ URL-REGEX,^https:\/\/social\.blued\.cn\/users\/recommend$,REJECT
 [Script]
 http-response ^https:\/\/.*\/users.*(setting|is_living=false|more/ios|flash|shadow|fair/exchange/count|\?aaid=|basic|map|\?column=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_vip.js, requires-body=true, enable = {arg1}, tag=blued_VIP
 
-http-request https://((social|argo).blued.cn|\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)/(users.*extra_info=|ticktocks/users|groups/nearby|users/selection|ticktocks/popups|ticktocks/info|ticktocks/banner).* script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_location.js, enable = {arg2}, tag=blued_location, argument=[{customLatitude},{customLongitude},{customCity},{AK},{sortBy},{scriptEnabled},{useCity},{useCoordinates}]
+http-request https://((social|argo).blued.cn|\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)/(users.*extra_info=|ticktocks/users|groups/nearby|users/selection|ticktocks/popups|ticktocks/info|ticktocks/banner).* script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_location.js, enable = {arg2}, tag=blued_location, argument=[{customLatitude},{customLongitude},{customCity},{AK},{sortBy},{scriptEnabled},{useCity},{useCoordinates},{mapSearchEnabled}]
 
 http-response https://api.finka.cn/vas/nearby/v2 script-path=https://gist.githubusercontent.com/Alex0510/85c95aeaf2283ab825702d27ed229a54/raw/Finka.js, requires-body=true, enable = {arg3}, tag=翻咔查看pic
 
