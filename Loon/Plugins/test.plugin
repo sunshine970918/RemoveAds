@@ -11,8 +11,8 @@ arg2 = switch,false,tag=Blued位置
 arg3 = switch,false,tag=翻咔查看图片
 arg4 = switch,false,tag=翻咔位置
 
-customLatitude = input, "", tag = 输入纬度(经纬度定位), desc = 纬度
 customLongitude = input, "", tag = 输入经度(经纬度定位), desc = 经度
+customLatitude = input, "", tag = 输入纬度(经纬度定位), desc = 纬度
 customCity = input, "", tag = 输入城市(城市定位), desc = 你的城市
 AK = input, "", tag = 输入百度地图API密钥(城市定位), desc = 你的百度地图API密钥
 sortBy = select, "nearby", "online", tag = 地图找人, desc = nearby附近的人，online在线的人
