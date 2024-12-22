@@ -38,11 +38,11 @@ arg18 = switch,true,tag=阿里云社区
 arg19 = input,"22 10 * * *",tag=雨晨ios签到任务时间
 arg20 = switch,true,tag=雨晨ios签到
 
-arg21 = input,"10 10 * * *",tag=高德地图签到任务时间
-arg22 = switch,true,tag=高德地图
+#arg21 = input,"10 10 * * *",tag=高德地图签到任务时间
+#arg22 = switch,true,tag=高德地图
 
-arg23 = input,"0 6,12,18 * * *",tag=高德抢券签到任务时间
-arg24 = switch,true,tag=高德抢券
+#arg23 = input,"0 6,12,18 * * *",tag=高德抢券签到任务时间
+#arg24 = switch,true,tag=高德抢券
 
 arg25 = input,"23 10 * * *",tag=杜蕾斯签到任务时间
 arg26 = switch,true,tag=杜蕾斯
