@@ -73,8 +73,8 @@ cron {arg13} script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa
 cron {arg15} script-path=https://gist.githubusercontent.com/Alex0510/1c389019c264a7d3ddbe4dbcf77d4295/raw/kugou_auto.js, timeout=120, enable={arg16}, tag=酷狗领取VIP
 cron {arg17} script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/aliyun_web/aliyun_web.js, timeout=120,enable= {arg18}, tag=阿里云社区
 cron {arg19} script-path=https://gist.githubusercontent.com/Sliverkiss/9aab5b214f3145e39639a2581e83bb27/raw/yuchenios.js, timeout=120,enable= {arg20}, tag=雨晨ios签到
-cron {arg21} script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=120,enable= {arg22}, tag=高德地图
-cron {arg23} script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDacheCoupon.js, timeout=120,enable= {arg24}, tag=高德抢券
+#cron {arg21} script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=120,enable= {arg22}, tag=高德地图
+#cron {arg23} script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDacheCoupon.js, timeout=120,enable= {arg24}, tag=高德抢券
 cron {arg25} script-path=https://raw.githubusercontent.com/czy13724/Quantumult-X/main/scripts/dls.js, timeout=120,enable= {arg26}, tag=杜蕾斯
 cron {arg27} script-path=https://gist.githubusercontent.com/Sliverkiss/6d15658e313eee254a55d2b97933587c/raw/jsb.js, timeout=120, enable={arg28}, tag=杰士邦安心福利社
 cron {arg29} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js, timeout=10,enable={arg30}, tag=吾爱破解签到
