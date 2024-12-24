@@ -29,7 +29,7 @@ URL-REGEX,https://social.blued.cn/users/.*/joy,REJECT
 URL-REGEX,^https:\/\/social\.blued\.cn\/users\/recommend$,REJECT
 URL-REGEX,https://.*/users/chatroom/nearby/,REJECT
 URL-REGEX,https://.*/users/recommend,REJECT
-URL-REGEX,https://.*/users/call,REJECT
+#URL-REGEX,https://.*/users/call,REJECT
 URL-REGEX,https://.*/users/chatroom/im/recommend,REJECT
 URL-REGEX,https://voice.irisgw.cn/users/chatroom/im/recommend,REJECT
 URL-REGEX,https://voice.blued.cn/users/chatroom/im/recommend,REJECT
