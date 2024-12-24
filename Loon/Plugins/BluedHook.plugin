@@ -27,6 +27,11 @@ URL-REGEX,https://argo.blued.cn/blued/splash.*,REJECT
 URL-REGEX,https://argo.blued.cn/blued/launch/adms,REJECT
 URL-REGEX,https://social.blued.cn/users/.*/joy,REJECT
 URL-REGEX,^https:\/\/social\.blued\.cn\/users\/recommend$,REJECT
+URL-REGEX,https://.*/users/chatroom/nearby/,REJECT
+URL-REGEX,https://.*/users/recommend,REJECT
+URL-REGEX,https://.*/users/call,REJECT
+URL-REGEX,https://.*/users/chatroom/im/recommend,REJECT
+URL-REGEX,https://voice.irisgw.cn/users/chatroom/im/recommend,REJECT
 
 [Script]
 http-response ^https:\/\/.*\/users.*(setting|is_living=false|more/ios|flash|shadow|fair/exchange/count|\?aaid=|basic|map|\?column=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_vip.js, requires-body=true, enable = {arg1}, tag=blued_VIP
