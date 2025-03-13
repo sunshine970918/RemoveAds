@@ -2,7 +2,7 @@
 #!desc=隐私相册、默认悄悄查看、去除广告、全球定位。功能：强制经纬度定位+地图找人排序。原创：Mr.Eric
 #!icon=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/icons/change_iconB%403x.png
 #!keyword=Blued_Chat
-#!author = 修改版
+#!author = Mr.Eric[https://t.me/Mr_Alex]
 #!openUrl = 
 
 [Argument]
@@ -11,9 +11,9 @@ arg2 = switch,false,tag=Blued定位
 arg3 = switch,false,tag=翻咔查看图片
 arg4 = switch,false,tag=翻咔位置
 
-customLongitude = input, "", tag = 输入经度（必填）, desc = 示例：116.407526（北京）
-customLatitude = input, "", tag = 输入纬度（必填）, desc = 示例：39.904030（北京）
-useCoordinates = switch, true, tag = 强制经纬度定位, desc = 必须开启（默认true）
+customLongitude = input, "", tag = 输入经度, desc = 示例：116.407526（北京）
+customLatitude = input, "", tag = 输入纬度, desc = 示例：39.904030（北京）
+useCoordinates = switch, true, tag = 经纬度定位, desc = 开启位置修改（默认true）
 mapSearchEnabled = switch, false, tag = 启用地图找人, desc = 开启后下方选择排序方式
 sortBy = select, "nearby", "online", tag = 地图排序规则, desc = 需先启用地图找人：nearby=附近用户 | online=在线用户
 
