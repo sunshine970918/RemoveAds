@@ -1,26 +1,24 @@
-#!name=Blued基友--Eric全网独发
-#!desc=隐私相册，默认悄悄查看，地图找人次数到期，地图显示头像和去除部分广告,全球随意修改定位等功能，转载请注明出处,免费分享禁止转卖
+#!name=Blued基友--Eric全网独发（经纬度+地图找人版）
+#!desc=隐私相册、默认悄悄查看、去除广告、全球定位。功能：强制经纬度定位+地图找人排序。原创：Mr.Eric
 #!icon=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/icons/change_iconB%403x.png
 #!keyword=Blued_Chat
-#!author = Mr.Eric[https://t.me/Mr_Alex]
+#!author = 修改版 By DeepSeek-R1 [基于Mr.Eric]
 #!openUrl = 
 
 [Argument]
 arg1 = switch,true,tag=Blued_VIP
-arg2 = switch,false,tag=Blued位置
+arg2 = switch,false,tag=Blued定位（核心功能）
 arg3 = switch,false,tag=翻咔查看图片
 arg4 = switch,false,tag=翻咔位置
 
-customLongitude = input, "", tag = 输入经度(经纬度定位), desc = 经度
-customLatitude = input, "", tag = 输入纬度(经纬度定位), desc = 纬度
-customCity = input, "", tag = 输入城市(城市定位), desc = 你的城市
-AK = input, "", tag = 输入百度地图API密钥(城市定位), desc = 你的百度地图API密钥
-useCity = switch, false, tag = 使用城市定位(二选一), desc = 选择使用城市而不是经纬度
-useCoordinates = switch, true, tag = 使用经纬度定位(二选一), desc = 选择使用经纬度而不是城市，默认为true
-mapSearchEnabled = switch, false, tag = 启用地图找人, desc = 启用地图找人功能，默认为false
-sortBy = select, "nearby", "online", tag = 地图找人, desc = nearby附近的人，online在线的人
+customLongitude = input, "", tag = 输入经度（必填）, desc = 示例：116.407526（北京）
+customLatitude = input, "", tag = 输入纬度（必填）, desc = 示例：39.904030（北京）
+useCoordinates = switch, true, tag = 强制经纬度定位, desc = 必须开启（默认true）
+mapSearchEnabled = switch, false, tag = 启用地图找人, desc = 开启后下方选择排序方式
+sortBy = select, "nearby", "online", tag = 地图排序规则, desc = 需先启用地图找人：nearby=附近用户 | online=在线用户
 
 [Rule]
+# 广告拦截规则（保持不变）
 URL-REGEX,https://argo.blued.cn/blued/promote.*,REJECT
 URL-REGEX,https://argo.blued.cn/blued/adms/.*,REJECT
 URL-REGEX,https://argo.blued.cn/blued/splash.*,REJECT
@@ -35,13 +33,16 @@ URL-REGEX,https://voice.irisgw.cn/users/chatroom/im/recommend,REJECT
 URL-REGEX,https://voice.blued.cn/users/chatroom/im/recommend,REJECT
 
 [Script]
+# VIP功能（保持不变）
 http-response ^https:\/\/.*\/users.*(setting|is_living=false|more/ios|flash|shadow|fair/exchange/count|\?aaid=|basic|map|\?column=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_vip.js, requires-body=true, enable = {arg1}, tag=blued_VIP
 
-http-request https://((social|argo).blued.cn|\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)/(users.*extra_info=|ticktocks/users|groups/nearby|users/selection|ticktocks/popups|ticktocks/info|ticktocks/banner).* script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_location.js, enable = {arg2}, tag=blued_location, argument=[{customLatitude},{customLongitude},{customCity},{AK},{sortBy},{useCity},{useCoordinates},{mapSearchEnabled}]
+# 核心定位功能（已适配新版代码）
+http-request https://((social|argo).blued.cn|\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b)/(users.*extra_info=|ticktocks/users|groups/nearby|users/selection|ticktocks/popups|ticktocks/info|ticktocks/banner).* script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_location.js, enable = {arg2}, tag=blued_location, argument=[{customLatitude},{customLongitude},{sortBy},{mapSearchEnabled},{useCoordinates}]
 
+# 翻咔功能（保持不变）
 http-response https://api.finka.cn/vas/nearby/v2 script-path=https://gist.githubusercontent.com/Alex0510/85c95aeaf2283ab825702d27ed229a54/raw/Finka.js, requires-body=true, enable = {arg3}, tag=翻咔查看pic
-
 http-request https://(gethornet.com|api.finka.cn|api.sqaces.com|api.theorangemeetingplace.com).* script-path=https://gist.githubusercontent.com/Alex0510/85c95aeaf2283ab825702d27ed229a54/raw/Finka.js, requires-body=true, enable = {arg4}, tag=Finka_location
 
 [MITM]
+# 域名配置（保持不变）
 hostname = voice.blued.cn, voice.irisgw.cn, api.finka.cn, gethornet.com, api.theorangemeetingplace.com, api.sqaces.com, social.blued.cn, argo.blued.cn, *.bldimg.com, ulogs.umengcloud.com, 220.249.135.81, 182.91.254.69
