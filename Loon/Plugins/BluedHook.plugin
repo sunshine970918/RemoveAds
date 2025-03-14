@@ -14,7 +14,7 @@ arg4 = switch,false,tag=翻咔位置
 customLongitude = input, "", tag = 输入经度, desc = 示例：116.407526（北京）
 customLatitude = input, "", tag = 输入纬度, desc = 示例：39.904030（北京）
 useCoordinates = switch, true, tag = 经纬度定位, desc = 开启位置修改（默认true）
-mapSearchEnabled = switch, false, tag = 地图找人(用完及时关闭,开启会导致修改位置失效), desc = 开启后下方选择排序方式
+mapSearchEnabled = switch, false, tag = 地图找人(开启会位置失效,用完及时关闭), desc = 开启后下方选择排序方式
 sortBy = select, "nearby", "online", tag = 地图找人nearby附近/online在线, desc = 需先启用地图找人：nearby=附近用户 | online=在线用户
 
 [Rule]
