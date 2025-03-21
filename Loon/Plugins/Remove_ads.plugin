@@ -49,7 +49,7 @@ DOMAIN-SUFFIX,ehaier.com,REJECT
 
 # ======= J ======= #
 # 京东 //api.m.jd.com
-#DOMAIN, dns.jd.com, REJECT
+DOMAIN, dns.jd.com, REJECT
 #URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
 #IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
 #IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
@@ -293,7 +293,7 @@ http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path = https:/
 # ======= 5 ======= #
 # 555影视 //app-v1.ecoliving168.com
 # 移除横幅广告
-http-response ^https:\/\/app-v1\.ecoliving168\.com\/api\/v1\/movie\/index_recommend\? script-path=https://kelee.one/Resource/Script/555DY/555DY_remove_ads.js, requires-body=true, tag=555影视移除横幅广告
+#http-response ^https:\/\/app-v1\.ecoliving168\.com\/api\/v1\/movie\/index_recommend\? script-path=https://kelee.one/Resource/Script/555DY/555DY_remove_ads.js, requires-body=true, tag=555影视移除横幅广告
 
 # ======= A ======= #
 # 阿里云盘 //api.alipan.com, member.alipan.com, bizapi.alipan.com
