@@ -73,17 +73,17 @@ URL-REGEX,https://gatewayretry.kugou.com/ads.gateway/.*,REJECT-DICT
 URL-REGEX,https://gateway.kugou.com/youth/api/user/v1/init.*,REJECT-DICT
 URL-REGEX,^http:\/\/mobilelog\.kugou\.com\/adtrackconfig\.json$,REJECT-DICT
 URL-REGEX,https://tmeadcomm.y.qq.com/maproxy/getPbCompressAd,REJECT-DICTDOMAIN-SUFFIX,adservice.kugou.com,REJECT
-DOMAIN-SUFFIX,install2.kugou.com,REJECT
-DOMAIN-SUFFIX,adstats.tencentmusic.com,REJECT
-DOMAIN-SUFFIX,tmead.y.qq.com,REJECT
-DOMAIN-SUFFIX,ad.tencentmusic.com,REJECT
-DOMAIN-SUFFIX,api-adservices.apple.com,REJECT
-DOMAIN-SUFFIX,us.l.qq.com,REJECT
-DOMAIN-SUFFIX,p.l.qq.com,REJECT
-DOMAIN-SUFFIX,mc.tencentmusic.com,REJECT
-DOMAIN-SUFFIX,mdt.qq.com,REJECT
-DOMAIN-SUFFIX,gdt.qq.com,REJECT
-DOMAIN-SUFFIX,e.qq.com,REJECT
+DOMAIN,install2.kugou.com,REJECT
+DOMAIN,adstats.tencentmusic.com,REJECT
+DOMAIN,tmead.y.qq.com,REJECT
+DOMAIN,ad.tencentmusic.com,REJECT
+DOMAIN,api-adservices.apple.com,REJECT
+DOMAIN,us.l.qq.com,REJECT
+DOMAIN,p.l.qq.com,REJECT
+DOMAIN,mc.tencentmusic.com,REJECT
+DOMAIN,mdt.qq.com,REJECT
+DOMAIN,gdt.qq.com,REJECT
+DOMAIN,e.qq.com,REJECT
 DOMAIN,ios.bugly.qq.com,REJECT
 
 # ======= L ======= #
