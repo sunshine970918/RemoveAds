@@ -84,6 +84,7 @@ DOMAIN-SUFFIX,mc.tencentmusic.com,REJECT
 DOMAIN-SUFFIX,mdt.qq.com,REJECT
 DOMAIN-SUFFIX,gdt.qq.com,REJECT
 DOMAIN-SUFFIX,e.qq.com,REJECT
+DOMAIN,ios.bugly.qq.com,REJECT
 
 # ======= L ======= #
 # 蓝奏云
