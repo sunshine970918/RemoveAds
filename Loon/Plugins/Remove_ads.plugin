@@ -101,8 +101,10 @@ DOMAIN, sin3-ib.adnxs.com, REJECT
 DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 DOMAIN, data.mistat.xiaomi.com, REJECT
 DOMAIN, tracking.intl.miui.com, REJECT
-# > 小小影视
+# 小小影视
 DOMAIN,39d83s.com,REJECT
+# 小蚕霸王餐
+DOMAIN, sdk.1rtb.net, REJECT
 # 晓晓优选去开屏
 DOMAIN, api-htp.beizi.biz, REJECT
 DOMAIN, sdk.beizi.biz, REJECT
