@@ -84,4 +84,4 @@ cron {arg29} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tas
 cron {arg31} script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/iios/iios.js, timeout=120,enable= {arg32}, tag=iios-苹果软件站
 cron {arg33} script-path=https://gist.githubusercontent.com/Sliverkiss/bfc5527ad3ea8ac7b0820ca442442452/raw/iqoo.js, timeout=120, enable={arg34}, tag=IQOO
 cron {arg35} script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/ningji/ningji.js, timeout=120, enable={arg36}, tag=柠季
-cron {arg36} script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xxyx/xxyx_signin.js, timeout=300, enable={arg38}, tag=晓晓优选每日任务
+cron {arg37} script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xxyx/xxyx_signin.js, timeout=300, enable={arg38}, tag=晓晓优选每日任务
