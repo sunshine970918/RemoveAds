@@ -21,6 +21,7 @@ arg15 = switch,true,tag=海天美味馆_获取token
 arg17 = switch,true,tag=统一_获取token
 arg18 = switch,true,tag=网易严选_获取cookie
 arg19 = switch,true,tag=麦斯威尔福利社_获取token
+arg20 = switch,true,tag=叮咚买菜_获取cookie
 
 [Script]
 http-request ^https:\/\/shopapi\.skycolorful\.com\/api\/User\/DecryptPhoneNumber script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, requires-body=true, enable = {arg1}, tag=七彩虹商城_获取token
@@ -39,6 +40,6 @@ http-response ^https:\/\/cmallapi\.haday\.cn\/buyer-api\/wechat\/mini\/phoneNew\
 http-response ^https:\/\/xapi\.weimob\.com\/api3\/onecrm\/user\/center\/usercenter\/queryUserInfo script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/TongYi/TongYi.js, requires-body=true, enable = {arg17}, tag=统一_获取token
 http-request ^https:\/\/act\.you\.163\.com\/act-attendance\/task\/list script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX.js, requires-body=true, enable = {arg18}, tag=网易严选_获取cookie
 http-response ^https:\/\/jde\.mtbcpt\.com\/api\/JDEMaxwellApi\/QueryHomeInfo script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js, requires-body=true, enable = {arg19}, tag=麦斯威尔福利社_获取token
-
+http-request ^https?:\/\/maicai\.api\.ddxq\.mobi\/point\/home\?api_version script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/DingDong/DingDong.js, requires-body=true, enable = {arg20}, tag=叮咚买菜_获取cookie
 [MITM]
-hostname = shopapi.skycolorful.com, shopapitest.skycolorful.com, shop.skycolorful.com:45677, shop.skycolorful.com, xiaodian.miyatech.com, hy.51pt.top, channel.cheryfs.cn, instax.app.xcxd.net.cn, psjia.ipason.com, prod-api.nissinfoodium.com.cn, mpb.jingjiu.com, m.tk.cn, cmallapi.haday.cn, xapi.weimob.com, qiehuang-apig.xiaoyisz.com, plugin.szzbmy.com, act.you.163.com, jde.mtbcpt.com
+hostname = shopapi.skycolorful.com, shopapitest.skycolorful.com, shop.skycolorful.com:45677, shop.skycolorful.com, xiaodian.miyatech.com, hy.51pt.top, channel.cheryfs.cn, instax.app.xcxd.net.cn, psjia.ipason.com, prod-api.nissinfoodium.com.cn, mpb.jingjiu.com, m.tk.cn, cmallapi.haday.cn, xapi.weimob.com, qiehuang-apig.xiaoyisz.com, plugin.szzbmy.com, act.you.163.com, jde.mtbcpt.com, maicai.api.ddxq.mobi
