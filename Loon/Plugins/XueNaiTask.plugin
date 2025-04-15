@@ -14,9 +14,6 @@ arg4 = switch,true,tag=三得利任务开关
 arg5 = input,"20 10,22 * * *",tag=仰韶会员任务时间
 arg6 = switch,true,tag=仰韶会员任务开关
 
-arg7 = input,"5 0,18 * * *",tag=伊利-春节任务时间
-arg8 = switch,true,tag=伊利-春节任务开关
-
 arg9 = input,"54 7,15 * * *",tag=好奇车生活任务时间
 arg10 = switch,true,tag=好奇车生活任务开关
 
@@ -64,8 +61,6 @@ cron {arg1} "7 8,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn77
 cron {arg3} "19 8,19 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/SDL/SDL.js, timeout=120, enable= {arg4}, tag=三得利
 
 cron {arg5} "20 10,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/YSHY/YSHY.js, timeout=120, enable= {arg6}, tag=仰韶会员
-
-cron {arg7} "5 0,18 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/YiLi/YiLi.js, timeout=120, enable= {arg8}, tag=伊利-春节
 
 cron {arg9} "54 7,15 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Cheryfs/Cheryfs.js, timeout=120, enable= {arg10}, tag=好奇车生活
 
