@@ -13,53 +13,32 @@ arg5 = switch,true,tag=三得利_获取token
 arg6 = switch,true,tag=仰韶会员_获取token
 arg8 = switch,true,tag=好奇车生活_获取token
 arg9 = switch,true,tag=富士instax玩拍由我俱乐部_获取token
-arg10 = switch,true,tag=富连e充_获取token
 arg11 = switch,true,tag=攀升科技+_获取token
 arg12 = switch,true,tag=日清食品体验馆_获取token
 arg13 = switch,true,tag=毛铺草本荟_获取token
 arg14 = switch,true,tag=泰康在线_获取token
 arg15 = switch,true,tag=海天美味馆_获取token
-arg16 = switch,true,tag=红牛会员俱乐部_获取token
 arg17 = switch,true,tag=统一_获取token
 arg18 = switch,true,tag=网易严选_获取cookie
 arg19 = switch,true,tag=麦斯威尔福利社_获取token
 
 [Script]
 http-request ^https:\/\/shopapi\.skycolorful\.com\/api\/User\/DecryptPhoneNumber script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, requires-body=true, enable = {arg1}, tag=七彩虹商城_获取token
-
 http-request ^https:\/\/shopapitest\.skycolorful\.com\/api\/User\/DecryptPhoneNumber script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, requires-body=true, enable = {arg2}, tag=七彩虹商城_获取token2
-
 http-request ^https:\/\/shop\.skycolorful\.com:45677\/api\/User\/DecryptPhoneNumber script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, requires-body=true, enable = {arg3}, tag=七彩虹商城_获取token3
-
 http-request ^https:\/\/shop\.skycolorful\.com\/api\/User\/DecryptPhoneNumber script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, requires-body=true, enable = {arg4}, tag=七彩虹商城_获取token4
-
 http-response ^https:\/\/xiaodian\.miyatech\.com\/api\/user\/member\/info script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/SDL/SDL.js, requires-body=true, enable = {arg5}, tag=三得利_获取token
-
 http-response ^https:\/\/hy\.51pt\.top\/app\/ys\/mine\/getMemberInfo script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/YSHY/YSHY.js, requires-body=true, enable = {arg6}, tag=仰韶会员_获取token
-
 http-request ^https:\/\/channel\.cheryfs\.cn\/archer\/activity-api\/common\/accountPointLeft script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Cheryfs/Cheryfs.js, requires-body=true, enable = {arg8}, tag=好奇车生活_获取token
-
 http-response ^https:\/\/instax\.app\.xcxd\.net\.cn\/api\/me script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/INSTAX/INSTAX.js, requires-body=true, enable = {arg9}, tag=富士instax玩拍由我俱乐部_获取token
-
-http-response ^https:\/\/api\.nblinks\.cn\/coreApi\/user\/consumer\/v1\/(aliPayAppLogin|weChatAppLogin) script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/YongXin/YongXin.js, requires-body=true, enable = {arg10}, tag=富连e充_获取token
-
 http-response ^https:\/\/psjia\.ipason\.com\/api\/v2\/member\/memberinfo script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/PSKJ/PSKJ.js, requires-body=true, enable = {arg11}, tag=攀升科技+_获取token
-
 http-response ^https:\/\/prod-api\.nissinfoodium\.com\.cn\/gw-shop\/app\/v1\/user\/detail script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/RQSP/RQSP.js, requires-body=true, enable = {arg12}, tag=日清食品体验馆_获取token
-
 http-response ^https:\/\/mpb\.jingjiu\.com\/proxy-he\/api\/user script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MPCBH/MPCBH.js, requires-body=true, enable = {arg13}, tag=毛铺草本荟_获取token
-
 http-response ^https:\/\/m\.tk\.cn\/wechat_item\/rest\/xcx\/login script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/TKZX/TKZX.js, requires-body=true, enable = {arg14}, tag=泰康在线_获取token
-
 http-response ^https:\/\/cmallapi\.haday\.cn\/buyer-api\/wechat\/mini\/phoneNew\/login script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/HaiTian/HaiTian.js, requires-body=true, enable = {arg15}, tag=海天美味馆_获取token
-
-http-response ^https:\/\/xiaodian\.miyatech\.com\/api\/user\/login\/wx-jc script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/RedBull/RedBull.js, requires-body=true, enable = {arg16}, tag=红牛会员俱乐部_获取token
-
 http-response ^https:\/\/xapi\.weimob\.com\/api3\/onecrm\/user\/center\/usercenter\/queryUserInfo script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/TongYi/TongYi.js, requires-body=true, enable = {arg17}, tag=统一_获取token
-
 http-request ^https:\/\/act\.you\.163\.com\/act-attendance\/task\/list script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX.js, requires-body=true, enable = {arg18}, tag=网易严选_获取cookie
-
 http-response ^https:\/\/jde\.mtbcpt\.com\/api\/JDEMaxwellApi\/QueryHomeInfo script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js, requires-body=true, enable = {arg19}, tag=麦斯威尔福利社_获取token
 
 [MITM]
-hostname = shopapi.skycolorful.com, shopapitest.skycolorful.com, shop.skycolorful.com:45677, shop.skycolorful.com, xiaodian.miyatech.com, hy.51pt.top, msmarket.msx.digitalyili.com, channel.cheryfs.cn, instax.app.xcxd.net.cn, api.nblinks.cn, psjia.ipason.com, prod-api.nissinfoodium.com.cn, mpb.jingjiu.com, m.tk.cn, cmallapi.haday.cn, xiaodian.miyatech.com, xapi.weimob.com, qiehuang-apig.xiaoyisz.com, plugin.szzbmy.com, act.you.163.com, jde.mtbcpt.com
+hostname = shopapi.skycolorful.com, shopapitest.skycolorful.com, shop.skycolorful.com:45677, shop.skycolorful.com, xiaodian.miyatech.com, hy.51pt.top, channel.cheryfs.cn, instax.app.xcxd.net.cn, psjia.ipason.com, prod-api.nissinfoodium.com.cn, mpb.jingjiu.com, m.tk.cn, cmallapi.haday.cn, xapi.weimob.com, qiehuang-apig.xiaoyisz.com, plugin.szzbmy.com, act.you.163.com, jde.mtbcpt.com
