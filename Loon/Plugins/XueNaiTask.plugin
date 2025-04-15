@@ -1,7 +1,7 @@
 #!name = XueNaiTask
 #!desc = XueNai Scripts 定时任务
 #!author = XueNai [https://github.com/Sliverkiss]
-#!data = 2024-12-22
+#!data = 2025-4-15
 #!loon_version = 3.2.3(753)
 
 [Argument]
@@ -53,8 +53,11 @@ arg32 = switch,true,tag=网易严选-兑换时间任务开关
 arg33 = input,"11 11,18 * * *",tag=麦斯威尔福利社任务时间
 arg34 = switch,true,tag=麦斯威尔福利社任务开关
 
+arg35 = input,"5 0,9 * * *",tag=叮咚买菜签到
+arg36 = switch,true,tag=叮咚买菜签到开关
 
-
+arg37 = input,"8 8,14,22 * * *",tag=甬派
+arg38 = switch,true,tag=甬派开关
 [Script]
 cron {arg1} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, timeout=120, enable= {arg2}, tag=七彩虹商城
 cron {arg3} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/SDL/SDL.js, timeout=120, enable= {arg4}, tag=三得利
@@ -72,3 +75,5 @@ cron {arg27} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/S
 cron {arg29} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX.js, timeout=120, enable= {arg30}, tag=网易严选
 cron {arg31} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX_MONITOR.js, timeout=120, enable= {arg32}, tag=网易严选-兑换时间
 cron {arg33} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js, timeout=120, enable= {arg34}, tag=麦斯威尔福利社
+cron {arg35} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/DingDong/DingDong.js, timeout=360, enable= {arg36}, tag=叮咚买菜签到
+cron {arg37} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/YongPai/YongPai.js, timeout=3600, enable= {arg38}, tag=甬派
