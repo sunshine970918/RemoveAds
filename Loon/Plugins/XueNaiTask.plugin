@@ -1,6 +1,7 @@
 #!name = XueNaiTask
 #!desc = XueNai Scripts 定时任务
 #!author = XueNai [https://github.com/Sliverkiss]
+#!icon= https://raw.githubusercontent.com/black2c7/TheMagic-Icons/main/Icons/UNI3.png
 #!data = 2025-4-15
 #!loon_version = 3.2.3(753)
 
