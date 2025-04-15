@@ -1,6 +1,6 @@
 #!name=雪乃脚本获取Token
 #!desc=1.打开小程序,收录小程序任务或更新token\n2.手动完成一次签到
-#!icon= 
+#!icon= https://raw.githubusercontent.com/black2c7/TheMagic-Icons/main/Icons/UNI3.png
 #!data = 2025-4-15
 #!loon_version = 3.2.3(753)
 
