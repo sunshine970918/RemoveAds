@@ -20,8 +20,8 @@ arg10 = switch,true,tag=好奇车生活任务开关
 arg11 = input,"10 10,16,22 * * *",tag=富士instax玩拍由我俱乐部任务时间
 arg12 = switch,true,tag=富士instax玩拍由我俱乐部任务开关
 
-arg13 = input,"10 0,23 * * *",tag=富连e充任务时间
-arg14 = switch,true,tag=富连e充任务开关
+arg13 = input,"39 11,19 * * *",tag=福田e家任务时间
+arg14 = switch,true,tag=福田e家任务开关
 
 arg15 = input,"33 2,12,20 * * *",tag=攀升科技+任务时间
 arg16 = switch,true,tag=攀升科技+任务开关
@@ -38,8 +38,8 @@ arg22 = switch,true,tag=泰康在线任务开关
 arg23 = input,"43 2,11,20 * * *",tag=海天美味馆任务时间
 arg24 = switch,true,tag=海天美味馆任务开关
 
-arg25 = input,"44 8,18 * * *",tag=红牛会员俱乐部任务时间
-arg26 = switch,true,tag=红牛会员俱乐部任务开关
+arg25 = input,"20 9,15,21 * * *",tag=望潮任务时间
+arg26 = switch,true,tag=望潮任务开关
 
 arg27 = input,"25 8,12,18,20 * * *",tag=统一任务时间
 arg28 = switch,true,tag=统一任务开关
@@ -56,34 +56,19 @@ arg34 = switch,true,tag=麦斯威尔福利社任务开关
 
 
 [Script]
-cron {arg1} "7 8,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, timeout=120, enable= {arg2}, tag=七彩虹商城
-
-cron {arg3} "19 8,19 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/SDL/SDL.js, timeout=120, enable= {arg4}, tag=三得利
-
-cron {arg5} "20 10,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/YSHY/YSHY.js, timeout=120, enable= {arg6}, tag=仰韶会员
-
-cron {arg9} "54 7,15 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Cheryfs/Cheryfs.js, timeout=120, enable= {arg10}, tag=好奇车生活
-
-cron {arg11} "10 10,16,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/INSTAX/INSTAX.js, timeout=120, enable= {arg12}, tag=富士instax玩拍由我俱乐部
-
-cron {arg13} "10 0,23 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/YongXin/YongXin.js, timeout=120, enable= {arg14}, tag=富连e充
-
-cron {arg15} "33 2,12,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/PSKJ/PSKJ.js, timeout=120, enable= {arg16}, tag=攀升科技+
-
-cron {arg17} "25 5,15 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/RQSP/RQSP.js, timeout=120, enable= {arg18}, tag=日清食品体验馆
-
-cron {arg19} "27 7,17 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MPCBH/MPCBH.js, timeout=120, enable= {arg20}, tag=毛铺草本荟
-
-cron {arg21} "8 8,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/TKZX/TKZX.js, timeout=120, enable= {arg22}, tag=泰康在线
-
-cron {arg23} "43 2,11,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/HaiTian/HaiTian.js, timeout=120, enable= {arg24}, tag=海天美味馆
-
-cron {arg25} "44 8,18 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/RedBull/RedBull.js, timeout=120, enable= {arg26}, tag=红牛会员俱乐部
-
-cron {arg27} "25 8,12,18,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/TongYi/TongYi.js, timeout=120, enable= {arg28}, tag=统一
-
-cron {arg29} "45 0,11,21 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX.js, timeout=120, enable= {arg30}, tag=网易严选
-
-cron {arg31} "50 9 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX_MONITOR.js, timeout=120, enable= {arg32}, tag=网易严选-兑换时间
-
-cron {arg33} "11 11,18 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js, timeout=120, enable= {arg34}, tag=麦斯威尔福利社
+cron {arg1} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, timeout=120, enable= {arg2}, tag=七彩虹商城
+cron {arg3} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/SDL/SDL.js, timeout=120, enable= {arg4}, tag=三得利
+cron {arg5} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/YSHY/YSHY.js, timeout=120, enable= {arg6}, tag=仰韶会员
+cron {arg9} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Cheryfs/Cheryfs.js, timeout=120, enable= {arg10}, tag=好奇车生活
+cron {arg11} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/INSTAX/INSTAX.js, timeout=120, enable= {arg12}, tag=富士instax玩拍由我俱乐部
+cron {arg13} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/FTEJ/FTEJ.js, timeout=120, enable= {arg14}, tag=福田e家
+cron {arg15} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/PSKJ/PSKJ.js, timeout=120, enable= {arg16}, tag=攀升科技+
+cron {arg17} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/RQSP/RQSP.js, timeout=120, enable= {arg18}, tag=日清食品体验馆
+cron {arg19} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MPCBH/MPCBH.js, timeout=120, enable= {arg20}, tag=毛铺草本荟
+cron {arg21} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/TKZX/TKZX.js, timeout=120, enable= {arg22}, tag=泰康在线
+cron {arg23} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/HaiTian/HaiTian.js, timeout=120, enable= {arg24}, tag=海天美味馆
+cron {arg25} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/refs/heads/main/Script/WangChao/WangChao.js, timeout=120, enable= {arg26}, tag=望潮
+cron {arg27} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/TongYi/TongYi.js, timeout=120, enable= {arg28}, tag=统一
+cron {arg29} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX.js, timeout=120, enable= {arg30}, tag=网易严选
+cron {arg31} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX_MONITOR.js, timeout=120, enable= {arg32}, tag=网易严选-兑换时间
+cron {arg33} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js, timeout=120, enable= {arg34}, tag=麦斯威尔福利社
