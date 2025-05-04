@@ -1,0 +1,1058 @@
+name: 自用去广告合集
+description: 自用app去广告合集，涵盖多应用开屏广告、信息流广告、弹窗广告过滤
+open_url: https://github.com/sunshine970918/RemoveAds
+author: sunshine970918
+homepage: https://github.com/sunshine970918/RemoveAds/Loon
+icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/erdongchanyo/AdBlock.png
+rules:
+- domain:
+    match: ad.12306.cn
+    policy: DIRECT
+  # 放行12306广告域名（避免误拦）
+- domain:
+    match: 203.107.1.1/24
+    policy: REJECT
+    no-resolve: true
+  # 拦截阿里云盘广告IP段
+- domain:
+    match: lookup.api.bsb.baidu.com
+    policy: REJECT
+  # 解除安全浏览限制相关域名
+- domain-suffix:
+    match: u3.ucweb.com
+    policy: REJECT
+  # 安全浏览限制相关域名后缀拦截
+- domain-keyword:
+    match: safebrowsing.
+    policy: REJECT
+  # 拦截包含安全浏览关键词的域名
+- domain:
+    match: afd.baidu.com
+    policy: REJECT
+  # 百度地图广告相关域名
+- domain:
+    match: afdconf.baidu.com
+    policy: REJECT
+  # 百度地图广告配置域名
+- domain:
+    match: lc.map.baidu.com
+    policy: REJECT
+  # 百度地图定位广告域名
+- domain:
+    match: adttrackingprd.hwwt8.com
+    policy: REJECT
+  # DNS无响应广告追踪域名
+- domain:
+    match: pageviewp.icbc.com.cn
+    policy: REJECT
+  # 工商银行页面广告统计域名
+- domain-suffix:
+    match: mall.icbc.com.cn
+    policy: REJECT
+  # 工商银行商城广告后缀域名
+- domain:
+    match: apis.alenable.com
+    policy: REJECT
+  # 广州地铁乘车码广告接口
+- url-regex:
+    match: "^http?:\\/\\/(discardrp|startup)\\.umetrip\\.com\\/gateway\\/api\\/umetrip\\/native"
+    policy: REJECT
+  # 航旅纵横开屏广告接口拦截（url-regex需双引号）
+- domain-suffix:
+    match: ehaier.com
+    policy: REJECT
+  # 海尔智家广告相关域名后缀
+- domain-suffix:
+    match: igexin.com
+    policy: REJECT
+  # 灰太狼霸王餐广告推送域名后缀（个推）
+- domain-suffix:
+    match: getui.com
+    policy: REJECT
+  # 灰太狼霸王餐广告推送域名后缀（个推）
+- domain:
+    match: dns.jd.com
+    policy: REJECT
+  # 京东DNS广告域名
+- domain-keyword:
+    match: adv.ccb.com
+    policy: REJECT
+  # 建设银行广告相关域名关键词
+- domain:
+    match: api.liquidlink.cn
+    policy: REJECT
+  # JavDB广告接口域名
+- url-regex:
+    match: "^http:\\/\\/p\\.kuaidi100\\.com\\/mobile\\/mobileapi\\.do"
+    policy: REJECT-TINYGIF
+  # 快递100移动端广告接口（url-regex需双引号）
+- url-regex:
+    match: "^http:\\/\\/p\\.kuaidi100\\.com\\/advertisement\\/"
+    policy: REJECT-TINYGIF
+  # 快递100广告页面拦截（url-regex需双引号）
+- domain:
+    match: httpdns.n.netease.com
+    policy: REJECT
+  # 拦截网易HTTPDNS广告域名
+- domain:
+    match: httpdns.calorietech.com
+    policy: REJECT
+  # 拦截卡路里科技HTTPDNS广告域名
+- domain:
+    match: hc-ssp.sm.cn
+    policy: REJECT
+  # 拦截广告下发域名（搜狗）
+- url-regex:
+    match: "https://gateway.kugou.com/ads.gateway/.*"
+    policy: REJECT-TINYGIF
+  # 酷狗概念版广告网关接口（url-regex需双引号）
+- url-regex:
+    match: "https://gateway3.kugou.com/ads.gateway/.*"
+    policy: REJECT-TINYGIF
+  # 酷狗概念版备用广告网关接口（url-regex需双引号）
+- url-regex:
+    match: "https://gatewayretry.kugou.com/ads.gateway/.*"
+    policy: REJECT-TINYGIF
+  # 酷狗概念版重试广告网关接口（url-regex需双引号）
+- url-regex:
+    match: "https://gateway.kugou.com/youth/api/user/v1/init.*"
+    policy: REJECT-TINYGIF
+  # 酷狗青少年模式初始化广告接口（url-regex需双引号）
+- url-regex:
+    match: "^http:\\/\\/mobilelog\\.kugou\\.com\\/adtrackconfig\\.json$"
+    policy: REJECT-TINYGIF
+  # 酷狗移动广告追踪配置文件（url-regex需双引号）
+- url-regex:
+    match: "https://tmeadcomm.y.qq.com/maproxy/getPbCompressAd,-DICTDOMAIN-SUFFIX,adservice.kugou.com,REJECT"
+    policy: REJECT
+  # 腾讯音乐广告代理接口（酷狗相关）（url-regex需双引号）
+- domain-suffix:
+    match: adservice.kugou.com
+    policy: REJECT
+  # 酷狗广告服务域名后缀
+- domain-suffix:
+    match: install2.kugou.com
+    policy: REJECT
+  # 酷狗安装包广告域名后缀
+- domain-suffix:
+    match: adstats.tencentmusic.com
+    policy: REJECT
+  # 腾讯音乐广告统计域名后缀
+- domain-suffix:
+    match: tmead.y.qq.com
+    policy: REJECT
+  # 腾讯音乐广告域名后缀
+- domain-suffix:
+    match: ad.tencentmusic.com
+    policy: REJECT
+  # 腾讯音乐广告服务域名后缀
+- domain-suffix:
+    match: api-adservices.apple.com
+    policy: REJECT
+  # 苹果广告服务接口域名后缀
+- domain-suffix:
+    match: us.l.qq.com
+    policy: REJECT
+  # 腾讯广告链接域名后缀（美国）
+- domain-suffix:
+    match: p.l.qq.com
+    policy: REJECT
+  # 腾讯广告链接域名后缀（中国）
+- domain-suffix:
+    match: mc.tencentmusic.com
+    policy: REJECT
+  # 腾讯音乐媒体中心域名后缀
+- domain-suffix:
+    match: mdt.qq.com
+    policy: REJECT
+  # 腾讯移动数据广告域名后缀
+- domain-suffix:
+    match: gdt.qq.com
+    policy: REJECT
+  # 广点通广告域名后缀
+- domain-suffix:
+    match: e.qq.com
+    policy: REJECT
+  # 腾讯广告统计域名后缀
+- domain:
+    match: ios.bugly.qq.com
+    policy: REJECT
+  # 腾讯Bugly广告上报域名
+- domain:
+    match: statics.woozooo.com
+    policy: REJECT
+  # 蓝奏云统计广告域名
+- domain:
+    match: sdkconfig.ad.xiaomi.com
+    policy: REJECT
+  # 小米广告SDK配置域名
+- domain:
+    match: acdn.adnxs.com
+    policy: REJECT
+  # Outlook广告内容分发网络域名
+- domain:
+    match: mediation.adnxs.com
+    policy: REJECT
+  # Outlook广告中介域名
+- domain:
+    match: sin3-ib.adnxs.com
+    policy: REJECT
+  # Outlook广告服务域名
+- domain:
+    match: data.mistat.xiaomi.com
+    policy: REJECT
+  # 小米数据统计广告域名
+- domain:
+    match: tracking.intl.miui.com
+    policy: REJECT
+  # 小米国际版追踪广告域名
+- domain:
+    match: 39d83s.com
+    policy: REJECT
+  # 小小影视广告域名
+- domain:
+    match: sdk.1rtb.net
+    policy: REJECT
+  # 小蚕霸王餐广告SDK域名
+- domain:
+    match: api-htp.beizi.biz
+    policy: REJECT
+  # 晓晓优选开屏广告接口域名
+- domain:
+    match: sdk.beizi.biz
+    policy: REJECT
+  # 晓晓优选广告SDK域名
+- domain:
+    match: ads.95516.com
+    policy: REJECT
+  # 云闪付广告域名
+- domain:
+    match: switch.cup.com.cn
+    policy: REJECT
+  # 云闪付切换广告域名
+- domain:
+    match: tysdk.95516.com
+    policy: REJECT
+  # 云闪付广告SDK域名
+- domain-suffix:
+    match: ttayy.cn
+    policy: REJECT
+  # 真不卡视频广告域名后缀
+- domain-suffix:
+    match: zhengxiaoliu.top
+    policy: REJECT
+  # 真不卡视频广告域名后缀
+- ip-cidr:
+    match: 120.240.95.37/32
+    policy: REJECT
+  # 中国移动广告IP地址
+- domain-suffix:
+    match: m1.ad.10010.com
+    policy: REJECT
+  # 中国联通广告域名后缀
+- domain:
+    match: ad.21cn.com
+    policy: REJECT
+  # 中国电信广告域名
+- domain:
+    match: ad.k.21cn.com
+    policy: REJECT
+  # 中国电信广告域名
+- domain:
+    match: admarket.21cn.com
+    policy: REJECT
+  # 中国电信广告市场域名
+- domain:
+    match: adshows.21cn.com
+    policy: REJECT
+  # 中国电信广告展示域名
+- ip-cidr:
+    match: 122.229.8.47/32
+    policy: REJECT
+    no-resolve: true
+  # 中国电信广告IP地址（无解析）
+- ip-cidr:
+    match: 122.229.29.89/32
+    policy: REJECT
+    no-resolve: true
+  # 中国电信广告IP地址（无解析）
+body_rewrites:
+- response-jq:
+    match: ^https?:\\/\\/[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+){1,3}(:\\d+)?\\/api\\/v\\d\\/advert
+    filter: reject
+  # 通用API广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/dss0\\.bdstatic\\.com\\/.+/tam-ogel\\/.+\\.(jpg|mp4)
+    filter: reject
+  # 百度静态资源广告文件拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/tb1\\.bdstatic\\.com\\/tb\\/cms\\/ngmis\\/adsense\\/*.jpg
+    filter: reject
+  # 百度广告Sense图片资源拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/pic1\\.chelaile\\.net\\.cn\\/adv\\/
+    filter: reject
+  # 车来了开屏广告资源路径拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/(api|atrace)\\.chelaile\\.net\\.cn\\/adpub\\/
+    filter: reject
+  # 车来了广告发布接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/api\\.chelaile\\.net\\.cn\\/goocity\\/advert\\/
+    filter: reject
+  # 车来了城市广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/web\\.chelaile\\.net\\.cn\\/api\\/adpub\\/ad
+    filter: reject
+  # 车来了网页广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/cdn\\.\\w{3}\\.chelaileapp\\.cn\\/(api\\/)?adpub
+    filter: reject
+  # 车来了CDN广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/app-gw\\.csdn\\.net\\/silkroad-api\\/api\\/v\\d\\/assemble\\/list\\/pub\\/channel\\/app_open_screen_ad
+    filter: reject
+  # CSDN开屏广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/app-gw\\.csdn\\.net\\/abtesting\\/v2\\/getList\\\
+    filter: reject
+  # CSDN A/B测试广告列表接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/gw\\.csdn\\.net\\/cms-app\\/v\\d+\\/home_page\\/open_advertisement
+    filter: reject
+  # CSDN首页广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/img\\d\\.doubanio\\.com\\/view\\/dale-online\\/dale_ad\\/
+    filter: reject
+  # 豆瓣在线广告图片资源拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/frodo\\.douban\\.com\\/api\\/v2\\/movie\\/banner
+    filter: reject
+  # 豆瓣电影横幅广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/erebor\\.douban\\.com\\/count\\/\\?ad=
+    filter: reject
+  # 豆瓣广告计数接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/img-ys011\\.didistatic\\.com\\/static\\/ad_oss\\/.*.jpg
+    filter: reject
+  # 滴滴静态广告资源拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/elemecdn\\.com\\/.+\\/sitemap
+    filter: reject
+  # 饿了么CDN广告站点地图拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+\\/w\\/640\\/h\\/\\d{3,4}
+    filter: reject
+  # 饿了么CDN广告图片尺寸拦截（640宽度）（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+\\/w\\/750\\/h\\/\\d{3,4}
+    filter: reject
+  # 饿了么CDN广告图片尺寸拦截（750宽度）（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/cube\\.elemecdn\\.com\\/[\\w\\/]+\\.jpeg\\?x-oss-process=image\\/resize,m_fill,w_1\\d{3},h_2\\d{3}\\/format,webp\\/
+    filter: reject
+  # 饿了么CDN广告图片处理接口拦截（1xxx宽度）（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/cube\\.elemecdn\\.com\\/[\\w\\/]+\\.jpeg\\?x-oss-process=image\\/resize,m_fill,w_6\\d{2},h_8\\d{2}\\/format,webp\\/
+    filter: reject
+  # 饿了么CDN广告图片处理接口拦截（6xx宽度）（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/cube\\.elemecdn\\.com\\/[\\w\\/]+\\.jpeg\\?x-oss-process=image\\/resize,m_fill,w_\\d{3},h_\\d{4}\\/format,webp\\/
+    filter: reject
+  # 饿了么CDN广告图片处理接口拦截（通用尺寸）（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/cube\\.elemecdn\\.com\\/\\w\\/\\w{2}\\/\\w+mp4\\.mp4\\?
+    filter: reject
+  # 饿了么CDN广告视频资源拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/www1\\.elecfans\\.com\\/www\\/delivery\\/
+    filter: reject
+  # 电子发烧友广告投放接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/(nr-op|cube)\\.elemecdn\\.com\\/.+\\.jpeg\\?x-oss-process=image\\/resize,m_fill,w_\\d{4,},h_\\d{4,}\\/($|format,webp\\/$)
+    filter: reject
+  # 饿了么CDN广告图片处理接口拦截（大尺寸）（非url-regex，不加双引号）
+- response-jq:
+    match: ^http?:\\/\\/(discardrp|startup)\\.umetrip\\.com\\/gateway\\/api\\/umetrip\\/native
+    filter: reject
+  # 航旅纵横开屏广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^http:\\/\\/image1\\.ccb\\.com\\/newsinfo\\/eBranch\\/check\\/(nf\\/newfin\\/activity|po\\/poortheme\\/activity)\\/\\w+\\.png
+    filter: reject
+  # 建设银行活动广告图片拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https:\\/\\/gab\\.122\\.gov\\.cn\\/eapp\\/m\\/sysquery\\/adver$
+    filter: reject
+  # 交管12123广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https:\\/\\/res\\.kfc\\.com\\/advertisement
+    filter: reject
+  # 肯德基广告页面拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/guide-webapp\\/v\\d\\/popup\\/getPopUp
+    filter: reject
+  # Keep引导弹窗广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/kprime\\/v\\d\\/popups\\/primeGuide
+    filter: reject
+  # Keep会员引导弹窗接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/kad\\.gotokeep\\.com\\/op-engine-webapp\\/v\\d\\/ad
+    filter: reject
+  # Keep广告引擎接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/api.gotokeep.com/cauchy/growth/init
+    filter: reject
+  # Keep青少年模式初始化接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/search\\/v\\d\\/default\\/keyword\\/list
+    filter: reject
+  # Keep搜索默认关键词广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/search\\/v\\d\\/hotword\\/list
+    filter: reject
+  # Keep热搜词广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/search\\/v\\d\\/hotCourse\\/list
+    filter: reject
+  # Keep热门课程广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/op-engine-webapp\\/v\\d\\/ad
+    filter: reject
+  # Keep广告引擎接口拦截（重复规则）（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/ads\\/v\\d\\/ads\\/preload
+    filter: reject
+  # Keep广告预加载接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/training\\/box\\/config
+    filter: reject
+  # Keep训练盒子广告配置接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/anno\\/v\\d\\/upgrade\\/check
+    filter: reject
+  # Keep升级检查广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: (^https:\\/\\/c\\.pc\\.qq\\.com\\/middlem\\.html\\?pfurl=)(http.*)(&pfuin=.*)
+    filter: "$2 302"
+  # QQ链接中间页解锁（提取真实链接重定向）（非url-regex，但match含正则，此处按用户示例保留双引号？实际YAML中字符串无需双引号，已修正为无引号
+  # 注：此处match为正则表达式，应属于url-regex类型，但原规则分类为response-jq，需确认。根据用户指示，仅url_regex类型加双引号，此处作为response-jq的match不加双引号
+- response-jq:
+    match: (^https:\\/\\/c\\.pc\\.qq\\.com\\/middlect\\.html\\?pfuin=.*&pfurl=)(http.*)(&gjsublevel=.*)
+    filter: "$2 302"
+  # QQ链接中间页解锁（带参数处理）
+- response-jq:
+    match: (^https:\\/\\/c\\.pc\\.qq\\.com\\/middlect\\.html\\?iscontinue=.*pfurl=)(http.*)(&pfuin=.*)
+    filter: "$2 302"
+  # QQ链接中间页解锁（续传参数处理）
+- response-jq:
+    match: (^https:\\/\\/pingtas\\.qq\\.com\\/webview\\/pingd\\?dm=c\\.pc\\.qq\\.com&pvi=\\d+&si=s\\d+&url=\\/middlem\\.html\\?pfurl%3d)(http.*)(%26pfuin%3d.*%26pfuin%3d.*)
+    filter: "$2 302"
+  # QQ链接WebView中间页解锁（URL编码处理）
+- response-jq:
+    match: (^https:\\/\\/cgi\\.connect\\.qq\\.com\\/qqconnectopen\\/get_urlinfoForQQV2\\?url=)(http.*)
+    filter: "$2 302"
+  # QQ连接开放平台链接解锁
+- response-jq:
+    match: (^https:\\/\\/c\\.pc\\.qq\\.com\\/index\\.html\\?pfurl=)(http.*)(&pfuin=.*)
+    filter: "$2 302"
+  # QQ首页链接解锁
+- response-jq:
+    match: (^https:\\/\\/c\\.pc\\.qq\\.com\\/ios\\.html\\?url=)(http.*)(&level=.*)
+    filter: "$2 302"
+  # QQ iOS页面链接解锁
+- response-jq:
+    match: (^https:\\/\\/pingtas\\.qq\\.com\\/webview\\/pingd\\?dm=c\\.pc\\.qq\\.com&pvi=\\d+&si=s\\d+&url=\\/ios\\.html\\?url%3d)(http.*)(%26level.*%26level.*)
+    filter: "$2 302"
+  # QQ iOS WebView链接解锁（URL编码处理）
+- response-jq:
+    match: ^https:\\/\\/api\\.wfdata\\.club\\/v2\\/yesfeng\\/yesList
+    filter: reject
+  # 威锋网开屏广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/xxyx-client-api\\.xiaoxiaoyouxuan\\.com\\/agent_ad
+    filter: reject
+  # 晓晓优选代理广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/xxyx-client-api\\.xiaoxiaoyouxuan\\.com\\/activity\\/show
+    filter: reject
+  # 晓晓优选活动广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/statistic\\.live\\.126\\.net\\/statics\\/report\\/common\\/form
+    filter: reject
+  # 网易直播统计广告表单拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https:\\/\\/wallet\\.95516\\.com(:10533)?\\/s\\/wl\\/icon\\/large\\/1
+    filter: reject
+  # 云闪付钱包图标广告拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/(client\\.app\\.coc|app)\\.10086\\.cn\\/biz-orange\\/DN\\/explorePage\\/getAdverList
+    filter: reject
+  # 中国移动广告列表接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/(client\\.app\\.coc|app)\\.10086\\.cn\\/biz-orange\\/DN\\/emotionMarket
+    filter: reject
+  # 中国移动情感市场广告接口拦截（非url-regex，不加双引号）
+- response-jq:
+    match: ^https?:\\/\\/cloud\\.189\\.cn\\/include\\/splash\\/
+    filter: reject
+  # 中国电信云开屏广告资源拦截（非url-regex，不加双引号）
+map_locals:
+- match: ^https?:\\/\\/vip7\\.fzwdyy\\.cn:8083\\/api\\/(getAdvertInfo|getGOOGAdvert)
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # 555影视开屏广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/member\\.alipan\\.com\\/v2\\/activity\\/sign_in_luckyBottle
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 阿里云盘签到活动广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/api\\.alipan\\.com\\/adrive\\/v1\\/file\\/getTopFolders
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 阿里云盘顶部文件夹广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/social\\.blued\\.cn\\/users\\/recommend
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # Blued用户推荐广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/social\\.blued\\.cn\\/users\\/no_auth\\/benefit
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # Blued未登录福利广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/dss0\\.bdstatic\\.com\\/-0U0bnSm1A5BphGlnYG\\/
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # 百度静态资源广告路径模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/tb2\\.bdstatic\\.com\\/tb\\/mobile\\/spb\\/widget\\/jump
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # 百度移动Widget广告跳转模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/ss0\\.bdstatic\\.com/.+?_\d{3}_\d{4}\\.jpg
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # 百度静态图片广告模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/gss0\\.bdstatic\\.com\\/.+?\\/static\\/wiseindex\\/img\\/bd_red_packet\\.png
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # 百度红包图片广告模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/biz\\.cyapi\\.cn\\/(p\\/v1\\/entries|p\\/v1\\/trial_card\\/info|v2\\/product)
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 彩云天气商业接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/starplucker\\.cyapi\\.cn\\/v3\\/(config\\/cypage\\/\\w+\\/conditions|notification\\/message_center|operation\\/homefeatures)
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 彩云天气配置接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/api\\.caiyunapp\\.com\\/v1\\/activity
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 彩云天气活动接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/atrace\\.chelaile\\.net\\.cn\\/adpub\\/
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # 车来了广告发布接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/atrace\\.chelaile\\.net\\.cn\\/exhibit\\?&adv_image
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # 车来了广告展示接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/api\\.douban\\.com\\/v\\d\\/app_ads\\/
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 豆瓣应用广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/api\\.douban\\.com\\/b.*\\/common_ads\\?.*
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 豆瓣通用广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/hd\\.xiaojukeji\\.com\\/d
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 小桔科技广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/fuss10\\.elemecdn\\.com\\/.+?\\.mp4
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # 饿了么CDN广告视频模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/gd\\.10086\\.cn\\/gmccapp\\/serv\\/\\?servicename=GMCCAPP_704_002_001_001
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # 广东移动服务广告接口模拟空响应（非url-regex，不加双引号）
+- match: "https?:\\/\\/awg\\.enmonster\\.com\\/apa\\/(advert\\/demand\\/home\\/poster|index\\/advert\\/skin)"
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 怪兽充电广告海报接口模拟空响应（含正则，使用url-regex类型，加双引号）
+- match: ^https:\\/\\/api\\.m\\.jd\\.com\\/client\\.action\\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06])
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 京东搜索框广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/api\\.coolapk\\.com\\/v6\\/search\\?.*type=hotSearch
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 酷安热搜广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/static1\\.keepcdn\\.com\\/ark_optimus\\/202\\d\\/*\\/*\\/.*.(png|jpg)
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # Keep静态资源广告图片模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/lens\\.leoao\\.com\\/lens\\/conduct\\/app\\/rpc\\/v2\\/com\\.lefit\\.dubbo\\.cms\\.api\\.front\\.AppAdvertisingFrontService\\/getAppAdvertisingNew
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 乐刻新广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/lens\\.leoao\\.com\\/lens\\/conduct\\/app\\/rpc\\/v2\\/com\\.lefit\\.dubbo\\.cms\\.api\\.bff\\.ClientFrontFacade\\/queryHomeMiddleInfo
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 乐刻首页中间信息广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/lens\\.leoao\\.com\\/lens\\/conduct\\/app\\/rpc\\/v2\\/com\\.lefit\\.dubbo\\.cms\\.api\\.front\\.AdvertiseConfigFrontService\\/getAdvertiseConfigNew
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 乐刻广告配置接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/home\\.mi\\.com\\/cgi-op\\/api\\/v1\\/recommendation\\/(banner|carousel\\/banners|myTab|openingBanner)\?
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 米家推荐广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/p0\\.pipi\\.cn\\/(adAdmin|mediaplus\\/maoyantong_ads_fe)\\/\\w+\\.jpg\\?imageMogr2\\/quality\\/
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 猫眼广告图片处理接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/p0\\.pipi\\.cn\\/(adAdmin|mediaplus\\/maoyantong_ads_fe)\\/\\w+\\.(jpg|png)\\?imageMogr2\\/thumbnail\\/(860x0|!165x165|!1049x1169)
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 猫眼广告图片缩略图接口模拟空响应（非url-regex，不加双引号）
+- match: ^http:\\/\\/wmapi\\.meituan\\.com\\/api\\/v7\\/(loadInfo|openscreen|startpicture)\?
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 美团加载信息/开屏广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/flowplus\\.meituan\\.net\\/v1\\/mss_\\w+\\/linglong\\/\\d+\\.jpg
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 美团流量广告图片接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/img\\.meituan\\.net\\/bizad\\/bizad_brandCpt_\\d+\\.jpg
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 美团品牌广告图片接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/s3plus\\.meituan\\.net\\/ocean-blk-index\\/index\\/blk_conf_73\\.json
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 美团配置文件广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/s3plus\\.meituan\\.net\\/v1\\/mss_\\w+\\/(brandcpt-vedio|waimai-alita)\\/\\w+\\.zip$
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 美团品牌广告视频/外卖广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/img0[1-9]{1}\\.luckincoffeecdn\\.com\\/group\\d/M00/[A-Z0-9]{2}/[A-Z0-9]{2}/[a-zA-Z0-9]{29}\\.(jpg|jpeg)_\.webp
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # 瑞幸咖啡广告图片模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/ucmp\\.sf-express\\.com\\/cx-wechat-query\\/query\\/info-flow\\/reconsitution-list
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # 顺丰速运微信查询广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/acs\\.m\\.taobao\\.com\\/gw\\/mtop\\.film\\.mtopadvertiseapi\\.queryloadingbanner
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # 淘票票加载广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/alt-r\\.my\\.com\\/mobile
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # Talkatone移动广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/imgx\\.jampp\\.com\\/imgsrv\\/tn
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # Jampp广告图片服务模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/osg-service\\.sgcc\\.com\\.cn:18600\\/emss-pfa-appset-front\\/bootpageoutter\\/
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 网上国网启动页广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/api\\.wfdata\\.club\\/v2\\/yesfeng\\/yesList
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 威锋网广告列表接口模拟空响应（重复规则，确保覆盖）（非url-regex，不加双引号）
+- match: ^https?:\\/\\/mp\\.weixin\\.qq\\.com\\/mp\\/cps_product_info\\?action
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 微信公众号商品推广接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/appconf\\.mail\\.163\\.com\\/mailmaster\\/api\\/http\\/urlConfig\\.do$
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 网易邮箱广告配置接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/client-api-v2\\.oray\\.com\\/materials\\/SLCC_IOS_STARTUP
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 向日葵iOS启动页广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/client-api-v2\\.oray\\.com\\/materials\\/SLCC_IOS_DEVICE
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 向日葵iOS设备广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/client-api-v2\\.oray\\.com\\/materials\\/SUNLOGIN_CLIENT_IOS_PROMOTION
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 向日葵iOS推广广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https:\\/\\/xxyx-client-api\\.xiaoxiaoyouxuan\\.com\\/vajra
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 晓晓优选多余模块接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/client\\.app\\.coc\\.10086\\.cn\\/biz-orange\\/DN\\/init\\/startInit
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # 中国移动初始化广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/m\\.client\\.10010\\.com\\/mobileService\\/(activity|customer)\\/(accountListData|get_client_adv|get_startadv)
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # 中国联通活动/客户广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/m\\.client\\.10010\\.com\\/mobileService\\/customer\\/getclientconfig\\.htm
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 中国联通客户配置广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/m\\.client\\.10010\\.com\\/uniAdmsInterface\\/(getHomePageAd|getWelcomeAd)
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # 中国联通首页/欢迎页广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/[^(apple|10010)]+\\.(com|cn)\\/(a|A)d(s|v)?(\\/|\\.js)
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # 通用广告路径拦截（非苹果/联通域名）（含正则，使用url-regex类型，加双引号）
+- match: ^https?:\\/\\/m1\\.ad\\.10010\\.com\\/noticeMag\\/images\\/imageUpload\\/2\\d{3}
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # 中国联通广告图片上传接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/res\\.mall\\.10010\\.cn\\/mall\\/common\\/js\\/fa\\.js?referer=
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # 中国联通商城JS广告文件模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/zt-app\\.go189\\.cn\\/zt-app\\/welcome\\/.*?Animation
+  headers:
+    content-type: tiny-gif
+  status-code: 200
+  # 中国电信欢迎页动画广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/app\\.10099\\.com\\.cn\\/contact-web\\/api\\/version\\/getFlashScreenPage
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # 中国广电闪屏页广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/c\\.zhangle\\.com\\/pic\\/mktg\\/diversity\\/.+\\.jpg$
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 涨乐财富通市场广告图片接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/live\\.inst-service\\.htsc\\.com\\/live
+  headers:
+    content-type: text
+  body: "{}"
+  status-code: 200
+  # 华泰证券直播广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/geetest\\.htsc\\.com:8888\\/pre_get_token
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # 华泰证券验证码广告接口模拟空响应（非url-regex，不加双引号）
+- match: ^https?:\\/\\/119\\.29\\.29\\.98\\/d
+  headers:
+    content-type: text
+  body: " "
+  status-code: 200
+  # 未知广告IP路径模拟空响应（非url-regex，不加双引号）
+scriptings:
+- http-response:
+    name: 移除12306开屏广告
+    match: ^https:\\/\\/ad\\.12306\\.cn\\/ad\\/ser\\/getAdList$
+    script-url: https://kelee.one/Resource/Script/12306/12306_remove_splashscreen_ads.js
+    requires-body: true
+  # 12306开屏广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: 555影视广告
+    match: ^https:\\/\\/app-v1\\.ecoliving168\\.com\\/api\\/v1\\/movie\\/index_recommend\?
+    script-url: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/555Ad.js
+    requires-body: true
+    timeout: 60
+  # 555影视首页推荐广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: 移除阿里云盘广告
+    match: ^https:\\/\\/(biz)?api\\.alipan\\.com\\/apps\\/v\\d\\/users?\\/home\\/(news|widgets)
+    script-url: https://kelee.one/Resource/Script/AliYunDrive/AliYunDrive_remove_ads.js
+    requires-body: true
+  # 阿里云盘首页新闻/小部件广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: 移除阿里云盘广告
+    match: ^https:\\/\\/member\\.alipan\\.com\\/v1\\/users\\/onboard_list
+    script-url: https://kelee.one/Resource/Script/AliYunDrive/AliYunDrive_remove_ads.js
+    requires-body: true
+  # 阿里云盘用户引导列表广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: blued登录后个人界面广告
+    match: ^https?:\\/\\/social\\.blued\\.cn\\/users\\/.+\\/more\\/ios\\?v=2
+    script-url: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/blued.js
+    requires-body: true
+    timeout: 60
+  # Blued登录后个人界面广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: 移除百度搜索首页信息流广告
+    match: ^https?:\\/\\/(www|m)\\.baidu\\.com\\/?($|\\?from=\\w{8,9})
+    script-url: https://kelee.one/Resource/Script/BaiduSearch/BaiduSearchHomePage_remove_ads.js
+    requires-body: true
+  # 百度搜索首页信息流广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: 彩云天气去广告
+    match: ^https:\\/\\/(wrapper\\.cyapi\\.cn|api\\.caiyunapp\\.com|cdn-w\\.caiyunapp\\.com)\\/v1\\/activity\?
+    script-url: https://kelee.one/Resource/Script/ColorfulClouds/ColorfulClouds_remove_ads.js
+    requires-body: true
+  # 彩云天气活动广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: 移除首页广告
+    match: ^http?:\\/\\/(114\\.115\\.217\\.129)|(home\\.umetrip\\.com)\\/gateway\\/api\\/umetrip\\/native$
+    script-url: https://kelee.one/Resource/Script/Umetrip/Umetrip_remove_ads.js
+  # 航旅纵横首页广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: ithome
+    match: ^https?:\\/\\/napi\\.ithome\\.com\\/api\\/(news\\/index|topmenu\\/getfeeds)
+    script-url: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ithome/ithome.js
+    requires-body: true
+    timeout: 60
+  # 爱科技首页新闻/顶部菜单广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: 计算器解锁
+    match: ^https?:\\/\\/buy\\.itunes\\.apple\\.com\\/verifyReceipt$
+    script-url: https://gist.githubusercontent.com/ddgksf2013/9e0f6c7341beea09a31aa309d9d7f502/raw/buyitunes.js
+    requires-body: true
+    timeout: 60
+  # 苹果计算器内购解锁脚本（非url-regex，不加双引号）
+- http-response:
+    name: keep
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/athena\\/v\\d\\/people\\/my$
+    script-url: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js
+    requires-body: true
+    timeout: 60
+  # Keep个人页面广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: keep
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/config\\/v\\d\\/basic
+    script-url: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js
+    requires-body: true
+    timeout: 60
+  # Keep基础配置广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: keep
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/homepage\\/v\\d\\/tab
+    script-url: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js
+    requires-body: true
+    timeout: 60
+  # Keep首页标签广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: keep
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/nuocha\\/course\\/v\\d/\\w+\\/preview
+    script-url: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js
+    requires-body: true
+    timeout: 60
+  # Keep课程预览广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: keep
+    match: ^https?:\\/\\/api\\.gotokeep\\.com\\/sportpage\\/sport\\/v\\d\\/mysport
+    script-url: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js
+    requires-body: true
+    timeout: 60
+  # Keep运动页面广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: 朴朴超市
+    match: ^https?:\\/\\/j1\\.pupuapi\\.com\\/client\\/marketing\\/banner\\/v7\\?position_types=2(%[A-Z0-9]+)+&store_id
+    script-url: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js
+    requires-body: true
+    timeout: 60
+  # 朴朴超市开屏广告移除脚本（非url-regex，不加双引号）
+- http-response:
+    name: 微信封禁页面
+    match: ^https:\\/\\/(weixin110\\.qq|security\\.wechat)\\.com\\/cgi-bin\\/mmspamsupport-bin\\/newredirectconfirmcgi\?
+    script-url: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/Weixin/Weixin_external_links_unlock.js
+    requires-body: true
+  # 微信封禁页面外部链接解锁脚本（非url-regex，不加双引号）
+mitm:
+  hostnames:
+    includes:
+    - ad.12306.cn
+    - mobile.12306.cn
+    - vip7.fzwdyy.cn
+    - *.qyfxgd.cn
+    - *.weilai555.com
+    - *.ecoliving168.com
+    - app-v1.ecoliving168.com
+    - api.alipan.com
+    - member.alipan.com
+    - bizapi.alipan.com
+    - social.blued.cn
+    - dss0.bdstatic.com
+    - tb1.bdstatic.com
+    - tb2.bdstatic.com
+    - ss0.bdstatic.com
+    - gss0.bdstatic.com
+    - newclient.map.baidu.com
+    - m.baidu.com
+    - www.baidu.com
+    - biz.cyapi.cn
+    - starplucker.cyapi.cn
+    - api.caiyunapp.com
+    - cdn-w.caiyunapp.com
+    - pic1.chelaile.net.cn
+    - api.chelaile.net.cn
+    - atrace.chelaile.net.cn
+    - web.chelaile.net.cn
+    - cdn.*.chelaileapp.cn
+    - app-gw.csdn.net
+    - gw.csdn.net
+    - api.douban.com
+    - img*.douban.com
+    - frodo.douban.com
+    - erebor.douban.com
+    - hd.xiaojukeji.com
+    - img-ys011.didistatic.com
+    - elemecdn.com
+    - fuss10.elemecdn.com
+    - cube.elemecdn.com
+    - www1.elecfans.com
+    - nr-op.elemecdn.com
+    - gd.10086.cn
+    - awg.enmonster.com
+    - 114.115.217.129
+    - home.umetrip.com
+    - discardrp.umetrip.com
+    - startup.umetrip.com
+    - api.m.jd.com
+    - gab.122.gov.cn
+    - res.kfc.com.cn
+    - napi.ithome.com
+    - buy.itunes.apple.com
+    - api.coolapk.com
+    - api.gotokeep.com
+    - lens.leoao.com
+    - home.mi.com
+    - p0.pipi.cn
+    - flowplus.meituan.net
+    - img.meituan.net
+    - s3plus.meituan.net
+    - pingtas.qq.com
+    - c.pc.qq.com
+    - cgi.connect.qq.com
+    - capi.lkcoffee.com
+    - ecapi.lkcoffee.com
+    - m.lkcoffee.com
+    - img0*.luckincoffeecdn.com
+    - ucmp.sf-express.com
+    - alt-r.my.com
+    - imgx.jampp.com
+    - osg-service.sgcc.com.cn
+    - api.wfdata.club
+    - mp.weixin.qq.com
+    - j1.pupuapi.com
+    - weixin110.qq.com
+    - security.wechat.com
+    - appconf.mail.163.com
+    - api.xiachufang.com
+    - client-api-v2.oray.com
+    - xxyx-client-api.xiaoxiaoyouxuan.com
+    - statistic.live.126.net
+    - client.app.coc.10086.cn
+    - app.10086.cn
+    - m.client.10010.com
+    - m1.ad.10010.com
+    - res.mall.10010.cn
+    - cloud.189.cn
+    - zt-app.go189.cn
+    - app.10099.com.cn
+    - c.zhangle.com
+    - live.inst-service.htsc.com
+    - geetest.htsc.com
+    - 119.29.29.98
+  # MITM监控的主机名列表，覆盖各应用广告相关域名，需在代理工具中启用MITM功能以生效
