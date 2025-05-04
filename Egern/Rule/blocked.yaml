@@ -1,0 +1,26 @@
+no_resolve: true
+domain_keyword_set:
+- google
+- gmail
+- youtube
+- facebook
+- twitter
+- instagram
+- dropbox
+- blogspot
+- whatsapp
+domain_suffix_set:
+- tw
+- gstatic.com
+- ampproject.org
+- fb.me
+- fbcdn.net
+- twimg.com
+- youtu.be
+- oculuscdn.com
+- oculus.com
+- letsencrypt.org
+- android.com
+- ytimg.com
+- githubusercontent.com
+- telegram.org
