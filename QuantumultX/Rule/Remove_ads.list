@@ -155,6 +155,10 @@ DOMAIN,39d83s.com,REJECT
 # 小蚕霸王餐
 DOMAIN, sdk.1rtb.net, REJECT
 # 晓晓优选去开屏
+DOMAIN-SUFFIX,getui.com
+DOMAIN-SUFFIX,jpush.cn
+DOMAIN-SUFFIX,igexin.com
+DOMAIN-SUFFIX,jiguang.cn
 DOMAIN, api-htp.beizi.biz, REJECT
 DOMAIN, sdk.beizi.biz, REJECT
 
