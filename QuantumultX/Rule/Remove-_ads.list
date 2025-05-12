@@ -1,0 +1,181 @@
+# ======= 12306 ======= #
+# 放行规则
+DOMAIN, ad.12306.cn, DIRECT
+
+# ======= A ======= #
+# 阿里云盘
+IP-CIDR, 203.107.1.1/24, REJECT, no-resolve
+
+# 安全浏览限制解除
+DOMAIN,lookup.api.bsb.baidu.com,REJECT
+DOMAIN-SUFFIX,u3.ucweb.com,REJECT
+DOMAIN-KEYWORD,safebrowsing.,REJECT
+
+# ======= B ======= #
+# 百度地图
+DOMAIN,afd.baidu.com,REJECT
+DOMAIN,afdconf.baidu.com,REJECT
+DOMAIN,lc.map.baidu.com,REJECT
+
+
+# ======= C ======= #
+# 菜鸟
+DOMAIN, acs4baichuan.m.taobao.com, REJECT
+DOMAIN, adsmind.ugdtimg.com, REJECT
+DOMAIN, amdc.m.youku.com, REJECT
+DOMAIN, api.sm.cn, REJECT
+DOMAIN, apiv4-iyes.youku.com, REJECT
+DOMAIN, baichuan-sdk.alicdn.com, REJECT
+DOMAIN, cad.youku.com, REJECT
+DOMAIN, huichuan-mc.sm.cn, REJECT
+DOMAIN, huichuan.sm.cn, REJECT
+DOMAIN, iyes.youku.com, REJECT
+DOMAIN, m-vali.cp31.ott.cibntv.net, REJECT
+DOMAIN, mc.atm.youku.com, REJECT
+DOMAIN, nbsdk-baichuan.alicdn.com, REJECT
+DOMAIN, pre-acs.youku.com, REJECT
+DOMAIN, vali-g1.cp31.ott.cibntv.net, REJECT
+DOMAIN, vali-ugc.cp31.ott.cibntv.net, REJECT
+DOMAIN, yk-ssp.ad.youku.com, REJECT
+DOMAIN, ykad-data.youku.com, REJECT
+DOMAIN, youku-acs.m.taobao.com, REJECT
+
+
+# ======= D ======= #
+# DNS 无响应
+DOMAIN,adttrackingprd.hwwt8.com,REJECT
+
+# ======= G ======= #
+# 工商银行
+DOMAIN,pageviewp.icbc.com.cn,REJECT
+DOMAIN-SUFFIX,mall.icbc.com.cn,REJECT
+# > 广州地铁乘车码
+DOMAIN,apis.alenable.com,REJECT
+
+# ======= H ====== #
+# 航旅纵横 //114.115.217.129, home.umetrip.com
+URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
+# 海尔智家
+DOMAIN-SUFFIX,ehaier.com,REJECT
+# 灰太狼霸王餐
+DOMAIN-SUFFIX,igexin.com, REJECT
+DOMAIN-SUFFIX,getui.com, REJECT
+
+# ======= J ======= #
+# 京东 //api.m.jd.com
+DOMAIN, dns.jd.com, REJECT
+#URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
+#IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
+#IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
+# 建设银行
+DOMAIN-KEYWORD,adv.ccb.com,REJECT
+# JavDB
+DOMAIN,api.liquidlink.cn,REJECT
+
+# ======= K ======= #
+# 快递100
+URL-REGEX, ^http:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do, REJECT-DICT
+URL-REGEX, ^http:\/\/p\.kuaidi100\.com\/advertisement\/, REJECT-DICT
+# > Keep
+# 拦截HTTPDNS
+DOMAIN, httpdns.n.netease.com, REJECT
+DOMAIN, httpdns.calorietech.com, REJECT
+# 拦截广告下发
+DOMAIN, hc-ssp.sm.cn, REJECT
+
+# 酷狗概念版
+URL-REGEX,https://gateway.kugou.com/ads.gateway/.*,REJECT-DICT
+URL-REGEX,https://gateway3.kugou.com/ads.gateway/.*,REJECT-DICT
+URL-REGEX,https://gatewayretry.kugou.com/ads.gateway/.*,REJECT-DICT
+URL-REGEX,https://gateway.kugou.com/youth/api/user/v1/init.*,REJECT-DICT
+URL-REGEX,^http:\/\/mobilelog\.kugou\.com\/adtrackconfig\.json$,REJECT-DICT
+URL-REGEX,https://tmeadcomm.y.qq.com/maproxy/getPbCompressAd,REJECT-DICTDOMAIN-SUFFIX,adservice.kugou.com,REJECT
+DOMAIN-SUFFIX,adservice.kugou.com,REJECT
+DOMAIN-SUFFIX,install2.kugou.com,REJECT
+DOMAIN-SUFFIX,adstats.tencentmusic.com,REJECT
+DOMAIN-SUFFIX,tmead.y.qq.com,REJECT
+DOMAIN-SUFFIX,ad.tencentmusic.com,REJECT
+DOMAIN-SUFFIX,api-adservices.apple.com,REJECT
+DOMAIN-SUFFIX,us.l.qq.com,REJECT
+DOMAIN-SUFFIX,p.l.qq.com,REJECT
+DOMAIN-SUFFIX,mc.tencentmusic.com,REJECT
+DOMAIN-SUFFIX,mdt.qq.com,REJECT
+DOMAIN-SUFFIX,gdt.qq.com,REJECT
+DOMAIN-SUFFIX,e.qq.com,REJECT
+DOMAIN,ios.bugly.qq.com,REJECT
+
+# ======= L ======= #
+# 蓝奏云
+DOMAIN,statics.woozooo.com,REJECT
+
+# ======= M ======= #
+# 米家
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
+
+# ======= O ======= #
+# Outlook
+DOMAIN, acdn.adnxs.com, REJECT
+DOMAIN, mediation.adnxs.com, REJECT
+DOMAIN, sin3-ib.adnxs.com, REJECT
+
+# ======= W ======= #
+##网易邮箱大师
+# 网易
+DOMAIN, nex.163.com, REJECT
+DOMAIN, iad.g.163.com, REJECT
+DOMAIN, adx-bj.anythinktech.com, REJECT
+DOMAIN, api.anythinktech.com, REJECT
+DOMAIN, tk.anythinktech.com, REJECT
+DOMAIN, da.anythinktech.com, REJECT
+DOMAIN, gorgon.youdao.com, REJECT
+# 聚次方 - TopOn
+DOMAIN, api.mosspf.com, REJECT
+DOMAIN, da.mosspf.com, REJECT
+DOMAIN, mores.toponad.com, REJECT
+DOMAIN, api.toponadss.com, REJECT
+DOMAIN, da.toponadss.com, REJECT
+DOMAIN, tk.toponadss.com, REJECT
+DOMAIN, adx-os.toponadss.com, REJECT
+# 布里奇信息科技有限公司
+DOMAIN, tk.bridgeoos.com, REJECT
+DOMAIN, da.bridgeoos.com, REJECT
+DOMAIN, api.bridgeoos.com, REJECT
+DOMAIN, adx-os.bridgeoos.com, REJECT
+DOMAIN, adx-sg-req.bridgeoos.com, REJECT
+DOMAIN-SUFFIX, bridgeoos.com, REJECT
+
+
+# ======= X ======= #
+# 小米
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
+DOMAIN, data.mistat.xiaomi.com, REJECT
+DOMAIN, tracking.intl.miui.com, REJECT
+# 小小影视
+DOMAIN,39d83s.com,REJECT
+# 小蚕霸王餐
+DOMAIN, sdk.1rtb.net, REJECT
+# 晓晓优选去开屏
+DOMAIN, api-htp.beizi.biz, REJECT
+DOMAIN, sdk.beizi.biz, REJECT
+
+# ======= Y ====== #
+# 云闪付 //account.95516.com, base.95516.com, content.95516.com
+DOMAIN, ads.95516.com, REJECT
+DOMAIN, switch.cup.com.cn, REJECT
+DOMAIN, tysdk.95516.com, REJECT
+
+# ======= Z ======= #
+# > 真不卡
+DOMAIN-SUFFIX,ttayy.cn,REJECT
+DOMAIN-SUFFIX,zhengxiaoliu.top,REJECT
+# > 中国移动
+IP-CIDR,120.240.95.37/32,REJECT
+# > 中国联通
+DOMAIN-SUFFIX,m1.ad.10010.com,REJECT
+# 中国电信
+DOMAIN, ad.21cn.com, REJECT
+DOMAIN, ad.k.21cn.com, REJECT
+DOMAIN, admarket.21cn.com, REJECT
+DOMAIN, adshows.21cn.com, REJECT
+IP-CIDR, 122.229.8.47/32, REJECT, no-resolve
+IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
