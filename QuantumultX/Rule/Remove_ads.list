@@ -57,9 +57,6 @@ DOMAIN,apis.alenable.com,REJECT
 URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
 # 海尔智家
 DOMAIN-SUFFIX,ehaier.com,REJECT
-# 灰太狼霸王餐
-DOMAIN-SUFFIX,igexin.com, REJECT
-DOMAIN-SUFFIX,getui.com, REJECT
 
 # ======= J ======= #
 # 京东 //api.m.jd.com
