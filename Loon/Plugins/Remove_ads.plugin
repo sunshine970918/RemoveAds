@@ -461,7 +461,7 @@ http-response ^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/v7\?posit
 
 # ======= W ====== #
 # 微信封禁页面 //weixin110.qq.com, security.wechat.com
-http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path = https://kelee.one/Resource/Script/Weixin/Weixin_external_links_unlock.js, requires-body = true, tag = 微信封禁页面
+http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path = https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js, requires-body = true, tag = 微信封禁页面
 
 
 
