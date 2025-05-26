@@ -39,8 +39,6 @@ DOMAIN-SUFFIX,ehaier.com,REJECT
 # ======= J ======= #
 # 京东
 DOMAIN, dns.jd.com, REJECT
-# 建设银行
-DOMAIN-KEYWORD,adv.ccb.com,REJECT
 # JavDB
 DOMAIN,api.liquidlink.cn,REJECT
 
@@ -82,7 +80,7 @@ URL-REGEX,^https:\/\/api\.xiachufang\.com\/v2\/homepage1810\/init_page\.json,REJ
 URL-REGEX,^https:\/\/m\.xiachufang\.com\/post,REJECT
 
 # ======= Y ====== #
-# 云闪付 //account.95516.com, base.95516.com, content.95516.com
+# 云闪付
 DOMAIN, ads.95516.com, REJECT
 DOMAIN, switch.cup.com.cn, REJECT
 DOMAIN, tysdk.95516.com, REJECT
