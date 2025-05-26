@@ -307,6 +307,9 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https?:\/\/[^(apple|10010)]+\.(com|cn)\/(a|A)d(s|v)?(\/|\.js) reject-img
 ^https?:\/\/m1\.ad\.10010\.com\/noticeMag\/images\/imageUpload\/2\d{3} reject-img
 ^https?:\/\/res\.mall\.10010\.cn\/mall\/common\/js\/fa\.js?referer= reject-img
+^https?:\/\/m\.client\.10010\.com\/mobileserviceNine\/api\/v1\/index\/queryIndexExclusiveOffers\/ response-body-json-jq 'walk(if type == "array" then [] else . end)'
+^https?:\/\/m\.client\.10010\.com\/mobileserviceNine\/api\/v1\/index\/queryIndexWaterfall\/ request-body-json-jq 'walk(if type == "array" then [] else . end)'
+^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm mock-response-body data-type=text data="'{"imgIndex":"0","adv":{"startup_adv":{"advCntList":[],"buttonList":[]}},"respCode":"0000"}'"
 
 # > 中国电信 // cloud.189.cn, zt-app.go189.cn
 ^https?:\/\/cloud\.189\.cn\/include\/splash\/ reject
