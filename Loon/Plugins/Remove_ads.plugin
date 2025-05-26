@@ -4,11 +4,11 @@
 #!tag = 去广告, sunshine970918
 #!system = 
 #!system_version = 
-#!loon_version = 3.2.3(752)
+#!loon_version = 3.3.1(862)
 #!homepage = https://github.com/sunshine970918/RemoveAds/Loon
 #!openUrl = https://github.com/sunshine970918/RemoveAds
 #!icon = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/erdongchanyo/AdBlock.png
-#!date = 2025-4-9 22:45:06
+#!date = 2025-5-26 14:14:06
 
 [Rule]
 # ======= 12306 ======= #
@@ -23,12 +23,6 @@ IP-CIDR, 203.107.1.1/24, REJECT, no-resolve
 DOMAIN,lookup.api.bsb.baidu.com,REJECT
 DOMAIN-SUFFIX,u3.ucweb.com,REJECT
 DOMAIN-KEYWORD,safebrowsing.,REJECT
-
-# ======= B ======= #
-# 百度地图
-DOMAIN,afd.baidu.com,REJECT
-DOMAIN,afdconf.baidu.com,REJECT
-DOMAIN,lc.map.baidu.com,REJECT
 
 # ======= D ======= #
 # DNS 无响应
@@ -46,9 +40,6 @@ DOMAIN,apis.alenable.com,REJECT
 URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
 # 海尔智家
 DOMAIN-SUFFIX,ehaier.com,REJECT
-# 灰太狼霸王餐
-DOMAIN-SUFFIX,igexin.com, REJECT
-DOMAIN-SUFFIX,getui.com, REJECT
 
 # ======= J ======= #
 # 京东 //api.m.jd.com
@@ -78,47 +69,29 @@ URL-REGEX,https://gateway3.kugou.com/ads.gateway/.*,REJECT-DICT
 URL-REGEX,https://gatewayretry.kugou.com/ads.gateway/.*,REJECT-DICT
 URL-REGEX,https://gateway.kugou.com/youth/api/user/v1/init.*,REJECT-DICT
 URL-REGEX,^http:\/\/mobilelog\.kugou\.com\/adtrackconfig\.json$,REJECT-DICT
-URL-REGEX,https://tmeadcomm.y.qq.com/maproxy/getPbCompressAd,REJECT-DICTDOMAIN-SUFFIX,adservice.kugou.com,REJECT
-DOMAIN-SUFFIX,adservice.kugou.com,REJECT
+URL-REGEX,https://tmeadcomm.y.qq.com/maproxy/getPbCompressAd,REJECT-DICT
 DOMAIN-SUFFIX,install2.kugou.com,REJECT
 DOMAIN-SUFFIX,adstats.tencentmusic.com,REJECT
-DOMAIN-SUFFIX,tmead.y.qq.com,REJECT
 DOMAIN-SUFFIX,ad.tencentmusic.com,REJECT
 DOMAIN-SUFFIX,api-adservices.apple.com,REJECT
-DOMAIN-SUFFIX,us.l.qq.com,REJECT
 DOMAIN-SUFFIX,p.l.qq.com,REJECT
 DOMAIN-SUFFIX,mc.tencentmusic.com,REJECT
-DOMAIN-SUFFIX,mdt.qq.com,REJECT
-DOMAIN-SUFFIX,gdt.qq.com,REJECT
-DOMAIN-SUFFIX,e.qq.com,REJECT
-DOMAIN,ios.bugly.qq.com,REJECT
 
 # ======= L ======= #
 # 蓝奏云
 DOMAIN,statics.woozooo.com,REJECT
 
-# ======= M ======= #
-# 米家
-DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
-
 # ======= O ======= #
 # Outlook
-DOMAIN, acdn.adnxs.com, REJECT
 DOMAIN, mediation.adnxs.com, REJECT
 DOMAIN, sin3-ib.adnxs.com, REJECT
 
 # ======= X ======= #
 # 小米
-DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 DOMAIN, data.mistat.xiaomi.com, REJECT
 DOMAIN, tracking.intl.miui.com, REJECT
 # 小小影视
 DOMAIN,39d83s.com,REJECT
-# 小蚕霸王餐
-DOMAIN, sdk.1rtb.net, REJECT
-# 晓晓优选去开屏
-DOMAIN, api-htp.beizi.biz, REJECT
-DOMAIN, sdk.beizi.biz, REJECT
 
 # ======= Y ====== #
 # 云闪付 //account.95516.com, base.95516.com, content.95516.com
@@ -147,6 +120,7 @@ IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
 # 555影视 //vip7.fzwdyy.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com
 ^https?:\/\/vip7\.fzwdyy\.cn:8083\/api\/(getAdvertInfo|getGOOGAdvert) reject-200
 ^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/advert reject
+
 # ======= A ======= #
 # 阿里云盘 //api.alipan.com, member.alipan.com, bizapi.alipan.com
 # 首页活动日历
@@ -154,26 +128,7 @@ IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
 # 首页板块入口
 ^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders reject-dict
 
-# ======= B ======= #
-# > Blued //social.blued.cn
-# 主页推荐直播 
-^https?:\/\/social\.blued\.cn\/users\/recommend reject-dict
-# 未登录时个人界面广告
-^https?:\/\/social\.blued\.cn\/users\/no_auth\/benefit reject-dict
-# > 百度地图 //dss0.bdstatic.com, tb1.bdstatic.com, tb2.bdstatic.com, ss0.bdstatic.com, gss0.bdstatic.com, newclient.map.baidu.com
-^https?:\/\/dss0\.bdstatic\.com\/-0U0bnSm1A5BphGlnYG\/ reject-200
-^https?:\/\/dss0\.bdstatic\.com\/.+/tam-ogel\/.+\.(jpg|mp4) reject
-^https?:\/\/tb1\.bdstatic\.com\/tb\/cms\/ngmis\/adsense\/*.jpg reject
-^https?:\/\/tb2\.bdstatic\.com\/tb\/mobile\/spb\/widget\/jump reject-img
-^https?:\/\/ss0\.bdstatic\.com/.+?_\d{3}_\d{4}\.jpg reject-200
-^https?:\/\/gss0\.bdstatic\.com\/.+?\/static\/wiseindex\/img\/bd_red_packet\.png reject-img
-
 # ======= C ======= #
-# 彩云天气 //biz.cyapi.cn, starplucker.cyapi.cn, api.caiyunapp.com, cdn-w.caiyunapp.com
-^https:\/\/biz\.cyapi\.cn\/(p\/v1\/entries|p\/v1\/trial_card\/info|v2\/product) reject-dict
-^https:\/\/starplucker\.cyapi\.cn\/v3\/(config\/cypage\/\w+\/conditions|notification\/message_center|operation\/homefeatures) reject-dict
-^https?:\/\/api\.caiyunapp\.com\/v1\/activity reject-dict
-
 # 车来了 - 为您推荐 //pic1.chelaile.net.cn, api.chelaile.net.cn, atrace.chelaile.net.cn, web.chelaile.net.cn, cdn.*.chelaileapp.cn
 ^https?:\/\/pic1\.chelaile\.net\.cn\/adv\/ reject
 ^https?:\/\/(api|atrace)\.chelaile\.net\.cn\/adpub\/ reject
@@ -243,7 +198,7 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https:\/\/res\.kfc\.com\.cn\/advertisement reject
 # 酷安 //api.coolapk.com
 ^https:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch reject-dict
-^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\? response-body-json-jq '.data.hotReplyRows |= if . then map(select(.id?)) else . end | .data.topReplyRows |= if . then map(select(.id?)) else . end | reduce ("detailSponsorCard", "include_goods", "include_goods_ids") as $key (.; .data[$key] = [])'
+^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\? response-body-json-jq '.data.hotReplyRows |= if . then map(select(.id?)) else . end | .data.topReplyRows |= if . then map(select(.id?)) else . end | reduce ("detailSponsorCard", "include_goods", "include_goods_ids") as $key (.; .data[$key]=[])'
 ^https:\/\/api\.coolapk\.com\/v6\/feed\/replyList response-body-json-jq 'if .data? and ((.data | type) == "array") and (.data | length > 0) then .data |= map(select(.id?)) else . end'
 ^https:\/\/api\.coolapk\.com\/v6\/main\/dataList response-body-json-jq '.data |= (if (type=="array" and length>0) then map(select((.entityTemplate!="sponsorCard") and (.title!="精选配件"))) else . end)'
 ^https:\/\/api\.coolapk\.com\/v6\/page\/dataList response-body-json-jq 'if (.data | length > 0) then .data |= map(select((.title? != "酷安热搜") and (.entityTemplate? != "imageScaleCard") and (.entityTemplate? != "sponsorCard"))) else . end'
@@ -419,15 +374,8 @@ http-response ^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list script-pat
 #http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/header.js, requires-body = true, tag = amdc去广告
 
 # ======= B ======= #
-# > Blued //social.blued.cn
-# 登录后个人界面广告
-http-response ^https?:\/\/social\.blued\.cn\/users\/.+\/more\/ios\?v=2 script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/blued.js, requires-body=true, timeout=60, tag=blued登录后个人界面广告
 # 百度网页去广告 //m.baidu.com, www.baidu.com
-#http-response ^https?:\/\/(www|m)\.baidu\.com\/?($|\?from=\w{8,9}) script-path = https://kelee.one/Resource/Script/BaiduSearch/BaiduSearchHomePage_remove_ads.js, requires-body = true, tag = 移除百度搜索首页信息流广告
-
-# ======= C ======= #
-# 彩云天气 //biz.cyapi.cn, starplucker.cyapi.cn, api.caiyunapp.com, cdn-w.caiyunapp.com
-http-response ^https:\/\/(wrapper\.cyapi\.cn|api\.caiyunapp\.com|cdn-w\.caiyunapp\.com)\/v1\/activity\? script-path =https://raw.githubusercontent.com/Keywos/rule/main/mocks/caiyun.json, requires-body = true, tag = 彩云天气去广告
+http-response ^https?:\/\/(www|m)\.baidu\.com\/?($|\?from=\w{8,9}) script-path=https://kelee.one/Resource/Script/BaiduSearch/BaiduSearchHomePage_remove_ads.js, requires-body=true, tag=移除百度搜索首页信息流广告
 
 # ======= H ====== #
 # 航旅纵横 //114.115.217.129, home.umetrip.com
@@ -466,4 +414,4 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 
 
 [Mitm]
-hostname = ad.12306.cn, mobile.12306.cn, vip7.fzwdyy.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, app-v1.ecoliving168.com, api.alipan.com, member.alipan.com, bizapi.alipan.com, social.blued.cn, dss0.bdstatic.com, tb1.bdstatic.com, tb2.bdstatic.com, ss0.bdstatic.com, gss0.bdstatic.com, newclient.map.baidu.com, m.baidu.com, www.baidu.com, biz.cyapi.cn, starplucker.cyapi.cn, api.caiyunapp.com, cdn-w.caiyunapp.com, pic1.chelaile.net.cn, api.chelaile.net.cn, atrace.chelaile.net.cn, web.chelaile.net.cn, cdn.*.chelaileapp.cn, app-gw.csdn.net, gw.csdn.net, api.douban.com, img*.douban.com, frodo.douban.com, erebor.douban.com, hd.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, gd.10086.cn, awg.enmonster.com, 114.115.217.129, home.umetrip.com, discardrp.umetrip.com, startup.umetrip.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, napi.ithome.com, buy.itunes.apple.com, api.coolapk.com, api.gotokeep.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ecapi.lkcoffee.com, m.lkcoffee.com, img0*.luckincoffeecdn.com, ucmp.sf-express.com, alt-r.my.com, imgx.jampp.com, osg-service.sgcc.com.cn, api.wfdata.club, mp.weixin.qq.com, j1.pupuapi.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net, client.app.coc.10086.cn, app.10086.cn, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, c.zhangle.com, live.inst-service.htsc.com, geetest.htsc.com, 119.29.29.98
+hostname = ad.12306.cn, mobile.12306.cn, vip7.fzwdyy.cn, *.qyfxgd.cn, *.weilai555.com, *.ecoliving168.com, app-v1.ecoliving168.com, api.alipan.com, member.alipan.com, bizapi.alipan.com, m.baidu.com, www.baidu.com, pic1.chelaile.net.cn, api.chelaile.net.cn, atrace.chelaile.net.cn, web.chelaile.net.cn, cdn.*.chelaileapp.cn, app-gw.csdn.net, gw.csdn.net, api.douban.com, img*.douban.com, frodo.douban.com, erebor.douban.com, hd.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, gd.10086.cn, awg.enmonster.com, 114.115.217.129, home.umetrip.com, discardrp.umetrip.com, startup.umetrip.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, napi.ithome.com, buy.itunes.apple.com, api.coolapk.com, api.gotokeep.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ecapi.lkcoffee.com, m.lkcoffee.com, img0*.luckincoffeecdn.com, ucmp.sf-express.com, alt-r.my.com, imgx.jampp.com, osg-service.sgcc.com.cn, api.wfdata.club, mp.weixin.qq.com, j1.pupuapi.com, weixin110.qq.com, security.wechat.com, appconf.mail.163.com, api.xiachufang.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net, client.app.coc.10086.cn, app.10086.cn, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn, c.zhangle.com, live.inst-service.htsc.com, geetest.htsc.com, 119.29.29.98
