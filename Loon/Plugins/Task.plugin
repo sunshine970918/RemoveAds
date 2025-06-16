@@ -1,8 +1,8 @@
-#!name = SakuraChatTask
-#!desc = 🌸Sakura Scripts 定时任务
-#!author = Sliverkiss [https://github.com/Sliverkiss]
-#!homePage = https://t.me/sliverkiss_blog
-#!data = 2024-09-21
+#!name = Task
+#!desc = 定时任务
+#!author = 
+#!homePage = 
+#!data = 2025-06-16
 #!icon = https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/gril.png
 #!system = iOS,iPadOS
 #!loon_version = 3.2.3(753)
