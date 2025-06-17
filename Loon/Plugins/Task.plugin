@@ -9,65 +9,35 @@
 
 [Argument]
 arg1 = switch,true,tag=阿里云社区
-
 arg2 = switch,true,tag=酷狗领取VIP
-
 arg3 = switch,true,tag=毛铺草本荟
-
 arg4 = switch,true,tag=统一
-
 arg5 = switch,true,tag=v2ex签到
-
 arg6 = switch,true,tag=鲸才招聘
-
 arg7 = switch,true,tag=吾爱破解
-
 arg8 = switch,true,tag=中兴社区
-
-arg9 = switch,true,tag=摸鱼来啦
-
-arg10 = input,"1 0 * * *",tag=BoxJS与青龙数据同步时间
-arg11 = switch,true,tag=BoxJS与青龙数据同步
-
-arg12 = switch,true,tag=三得利
-
-arg13 = switch,true,tag=叮咚买菜签到
-
-arg14 = switch,true,tag=阿里云盘
-
-arg15 = switch,true,tag=奈雪
-
-arg16 = switch,true,tag=小蚕霸王餐
-
-arg17 = switch,true,tag=晓晓优选每日任务
-
-arg18 = switch,true,tag=泡泡玛特
-
-arg19 = switch,true,tag=雨晨ios签到
-
-arg20 = switch,true,tag=高德地图
-
-arg21 = switch,true,tag=高德抢券
-
-arg22 = switch,true,tag=ios苹果软件站
-
-arg23 = switch,true,tag=IQOO社区
-
-arg24 = switch,true,tag=柠季
-
-arg25 = switch,true,tag=七彩虹商城
-
-arg26 = switch,true,tag=仰韶会员
-
-arg27 = switch,true,tag=富士instax玩拍由我俱乐部
-
-arg28 = switch,true,tag=日清食品体验馆
-
-arg29 = switch,true,tag=海天美味馆
-
-arg30 = switch,true,tag=网易严选
-
-arg31 = switch,true,tag=麦斯威尔福利社
+arg9 = input,"1 0 * * *",tag=BoxJS与青龙数据同步时间
+arg10 = switch,true,tag=BoxJS与青龙数据同步
+arg11 = switch,true,tag=三得利
+arg12 = switch,true,tag=叮咚买菜签到
+arg13 = switch,true,tag=阿里云盘
+arg14 = switch,true,tag=奈雪
+arg15 = switch,true,tag=小蚕霸王餐
+arg16 = switch,true,tag=晓晓优选每日任务
+arg17 = switch,true,tag=泡泡玛特
+arg18 = switch,true,tag=雨晨ios签到
+arg19 = switch,true,tag=高德地图
+arg20 = switch,true,tag=高德抢券
+arg21 = switch,true,tag=ios苹果软件站
+arg22 = switch,true,tag=IQOO社区
+arg23 = switch,true,tag=柠季
+arg24 = switch,true,tag=七彩虹商城
+arg25 = switch,true,tag=仰韶会员
+arg26 = switch,true,tag=富士instax玩拍由我俱乐部
+arg27 = switch,true,tag=日清食品体验馆
+arg28 = switch,true,tag=海天美味馆
+arg29 = switch,true,tag=网易严选
+arg30 = switch,true,tag=麦斯威尔福利社
 
 [Script]
 cron "10 9,17 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/aliyun_web/aliyun_web.js, timeout=120,enable= {arg1}, tag=阿里云社区
@@ -78,25 +48,24 @@ cron "5 0 * * *" script-path=https://raw.githubusercontent.com/anyehttp/quantumu
 cron "14 7,15 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/JingCai/JingCai.js, timeout=3600, enable= {arg6}, tag=鲸才招聘
 cron "23 10 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js, timeout=30, enable={arg7}, tag=吾爱破解签到
 cron "23 10 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/ZTE/ZTE_Community.js, enable={arg8}, tag=中兴社区
-cron "23 10 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/moyu.js, enable={arg9}, tag=摸鱼来啦
-cron {arg10} script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/qinglong/ql_sync.js, enable={arg11}, tag=BoxJS与青龙数据同步
-cron "19 8,19 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/SDL/SDL.js, timeout=120, enable= {arg12}, tag=三得利
-cron "5 0,9 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/DingDong/DingDong.js, timeout=360, enable= {arg13}, tag=叮咚买菜签到
-cron "20 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, timeout=120, enable= {arg14}, tag=阿里云盘签到
-cron "21 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, timeout=120, enable={arg15}, tag=奈雪点单签到
-cron "21-22 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, timeout=120, enable={arg16}, tag=小蚕霸王餐
-cron "10 10 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xxyx/xxyx_signin.js, timeout=300, enable={arg17}, tag=晓晓优选每日任务
-cron "22 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, timeout=120, enable={arg18}, tag=泡泡玛特签到
-cron "22 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/9aab5b214f3145e39639a2581e83bb27/raw/yuchenios.js, timeout=120,enable= {arg19}, tag=雨晨ios签到
-cron "10 10 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=120,enable= {arg20}, tag=高德地图
-cron "0 6,12,18 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDacheCoupon.js, timeout=120,enable= {arg21}, tag=高德抢券
-cron "24 10 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/iios/iios.js, timeout=120,enable= {arg22}, tag=iios-苹果软件站
-cron "24 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/bfc5527ad3ea8ac7b0820ca442442452/raw/iqoo.js, timeout=120, enable={arg23}, tag=IQOO社区
-cron "24 10 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/ningji/ningji.js, timeout=120, enable={arg24}, tag=柠季
-cron "7 8,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, timeout=120, enable= {arg25}, tag=七彩虹商城
-cron "20 10,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/YSHY/YSHY.js, timeout=120, enable= {arg26}, tag=仰韶会员
-cron "10 10,16,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/INSTAX/INSTAX.js, timeout=120, enable= {arg27}, tag=富士instax玩拍由我俱乐部
-cron "25 5,15 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/RQSP/RQSP.js, timeout=120, enable= {arg28}, tag=日清食品体验馆
-cron "43 2,11,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/HaiTian/HaiTian.js, timeout=120, enable= {arg29}, tag=海天美味馆
-cron "45 0,11,21 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX.js, timeout=120, enable= {arg30}, tag=网易严选
-cron "11 11,18 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js, timeout=120, enable= {arg31}, tag=麦斯威尔福利社
+cron {arg9} script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/qinglong/ql_sync.js, enable={arg10}, tag=BoxJS与青龙数据同步
+cron "19 8,19 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/SDL/SDL.js, timeout=120, enable= {arg11}, tag=三得利
+cron "5 0,9 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/DingDong/DingDong.js, timeout=360, enable= {arg12}, tag=叮咚买菜签到
+cron "20 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, timeout=120, enable= {arg13}, tag=阿里云盘签到
+cron "21 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, timeout=120, enable={arg14}, tag=奈雪点单签到
+cron "21-22 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, timeout=120, enable={arg15}, tag=小蚕霸王餐
+cron "10 10 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xxyx/xxyx_signin.js, timeout=300, enable={arg16}, tag=晓晓优选每日任务
+cron "22 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, timeout=120, enable={arg17}, tag=泡泡玛特签到
+cron "22 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/9aab5b214f3145e39639a2581e83bb27/raw/yuchenios.js, timeout=120,enable= {arg18}, tag=雨晨ios签到
+cron "10 10 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=120,enable= {arg19}, tag=高德地图
+cron "0 6,12,18 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDacheCoupon.js, timeout=120,enable= {arg20}, tag=高德抢券
+cron "24 10 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/iios/iios.js, timeout=120,enable= {arg21}, tag=iios-苹果软件站
+cron "24 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/bfc5527ad3ea8ac7b0820ca442442452/raw/iqoo.js, timeout=120, enable={arg22}, tag=IQOO社区
+cron "24 10 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/ningji/ningji.js, timeout=120, enable={arg23}, tag=柠季
+cron "7 8,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, timeout=120, enable= {arg24}, tag=七彩虹商城
+cron "20 10,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/YSHY/YSHY.js, timeout=120, enable= {arg25}, tag=仰韶会员
+cron "10 10,16,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/INSTAX/INSTAX.js, timeout=120, enable= {arg26}, tag=富士instax玩拍由我俱乐部
+cron "25 5,15 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/RQSP/RQSP.js, timeout=120, enable= {arg27}, tag=日清食品体验馆
+cron "43 2,11,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/HaiTian/HaiTian.js, timeout=120, enable= {arg28}, tag=海天美味馆
+cron "45 0,11,21 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX.js, timeout=120, enable= {arg29}, tag=网易严选
+cron "11 11,18 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js, timeout=120, enable= {arg30}, tag=麦斯威尔福利社
