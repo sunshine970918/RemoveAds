@@ -32,6 +32,7 @@ arg21 = switch,true,tag=统一_获取token
 arg22 = switch,true,tag=网易严选_获取cookie
 arg23 = switch,true,tag=麦斯威尔福利社_获取token
 arg24 = switch,true,tag=叮咚买菜_获取cookie
+arg25 = switch,true,tag=习酒_获取token
 
 [Script]
 http-response https:\/\/gateway\.5jingcai\.com\/mini\/data\/user\/person.json script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/JingCai/JingCai.js, requires-body=true, timeout=60, enable = {arg1}, tag=鲸才招聘_获取token
@@ -61,6 +62,7 @@ http-response ^https:\/\/xapi\.weimob\.com\/api3\/onecrm\/user\/center\/usercent
 http-request ^https:\/\/act\.you\.163\.com\/act-attendance\/task\/list script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX.js, requires-body=true, enable = {arg22}, tag=网易严选_获取cookie
 http-response ^https:\/\/jde\.mtbcpt\.com\/api\/JDEMaxwellApi\/QueryHomeInfo script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js, requires-body=true, enable = {arg23}, tag=麦斯威尔福利社_获取token
 http-request ^https?:\/\/maicai\.api\.ddxq\.mobi\/point\/home\?api_version script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/DingDong/DingDong.js, requires-body=true, enable = {arg24}, tag=叮咚买菜_获取cookie
+http-response ^https:\/\/xcx\.exijiu\.com\/anti-channeling\/public\/index.php\/api\/v2\/Member\/getJifenShopMemberInfo script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/XiJiu/XiJiu.js, requires-body=true, enable = {arg25}, tag=习酒_获取token
 
 [MITM]
-hostname = gateway.5jingcai.com, game.dominos.com.cn, developer.aliyun.com, auth.alipan.com,auth.aliyundrive.com, tm-web.pin-dao.cn, popvip.paquapp.com, *.kugou.com, *.amap.com, www.52pojie.cn, bbs-api.iqoo.com, pos.meituan.com, xxyx-client-api.xiaoxiaoyouxuan.com, gw.xiaocantech.com, shopapi.skycolorful.com, shopapitest.skycolorful.com, shop.skycolorful.com:45677, shop.skycolorful.com, xiaodian.miyatech.com, hy.51pt.top, instax.app.xcxd.net.cn, prod-api.nissinfoodium.com.cn, mpb.jingjiu.com, cmallapi.haday.cn, xapi.weimob.com, act.you.163.com, jde.mtbcpt.com, maicai.api.ddxq.mobi
+hostname = gateway.5jingcai.com, game.dominos.com.cn, developer.aliyun.com, auth.alipan.com,auth.aliyundrive.com, tm-web.pin-dao.cn, popvip.paquapp.com, *.kugou.com, *.amap.com, www.52pojie.cn, bbs-api.iqoo.com, pos.meituan.com, xxyx-client-api.xiaoxiaoyouxuan.com, gw.xiaocantech.com, shopapi.skycolorful.com, shopapitest.skycolorful.com, shop.skycolorful.com:45677, shop.skycolorful.com, xiaodian.miyatech.com, hy.51pt.top, instax.app.xcxd.net.cn, prod-api.nissinfoodium.com.cn, mpb.jingjiu.com, cmallapi.haday.cn, xapi.weimob.com, act.you.163.com, jde.mtbcpt.com, maicai.api.ddxq.mobi, xcx.exijiu.com
