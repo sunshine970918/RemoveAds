@@ -1,11 +1,14 @@
 #!name=Tg外链跳转重定向
-#!desc=Tg重定向外链跳转，至第三方客户端turrit
+#!desc=Tg重定向外链跳转，至第三方客户端turrit,swiftgram
 #!author=麻衣
 #!icon=https://s2.loli.net/2024/12/24/39NmWUEYHeiFrs2.jpg
 #!tag=樱岛,麻衣
 
 [Rewrite]
+#turrit
 (https:\/\/)?t.me\/(.+) turrit://resolve?domain=$2 302
+#swiftgram
+(https:\/\/)?t.me\/(.+) sg://resolve?domain=$2 302
 
 [MITM]
 hostname = t.me
