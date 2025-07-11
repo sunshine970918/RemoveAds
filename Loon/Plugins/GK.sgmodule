@@ -1,0 +1,44 @@
+#!name=GetCookie
+#!desc=获取cookie/token
+#!icon=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/gril.png
+#!data=2025-07-11
+#!system=ios
+#!loon_version=3.2.3(753)
+#!arguments=V2ex获取Cookie:#,飞蚁回收:#,聚赏圈:#,鲸才招聘_获取token:#,达美乐token:#,阿里云社区获取token:#,阿里云盘获取cookie:#,奈雪点单获取token:#,泡泡玛特获取token:#,酷狗数据:#,高德地图获取token:#,吾爱破解获取Cookie:#,IQOO获取token:#,柠季Token:#,晓晓优选:#,小蚕霸王餐:#,七彩虹商城_获取token1:#,七彩虹商城_获取token2:#,七彩虹商城_获取token3:#,七彩虹商城_获取token4:#,三得利_获取token:#,仰韶会员_获取token:#,富士instax玩拍由我俱乐部_获取token:#,日清食品体验馆_获取token:#,毛铺草本荟_获取token:#,海天美味馆_获取token:#,统一_获取token:#,网易严选_获取cookie:#,麦斯威尔福利社_获取token:#,叮咚买菜_获取cookie:#,习酒_获取token:#
+#!arguments-desc=将 # 改成任意名称即可开启对应脚本，默认#为关闭
+
+[Script]
+{{{V2ex获取Cookie}}} = type=http-request,pattern=^https:\/\/www\.v2ex\.com\/b\/i\/,script-path=https://raw.githubusercontent.com/anyehttp/quantumult-x/main/task/v2ex.js,requires-body=true,timeout=60
+{{{飞蚁回收}}} = type=http-response,pattern=^https:\/\/openapp\.fmy90\.com\/auth\/wx\/login,script-path=https://git.fuckinghigh.eu.org/xzxxn777/scripts/raw/branch/main/FYHS/FYHS.js,requires-body=true,timeout=60
+{{{聚赏圈}}} = type=http-response,pattern=^https:\/\/mini\.nxqingchuangkeji\.com\/api\/Useraectype\/userBasicsInfo,script-path=https://git.fuckinghigh.eu.org/xzxxn777/scripts/raw/branch/main/JSQ/JSQ.js,requires-body=true,timeout=60
+{{{鲸才招聘_获取token}}} = type=http-response,pattern=https:\/\/gateway\.5jingcai\.com\/mini\/data\/user\/person.json,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/JingCai/JingCai.js,requires-body=true,timeout=60
+{{{达美乐token}}} = type=http-response,pattern=^https:\/\/game\.dominos\.com\.cn\/.+\/getUser?,script-path=dlm.js,timeout=60
+{{{阿里云社区获取token}}} = type=http-response,pattern=^https?:\/\/developer\.aliyun\.com\/developer\/api\/my\/user\/getUser,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/aliyun_web/aliyun_web.js,requires-body=true,timeout=60
+{{{阿里云盘获取cookie}}} = type=http-request,pattern=^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token,script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js,requires-body=true,timeout=60
+{{{奈雪点单获取token}}} = type=http-request,pattern=^https:\/\/tm-web\.pin-dao\.cn\/user\/base-userinfo,script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js,requires-body=true,timeout=60
+{{{泡泡玛特获取token}}} = type=http-response,pattern=^https:\/\/popvip\.paquapp\.com\/miniapp\/v2\/wechat\/getUserInfo,script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js,requires-body=true,timeout=60
+{{{酷狗数据}}} = type=http-request,pattern=https://(gateway|gatewayretry|gateway3).kugou.com/youth/v1/(recharge/receive_vip_listen_song|activity/get_month_vip_record).*,script-path=https://gist.githubusercontent.com/Alex0510/1c389019c264a7d3ddbe4dbcf77d4295/raw/kugou.js,requires-body=true,timeout=60
+{{{高德地图获取token}}} = type=http-response,pattern=^https?:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=),script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js,requires-body=true,timeout=60
+{{{吾爱破解获取Cookie}}} = type=http-request,pattern=https:\/\/www\.52pojie\.cn\/home\.php\?,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js
+{{{IQOO获取token}}} = type=http-response,pattern=^https:\/\/bbs-api\.iqoo\.com\/api\/v3\/user\?userId=,script-path=https://gist.githubusercontent.com/Sliverkiss/bfc5527ad3ea8ac7b0820ca442442452/raw/iqoo.js,requires-body=true,timeout=60
+{{{柠季Token}}} = type=http-response,pattern=^https?:\/\/pos\.meituan\.com\/api\/v1\/crm\/frontend\/campaign\/display,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/ningji/ningji.js,requires-body=true,timeout=60
+{{{晓晓优选}}} = type=http-response,pattern=^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js,requires-body=true,timeout=60
+{{{小蚕霸王餐}}} = type=http-response,pattern=^https:\/\/gw\.xiaocantech\.com\/rpc,script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js,requires-body=true,timeout=60
+{{{七彩虹商城_获取token1}}} = type=http-request,pattern=^https:\/\/shopapi\.skycolorful\.com\/api\/User\/DecryptPhoneNumber,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js,requires-body=true
+{{{七彩虹商城_获取token2}}} = type=http-request,pattern=^https:\/\/shopapitest\.skycolorful\.com\/api\/User\/DecryptPhoneNumber,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js,requires-body=true
+{{{七彩虹商城_获取token3}}} = type=http-request,pattern=^https:\/\/shop\.skycolorful\.com:45677\/api\/User\/DecryptPhoneNumber,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js,requires-body=true
+{{{七彩虹商城_获取token4}}} = type=http-request,pattern=^https:\/\/shop\.skycolorful\.com\/api\/User\/DecryptPhoneNumber,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js,requires-body=true
+{{{三得利_获取token}}} = type=http-response,pattern=^https:\/\/xiaodian\.miyatech\.com\/api\/user\/member\/info,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/SDL/SDL.js,requires-body=true
+{{{仰韶会员_获取token}}} = type=http-response,pattern=^https:\/\/hy\.51pt\.top\/app\/ys\/mine\/getMemberInfo,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/YSHY/YSHY.js,requires-body=true
+{{{富士instax玩拍由我俱乐部_获取token}}} = type=http-response,pattern=^https:\/\/instax\.app\.xcxd\.net\.cn\/api\/me,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/INSTAX/INSTAX.js,requires-body=true
+{{{日清食品体验馆_获取token}}} = type=http-response,pattern=^https:\/\/prod-api\.nissinfoodium\.com\.cn\/gw-shop\/app\/v1\/user\/detail,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/RQSP/RQSP.js,requires-body=true
+{{{毛铺草本荟_获取token}}} = type=http-response,pattern=^https:\/\/mpb\.jingjiu\.com\/proxy-he\/api\/user,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MPCBH/MPCBH.js,requires-body=true
+{{{海天美味馆_获取token}}} = type=http-response,pattern=^https:\/\/cmallapi\.haday\.cn\/buyer-api\/wechat\/mini\/phoneNew\/login,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/HaiTian/HaiTian.js,requires-body=true
+{{{统一_获取token}}} = type=http-response,pattern=^https:\/\/xapi\.weimob\.com\/api3\/onecrm\/user\/center\/usercenter\/queryUserInfo,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/TongYi/TongYi.js,requires-body=true
+{{{网易严选_获取cookie}}} = type=http-request,pattern=^https:\/\/act\.you\.163\.com\/act-attendance\/task\/list,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX.js,requires-body=true
+{{{麦斯威尔福利社_获取token}}} = type=http-response,pattern=^https:\/\/jde\.mtbcpt\.com\/api\/JDEMaxwellApi\/QueryHomeInfo,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js,requires-body=true
+{{{叮咚买菜_获取cookie}}} = type=http-request,pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/point\/home\?api_version,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/DingDong/DingDong.js,requires-body=true
+{{{习酒_获取token}}} = type=http-response,pattern=^https:\/\/xcx\.exijiu\.com\/anti-channeling\/public\/index.php\/api\/v2\/Member\/getJifenShopMemberInfo,script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/XiJiu/XiJiu.js,requires-body=true
+
+[MITM]
+hostname=%APPEND% www.v2ex.com,openapp.fmy90.com,mini.nxqingchuangkeji.com,gateway.5jingcai.com,game.dominos.com.cn,developer.aliyun.com,auth.alipan.com,auth.aliyundrive.com,tm-web.pin-dao.cn,popvip.paquapp.com,*.kugou.com,*.amap.com,www.52pojie.cn,bbs-api.iqoo.com,pos.meituan.com,xxyx-client-api.xiaoxiaoyouxuan.com,gw.xiaocantech.com,shopapi.skycolorful.com,shopapitest.skycolorful.com,shop.skycolorful.com:45677,shop.skycolorful.com,xiaodian.miyatech.com,hy.51pt.top,instax.app.xcxd.net.cn,prod-api.nissinfoodium.com.cn,mpb.jingjiu.com,cmallapi.haday.cn,xapi.weimob.com,act.you.163.com,jde.mtbcpt.com,maicai.api.ddxq.mobi,xcx.exijiu.com
