@@ -67,5 +67,5 @@ cron "20 10,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Sur
 cron "10 10,16,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/INSTAX/INSTAX.js, timeout=120, enable= {arg26}, tag=富士instax玩拍由我俱乐部
 cron "25 5,15 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/RQSP/RQSP.js, timeout=120, enable= {arg27}, tag=日清食品体验馆
 cron "43 2,11,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/HaiTian/HaiTian.js, timeout=120, enable= {arg28}, tag=海天美味馆
-cron "0 45 0,11,21 * * ?" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX.js, timeout=120, enable= {arg29}, tag=网易严选
+cron "0 45 0,11,21 * * ?" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/WYYX/WYYX.js, timeout=500, enable= {arg29}, tag=网易严选
 cron "11 11,18 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js, timeout=120, enable= {arg30}, tag=麦斯威尔福利社
