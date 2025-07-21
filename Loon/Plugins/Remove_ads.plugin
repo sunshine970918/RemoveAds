@@ -11,10 +11,6 @@
 #!date = 2025-5-26 17:47:06
 
 [Rule]
-# ======= 12306 ======= #
-# 放行规则
-DOMAIN, ad.12306.cn, DIRECT
-
 # ======= A ======= #
 # 阿里云盘
 IP-CIDR, 203.107.1.1/24, REJECT, no-resolve
@@ -64,15 +60,11 @@ DOMAIN-SUFFIX,mc.tencentmusic.com,REJECT
 # 蓝奏云
 DOMAIN,statics.woozooo.com,REJECT
 
-# ======= O ======= #
-# Outlook
-DOMAIN, mediation.adnxs.com, REJECT
-DOMAIN, sin3-ib.adnxs.com, REJECT
-
 # ======= X ======= #
 # 小米
 DOMAIN, data.mistat.xiaomi.com, REJECT
 DOMAIN, tracking.intl.miui.com, REJECT
+
 # 小小影视
 DOMAIN,39d83s.com,REJECT
 # 下厨房
@@ -117,15 +109,6 @@ IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
 ^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders reject-dict
 
 # ======= C ======= #
-# 车来了 - 为您推荐 //pic1.chelaile.net.cn, api.chelaile.net.cn, atrace.chelaile.net.cn, web.chelaile.net.cn, cdn.*.chelaileapp.cn
-^https?:\/\/pic1\.chelaile\.net\.cn\/adv\/ reject
-^https?:\/\/(api|atrace)\.chelaile\.net\.cn\/adpub\/ reject
-^https?:\/\/api\.chelaile\.net\.cn\/goocity\/advert\/ reject
-^https?:\/\/atrace\.chelaile\.net\.cn\/adpub\/ reject-img
-^https?:\/\/atrace\.chelaile\.net\.cn\/exhibit\?&adv_image reject-img
-^https?:\/\/web\.chelaile\.net\.cn\/api\/adpub\/ad reject
-^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub reject
-
 # CSDN //app-gw.csdn.net, gw.csdn.net
 ^https?:\/\/app-gw\.csdn\.net\/silkroad-api\/api\/v\d\/assemble\/list\/pub\/channel\/app_open_screen_ad reject
 ^https?:\/\/app-gw\.csdn\.net\/abtesting\/v2\/getList? reject
@@ -133,13 +116,6 @@ IP-CIDR, 122.229.29.89/32, REJECT, no-resolve
 
 
 # ======= D ======= #
-# 豆瓣 //api.douban.com, img*.douban.com, frodo.douban.com, erebor.douban.com
-^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ reject-dict
-^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* reject-dict
-^https?:\/\/img\d\.doubanio\.com\/view\/dale-online\/dale_ad\/ reject
-^https?:\/\/frodo\.douban\.com\/api\/v2\/movie\/banner reject
-^https?:\/\/erebor\.douban\.com\/count\/\?ad= reject
-
 # > 滴滴出行 //hd.xiaojukeji.com
 ^https?:\/\/hd\.xiaojukeji\.com\/d reject-dict
 # > 滴滴 // img-ys011.didistatic.com
@@ -177,14 +153,6 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 # ======= K ======= #
 # 肯德基 //res.kfc.com.cn
 ^https:\/\/res\.kfc\.com\.cn\/advertisement reject
-# 酷安 //api.coolapk.com
-^https:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch reject-dict
-^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\? response-body-json-jq '.data.hotReplyRows |= if . then map(select(.id?)) else . end | .data.topReplyRows |= if . then map(select(.id?)) else . end | reduce ("detailSponsorCard", "include_goods", "include_goods_ids") as $key (.; .data[$key]=[])'
-^https:\/\/api\.coolapk\.com\/v6\/feed\/replyList response-body-json-jq 'if .data? and ((.data | type) == "array") and (.data | length > 0) then .data |= map(select(.id?)) else . end'
-^https:\/\/api\.coolapk\.com\/v6\/main\/dataList response-body-json-jq '.data |= (if (type=="array" and length>0) then map(select((.entityTemplate!="sponsorCard") and (.title!="精选配件"))) else . end)'
-^https:\/\/api\.coolapk\.com\/v6\/page\/dataList response-body-json-jq 'if (.data | length > 0) then .data |= map(select((.title? != "酷安热搜") and (.entityTemplate? != "imageScaleCard") and (.entityTemplate? != "sponsorCard"))) else . end'
-^https:\/\/api\.coolapk\.com\/v6\/main\/indexV8 response-body-json-jq '.data |= (if length > 0 then map(select((.entityTemplate != "sponsorCard") and ([8639,29349,33006,32557] | index(.entityId) | not) and ((.title // "" | test("值得买|红包")) | not))) else . end)'
-^https:\/\/api\.coolapk\.com\/v6\/main\/init response-body-json-jq '.data |= map(select(.entityId? | [944,945,6390] | index(.) | not) | if .entityId == 20131 then .entities |= map(select(.title != "酷品")) else . end)'
 
 # ======= L ======= #
 #乐刻启动页去广告 #开屏广告 lens.leoao.com
@@ -247,7 +215,8 @@ https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert
 ^https:\/\/osg-service\.sgcc\.com\.cn:18600\/emss-pfa-appset-front\/bootpageoutter\/ reject-dict
 
 # 威锋 - 开屏广告 //api.wfdata.club
-^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/yesList reject
+^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/yesList\? reject-dict
+^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/slideshow\? response-body-json-jq '.data |= map(select(.protocolId == 1))'
 
 # 微信 //mp.weixin.qq.com
 # 公众号文章下方广告
@@ -321,10 +290,6 @@ https://api.xiachufang.com/v2/config/get.json response-body-json-jq '.content.ta
 
 
 [Script]
-# ======= 12306 ======= #
-# 移除12306开屏广告 //ad.12306.cn
-http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path = https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js, requires-body = true, tag = 移除12306开屏广告
-
 # ======= A ======= #
 # 阿里云盘 //api.alipan.com, member.alipan.com, bizapi.alipan.com
 http-response ^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(news|widgets) script-path = https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/adrive/adrive.js, requires-body = true, tag = 移除阿里云盘广告
@@ -352,4 +317,4 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 
 
 [Mitm]
-hostname = www.123pan.com, ad.12306.cn, app-v1.ecoliving168.com, 852b95d36.xwlpk.cn, api.alipan.com, member.alipan.com, bizapi.alipan.com, m.baidu.com, www.baidu.com, pic1.chelaile.net.cn, api.chelaile.net.cn, atrace.chelaile.net.cn, web.chelaile.net.cn, cdn.*.chelaileapp.cn, app-gw.csdn.net, gw.csdn.net, api.douban.com, img*.douban.com, frodo.douban.com, erebor.douban.com, hd.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, gd.10086.cn, awg.enmonster.com, napi.ithome.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, api.coolapk.com, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, j1.pupuapi.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ecapi.lkcoffee.com, m.lkcoffee.com, img0*.luckincoffeecdn.com, ucmp.sf-express.com, acs.m.taobao.com, alt-r.my.com, imgx.jampp.com, osg-service.sgcc.com.cn, api.wfdata.club, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net, api.xiachufang.com, gw.xiaocantech.com, web2.realtech-inc.com, sdk.1rtb.net, wallet.95516.com, client.app.coc.10086.cn, app.10086.cn, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn
+hostname = www.123pan.com, app-v1.ecoliving168.com, 852b95d36.xwlpk.cn, api.alipan.com, member.alipan.com, bizapi.alipan.com, m.baidu.com, www.baidu.com, app-gw.csdn.net, gw.csdn.net, hd.xiaojukeji.com, img-ys011.didistatic.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, gd.10086.cn, awg.enmonster.com, napi.ithome.com, api.m.jd.com, gab.122.gov.cn, res.kfc.com.cn, lens.leoao.com, home.mi.com, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, j1.pupuapi.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, capi.lkcoffee.com, ecapi.lkcoffee.com, m.lkcoffee.com, img0*.luckincoffeecdn.com, ucmp.sf-express.com, acs.m.taobao.com, alt-r.my.com, imgx.jampp.com, osg-service.sgcc.com.cn, api.wfdata.club, mp.weixin.qq.com, weixin110.qq.com, security.wechat.com, client-api-v2.oray.com, xxyx-client-api.xiaoxiaoyouxuan.com, statistic.live.126.net, api.xiachufang.com, gw.xiaocantech.com, web2.realtech-inc.com, sdk.1rtb.net, wallet.95516.com, client.app.coc.10086.cn, app.10086.cn, m.client.10010.com, m1.ad.10010.com, res.mall.10010.cn, cloud.189.cn, zt-app.go189.cn, app.10099.com.cn
