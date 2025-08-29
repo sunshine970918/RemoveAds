@@ -18,15 +18,14 @@ arg7 = switch,true,tag=三得利
 arg8 = switch,true,tag=小蚕霸王餐
 arg9 = switch,true,tag=晓晓优选每日任务
 arg10 = switch,true,tag=泡泡玛特
-arg11 = switch,true,tag=雨晨ios签到
-arg12 = switch,true,tag=高德地图
-arg13 = switch,true,tag=高德抢券
-arg14 = switch,true,tag=ios苹果软件站
-arg15 = switch,true,tag=IQOO社区
-arg16 = switch,true,tag=七彩虹商城
-arg17 = switch,true,tag=富士instax玩拍由我俱乐部
-arg18 = switch,true,tag=海天美味馆
-arg19 = switch,true,tag=麦斯威尔福利社
+arg11 = switch,true,tag=高德地图
+arg12 = switch,true,tag=高德抢券
+arg13 = switch,true,tag=ios苹果软件站
+arg14 = switch,true,tag=IQOO社区
+arg15 = switch,true,tag=七彩虹商城
+arg16 = switch,true,tag=富士instax玩拍由我俱乐部
+arg17 = switch,true,tag=海天美味馆
+arg18 = switch,true,tag=麦斯威尔福利社
 
 [Script]
 cron "10 9,17 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/aliyun_web/aliyun_web.js, timeout=120,enable= {arg1}, tag=阿里云社区
@@ -36,15 +35,14 @@ cron "5 0 * * *" script-path=https://raw.githubusercontent.com/anyehttp/quantumu
 cron "14 7,15 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/JingCai/JingCai.js, timeout=3600, enable= {arg5}, tag=鲸才招聘
 cron "23 10 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js, timeout=30, enable={arg6}, tag=吾爱破解签到
 cron "19 8,19 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/SDL/SDL.js, timeout=120, enable= {arg7}, tag=三得利
-cron "5 0,9 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/DingDong/DingDong.js, timeout=360, enable= {arg8}, tag=叮咚买菜签到
-cron "21-22 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, timeout=120, enable={arg9}, tag=小蚕霸王餐
-cron "10 10 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xxyx/xxyx_signin.js, timeout=300, enable={arg10}, tag=晓晓优选每日任务
-cron "22 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, timeout=120, enable={arg11}, tag=泡泡玛特签到
-cron "10 10 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=120,enable= {arg12}, tag=高德地图
-cron "0 6,12,18 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDacheCoupon.js, timeout=120,enable= {arg13}, tag=高德抢券
-cron "24 10 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/iios/iios.js, timeout=120,enable= {arg14}, tag=iios-苹果软件站
-cron "24 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/bfc5527ad3ea8ac7b0820ca442442452/raw/iqoo.js, timeout=120, enable={arg15}, tag=IQOO社区
-cron "7 8,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, timeout=120, enable= {arg16}, tag=七彩虹商城
-cron "10 10,16,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/INSTAX/INSTAX.js, timeout=120, enable= {arg17}, tag=富士instax玩拍由我俱乐部
-cron "43 2,11,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/HaiTian/HaiTian.js, timeout=120, enable= {arg18}, tag=海天美味馆
-cron "11 11,18 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js, timeout=120, enable= {arg19}, tag=麦斯威尔福利社
+cron "21-22 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, timeout=120, enable={arg8}, tag=小蚕霸王餐
+cron "10 10 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xxyx/xxyx_signin.js, timeout=300, enable={arg9}, tag=晓晓优选每日任务
+cron "22 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/3e1fe82fa18dbcff9b2ae7fdad7596a6/raw/ppmt.js, timeout=120, enable={arg10}, tag=泡泡玛特签到
+cron "10 10 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=120,enable= {arg11}, tag=高德地图
+cron "0 6,12,18 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDacheCoupon.js, timeout=120,enable= {arg12}, tag=高德抢券
+cron "24 10 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/iios/iios.js, timeout=120,enable= {arg13}, tag=iios-苹果软件站
+cron "24 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/bfc5527ad3ea8ac7b0820ca442442452/raw/iqoo.js, timeout=120, enable={arg14}, tag=IQOO社区
+cron "7 8,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/Colorful/Colorful.js, timeout=120, enable= {arg15}, tag=七彩虹商城
+cron "10 10,16,22 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/INSTAX/INSTAX.js, timeout=120, enable= {arg16}, tag=富士instax玩拍由我俱乐部
+cron "43 2,11,20 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/HaiTian/HaiTian.js, timeout=120, enable= {arg17}, tag=海天美味馆
+cron "11 11,18 * * *" script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/MSWEFLS/MSWEFLS.js, timeout=120, enable= {arg18}, tag=麦斯威尔福利社
