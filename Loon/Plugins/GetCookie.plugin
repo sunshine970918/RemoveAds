@@ -31,7 +31,7 @@ arg20 = switch,true,tag=习酒_获取token
 
 [Script]
 http-request ^https:\/\/www\.v2ex\.com\/b\/i\/ script-path=https://raw.githubusercontent.com/anyehttp/quantumult-x/main/task/v2ex.js, requires-body=true, timeout=60, enable = {arg1}, tag=V2ex获取Cookie
-http-response ^https:\/\/openapp\.fmy90\.com\/auth\/wx\/login script-path=https://git.abofk.fuckinghigh.eu.org/xzxxn777/scripts/raw/branch/main/FYHS/FYHS.js, requires-body=true, timeout=60, enable = {arg2}, tag=飞蚁回收
+http-response ^https:\/\/openapp\.fmy90\.com\/auth\/wx\/login script-path=https://git.fuckinghigh.eu.org/xzxxn777/scripts/raw/branch/main/FYHS/FYHS.js, requires-body=true, timeout=60, enable = {arg2}, tag=飞蚁回收
 http-response https:\/\/gateway\.5jingcai\.com\/mini\/data\/user\/person.json script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/JingCai/JingCai.js, requires-body=true, timeout=60, enable = {arg3}, tag=鲸才招聘_获取token
 http-response ^https:\/\/game\.dominos\.com\.cn\/.+\/getUser? script-path=dlm.js, timeout=60, enable = {arg4}, tag=达美乐token
 http-response ^https?:\/\/developer\.aliyun\.com\/developer\/api\/my\/user\/getUser script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/aliyun_web/aliyun_web.js, requires-body=true, timeout=60, enable = {arg5}, tag=阿里云社区获取token
