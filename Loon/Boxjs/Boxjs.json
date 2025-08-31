@@ -1,0 +1,422 @@
+{
+  "id": "fmz200.sub",
+  "name": "fmz200のBoxJS订阅",
+  "author": "@fmz200",
+  "icon": "https://avatars.githubusercontent.com/u/57740735?s=60&v=4",
+  "repo": "https://github.com/fmz200/wool_scripts",
+  "desc": "订阅大多都支持多账号，协定数据格式如下：有主键的用JSON，没有主键的拼接用#分割用@。\n例如{\"uid1\": \"token1\", \"uid2\": \"token2\",\"uid3\": \"token3\"}和uid1#token1@uid2#token2@uid3#token3",
+  "date": "更新日期：2025-07-29 19:00:00",
+  "apps": [
+    {
+      "id": "Leiyiyan_Aliyun_Web",
+      "name": "阿里云社区",
+      "author": "@leiyiyan",
+      "repo": "",
+      "icons": [
+        "https://raw.githubusercontent.com/leiyiyan/resource/main/icons/aliyun_web.png",
+        "https://raw.githubusercontent.com/leiyiyan/resource/main/icons/aliyun_web.png"
+      ],
+      "keys": [
+        "is_debug",
+        "aliyunWeb_data",
+        "aliyunWeb_time"
+      ],
+      "settings": [
+        {
+          "id": "is_debug",
+          "name": "开启调试模式",
+          "val": false,
+          "type": "boolean",
+          "desc": "默认关闭"
+        },
+        {
+          "id": "aliyunWeb_data",
+          "name": "阿里云社区Cookie数据",
+          "val": null,
+          "type": "textarea",
+          "autoGrow": true,
+          "desc": "阿里云社区Cookie数据"
+        },
+        {
+          "id": "aliyunWeb_time",
+          "name": "阿里云社区控制时间",
+          "val": "12",
+          "type": "input",
+          "desc": "早于该时间则执行任务，晚于该时间则领取积分，默认: 12(即中午12点，为避免出现乱七八糟的问题，请设置: 1-23的整数)"
+        },
+        {
+          "id": "aliyunWeb_scene",
+          "name": "开启场景任务",
+          "val": false,
+          "type": "boolean",
+          "desc": "控制是否开启场景任务，默认：关闭(false)"
+        },
+        {
+          "id": "aliyunWeb_stock",
+          "name": "开启库存查询",
+          "val": false,
+          "type": "boolean",
+          "desc": "控制是否开启库存查询，默认：关闭(false)"
+        },
+        {
+          "id": "aliyunWeb_video",
+          "name": "开启视频任务",
+          "val": false,
+          "type": "boolean",
+          "desc": "控制是否开启视频任务，默认：关闭(false)"
+        }
+      ]
+    },
+    {
+      "id": "fmz200_ql_sync",
+      "name": "BoxJS与青龙数据同步",
+      "author": "@fmz200",
+      "repo": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/qinglong/ql_sync.js",
+      "icons": [
+        "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/ql.png",
+        "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/ql.png"
+      ],
+      "scripts": [
+        {
+          "name": "BoxJS同步到青龙",
+          "script": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/qinglong/ql_sync.js"
+        }
+      ],
+      "keys": [
+        "ql_sync_keys",
+        "ql_sync_notify",
+        "@ql.ip",
+        "@ql.client_id",
+        "@ql.client_secret",
+        "@ql.username",
+        "@ql.password",
+        "@ql.env",
+        "@ql.mute",
+        "@ql.is_pwd"
+      ],
+      "settings": [
+        {
+          "id": "ql_sync_keys",
+          "name": "需要同步的keys",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "",
+          "autoGrow": true,
+          "rows": 2,
+          "desc": "以英文逗号分隔多个key，例如：key1,key2,key3 \n 如果要增加注释可以用格式@分隔key和注释，例如：key1@remark1,key2@remark2,key3@remark3 \n 以上两种格式可以混用"
+        },
+        {
+          "id": "ql_sync_notify",
+          "name": "是否静默通知",
+          "val": "",
+          "type": "boolean",
+          "placeholder": "true or false",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "关闭后成功时将不会通知，同步失败会通知（暂时没做）"
+        },
+        {
+          "id": "@ql.is_pwd",
+          "name": "开启密码登陆",
+          "val": false,
+          "type": "boolean",
+          "desc": "同步时，优先使用密码登陆"
+        },
+        {
+          "id": "@ql.ip",
+          "name": "青龙登陆的域名或IP:端口号",
+          "val": "",
+          "type": "text",
+          "placeholder": "111.21.0.32:5700"
+        },
+        {
+          "id": "@ql.client_id",
+          "name": "应用 Client ID",
+          "val": "",
+          "type": "text"
+        },
+        {
+          "id": "@ql.client_secret",
+          "name": "应用 Client Secret",
+          "val": "",
+          "type": "text"
+        },
+        {
+          "id": "@ql.username",
+          "name": "账号",
+          "val": "",
+          "type": "text"
+        },
+        {
+          "id": "@ql.password",
+          "name": "密码",
+          "val": "",
+          "type": "text"
+        }
+      ],
+      "descs_html": [
+        "青龙 docker 的安装方式请移步 tg 频道",
+        "青龙 docker 仓库：【<a href=\"https://github.com/whyour\">github</a>】",
+        "青龙 docker 频道：【<a href=\"https://t.me/jiao_long\">电报频道</a>】",
+        "去广告交流群：【<a href=\"https://t.me/lanjieguanggao\">去广告交流群</a>】",
+        "应用client_id，client_secret获取请去青龙面板“系统设置->应用设置”中添加相关参数，优先以openapi方式同步"
+      ]
+    },
+    {
+      "id": "sliverkiss_iqoo",
+      "name": "IQOO社区",
+      "author": "@Sliverkiss",
+      "repo": "",
+      "icons": [
+        "https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/iqooc.png",
+        "https://raw.githubusercontent.com/czy13724/LeviIcons/main/leviicons/iqooc.png"
+      ],
+      "keys": [
+        "iqoo_thread",
+        "iqoo_draw",
+        "iqoos_data"
+      ],
+      "settings": [
+        {
+          "id": "iqoo_thread",
+          "name": "开启发布帖子任务",
+          "val": false,
+          "type": "boolean",
+          "desc": "默认关闭"
+        },
+        {
+          "id": "iqoo_draw",
+          "name": "开启自动抽奖任务",
+          "val": false,
+          "type": "boolean",
+          "desc": "默认关闭"
+        },
+        {
+          "id": "iqoos_data",
+          "name": "会员Cookie数据",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "desc": "会员Cookie数据"
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "name": "video-Eric",
+      "author": "@Eric",
+      "script": "https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/tangtoutiao.js,https://raw.githubusercontent.com/Alex0510/Eric/refs/heads/master/surge/Script/4k.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Alex0510/Eric/refs/heads/master/Icons/MR-X.png",
+        "https://raw.githubusercontent.com/Alex0510/Eric/refs/heads/master/Icons/MR-X.png"
+      ],
+      "keys": [
+        "scheme"
+      ],
+      "settings": [
+        {
+          "id": "scheme",
+          "name": "浏览器",
+          "val": "Safari",
+          "type": "selects",
+          "items": [
+            {
+              "key": "Safari",
+              "label": "Safari"
+            },
+            {
+              "key": "alook",
+              "label": "alook"
+            },
+            {
+              "key": "SenPlayer",
+              "label": "SenPlayer"
+            },
+            {
+              "key": "yybp",
+              "label": "影音宝"
+            },
+            {
+              "key": "zoeplay",
+              "label": "Zoe播放器"
+            }
+          ],
+          "desc": "请选择浏览器"
+        }
+      ]
+    },
+    {
+      "id": "CommonNews",
+      "name": "通用新闻app",
+      "author": "@xzxxn777",
+      "repo": "https://github.com/xzxxn777/Surge",
+      "script": "https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/CommonNews/SendSms.js",
+      "icons": [
+        "https://raw.githubusercontent.com/xzxxn777/Surge/main/xzxxn.JPG",
+        "https://raw.githubusercontent.com/xzxxn777/Surge/main/xzxxn.JPG"
+      ],
+      "keys": [
+        "Common_Phone",
+        "Common_Type",
+        "Common_smsCode",
+        "Common_Password"
+      ],
+      "scripts": [
+        {
+          "name": "发送验证码（填手机号, 选择app, 保存, 执行）",
+          "script": "https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/CommonNews/SendSms.js"
+        },
+        {
+          "name": "用验证码登录（填手机号, 选择app, 验证码, 密码, 保存, 执行 ⚠️ 执行后 记得刷新）",
+          "script": "https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/CommonNews/ResetPassword.js"
+        }
+      ],
+      "settings": [
+        {
+          "id": "Common_Phone",
+          "name": "手机号",
+          "val": "",
+          "type": "text",
+          "desc": "手机号"
+        },
+        {
+          "id": "Common_Type",
+          "name": "app",
+          "val": "",
+          "type": "selects",
+          "items": [
+            {
+              "key": "XiShiYan",
+              "label": "西施眼"
+            },
+            {
+              "key": "WangChao",
+              "label": "望潮"
+            },
+            {
+              "key": "XinJiangBei",
+              "label": "新江北"
+            },
+            {
+              "key": "TongLu",
+              "label": "潇洒桐庐"
+            },
+            {
+              "key": "ZSWY",
+              "label": "掌上武义"
+            },
+            {
+              "key": "YueCheng",
+              "label": "今日越城"
+            },
+            {
+              "key": "DaChao",
+              "label": "大潮"
+            },
+            {
+              "key": "RongPanAn",
+              "label": "融磐安"
+            },
+            {
+              "key": "LanJingLing",
+              "label": "兰精灵"
+            },
+            {
+              "key": "AiHaiYan",
+              "label": "爱海盐"
+            },
+            {
+              "key": "QingJiao",
+              "label": "青椒"
+            },
+            {
+              "key": "JingZhou",
+              "label": "竟舟"
+            }
+          ],
+          "desc": "选择app"
+        },
+        {
+          "id": "Common_smsCode",
+          "name": "验证码",
+          "val": "",
+          "type": "text",
+          "desc": "验证码"
+        },
+        {
+          "id": "Common_Password",
+          "name": "密码",
+          "val": "",
+          "type": "text",
+          "desc": "密码"
+        }
+      ]
+    },
+    {
+      "id": "fmz200_xxyx_token",
+      "name": "晓晓优选token",
+      "author": "@fmz200",
+      "repo": "https://github.com/fmz200/wool_scripts",
+      "icons": [
+        "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/xxyx.jpeg",
+        "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/xxyx.jpeg"
+      ],
+      "keys": [
+        "fmz200_xxyx_token",
+        "xxyx_data"
+      ],
+      "descs_html": [
+        "打开APP点击“我的”页面获取，可到代理工具脚本日志中查看token"
+      ],
+      "settings": [
+        {
+          "id": "fmz200_xxyx_token",
+          "name": "",
+          "val": "",
+          "desc": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 8
+        },
+        {
+          "id": "xxyx_data",
+          "name": "",
+          "val": "",
+          "desc": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 8
+        }
+      ],
+      "scripts": [
+        {
+          "name": "晓晓优选每日任务",
+          "script": "https://raw.githubusercontent.com/fmz200/wool_scripts/Scripts/xxyx/xxyx_signin.js"
+        }
+      ]
+    },
+    {
+      "id": "Leiyiyan_iios",
+      "name": "iios-苹果软件站",
+      "author": "@leiyiyan",
+      "repo": "",
+      "icons": [
+        "https://raw.githubusercontent.com/leiyiyan/resource/main/icons/iios.png",
+        "https://raw.githubusercontent.com/leiyiyan/resource/main/icons/iios.png"
+      ],
+      "keys": [
+        "iios_data"
+      ],
+      "settings": [
+        {
+          "id": "iios_data",
+          "name": "账号信息",
+          "val": null,
+          "type": "textarea",
+          "autoGrow": true,
+          "desc": "账号信息"
+        }
+      ]
+    }
+  ]
+}
