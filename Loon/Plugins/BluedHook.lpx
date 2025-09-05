@@ -32,7 +32,7 @@ URL-REGEX,https://voice.blued.cn/users/chatroom/im/recommend,REJECT
 http-response ^https:\/\/(social|argo)\.blued\.cn\/users(?:\/\d+\?.*is_living=false|\?(aaid|column)=) script-path=bld_vip.js, requires-body=true, enable = {arg1}, tag=blued_VIP
  
 # 定位功能
-http-request ^https:\/\/((social|argo)\.(blued|irisgw)\.cn)\/(users/(nearby/new_face|selection|guess-like/push|[^/]+/joy)|ticktocks/[^?]*\?.*(?:lat|lng|latitude|longitude)=|blued/(?!adms/)[^?]*\?.*(?:lat|lng|latitude|longitude)=|users\?.*(?:lat|lng|latitude|longitude)=) script-path=bld.js, requires-body=true, enable = {arg2}, tag=Blued定位修改器, argument=[{customLatitude},{customLongitude}]
+http-request ^https:\/\/((social|argo)\.(blued|irisgw)\.cn)\/(users/(nearby/new_face|selection|guess-like/push|[^/]+/joy)|ticktocks/[^?]*\?.*(?:lat|lng|latitude|longitude)=|blued/(?!adms/)[^?]*\?.*(?:lat|lng|latitude|longitude)=|users\?.*(?:lat|lng|latitude|longitude)=) script-path=bld_location.js, requires-body=true, enable = {arg2}, tag=Blued定位修改器, argument=[{customLatitude},{customLongitude}]
  
 [MITM]
 hostname = voice.blued.cn, voice.irisgw.cn, api.finka.cn, gethornet.com, api.theorangemeetingplace.com, api.sqaces.com, social.blued.cn, argo.blued.cn, *.bldimg.com, ulogs.umengcloud.com, 220.249.135.81, 118.212.146.254
