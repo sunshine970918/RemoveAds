@@ -12,7 +12,7 @@ arg1 = switch,true,tag=V2ex获取Cookie
 arg2 = switch,true,tag=飞蚁回收
 arg3 = switch,true,tag=鲸才招聘_获取token
 arg4 = switch,true,tag=达美乐token
-arg5 = switch,true,tag=阿里云社区获取token
+arg5 = switch,true,tag=阿里云社区
 arg6 = switch,true,tag=泡泡玛特获取token
 arg7 = switch,true,tag=高德地图获取token
 arg8 = switch,true,tag=吾爱破解获取Cookie
