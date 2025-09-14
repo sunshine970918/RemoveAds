@@ -15,7 +15,7 @@ customLatitude = input,"",tag=纬度,desc=请输入要替换的纬度
 [Rule]
 # 广告拦截规则
 #URL-REGEX,https://argo.blued.cn/blued/promote.*,REJECT
-URL-REGEX,https://argo.blued.cn/blued/adms/.*,REJECT
+#URL-REGEX,https://argo.blued.cn/blued/adms/.*,REJECT
 URL-REGEX,https://argo.blued.cn/blued/splash.*,REJECT
 URL-REGEX,https://argo.blued.cn/blued/launch/adms,REJECT
 URL-REGEX,https://social.blued.cn/users/.*/joy,REJECT
