@@ -5,8 +5,9 @@ const startTime = Date.now();
 
 // 日志工具（带时间戳）
 function log(msg) {
-  const now = new Date().toISOString().split("T")[1].replace("Z", "");
-  console.log(`[Blued+ ${now}] ${msg}`);
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString("zh-CN", { hour12: false }) + "." + String(now.getMilliseconds()).padStart(3, "0");
+  console.log(`[Blued+ ${timeStr}] ${msg}`);
 }
 
 // 安全 JSON 解析
