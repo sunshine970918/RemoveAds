@@ -1,7 +1,7 @@
 /*
- * Blued 图片抓取脚本
- * 功能：拦截目标请求，提取图片 URL 保存并通知
- * 作者：Eric
+ * Blued 图片助手
+ * 功能：拦截目标请求，提取图片/视频 URL 保存并通知
+ * 作者：Eric (改写版)
  * 仅供研究学习，禁止转卖
  */
 
@@ -12,19 +12,28 @@ const requestUrl = $request.url;
 const requestHeaders = $request.headers;
 
 try {
-  // 保持原始触发逻辑：判断请求头是否为图片
-  if (requestHeaders && 
+  // 判断请求头或者直接通过 URL 后缀匹配图片/视频
+  if (
+    (requestHeaders &&
       (requestHeaders["Content-Type"]?.includes("image/") ||
-       requestHeaders["Accept"]?.includes("image/"))) {
+       requestHeaders["Accept"]?.includes("image/"))) ||
+    /\.(jpg|png|mp4)$/.test(requestUrl)
+  ) {
     const lastUrl = env.getdata(STORAGE_KEY);
     if (!lastUrl || lastUrl !== requestUrl) {
       env.setdata(requestUrl, STORAGE_KEY);
-      // 通知模块恢复原来的完整形式
-      env.msg("Blued 图片助手", "成功捕获图片链接", requestUrl, {
+      env.log("成功捕获图片/视频链接:", requestUrl);
+
+      // 触发完整通知
+      env.msg("Blued 图片助手", "成功捕获图片/视频链接", requestUrl, {
         "open-url": requestUrl,
         "media-url": requestUrl
       });
+    } else {
+      env.log("重复 URL，已忽略:", requestUrl);
     }
+  } else {
+    env.log("未匹配到图片/视频:", requestUrl);
   }
 } catch (err) {
   env.logErr(err);
@@ -85,7 +94,7 @@ function Env(name, opts) {
       this.logs = [];
       this.isMute = false;
       this.isNeedRewrite = false;
-      this.logSeparator = "\\n";
+      this.logSeparator = "\n";
       Object.assign(this, opts);
       this.log("", `🔔${this.name}, 开始!`);
     }
@@ -125,7 +134,7 @@ function Env(name, opts) {
       } else if (this.isQuanX()) {
         $notify(title, subt, desc, opts);
       } else if (this.isNode()) {
-        console.log(`${title}\\n${subt}\\n${desc}`);
+        console.log(`${title}\n${subt}\n${desc}`);
       }
     }
 
