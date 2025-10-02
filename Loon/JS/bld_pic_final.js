@@ -1,37 +1,26 @@
 /* 以下为脚本核心代码（注解已整合至上方文档） */
-const env = new Env("Blued 图片助手");
-const STORAGE_KEY = "BluedPicURL";
+const $ = new Env("GOGOGOGO");
+let url = $request.url, headers = $request.headers;
 
-const requestUrl = $request.url;
-const requestHeaders = $request.headers;
-
-try {
-  // 判断请求头或者直接通过 URL 后缀匹配图片/视频
-  if (
-    (requestHeaders &&
-      (requestHeaders["Content-Type"]?.includes("image/") ||
-       requestHeaders["Accept"]?.includes("image/"))) ||
-    /\.(jpg|png|mp4)$/.test(requestUrl)
-  ) {
-    const lastUrl = env.getdata(STORAGE_KEY);
-    if (!lastUrl || lastUrl !== requestUrl) {
-      env.setdata(requestUrl, STORAGE_KEY);
-      env.log("成功捕获图片/视频链接:", requestUrl);
-
-      // 直接传字符串链接，确保跳转适配
-      env.msg("Blued 图片助手", "成功捕获链接", requestUrl, requestUrl);
-    } else {
-      env.log("重复 URL，已忽略:", requestUrl);
+if (headers["User-Agent"].indexOf("Blued") !== -1 || headers["user-agent"].indexOf("Blued") !== -1) {
+    try {
+        // 检查是否为 Quantumult X、Loon 或 Shadowrocket 环境
+        if ('undefined' !== typeof $task || 'undefined' !== typeof $loon) {
+            const notify = $.getdata("pngUrl");
+            if (!notify || notify !== url) {
+                // 如果不存在通知或者当前链接与之前存储的链接不同，则发送通知
+                $.setdata(url, "pngUrl");
+                $.msg("PNG链接捕获成功", "点击此通知查看PNG", "", { 'media-url': url });
+            }
+        } else {
+                $.msg("PNG链接捕获成功", "", "点击此通知查看PNG", url);
+        }
+    } catch (e) {
+        console.error("错误:", e);
     }
-  } else {
-    env.log("未匹配到图片/视频:", requestUrl);
-  }
-} catch (err) {
-  env.logErr(err);
-  env.msg("Blued 图片助手", "出错", String(err));
 }
 
-env.done({});
+$.done({});
 
 /**
  * Env 通用类（适配多工具，核心支持通知跳转）
