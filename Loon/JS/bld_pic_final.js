@@ -1,70 +1,60 @@
-/***********************************************
- * Blued 图片助手
- * 作者：sunshine970918（改良版）
- * 功能：捕获并通知可点击跳转的图片/视频链接
- ***********************************************/
+// ==UserScript==
+// @name         Blued 图片助手
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  捕获 Blued 图片并通知跳转
+// @author       Eric
+// @match        *://*.blued.com/*
+// @grant        none
+// ==/UserScript==
 
-const env = new Env("Blued 图片助手");
+(function() {
+    'use strict';
 
-(async () => {
-  try {
-    let requestUrl = "";
-    if (typeof $request !== "undefined" && $request.url) {
-      requestUrl = $request.url;
-      env.log(`捕获到请求: ${requestUrl}`);
-    }
+    // 创建 Env 实例（原通知模块）
+    const env = new Env("Blued图片助手");
 
-    if (requestUrl) {
-      env.msg(
-        "Blued 图片助手",
-        "成功捕获图片/视频链接",
-        requestUrl,
-        {
-          "open-url": requestUrl,   // Surge / Loon
-          "media-url": requestUrl,  // Surge / Loon 通知缩略图
-          "url": requestUrl         // QuanX 点击跳转
+    // 主流程
+    async function main() {
+        try {
+            env.log("🔔Blued 图片助手, 开始!");
+
+            // 示例：获取页面图片列表
+            const images = document.querySelectorAll('img'); // 可替换为具体选择器
+            for (let i = 0; i < images.length; i++) {
+                const imgUrl = images[i].src;
+                if (imgUrl) {
+                    env.log(`捕获到图片链接: ${imgUrl}`);
+
+                    // **原代码通知模块**
+                    env.msg("Blued 图片助手", "成功捕获图片链接", imgUrl, {
+                        "open-url": imgUrl,
+                        "media-url": imgUrl
+                    });
+                }
+            }
+
+            env.log("🔔Blued 图片助手, 完成!");
+        } catch (e) {
+            env.log("❌捕获图片异常:", e);
         }
-      );
-    } else {
-      env.log("未捕获到有效链接");
     }
-  } catch (e) {
-    env.log(`脚本出错: ${e}`);
-  } finally {
-    env.done();
-  }
+
+    // 执行主流程
+    main();
+
+    // 原 Env 类（保留原通知方法）
+    function Env(name) {
+        this.name = name;
+        this.log = function(...args) {
+            console.log(`[${this.name}]`, ...args);
+        };
+        this.msg = function(title, subtitle, body, options = {}) {
+            console.log(`[通知] ${title} - ${subtitle}: ${body}`, options);
+            // Surge / Loon / Quantumult X 原生跳转支持
+            if (typeof $notification !== 'undefined') {
+                $notification.post(title, subtitle, body, options);
+            }
+        };
+    }
 })();
-
-/***********************************************
- * Env 框架 - 通用跨平台通知 & 日志
- ***********************************************/
-function Env(name) {
-  this.name = name;
-  this.startTime = new Date().getTime();
-  this.isNode = () => typeof module !== "undefined" && !!module.exports;
-  this.isQuanX = () => typeof $task !== "undefined";
-  this.isSurge = () => typeof $httpClient !== "undefined" && typeof $loon === "undefined";
-  this.isLoon = () => typeof $loon !== "undefined";
-  this.isMute = false;
-
-  this.log = (...args) => console.log(`[${this.name}]`, ...args);
-
-  this.msg = (title = this.name, subt = "", desc = "", opts = {}) => {
-    if (this.isMute) return;
-    if (this.isSurge() || this.isLoon()) {
-      $notification.post(title, subt, desc, opts);
-    } else if (this.isQuanX()) {
-      if (opts["open-url"]) opts["url"] = opts["open-url"];
-      $notify(title, subt, desc, opts);
-    } else if (this.isNode()) {
-      this.log(`${title}\n${subt}\n${desc}\n${JSON.stringify(opts)}`);
-    }
-  };
-
-  this.done = (value = {}) => {
-    const endTime = new Date().getTime();
-    const cost = ((endTime - this.startTime) / 1000).toFixed(2);
-    this.log(`🔔${this.name}, 结束! ⏱ ${cost} 秒`);
-    if (this.isQuanX() || this.isSurge() || this.isLoon()) $done(value);
-  };
-}
