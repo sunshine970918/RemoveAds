@@ -20,19 +20,19 @@ try {
     /\.(jpg|png|mp4)$/.test(requestUrl)
   ) {
     const lastUrl = env.getdata(STORAGE_KEY);
-    if (!lastUrl || lastUrl !== requestUrl) {
-      env.setdata(requestUrl, STORAGE_KEY);
-      env.log("成功捕获图片/视频链接:", requestUrl);
+    // 额外校验：确保是完整http/https链接（原代码可能隐含此逻辑）
+    const validUrl = requestUrl.startsWith("http") ? requestUrl : "";
+    if (validUrl && (!lastUrl || lastUrl !== validUrl)) {
+      env.setdata(validUrl, STORAGE_KEY);
+      env.log("成功捕获图片/视频链接:", validUrl);
 
-      // 触发通知：自动适配不同环境的参数
-      env.msg(
-        "Blued 图片助手", 
-        "成功捕获图片/视频链接", 
-        requestUrl, 
-        requestUrl // 直接传链接，让msg方法内部适配参数
-      );
+      // 【原代码核心写法】直接传链接字符串，而非对象（兼容性最强）
+      // 不同工具对字符串参数的处理：
+      // - Surge/Loon：自动识别为跳转链接
+      // - QuanX：自动映射为open-url
+      env.msg("Blued 图片助手", "成功捕获链接", validUrl, validUrl);
     } else {
-      env.log("重复 URL，已忽略:", requestUrl);
+      env.log("重复/无效 URL，已忽略:", requestUrl);
     }
   } else {
     env.log("未匹配到图片/视频:", requestUrl);
@@ -45,7 +45,7 @@ try {
 env.done({});
 
 /**
- * Env 通用类（修复通知适配问题）
+ * Env 通用类（完全对齐原代码的通知逻辑）
  */
 function Env(name, opts) {
   class Http {
@@ -101,13 +101,13 @@ function Env(name, opts) {
       this.log("", `🔔${this.name}, 开始!`);
     }
 
-    // 环境判断
+    // 环境判断（原代码标准写法）
     isNode() { return typeof module !== "undefined" && !!module.exports; }
     isQuanX() { return typeof $task !== "undefined"; }
     isSurge() { return typeof $httpClient !== "undefined" && typeof $loon === "undefined"; }
     isLoon() { return typeof $loon !== "undefined"; }
 
-    // 数据读写
+    // 数据读写（原代码逻辑）
     getdata(key) {
       if (this.isSurge() || this.isLoon()) return $persistentStore.read(key);
       if (this.isQuanX()) return $prefs.valueForKey(key);
@@ -128,32 +128,21 @@ function Env(name, opts) {
       return false;
     }
 
-    // 【核心修复】消息通知：自动适配不同环境的跳转/预览参数
-    msg(title = this.name, subt = "", desc = "", link = "") {
+    // 【关键】通知方法：完全对齐原代码的参数处理（支持字符串链接）
+    msg(title, subtitle, content, url) {
       if (this.isMute) return;
-      let notifyOpts = {};
-
-      // 1. 适配跳转参数
-      if (link) {
-        if (this.isSurge() || this.isLoon()) {
-          notifyOpts.url = link; // Surge/Loon 跳转用 url
-        } else if (this.isQuanX()) {
-          notifyOpts["open-url"] = link; // QuanX 跳转用 open-url
-          notifyOpts["media-url"] = link; // QuanX 预览用 media-url
-        }
-      }
-
-      // 2. 发送通知（匹配对应环境的API）
-      switch (true) {
-        case this.isSurge() || this.isLoon():
-          $notification.post(title, subt, desc, notifyOpts);
-          break;
-        case this.isQuanX():
-          $notify(title, subt, desc, notifyOpts);
-          break;
-        case this.isNode():
-          console.log(`${title}\n${subt}\n${desc}\n链接: ${link}`);
-          break;
+      // 原代码核心逻辑：优先用字符串url，而非对象
+      if (this.isSurge() || this.isLoon()) {
+        // Surge/Loon 对字符串url的兼容性最好，直接传第四个参数
+        $notification.post(title, subtitle, content, url);
+      } else if (this.isQuanX()) {
+        // QuanX 字符串url会自动转为open-url，额外加media-url支持预览
+        $notify(title, subtitle, content, {
+          "open-url": url,
+          "media-url": url
+        });
+      } else if (this.isNode()) {
+        console.log(`${title}\n${subtitle}\n${content}\n链接: ${url}`);
       }
     }
 
