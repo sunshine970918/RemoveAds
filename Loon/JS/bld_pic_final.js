@@ -1,6 +1,6 @@
 /*
  * Blued 图片助手
- * 功能：拦截目标请求，提取图片/视频 URL 保存并通知
+ * 功能：拦截目标请求，提取图片/视频 URL 保存并通知，点击可跳转
  * 作者：Eric (改写版)
  * 仅供研究学习，禁止转卖
  */
@@ -24,10 +24,11 @@ try {
       env.setdata(requestUrl, STORAGE_KEY);
       env.log("成功捕获图片/视频链接:", requestUrl);
 
-      // 触发完整通知
+      // 触发通知，点击通知即可打开
       env.msg("Blued 图片助手", "成功捕获图片/视频链接", requestUrl, {
-        "open-url": requestUrl,
-        "media-url": requestUrl
+        "open-url": requestUrl,   // Surge / Loon
+        "media-url": requestUrl,  // Surge / Loon，可预览图片
+        "url": requestUrl          // QuanX，点击跳转
       });
     } else {
       env.log("重复 URL，已忽略:", requestUrl);
@@ -126,12 +127,14 @@ function Env(name, opts) {
       return false;
     }
 
-    // 消息通知（完整形式）
+    // 消息通知（完整形式，跨平台点击可跳转）
     msg(title = this.name, subt = "", desc = "", opts = {}) {
       if (this.isMute) return;
       if (this.isSurge() || this.isLoon()) {
         $notification.post(title, subt, desc, opts);
       } else if (this.isQuanX()) {
+        // QuanX 需要使用 url 字段
+        if (opts["open-url"]) opts["url"] = opts["open-url"];
         $notify(title, subt, desc, opts);
       } else if (this.isNode()) {
         console.log(`${title}\n${subt}\n${desc}`);
