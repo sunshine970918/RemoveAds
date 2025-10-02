@@ -8,33 +8,33 @@
 const env = new Env("Blued 图片助手");
 const STORAGE_KEY = "BluedPicURL";
 
-// 从请求中获取目标 url
 const requestUrl = $request.url;
 const requestHeaders = $request.headers;
 
-// 判断是否为图片资源请求
-if (requestHeaders && 
-    (requestHeaders["Content-Type"]?.includes("image/") ||
-     requestHeaders["Accept"]?.includes("image/"))) {
-  try {
+try {
+  // 保持原始触发逻辑：判断请求头是否为图片
+  if (requestHeaders && 
+      (requestHeaders["Content-Type"]?.includes("image/") ||
+       requestHeaders["Accept"]?.includes("image/"))) {
     const lastUrl = env.getdata(STORAGE_KEY);
     if (!lastUrl || lastUrl !== requestUrl) {
       env.setdata(requestUrl, STORAGE_KEY);
-      env.msg("Blued 图片助手", "已抓取图片链接", requestUrl, {
+      // 通知模块恢复原来的完整形式
+      env.msg("Blued 图片助手", "成功捕获图片链接", requestUrl, {
         "open-url": requestUrl,
         "media-url": requestUrl
       });
     }
-  } catch (err) {
-    env.logErr(err);
-    env.msg("Blued 图片助手", "出错", String(err));
   }
+} catch (err) {
+  env.logErr(err);
+  env.msg("Blued 图片助手", "出错", String(err));
 }
 
 env.done({});
 
 /**
- * Env 通用类（适配 Surge/Loon/QuanX/Node.js 等环境）
+ * Env 通用类（适配 Surge/Loon/QuanX/Node.js 等环境，带完整通知模块）
  */
 function Env(name, opts) {
   class Http {
@@ -85,7 +85,7 @@ function Env(name, opts) {
       this.logs = [];
       this.isMute = false;
       this.isNeedRewrite = false;
-      this.logSeparator = "\n";
+      this.logSeparator = "\\n";
       Object.assign(this, opts);
       this.log("", `🔔${this.name}, 开始!`);
     }
@@ -117,7 +117,7 @@ function Env(name, opts) {
       return false;
     }
 
-    // 消息通知
+    // 消息通知（完整形式）
     msg(title = this.name, subt = "", desc = "", opts = {}) {
       if (this.isMute) return;
       if (this.isSurge() || this.isLoon()) {
@@ -125,7 +125,7 @@ function Env(name, opts) {
       } else if (this.isQuanX()) {
         $notify(title, subt, desc, opts);
       } else if (this.isNode()) {
-        console.log(`${title}\n${subt}\n${desc}`);
+        console.log(`${title}\\n${subt}\\n${desc}`);
       }
     }
 
