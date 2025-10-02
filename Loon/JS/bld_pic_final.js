@@ -1,10 +1,4 @@
-/*
- * Blued 图片助手
- * 功能：拦截目标请求，提取图片/视频 URL 保存并通知
- * 作者：Eric (改写版)
- * 仅供研究学习，禁止转卖
- */
-
+/* 以下为脚本核心代码（注解已整合至上方文档） */
 const env = new Env("Blued 图片助手");
 const STORAGE_KEY = "BluedPicURL";
 
@@ -20,19 +14,14 @@ try {
     /\.(jpg|png|mp4)$/.test(requestUrl)
   ) {
     const lastUrl = env.getdata(STORAGE_KEY);
-    // 额外校验：确保是完整http/https链接（原代码可能隐含此逻辑）
-    const validUrl = requestUrl.startsWith("http") ? requestUrl : "";
-    if (validUrl && (!lastUrl || lastUrl !== validUrl)) {
-      env.setdata(validUrl, STORAGE_KEY);
-      env.log("成功捕获图片/视频链接:", validUrl);
+    if (!lastUrl || lastUrl !== requestUrl) {
+      env.setdata(requestUrl, STORAGE_KEY);
+      env.log("成功捕获图片/视频链接:", requestUrl);
 
-      // 【原代码核心写法】直接传链接字符串，而非对象（兼容性最强）
-      // 不同工具对字符串参数的处理：
-      // - Surge/Loon：自动识别为跳转链接
-      // - QuanX：自动映射为open-url
-      env.msg("Blued 图片助手", "成功捕获链接", validUrl, validUrl);
+      // 直接传字符串链接，确保跳转适配
+      env.msg("Blued 图片助手", "成功捕获链接", requestUrl, requestUrl);
     } else {
-      env.log("重复/无效 URL，已忽略:", requestUrl);
+      env.log("重复 URL，已忽略:", requestUrl);
     }
   } else {
     env.log("未匹配到图片/视频:", requestUrl);
@@ -45,7 +34,7 @@ try {
 env.done({});
 
 /**
- * Env 通用类（完全对齐原代码的通知逻辑）
+ * Env 通用类（适配多工具，核心支持通知跳转）
  */
 function Env(name, opts) {
   class Http {
@@ -101,13 +90,13 @@ function Env(name, opts) {
       this.log("", `🔔${this.name}, 开始!`);
     }
 
-    // 环境判断（原代码标准写法）
+    // 环境判断
     isNode() { return typeof module !== "undefined" && !!module.exports; }
     isQuanX() { return typeof $task !== "undefined"; }
     isSurge() { return typeof $httpClient !== "undefined" && typeof $loon === "undefined"; }
     isLoon() { return typeof $loon !== "undefined"; }
 
-    // 数据读写（原代码逻辑）
+    // 数据读写
     getdata(key) {
       if (this.isSurge() || this.isLoon()) return $persistentStore.read(key);
       if (this.isQuanX()) return $prefs.valueForKey(key);
@@ -128,15 +117,12 @@ function Env(name, opts) {
       return false;
     }
 
-    // 【关键】通知方法：完全对齐原代码的参数处理（支持字符串链接）
+    // 通知方法：适配多工具跳转（字符串链接优先）
     msg(title, subtitle, content, url) {
       if (this.isMute) return;
-      // 原代码核心逻辑：优先用字符串url，而非对象
       if (this.isSurge() || this.isLoon()) {
-        // Surge/Loon 对字符串url的兼容性最好，直接传第四个参数
         $notification.post(title, subtitle, content, url);
       } else if (this.isQuanX()) {
-        // QuanX 字符串url会自动转为open-url，额外加media-url支持预览
         $notify(title, subtitle, content, {
           "open-url": url,
           "media-url": url
