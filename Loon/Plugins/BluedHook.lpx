@@ -33,6 +33,9 @@ http-response ^https:\/\/(social|argo)\.blued\.cn\/users(?:\/\d+\?.*is_living=fa
  
 # 定位功能
 http-request ^https:\/\/((social|argo)\.(blued|irisgw)\.cn)\/(users/(nearby/new_face|selection|guess-like/push|[^/]+/joy)|ticktocks/[^?]*\?.*(?:lat|lng|latitude|longitude)=|blued/(?!adms/)[^?]*\?.*(?:lat|lng|latitude|longitude)=|users\?.*(?:lat|lng|latitude|longitude)=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_location.js, requires-body=true, enable = {arg2}, tag=Blued定位修改器, argument=[{customLatitude},{customLongitude}]
+
+#闪照
+^https:\/\/(burn-chatfiles)\.bldimg\.(com|cn)\/.*\/(ingfiles|burn_chatfiles\/(videos|users))\/.*(mp4|jpg|png).* url script-request-header https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/hqtp.js, tag=闪照
  
 [MITM]
-hostname = voice.blued.cn, voice.irisgw.cn, gethornet.com, api.theorangemeetingplace.com, api.sqaces.com, social.blued.cn, argo.blued.cn, ulogs.umengcloud.com, 220.249.135.81, 118.212.146.254
+hostname = voice.blued.cn, voice.irisgw.cn, gethornet.com, api.theorangemeetingplace.com, api.sqaces.com, social.blued.cn, argo.blued.cn, ulogs.umengcloud.com, burn-chatfiles.bldimg.cn, 220.249.135.81, 118.212.146.254
