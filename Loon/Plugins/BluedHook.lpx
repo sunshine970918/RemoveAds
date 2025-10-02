@@ -6,7 +6,7 @@
 #!openUrl = 
  
 [Argument]
-arg1 = switch,true,tag=Blued_VIP
+arg1 = switch,true,tag=隐私相册
 arg2 = switch,false,tag=Blued定位
 arg3 = switch,true,tag=闪照捕获
  
@@ -30,7 +30,7 @@ URL-REGEX,https://voice.blued.cn/users/chatroom/im/recommend,REJECT
  
 [Script]
 # VIP功能
-http-response ^https:\/\/(social|argo)\.blued\.cn\/users(?:\/\d+\?.*is_living=false|\?(aaid|column)=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_vip.js, requires-body=true, enable = {arg1}, tag=blued_VIP
+http-response ^https:\/\/(social|argo)\.blued\.cn\/users(?:\/\d+\?.*is_living=false|\?(aaid|column)=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_vip.js, requires-body=true, enable = {arg1}, tag=隐私相册
  
 # 定位功能
 http-request ^https:\/\/((social|argo)\.(blued|irisgw)\.cn)\/(users/(nearby/new_face|selection|guess-like/push|[^/]+/joy)|ticktocks/[^?]*\?.*(?:lat|lng|latitude|longitude)=|blued/(?!adms/)[^?]*\?.*(?:lat|lng|latitude|longitude)=|users\?.*(?:lat|lng|latitude|longitude)=) script-path=https://raw.githubusercontent.com/sunshine970918/RemoveAds/refs/heads/main/Loon/JS/bld_location.js, requires-body=true, enable = {arg2}, tag=Blued定位修改器, argument=[{customLatitude},{customLongitude}]
