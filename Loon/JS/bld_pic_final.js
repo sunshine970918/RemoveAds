@@ -1,131 +1,146 @@
-/* 以下为脚本核心代码（注解已整合至上方文档） */
-const $ = new Env("GOGOGOGO");
-let url = $request.url, headers = $request.headers;
+// 核心配置：脚本名、存储键（用于去重）、目标URL匹配正则
+const SCRIPT_NAME = 'Blued 图片助手';
+const STORAGE_KEY = 'blued_pic_url_store'; // 存储已捕获链接，避免重复通知
+// 精准匹配Blued资源URL（覆盖子域名、路径、后缀+签名参数）
+const BLUED_RESOURCE_REG = /^https:\/\/(www|burn-chatfiles|.*burnchatfiles.*)\.bldimg\.(com|cn)\/(ingfiles|burn_chatfiles\/(videos|users))\/.*?\.(jpg|png|mp4)(\?.*)?$/;
 
-if (headers["User-Agent"].indexOf("Blued") !== -1 || headers["user-agent"].indexOf("Blued") !== -1) {
-    try {
-        // 检查是否为 Quantumult X、Loon 或 Shadowrocket 环境
-        if ('undefined' !== typeof $task || 'undefined' !== typeof $loon) {
-            const notify = $.getdata("pngUrl");
-            if (!notify || notify !== url) {
-                // 如果不存在通知或者当前链接与之前存储的链接不同，则发送通知
-                $.setdata(url, "pngUrl");
-                $.msg("PNG链接捕获成功", "点击此通知查看PNG", "", { 'media-url': url });
-            }
-        } else {
-                $.msg("PNG链接捕获成功", "", "点击此通知查看PNG", url);
+// 初始化Env环境（处理存储、通知、工具适配，核心功能依赖）
+const bluedHelperEnv = new Env(SCRIPT_NAME);
+
+// 主逻辑：拦截请求→判断是否为目标资源→去重→发送通知
+try {
+  // 1. 获取当前拦截的请求URL和请求头
+  const requestUrl = $request.url;
+  const requestHeaders = $request.headers || {};
+
+  // 2. 判断是否为Blued图片/视频（两种条件满足其一即可）
+  // 条件1：请求头含图片标识（Content-Type包含image/）
+  const isImageFromHeader = requestHeaders['Content-Type'] 
+    ? requestHeaders['Content-Type'].indexOf('image/') !== -1 
+    : false;
+  // 条件2：URL匹配Blued资源正则（含签名参数也能匹配）
+  const isTargetResource = isImageFromHeader || BLUED_RESOURCE_REG.test(requestUrl);
+
+  if (isTargetResource) {
+    // 3. 去重判断：读取已存储的链接，不同则更新存储并通知
+    const storedUrl = bluedHelperEnv.getdata(STORAGE_KEY);
+    if (!storedUrl || storedUrl !== requestUrl) {
+      // 存储新链接（下次相同链接会被忽略）
+      bluedHelperEnv.setdata(requestUrl, STORAGE_KEY);
+      console.log(`[${SCRIPT_NAME}] 捕获新链接：`, requestUrl);
+
+      // 4. 发送系统通知（支持点击跳转，QuanX可预览图片）
+      bluedHelperEnv.msg(
+        SCRIPT_NAME,          // 通知标题
+        '成功捕获图片/视频',   // 通知副标题
+        requestUrl,           // 通知内容（显示完整链接）
+        {                     // 通知选项：跳转+预览配置
+          'open-url': requestUrl,  // 点击通知跳转的链接
+          'media-url': requestUrl  // QuanX预览图片的链接
         }
-    } catch (e) {
-        console.error("错误:", e);
-    }
-}
-
-$.done({});
-
-/**
- * Env 通用类（适配多工具，核心支持通知跳转）
- */
-function Env(name, opts) {
-  class Http {
-    constructor(env) { this.env = env; }
-    send(req, method = "GET") {
-      req = typeof req === "string" ? { url: req } : req;
-      let sender = this.get;
-      if (method === "POST") sender = this.post;
-      return new Promise((resolve, reject) => {
-        sender.call(this, req, (err, resp, body) => {
-          if (err) reject(err);
-          else resolve(resp);
-        });
-      });
-    }
-    get(req, cb) { return this.sendRequest(req, "GET", cb); }
-    post(req, cb) { return this.sendRequest(req, "POST", cb); }
-    sendRequest(req, method, cb) {
-      switch (true) {
-        case this.env.isSurge() || this.env.isLoon():
-          $httpClient[method.toLowerCase()](req, (err, resp, body) => {
-            if (resp) resp.body = body;
-            cb(err, resp, body);
-          });
-          break;
-        case this.env.isQuanX():
-          req.method = method;
-          $task.fetch(req).then(
-            (resp) => cb(null, { ...resp, body: resp.body }, resp.body),
-            (err) => cb(err)
-          );
-          break;
-        case this.env.isNode():
-          const request = require("request");
-          request[method.toLowerCase()](req, (err, resp, body) => {
-            cb(err, resp, body);
-          });
-          break;
-      }
+      );
+    } else {
+      // 重复链接：仅打日志，不发通知
+      console.log(`[${SCRIPT_NAME}] 重复链接已忽略：`, requestUrl);
     }
   }
+} catch (error) {
+  // 错误处理：打印日志+发送错误通知
+  console.error(`[${SCRIPT_NAME}] 运行出错：`, error.message);
+  bluedHelperEnv.msg(
+    SCRIPT_NAME, 
+    '脚本出错', 
+    `错误原因：${error.message}`
+  );
+} finally {
+  // 脚本结束（必须调用，避免工具报错）
+  bluedHelperEnv.done({});
+}
 
-  return new (class {
-    constructor(name, opts) {
-      this.name = name;
-      this.http = new Http(this);
-      this.data = null;
-      this.logs = [];
-      this.isMute = false;
-      this.isNeedRewrite = false;
-      this.logSeparator = "\n";
-      Object.assign(this, opts);
-      this.log("", `🔔${this.name}, 开始!`);
+// Env通用类（精简核心功能：存储、通知、工具适配，无多余逻辑）
+function Env(scriptName) {
+  // Http辅助类：仅保留必要请求能力（主逻辑暂未用到，预留扩展）
+  class HttpHelper {
+    constructor(env) { this.env = env; }
+    send(requestOpts, method = 'GET') {
+      return new Promise((resolve) => {
+        this[method.toLowerCase()](requestOpts, (_, response) => resolve(response));
+      });
+    }
+    get(requestOpts, callback) { $httpClient.get(requestOpts, callback); }
+    post(requestOpts, callback) { $httpClient.post(requestOpts, callback); }
+  }
+
+  // 核心功能实现
+  return new class {
+    constructor(name) {
+      this.scriptName = name;
+      this.http = new HttpHelper(this);
+      this.startTime = Date.now(); // 用于计算运行时间
     }
 
-    // 环境判断
-    isNode() { return typeof module !== "undefined" && !!module.exports; }
-    isQuanX() { return typeof $task !== "undefined"; }
-    isSurge() { return typeof $httpClient !== "undefined" && typeof $loon === "undefined"; }
-    isLoon() { return typeof $loon !== "undefined"; }
+    // 识别当前工具环境（Surge/Loon/Quantumult X）
+    getCurrentEnv() {
+      if (typeof $task !== 'undefined') return 'Quantumult X';
+      if (typeof $loon !== 'undefined') return 'Loon';
+      if (typeof $httpClient !== 'undefined') return 'Surge';
+      return 'Node.js'; // 预留Node环境，主逻辑暂用不到
+    }
 
-    // 数据读写
-    getdata(key) {
-      if (this.isSurge() || this.isLoon()) return $persistentStore.read(key);
-      if (this.isQuanX()) return $prefs.valueForKey(key);
-      if (this.isNode()) {
-        this.data = this.data || {};
-        return this.data[key];
+    // 读取存储（适配不同工具的存储API）
+    getdata(storageKey) {
+      switch (this.getCurrentEnv()) {
+        case 'Surge':
+        case 'Loon':
+          return $persistentStore.read(storageKey);
+        case 'Quantumult X':
+          return $prefs.valueForKey(storageKey);
+        default:
+          return null;
       }
-      return null;
-    }
-    setdata(val, key) {
-      if (this.isSurge() || this.isLoon()) return $persistentStore.write(val, key);
-      if (this.isQuanX()) return $prefs.setValueForKey(val, key);
-      if (this.isNode()) {
-        this.data = this.data || {};
-        this.data[key] = val;
-        return true;
-      }
-      return false;
     }
 
-    // 通知方法：适配多工具跳转（字符串链接优先）
-    msg(title, subtitle, content, url) {
-      if (this.isMute) return;
-      if (this.isSurge() || this.isLoon()) {
-        $notification.post(title, subtitle, content, url);
-      } else if (this.isQuanX()) {
-        $notify(title, subtitle, content, {
-          "open-url": url,
-          "media-url": url
-        });
-      } else if (this.isNode()) {
-        console.log(`${title}\n${subtitle}\n${content}\n链接: ${url}`);
+    // 写入存储（适配不同工具的存储API）
+    setdata(storageValue, storageKey) {
+      switch (this.getCurrentEnv()) {
+        case 'Surge':
+        case 'Loon':
+          return $persistentStore.write(storageValue, storageKey);
+        case 'Quantumult X':
+          return $prefs.setValueForKey(storageValue, storageKey);
+        default:
+          return false;
       }
     }
 
-    log(...msg) { console.log(msg.join(this.logSeparator)); }
-    logErr(err) { console.error(err); }
-    done(val = {}) {
-      if (this.isNode()) process.exit(0);
-      else if (typeof $done !== "undefined") $done(val);
+    // 发送系统通知（适配不同工具的通知API，支持跳转和预览）
+    msg(title, subtitle, content, notifyOpts = {}) {
+      // 格式化通知选项：统一不同工具的参数格式
+      const formattedOpts = () => {
+        const jumpUrl = notifyOpts['open-url'] || notifyOpts.url;
+        const previewUrl = notifyOpts['media-url'] || jumpUrl;
+        return this.getCurrentEnv() === 'Quantumult X'
+          ? { 'open-url': jumpUrl, 'media-url': previewUrl }
+          : { url: jumpUrl, mediaUrl: previewUrl };
+      };
+
+      // 调用对应工具的通知API
+      switch (this.getCurrentEnv()) {
+        case 'Surge':
+        case 'Loon':
+          $notification.post(title, subtitle, content, formattedOpts());
+          break;
+        case 'Quantumult X':
+          $notify(title, subtitle, content, formattedOpts());
+          break;
+      }
     }
-  })(name, opts);
+
+    // 脚本结束处理（打印运行时间，调用工具的done方法）
+    done(result = {}) {
+      const runTime = (Date.now() - this.startTime) / 1000;
+      console.log(`[${this.scriptName}] 运行结束，耗时：${runTime}秒`);
+      if (typeof $done !== 'undefined') $done(result);
+    }
+  }(scriptName);
 }
