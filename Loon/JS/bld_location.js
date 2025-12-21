@@ -1,40 +1,38 @@
-// 🚀 Blued 定位修改（URL + Body）
+// 🚀 Blued 经纬度全 URL 强制修改
 // Surge / Loon 双兼容
-// 优先改 URL，其次改 JSON Body
-// 自动跳过非 JSON Body（protobuf / gzip）
+// 所有 URL 中出现的经纬度字段全部覆盖
+// 与是否刷新无关，只要命中请求就改
 
-console.log(`🚀 Blued定位修改器启动（URL + Body）`);
+console.log("🚀 Blued 全 URL 定位修改器启动");
 
 // ========================
 // Argument 解析
 // ========================
 function parseArguments() {
     try {
-        let userInput = {};
+        let input = {};
 
-        if (typeof $argument === 'string' && $argument.trim() !== '') {
-            userInput = JSON.parse($argument);
+        if (typeof $argument === 'string' && $argument.trim()) {
+            input = JSON.parse($argument);
         } else if (typeof $argument === 'object' && $argument !== null) {
-            userInput = $argument;
+            input = $argument;
         }
 
-        const params = {
-            lat: userInput.customLatitude?.toString().trim(),
-            lng: userInput.customLongitude?.toString().trim()
-        };
+        const lat = input.customLatitude?.toString().trim();
+        const lng = input.customLongitude?.toString().trim();
 
-        if (!params.lat || !params.lng) {
-            console.error(`❌ 参数缺失：${JSON.stringify(userInput)}`);
+        if (!lat || !lng) {
+            console.error("❌ 缺少 customLatitude / customLongitude");
             return null;
         }
 
-        if (isNaN(Number(params.lat)) || isNaN(Number(params.lng))) {
-            console.error(`❌ 参数格式错误`);
+        if (isNaN(lat) || isNaN(lng)) {
+            console.error("❌ 经纬度不是数字");
             return null;
         }
 
-        console.log(`📍 目标定位：lat=${params.lat}, lng=${params.lng}`);
-        return params;
+        console.log(`📍 固定定位 → lat=${lat}, lng=${lng}`);
+        return { lat, lng };
     } catch (e) {
         console.error(`❌ Argument 解析失败：${e.message}`);
         return null;
@@ -42,87 +40,39 @@ function parseArguments() {
 }
 
 // ========================
-// URL 参数修改
+// URL 全量修改
 // ========================
-function processUrl(url, params) {
-    try {
-        const [base, qs] = url.split('?');
-        if (!qs) return { url, modified: false };
+function rewriteUrl(url, params) {
+    if (!url.includes('?')) return { url, modified: false };
 
-        const sp = new URLSearchParams(qs);
-        let modified = false;
+    const [base, qs] = url.split('?');
+    const sp = new URLSearchParams(qs);
 
-        ['lat', 'latitude', 'custom_lat'].forEach(k => {
-            if (sp.has(k)) {
-                console.log(`🔄 URL纬度(${k})：${sp.get(k)} → ${params.lat}`);
-                sp.set(k, params.lat);
-                modified = true;
-            }
-        });
+    let modified = false;
 
-        ['lng', 'longitude', 'lot', 'custom_lon'].forEach(k => {
-            if (sp.has(k)) {
-                console.log(`🔄 URL经度(${k})：${sp.get(k)} → ${params.lng}`);
-                sp.set(k, params.lng);
-                modified = true;
-            }
-        });
+    const LAT_KEYS = ['lat', 'latitude', 'custom_lat'];
+    const LNG_KEYS = ['lng', 'longitude', 'lot', 'custom_lon'];
 
-        return {
-            url: modified ? `${base}?${sp.toString()}` : url,
-            modified
-        };
-    } catch (e) {
-        console.error(`❗ URL 处理失败：${e.message}`);
-        return { url, modified: false };
-    }
-}
-
-// ========================
-// Body 修改（仅 JSON）
-// ========================
-function processBody(body, params) {
-    if (!body) return { body, modified: false };
-
-    try {
-        const obj = JSON.parse(body);
-        let modified = false;
-
-        function walk(o) {
-            if (typeof o !== 'object' || o === null) return;
-
-            for (const k in o) {
-                const v = o[k];
-
-                if (['lat', 'latitude'].includes(k)) {
-                    console.log(`🧬 Body纬度(${k})：${v} → ${params.lat}`);
-                    o[k] = Number(params.lat);
-                    modified = true;
-                }
-
-                if (['lng', 'longitude', 'lot'].includes(k)) {
-                    console.log(`🧬 Body经度(${k})：${v} → ${params.lng}`);
-                    o[k] = Number(params.lng);
-                    modified = true;
-                }
-
-                if (typeof v === 'object') {
-                    walk(v);
-                }
-            }
+    for (const key of LAT_KEYS) {
+        if (sp.has(key)) {
+            console.log(`🔁 URL 纬度命中 ${key}: ${sp.get(key)} → ${params.lat}`);
+            sp.set(key, params.lat);
+            modified = true;
         }
-
-        walk(obj);
-
-        return {
-            body: modified ? JSON.stringify(obj) : body,
-            modified
-        };
-    } catch (e) {
-        // 非 JSON（protobuf / gzip），直接跳过
-        console.log(`⏭️ Body 非 JSON，跳过`);
-        return { body, modified: false };
     }
+
+    for (const key of LNG_KEYS) {
+        if (sp.has(key)) {
+            console.log(`🔁 URL 经度命中 ${key}: ${sp.get(key)} → ${params.lng}`);
+            sp.set(key, params.lng);
+            modified = true;
+        }
+    }
+
+    return {
+        url: modified ? `${base}?${sp.toString()}` : url,
+        modified
+    };
 }
 
 // ========================
@@ -135,17 +85,13 @@ function processBody(body, params) {
         return;
     }
 
-    let urlResult = processUrl($request.url, params);
-    let bodyResult = processBody($request.body, params);
+    const result = rewriteUrl($request.url, params);
 
-    if (urlResult.modified || bodyResult.modified) {
-        console.log(`✅ 定位修改生效（URL:${urlResult.modified} Body:${bodyResult.modified}）`);
-        $done({
-            url: urlResult.url,
-            body: bodyResult.body
-        });
+    if (result.modified) {
+        console.log(`✅ URL 已强制重写`);
+        $done({ url: result.url });
     } else {
-        console.log(`⚠️ 未发现可修改的定位字段`);
+        console.log(`⚠️ URL 中未发现经纬度参数`);
         $done({});
     }
 })();
