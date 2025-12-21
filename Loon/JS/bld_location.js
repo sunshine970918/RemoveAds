@@ -1,217 +1,123 @@
-/**
- * 🚀 Blued 定位强制修改（终极完整版）
- * 仅作用于 blued.cn
- * URL + JSON Body + protobuf 兜底
- * Surge / Loon 双兼容
- */
+// 🚀 Blued 定位修改（仅 Argument 传参）
+// Surge / Loon 双兼容
+// 仅修改 URL 中的经纬度参数，不碰 Body
+//
+// Surge 示例：
+// http-request ^https:\/\/((social|argo)\.(blued|irisgw)\.cn)\/... script-path=bld_location_only_arg.js, tag=FakeGPS, argument={"customLatitude":"23.135197677361752","customLongitude":"113.33890805000999"}
 
-console.log("🚀 Blued 定位修改器启动");
+console.log(`🚀 Blued定位修改器启动（仅Argument传参）`);
+console.log(`🔧 传入参数原始值：${typeof $argument === 'string' ? $argument : JSON.stringify($argument)}`);
+console.log(`⏱️ 主逻辑启动，处理耗时计时开始`);
 
 // ========================
-// Argument 解析
+// Argument 解析（核心修复点）
 // ========================
 function parseArguments() {
     try {
-        let input = {};
+        let userInput = {};
 
-        if (typeof $argument === 'string' && $argument.trim()) {
-            input = JSON.parse($argument);
-        } else if (typeof $argument === 'object' && $argument !== null) {
-            input = $argument;
+        // Surge：$argument 是 string
+        if (typeof $argument === 'string' && $argument.trim() !== '') {
+            userInput = JSON.parse($argument);
+        }
+        // Loon：$argument 是 object
+        else if (typeof $argument === 'object' && $argument !== null) {
+            userInput = $argument;
         }
 
-        const lat = input.customLatitude?.toString().trim();
-        const lng = input.customLongitude?.toString().trim();
+        const finalParams = {
+            customLatitude: userInput.customLatitude?.toString().trim() || null,
+            customLongitude: userInput.customLongitude?.toString().trim() || null
+        };
 
-        if (!lat || !lng) {
-            console.log("❌ 缺少 customLatitude / customLongitude");
+        if (!finalParams.customLatitude || !finalParams.customLongitude) {
+            console.error(`❌ 参数缺失，解析结果：${JSON.stringify(userInput)}`);
             return null;
         }
 
-        if (isNaN(lat) || isNaN(lng)) {
-            console.log("❌ 经纬度不是数字");
+        if (
+            isNaN(Number(finalParams.customLatitude)) ||
+            isNaN(Number(finalParams.customLongitude))
+        ) {
+            console.error(`❌ 参数格式错误：${JSON.stringify(finalParams)}`);
             return null;
         }
 
-        console.log(`📍 固定定位：lat=${lat}, lng=${lng}`);
-        return { lat, lng };
-    } catch (e) {
-        console.log("❌ Argument 解析失败：" + e.message);
+        console.log(`🔍 最终生效参数：
+纬度：${finalParams.customLatitude}
+经度：${finalParams.customLongitude}`);
+
+        return finalParams;
+    } catch (error) {
+        console.error(`❌ Argument 解析失败：${error.message}`);
         return null;
     }
 }
 
 // ========================
-// URL 经纬度强制修改
+// URL 参数修改
 // ========================
-function rewriteUrl(url, params) {
-    if (!url.includes('?')) return { url, modified: false };
-
-    const [base, qs] = url.split('?');
-    const sp = new URLSearchParams(qs);
-
-    let modified = false;
-
-    const LAT_KEYS = ['lat', 'latitude', 'custom_lat'];
-    const LNG_KEYS = ['lng', 'longitude', 'lot', 'custom_lon'];
-
-    LAT_KEYS.forEach(k => {
-        if (sp.has(k)) {
-            console.log(`🔁 URL 纬度 ${k}: ${sp.get(k)} → ${params.lat}`);
-            sp.set(k, params.lat);
-            modified = true;
-        }
-    });
-
-    LNG_KEYS.forEach(k => {
-        if (sp.has(k)) {
-            console.log(`🔁 URL 经度 ${k}: ${sp.get(k)} → ${params.lng}`);
-            sp.set(k, params.lng);
-            modified = true;
-        }
-    });
-
-    return {
-        url: modified ? `${base}?${sp.toString()}` : url,
-        modified
-    };
-}
-
-// ========================
-// JSON Body 经纬度修改
-// ========================
-function rewriteJsonBody(body, params) {
-    if (!body) return { body, modified: false };
-
+function processUrlParams(url, params) {
     try {
-        const obj = JSON.parse(body);
-        let modified = false;
+        const [baseUrl, queryString] = url.split('?');
+        if (!queryString) return url;
 
-        function walk(o) {
-            if (typeof o !== 'object' || o === null) return;
+        const searchParams = new URLSearchParams(queryString);
+        let isModified = false;
 
-            for (const k in o) {
-                const v = o[k];
-
-                if (['lat', 'latitude'].includes(k)) {
-                    console.log(`🧬 Body 纬度 ${k}: ${v} → ${params.lat}`);
-                    o[k] = Number(params.lat);
-                    modified = true;
-                }
-
-                if (['lng', 'longitude', 'lot'].includes(k)) {
-                    console.log(`🧬 Body 经度 ${k}: ${v} → ${params.lng}`);
-                    o[k] = Number(params.lng);
-                    modified = true;
-                }
-
-                if (typeof v === 'object') walk(v);
-            }
-        }
-
-        walk(obj);
-
-        return {
-            body: modified ? JSON.stringify(obj) : body,
-            modified
-        };
-    } catch {
-        return { body, modified: false };
-    }
-}
-
-// ========================
-// protobuf / octet-stream 兜底
-// ========================
-function rewriteProtobuf(body, params, headers) {
-    if (!body) return { body, modified: false };
-
-    const ct =
-        headers?.['content-type'] ||
-        headers?.['Content-Type'] ||
-        '';
-
-    if (!/protobuf|octet-stream/i.test(ct)) {
-        return { body, modified: false };
-    }
-
-    try {
-        let raw = body;
-        let modified = false;
-
-        const LAT_KEYS = ['latitude', 'lat'];
-        const LNG_KEYS = ['longitude', 'lng', 'lot'];
-
-        LAT_KEYS.forEach(k => {
-            if (raw.includes(k)) {
-                raw = raw.replace(
-                    new RegExp(k + '[^0-9\\-\\.]*[0-9\\-\\.]+', 'g'),
-                    `${k}:${params.lat}`
-                );
-                modified = true;
+        // 纬度参数
+        ['lat', 'latitude', 'custom_lat'].forEach(key => {
+            if (searchParams.has(key)) {
+                const oldVal = searchParams.get(key);
+                searchParams.set(key, params.customLatitude);
+                console.log(`🔄 URL纬度(${key})：${oldVal} → ${params.customLatitude}`);
+                isModified = true;
             }
         });
 
-        LNG_KEYS.forEach(k => {
-            if (raw.includes(k)) {
-                raw = raw.replace(
-                    new RegExp(k + '[^0-9\\-\\.]*[0-9\\-\\.]+', 'g'),
-                    `${k}:${params.lng}`
-                );
-                modified = true;
+        // 经度参数
+        ['lng', 'longitude', 'lot', 'custom_lon'].forEach(key => {
+            if (searchParams.has(key)) {
+                const oldVal = searchParams.get(key);
+                searchParams.set(key, params.customLongitude);
+                console.log(`🔄 URL经度(${key})：${oldVal} → ${params.customLongitude}`);
+                isModified = true;
             }
         });
 
-        if (modified) {
-            console.log("🧬 protobuf 定位兜底命中");
-            return { body: raw, modified: true };
-        }
-    } catch {}
-
-    return { body, modified: false };
+        return isModified ? `${baseUrl}?${searchParams.toString()}` : url;
+    } catch (error) {
+        console.error(`❗ URL 参数处理失败：${error.message}`);
+        return url;
+    }
 }
 
 // ========================
 // 主逻辑
 // ========================
-(function main() {
-    // 🔒 只允许 blued.cn
-    if (!$request.url.includes(".blued.cn")) {
+function main() {
+    const startTime = Date.now();
+
+    try {
+        const params = parseArguments();
+        if (!params) {
+            console.warn(`⚠️ 无有效参数，不执行定位修改`);
+            $done({});
+            return;
+        }
+
+        const modifiedUrl = processUrlParams($request.url, params);
+
+        console.log(`✅ 定位修改完成
+URL：${modifiedUrl}`);
+
+        $done({ url: modifiedUrl });
+    } catch (error) {
+        console.error(`❗ 脚本执行异常：${error.message}`);
         $done({});
-        return;
+    } finally {
+        console.log(`⏱️ 处理耗时：${Date.now() - startTime}ms`);
     }
+}
 
-    const params = parseArguments();
-    if (!params) {
-        $done({});
-        return;
-    }
-
-    // 1️⃣ URL
-    const urlResult = rewriteUrl($request.url, params);
-    if (urlResult.modified) {
-        $done({ url: urlResult.url });
-        return;
-    }
-
-    // 2️⃣ JSON Body
-    const jsonResult = rewriteJsonBody($request.body, params);
-    if (jsonResult.modified) {
-        $done({ body: jsonResult.body });
-        return;
-    }
-
-    // 3️⃣ protobuf 兜底
-    const pbResult = rewriteProtobuf(
-        $request.body,
-        params,
-        $request.headers
-    );
-
-    if (pbResult.modified) {
-        $done({ body: pbResult.body });
-        return;
-    }
-
-    $done({});
-})();
+main();
