@@ -3,6 +3,10 @@
   "description": "qx自用图标，尺寸为108px，更新日期：2026-05-20 18:00:00",
   "icons": [
     {
+      "name": "c",
+      "url": "https://raw.githubusercontent.com/sunshine970918/RemoveAds/main/QuantumultX/App_icon/c.png"
+    },
+    {
       "name": "fanqie",
       "url": "https://raw.githubusercontent.com/sunshine970918/RemoveAds/main/QuantumultX/App_icon/fq.png"
     },
