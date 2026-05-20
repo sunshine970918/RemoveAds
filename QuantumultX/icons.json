@@ -6,10 +6,25 @@
       "name": "fanqie",
       "url": "https://raw.githubusercontent.com/sunshine970918/RemoveAds/main/QuantumultX/App_icon/fq.png"
     },
-    
     {
-      "name": "fanqie144",
-      "url": "https://raw.githubusercontent.com/sunshine970918/RemoveAds/main/QuantumultX/App_icon/fq144.png"
+      "name": "jiakaobaodian",
+      "url": "https://raw.githubusercontent.com/sunshine970918/RemoveAds/main/QuantumultX/App_icon/jkbd.png"
+    },
+    {
+      "name": "kuan",
+      "url": "https://raw.githubusercontent.com/sunshine970918/RemoveAds/main/QuantumultX/App_icon/kuan.png"
+    },
+    {
+      "name": "tieba",
+      "url": "https://raw.githubusercontent.com/sunshine970918/RemoveAds/main/QuantumultX/App_icon/tieba.png"
+    },
+    {
+      "name": "wyy",
+      "url": "https://raw.githubusercontent.com/sunshine970918/RemoveAds/main/QuantumultX/App_icon/wyy.png"
+    },
+    {
+      "name": "wyyx",
+      "url": "https://raw.githubusercontent.com/sunshine970918/RemoveAds/main/QuantumultX/App_icon/wyyx.png"
     }
   ]
 }
